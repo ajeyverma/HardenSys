@@ -13,8 +13,8 @@ from PySide6.QtWidgets import (
     QTreeWidget, QTreeWidgetItem, QLineEdit, QProgressBar, QPlainTextEdit,
     QMessageBox, QTabWidget, QPushButton, QFileDialog, QFrame, QListWidget, QListWidgetItem, QLabel, QStyle
 )
-from PySide6.QtGui import QIcon
-from windows_tasks import enforce_password_history, backup_password_policy, restore_password_policy
+from PySide6.QtGui import QIcon, QPixmap, QPainter, QColor
+from windows_tasks import backup_password_policy, restore_password_policy
 
 
 # ----------------------- Central Logging -----------------------
@@ -78,16 +78,50 @@ class TaskWorker(threading.Thread):
             task_name = item.text(0)
             self.signals.log.emit(f"Starting: {task_name}")
 
-            # Find script_key from tasks_hierarchy
-            script_key = None
-            for task in self.tasks_hierarchy:
-                if task.get("title") == task_name:
-                    script_key = task.get("script_key")
-                    break
+            # Find script_key from tasks_hierarchy recursively
+            def find_script_key(tasks, target_name):
+                for task in tasks:
+                    if task.get("title") == target_name:
+                        return task.get("script_key")
+                    # Check if this is a parent task with subheading
+                    if task.get("subheading"):
+                        # Look for tasks with same heading and subheading
+                        for subtask in tasks:
+                            if (subtask.get("heading") == task.get("heading") and 
+                                subtask.get("subheading") == task.get("subheading") and
+                                subtask.get("title") == target_name):
+                                return subtask.get("script_key")
+                return None
 
-            # (Backup is now created once at run start)
+            script_key = find_script_key(self.tasks_hierarchy, task_name)
 
-            # Execute corresponding function
+            # Execute corresponding function based on script_key
+            if script_key and hasattr(sys.modules['windows_tasks'], script_key):
+                try:
+                    result = getattr(sys.modules['windows_tasks'], script_key)()
+                    if isinstance(result, dict):
+                        # Log the compliance result
+                        action_logger.add_compliance(
+                            parameter=task_name,
+                            previous=result.get('previous', 'Unknown'),
+                            current=result.get('current', 'Unknown'),
+                            status=result.get('status', 'unknown'),
+                            severity='HIGH' if result.get('status') == 'error' else 'LOW'
+                        )
+                        self.signals.log.emit(result.get('message', f'Completed: {task_name}'))
+                    else:
+                        self.signals.log.emit(f'Completed: {task_name}')
+                except Exception as e:
+                    self.signals.log.emit(f'Error executing {task_name}: {str(e)}')
+                    action_logger.add_compliance(
+                        parameter=task_name,
+                        previous='Unknown',
+                        current='Error',
+                        status='error',
+                        severity='HIGH'
+                    )
+            else:
+                self.signals.log.emit(f'Script not found for task: {task_name}')
             result_text = ""
             if script_key:
                 func = globals().get(script_key)
@@ -100,21 +134,26 @@ class TaskWorker(threading.Thread):
                             result_text = result.get("message", str(result))
                             previous_value = result.get("previous", "Unknown")
                             current_value = result.get("current", "Unknown")
-                            status = "Executed" if result.get("status") == "success" else "Failed"
+                            status = result.get("status", "unknown")
+                            
+                            # Log the result text immediately
+                            self.signals.log.emit(result_text)
+                            
+                            # Map task status to compliance record status
+                            compliance_status = "Executed" if status == "success" else "Failed"
+                            
+                            # Add compliance record if we have valid data
+                            if previous_value != "Unknown" and current_value != "Unknown":
+                                action_logger.add_compliance(
+                                    parameter=task_name,
+                                    previous=previous_value,
+                                    current=current_value,
+                                    status=compliance_status,
+                                    severity="High"
+                                )
                         else:
                             result_text = str(result)
-                            previous_value = "Unknown"
-                            current_value = str(result)
-                            status = "Executed"
-                        
-                        self.signals.log.emit(result_text)
-                        action_logger.add_compliance(
-                            parameter=task_name,
-                            previous=previous_value,
-                            current=current_value,
-                            status=status,
-                            severity="High"
-                        )
+                            self.signals.log.emit(result_text)
                     except Exception as e:
                         self.signals.log.emit(f"❌ Error executing '{task_name}': {str(e)}")
 
@@ -146,6 +185,25 @@ def load_tasks_for_os(os_name: str):
     except FileNotFoundError:
         tasks = []
     return tasks
+
+def create_white_icon(style, standard_pixmap):
+    # Get the standard icon as a pixmap
+    pixmap = style.standardIcon(standard_pixmap).pixmap(24, 24)  # Size 24x24
+    # Create a new pixmap with same size
+    new_pixmap = QPixmap(pixmap.size())
+    new_pixmap.fill(Qt.transparent)
+    # Create painter for the new pixmap
+    painter = QPainter(new_pixmap)
+    # Set composition mode to source over
+    painter.setCompositionMode(QPainter.CompositionMode_Source)
+    # Draw the original icon
+    painter.drawPixmap(0, 0, pixmap)
+    # Set composition mode to source in
+    painter.setCompositionMode(QPainter.CompositionMode_SourceIn)
+    # Fill with white color
+    painter.fillRect(new_pixmap.rect(), QColor(255, 255, 255))
+    painter.end()
+    return QIcon(new_pixmap)
 
 class HardeningTab(QWidget):
     def __init__(self, parent=None):
@@ -220,15 +278,61 @@ class HardeningTab(QWidget):
         right_panel.addWidget(self.task_details, 3)
 
         action_row = QHBoxLayout()
+        
+        # Run Selected button with icon and text
         self.btn_run_selected = QPushButton("Run Selected")
+        self.btn_run_selected.setIcon(create_white_icon(self.style(), QStyle.SP_MediaPlay))
+        self.btn_run_selected.setToolTip("Run Selected Tasks")
+        self.btn_run_selected.setStyleSheet("""
+            QPushButton {
+                background-color: #4CAF50;
+                color: white;
+                padding: 5px 10px;
+                border: none;
+                border-radius: 4px;
+            }
+            QPushButton:hover {
+                background-color: #45a049;
+            }
+        """)
         self.btn_run_selected.clicked.connect(self.run_selected_tasks)
         action_row.addWidget(self.btn_run_selected)
 
+        # Run All button with icon and text
         self.btn_run_all = QPushButton("Run All")
+        self.btn_run_all.setIcon(create_white_icon(self.style(), QStyle.SP_MediaSeekForward))
+        self.btn_run_all.setToolTip("Run All Tasks")
+        self.btn_run_all.setStyleSheet("""
+            QPushButton {
+                background-color: #2196F3;
+                color: white;
+                padding: 5px 10px;
+                border: none;
+                border-radius: 4px;
+            }
+            QPushButton:hover {
+                background-color: #1976D2;
+            }
+        """)
         self.btn_run_all.clicked.connect(self.run_all_tasks)
         action_row.addWidget(self.btn_run_all)
 
+        # Stop button with icon and text
         self.btn_stop = QPushButton("Stop")
+        self.btn_stop.setIcon(create_white_icon(self.style(), QStyle.SP_MediaStop))
+        self.btn_stop.setToolTip("Stop Execution")
+        self.btn_stop.setStyleSheet("""
+            QPushButton {
+                background-color: #f44336;
+                color: white;
+                padding: 5px 10px;
+                border: none;
+                border-radius: 4px;
+            }
+            QPushButton:hover {
+                background-color: #d32f2f;
+            }
+        """)
         self.btn_stop.clicked.connect(self.stop)
         action_row.addWidget(self.btn_stop)
 
@@ -510,8 +614,12 @@ class HardeningTab(QWidget):
             main_window = self.window()
             if hasattr(main_window, 'logging_tab'):
                 main_window.logging_tab.refresh_compliance_display()
-        except:
-            pass  # Silently fail if we can't refresh
+                self.append_log("Compliance results updated in Logging & Reporting tab.")
+        except Exception as e:
+            self.append_log(f"Could not refresh compliance display: {str(e)}")
+        
+        # Reset progress bar
+        self.progress.setValue(0)
 
     def on_task_selected(self):
         sel_items = self.task_tree.selectedItems()
@@ -527,13 +635,6 @@ class BackupRollbackTab(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
         layout = QVBoxLayout(self)
-
-        # (Top controls removed; actions are in the left backup panel toolbar)
-
-        # ---------------- Log console ----------------
-        self.log = QPlainTextEdit()
-        self.log.setReadOnly(True)
-        layout.addWidget(self.log, 1)
 
         # ---------------- Two-column layout: Left Backup | Right Rollback ----------------
         main_row = QHBoxLayout()

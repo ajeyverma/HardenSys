@@ -32,23 +32,37 @@
 <body>
   <div class="container">
     <h1>System Hardening Compliance Report</h1>
-    <p><strong>Generated:</strong> 2025-10-08 18:53:13</p>
-    <p><strong>Report ID:</strong> 7328</p>
+    <p><strong>Generated:</strong> 2025-10-11 00:07:44</p>
+    <p><strong>Report ID:</strong> 5443</p>
     
     <div class="summary">
       <h3>Executive Summary</h3>
-      <div class="summary-item">Total Actions: 1</div>
-      <div class="summary-item">Compliance Records: 0</div>
-      <div class="summary-item summary-high">High Severity: 0</div>
+      <div class="summary-item">Total Actions: 15</div>
+      <div class="summary-item">Compliance Records: 2</div>
+      <div class="summary-item summary-high">High Severity: 1</div>
       <div class="summary-item summary-medium">Medium Severity: 0</div>
-      <div class="summary-item summary-low">Low Severity: 0</div>
+      <div class="summary-item summary-low">Low Severity: 1</div>
     </div>
     
     <div class="audit-trail">
       <h2>Audit Trail - Actions Log</h2>
       <p>Complete chronological log of all actions performed during the hardening process:</p>
       <ul>
-        <li><strong>[2025-10-08 18:52:02]</strong> Hardening: Detected OS: Windows 10 (10.0.22631)</li>
+        <li><strong>[2025-10-11 00:06:01]</strong> Hardening: Detected OS: Windows 10 (10.0.22631)</li>
+<li><strong>[2025-10-11 00:06:40]</strong> Hardening: Backup created: C:\Users\Ajay Verma\Documents\GitHub\new\backup\secpol_backup_20251011_000640.inf</li>
+<li><strong>[2025-10-11 00:06:40]</strong> Hardening: Starting execution...</li>
+<li><strong>[2025-10-11 00:06:40]</strong> Hardening: Starting: Guest account status</li>
+<li><strong>[2025-10-11 00:06:40]</strong> Hardening: ✅ Guest account disabled successfully</li>
+<li><strong>[2025-10-11 00:06:41]</strong> Hardening: Completed: Guest account status</li>
+<li><strong>[2025-10-11 00:06:41]</strong> Hardening: Execution finished.</li>
+<li><strong>[2025-10-11 00:06:41]</strong> Hardening: Compliance results updated in Logging & Reporting tab.</li>
+<li><strong>[2025-10-11 00:07:36]</strong> Hardening: Backup created: C:\Users\Ajay Verma\Documents\GitHub\new\backup\secpol_backup_20251011_000736.inf</li>
+<li><strong>[2025-10-11 00:07:36]</strong> Hardening: Starting execution...</li>
+<li><strong>[2025-10-11 00:07:36]</strong> Hardening: Starting: Rename guest account</li>
+<li><strong>[2025-10-11 00:07:36]</strong> Hardening: ❌ Error renaming Guest account: Command '['wmic', 'useraccount', 'where', 'name="Guest"', 'call', 'rename', 'name="VisitorAccess"']' returned non-zero exit status 2147749911.</li>
+<li><strong>[2025-10-11 00:07:37]</strong> Hardening: Completed: Rename guest account</li>
+<li><strong>[2025-10-11 00:07:37]</strong> Hardening: Execution finished.</li>
+<li><strong>[2025-10-11 00:07:37]</strong> Hardening: Compliance results updated in Logging & Reporting tab.</li>
       </ul>
     </div>
     
@@ -66,7 +80,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td colspan='6'>No compliance records available.</td></tr>
+        <tr><td>Guest account status</td><td>Disabled</td><td>Disabled</td><td>success</td><td class='severity-low'>LOW</td><td>2025-10-11 00:06:40</td></tr>
+<tr><td>Rename guest account</td><td>Guest</td><td>Failed to apply</td><td>error</td><td class='severity-high'>HIGH</td><td>2025-10-11 00:07:36</td></tr>
       </tbody>
     </table>
     
