@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download - Windows Security Compliance Tool</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>Windows Security Compliance</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="cli.html" class="nav-link">CLI Guide</a></li>
+                <li><a href="gui.html" class="nav-link">GUI Guide</a></li>
+                <li><a href="parameters.html" class="nav-link">Parameters</a></li>
+                <li><a href="manual-setup.html" class="nav-link">Manual Setup</a></li>
+                <li><a href="download.html" class="nav-link active">Download</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Download</h1>
+                <p>Get the Windows Security Compliance Tool and start securing your Windows systems</p>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <div class="content-section">
+                    <h2>System Requirements</h2>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Operating System</div>
+                            <h4>Windows 10/11</h4>
+                            <div class="description">Windows 10 version 1903 or later, Windows 11</div>
+                            <div class="registry-path">Supported Editions: Home, Pro, Enterprise, Education</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Python</div>
+                            <h4>Python 3.7+</h4>
+                            <div class="description">Python 3.7 or higher required</div>
+                            <div class="registry-path">Download from: python.org</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Privileges</div>
+                            <h4>Administrator Rights</h4>
+                            <div class="description">Administrator privileges required for full functionality</div>
+                            <div class="registry-path">Some features may be limited without admin rights</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Disk Space</div>
+                            <h4>50 MB</h4>
+                            <div class="description">Minimum 50 MB free disk space</div>
+                            <div class="registry-path">Additional space for reports and backups</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Download Options</h2>
+                    
+                    <h3>Complete Package</h3>
+                    <div class="parameter-card">
+                        <div class="category">Full Installation</div>
+                        <h4>Windows Security Compliance Tool v1.0</h4>
+                        <div class="description">Complete package including GUI, CLI, documentation, and all dependencies</div>
+                        <div class="registry-path">Size: ~25 MB | Format: ZIP</div>
+                        <div class="manual-setup">
+                            <strong>Includes:</strong> GUI application, CLI tool, batch files, PowerShell scripts, documentation, and example configurations
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <a href="#" class="btn btn-primary">Download Complete Package</a>
+                        </div>
+                    </div>
+
+                    <h3>Individual Components</h3>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">GUI Application</div>
+                            <h4>gui.py</h4>
+                            <div class="description">Graphical user interface for Windows security compliance</div>
+                            <div class="registry-path">Size: ~15 KB</div>
+                            <div class="manual-setup">
+                                <strong>Dependencies:</strong> PySide6, windows_tasks.py, windows_tasks.json
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <a href="#" class="btn btn-outline">Download GUI</a>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">CLI Tool</div>
+                            <h4>compliance_cli.py</h4>
+                            <div class="description">Command-line interface for automation and scripting</div>
+                            <div class="registry-path">Size: ~12 KB</div>
+                            <div class="manual-setup">
+                                <strong>Dependencies:</strong> windows_tasks.py, windows_tasks.json
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <a href="#" class="btn btn-outline">Download CLI</a>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Core Engine</div>
+                            <h4>windows_tasks.py</h4>
+                            <div class="description">Core compliance engine with all security functions</div>
+                            <div class="registry-path">Size: ~180 KB</div>
+                            <div class="manual-setup">
+                                <strong>Dependencies:</strong> Standard Python libraries only
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <a href="#" class="btn btn-outline">Download Core</a>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Configuration</div>
+                            <h4>windows_tasks.json</h4>
+                            <div class="description">Parameter definitions and compliance rules</div>
+                            <div class="registry-path">Size: ~45 KB</div>
+                            <div class="manual-setup">
+                                <strong>Dependencies:</strong> None (standalone configuration file)
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <a href="#" class="btn btn-outline">Download Config</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Installation Instructions</h2>
+                    
+                    <h3>Quick Installation</h3>
+                    <div class="code-block">
+# 1. Download the complete package
+# 2. Extract to desired location (e.g., C:\SecurityCompliance)
+# 3. Open Command Prompt as Administrator
+# 4. Navigate to the extracted folder
+cd C:\SecurityCompliance
+
+# 5. Install Python dependencies
+pip install -r requirements.txt
+
+# 6. Run the tool
+python gui.py
+                    </div>
+
+                    <h3>Manual Installation</h3>
+                    <ol>
+                        <li><strong>Download Python:</strong> Install Python 3.7+ from python.org</li>
+                        <li><strong>Download the tool:</strong> Get the complete package or individual components</li>
+                        <li><strong>Extract files:</strong> Extract to a folder of your choice</li>
+                        <li><strong>Install dependencies:</strong> Run <code>pip install -r requirements.txt</code></li>
+                        <li><strong>Verify installation:</strong> Run <code>python compliance_cli.py --help</code></li>
+                    </ol>
+
+                    <h3>Dependencies</h3>
+                    <div class="code-block">
+# Core dependencies (included in requirements.txt)
+PySide6>=6.0.0          # GUI framework
+reportlab>=3.0.0        # PDF report generation
+PyPDF2>=3.0.0          # PDF manipulation
+Pillow>=8.0.0          # Image processing
+python-dotenv>=0.19.0  # Environment variables
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Quick Start</h2>
+                    
+                    <h3>GUI Quick Start</h3>
+                    <div class="code-block">
+# Run the GUI application
+python gui.py
+
+# Or use the batch file (Windows)
+run_gui.bat
+                    </div>
+
+                    <h3>CLI Quick Start</h3>
+                    <div class="code-block">
+# Run all compliance checks
+python compliance_cli.py
+
+# Run specific category
+python compliance_cli.py --heading "Account Policies"
+
+# Generate report
+python compliance_cli.py --output report.html
+                    </div>
+
+                    <h3>PowerShell Quick Start</h3>
+                    <div class="code-block">
+# Run with PowerShell launcher
+.\run_compliance.ps1
+
+# With parameters
+.\run_compliance.ps1 -Heading "Account Policies" -Output "report.html"
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>File Structure</h2>
+                    <div class="code-block">
+Windows Security Compliance Tool/
+├── gui.py                          # GUI application
+├── compliance_cli.py               # CLI tool
+├── windows_tasks.py                # Core compliance engine
+├── windows_tasks.json              # Parameter definitions
+├── run_gui.bat                     # Windows GUI launcher
+├── run_compliance.bat              # Windows CLI launcher
+├── run_compliance.ps1              # PowerShell launcher
+├── requirements.txt                # Python dependencies
+├── README.md                       # Documentation
+├── backup/                         # Security policy backups
+│   └── secpol_backup_*.inf
+├── reports/                        # Generated reports
+│   ├── html/
+│   └── pdf/
+└── website/                        # Documentation website
+    ├── index.html
+    ├── cli.html
+    ├── gui.html
+    ├── parameters.html
+    ├── manual-setup.html
+    ├── download.html
+    ├── css/
+    ├── js/
+    └── images/
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Verification</h2>
+                    
+                    <h3>Test Installation</h3>
+                    <div class="code-block">
+# Test CLI installation
+python compliance_cli.py --help
+
+# Test GUI installation
+python gui.py
+
+# Test specific functionality
+python compliance_cli.py --list
+                    </div>
+
+                    <h3>Verify Dependencies</h3>
+                    <div class="code-block">
+# Check Python version
+python --version
+
+# Check installed packages
+pip list
+
+# Test imports
+python -c "import PySide6; import reportlab; print('All dependencies OK')"
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Updates and Support</h2>
+                    
+                    <h3>Getting Updates</h3>
+                    <p>To get the latest version of the Windows Security Compliance Tool:</p>
+                    <ol>
+                        <li>Check the GitHub repository for new releases</li>
+                        <li>Download the latest version</li>
+                        <li>Backup your current configuration</li>
+                        <li>Replace the old files with new ones</li>
+                        <li>Update dependencies if needed</li>
+                    </ol>
+
+                    <h3>Support Resources</h3>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Documentation</div>
+                            <h4>User Guides</h4>
+                            <div class="description">Comprehensive documentation for CLI and GUI usage</div>
+                            <div class="registry-path">Available in the website/ directory</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">GitHub</div>
+                            <h4>Source Code</h4>
+                            <div class="description">View source code and contribute to development</div>
+                            <div class="registry-path">github.com/AjeyVerma</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Issues</div>
+                            <h4>Bug Reports</h4>
+                            <div class="description">Report bugs and request features</div>
+                            <div class="registry-path">GitHub Issues page</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Community</div>
+                            <h4>Discussions</h4>
+                            <div class="description">Join community discussions and get help</div>
+                            <div class="registry-path">GitHub Discussions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>License and Legal</h2>
+                    
+                    <h3>License</h3>
+                    <p>This tool is provided under the MIT License. You are free to use, modify, and distribute the software for both commercial and non-commercial purposes.</p>
+                    
+                    <h3>Disclaimer</h3>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Important:</strong> This tool modifies Windows security settings. Always test in a non-production environment first and maintain proper backups. The authors are not responsible for any system damage or security issues that may arise from the use of this tool.
+                    </div>
+
+                    <h3>Contributing</h3>
+                    <p>Contributions are welcome! Please feel free to submit pull requests, report bugs, or suggest new features through the GitHub repository.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Windows Security Compliance Tool</h3>
+                    <p>Comprehensive security policy management for Windows systems</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="cli.html">CLI Guide</a></li>
+                        <li><a href="gui.html">GUI Guide</a></li>
+                        <li><a href="parameters.html">Parameters</a></li>
+                        <li><a href="manual-setup.html">Manual Setup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="download.html">Download</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="https://github.com/AjeyVerma">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Windows Security Compliance Tool. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

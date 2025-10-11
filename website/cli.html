@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLI Guide - Windows Security Compliance Tool</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>Windows Security Compliance</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="cli.html" class="nav-link active">CLI Guide</a></li>
+                <li><a href="gui.html" class="nav-link">GUI Guide</a></li>
+                <li><a href="parameters.html" class="nav-link">Parameters</a></li>
+                <li><a href="manual-setup.html" class="nav-link">Manual Setup</a></li>
+                <li><a href="download.html" class="nav-link">Download</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Command Line Interface (CLI) Guide</h1>
+                <p>Complete documentation for using the Windows Security Compliance CLI tool</p>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <div class="content-section">
+                    <h2>Overview</h2>
+                    <p>The Windows Security Compliance CLI tool provides a command-line interface for running security compliance checks, generating reports, and managing Windows security policies. It's perfect for automation, scripting, and integration into CI/CD pipelines.</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Note:</strong> The CLI tool requires Administrator privileges for full functionality. Some checks may fail without proper permissions.
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Installation & Setup</h2>
+                    <h3>Prerequisites</h3>
+                    <ul>
+                        <li>Windows 10/11</li>
+                        <li>Python 3.7 or higher</li>
+                        <li>Administrator privileges (recommended)</li>
+                    </ul>
+
+                    <h3>Quick Start</h3>
+                    <div class="code-block">
+# Download and extract the tool
+# Navigate to the tool directory
+cd windows-security-compliance
+
+# Run all compliance checks
+python compliance_cli.py
+
+# Run with specific category
+python compliance_cli.py --heading "Account Policies"
+
+# Generate report
+python compliance_cli.py --output report.html
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Command Line Options</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>--json FILE</code></td>
+                                    <td>Path to tasks JSON file (default: windows_tasks.json)</td>
+                                    <td><code>--json custom_tasks.json</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--heading NAME</code></td>
+                                    <td>Filter by heading (e.g., "Account Policies")</td>
+                                    <td><code>--heading "Account Policies"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--subheading NAME</code></td>
+                                    <td>Filter by subheading (e.g., "Password Policy")</td>
+                                    <td><code>--subheading "Password Policy"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--output FILE</code></td>
+                                    <td>Output file for report</td>
+                                    <td><code>--output report.html</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--format FORMAT</code></td>
+                                    <td>Report format: text or json (default: text)</td>
+                                    <td><code>--format json</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--list</code></td>
+                                    <td>List available categories and exit</td>
+                                    <td><code>--list</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--verbose</code></td>
+                                    <td>Verbose output</td>
+                                    <td><code>--verbose</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--help</code></td>
+                                    <td>Show help message</td>
+                                    <td><code>--help</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Usage Examples</h2>
+                    
+                    <h3>Basic Usage</h3>
+                    <div class="code-block">
+# Run all compliance checks
+python compliance_cli.py
+
+# List available categories
+python compliance_cli.py --list
+
+# Show help
+python compliance_cli.py --help
+                    </div>
+
+                    <h3>Filtering by Category</h3>
+                    <div class="code-block">
+# Run only Account Policies checks
+python compliance_cli.py --heading "Account Policies"
+
+# Run only Password Policy checks
+python compliance_cli.py --subheading "Password Policy"
+
+# Run only Advanced Audit Policy Configuration
+python compliance_cli.py --heading "Advanced Audit Policy Configuration"
+                    </div>
+
+                    <h3>Report Generation</h3>
+                    <div class="code-block">
+# Generate text report
+python compliance_cli.py --output report.txt
+
+# Generate JSON report
+python compliance_cli.py --format json --output report.json
+
+# Generate report for specific category
+python compliance_cli.py --heading "Account Policies" --output account_policies.txt
+                    </div>
+
+                    <h3>PowerShell Integration</h3>
+                    <div class="code-block">
+# Using PowerShell launcher
+.\run_compliance.ps1
+
+# With parameters
+.\run_compliance.ps1 -Heading "Account Policies" -Output "report.html"
+
+# Generate JSON report
+.\run_compliance.ps1 -Format json -Output "compliance_report.json"
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Available Categories</h2>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Account Policies</div>
+                            <h4>Password Policy</h4>
+                            <div class="description">Password complexity, age, and history requirements</div>
+                            <div class="registry-path">6 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Account Policies</div>
+                            <h4>Account Lockout Policy</h4>
+                            <div class="description">Account lockout threshold and duration settings</div>
+                            <div class="registry-path">3 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Local Policies</div>
+                            <h4>User Rights Assignment</h4>
+                            <div class="description">User rights and privilege assignments</div>
+                            <div class="registry-path">7 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options</div>
+                            <h4>Accounts</h4>
+                            <div class="description">Account security settings and restrictions</div>
+                            <div class="registry-path">5 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options</div>
+                            <h4>Interactive logon</h4>
+                            <div class="description">Interactive logon security settings</div>
+                            <div class="registry-path">7 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options</div>
+                            <h4>Microsoft network server</h4>
+                            <div class="description">Network server security configuration</div>
+                            <div class="registry-path">7 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options</div>
+                            <h4>Network security</h4>
+                            <div class="description">Network security protocols and settings</div>
+                            <div class="registry-path">5 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">System Settings</div>
+                            <h4>User Account Control</h4>
+                            <div class="description">UAC settings and elevation prompts</div>
+                            <div class="registry-path">6 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">System Settings</div>
+                            <h4>System Services</h4>
+                            <div class="description">System service configuration and management</div>
+                            <div class="registry-path">26 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Windows Defender Firewall</div>
+                            <h4>Private Profile</h4>
+                            <div class="description">Firewall settings for private networks</div>
+                            <div class="registry-path">8 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Windows Defender Firewall</div>
+                            <h4>Public Profile</h4>
+                            <div class="description">Firewall settings for public networks</div>
+                            <div class="registry-path">10 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Advanced Audit Policy</div>
+                            <h4>Account Logon</h4>
+                            <div class="description">Account logon audit settings</div>
+                            <div class="registry-path">17 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Advanced Audit Policy</div>
+                            <h4>AutoPlay Policies</h4>
+                            <div class="description">AutoPlay security settings</div>
+                            <div class="registry-path">3 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Microsoft Defender Application Guard</div>
+                            <h4>Application Guard Settings</h4>
+                            <div class="description">Application Guard configuration and policies</div>
+                            <div class="registry-path">11 parameters</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Report Formats</h2>
+                    
+                    <h3>Text Report</h3>
+                    <p>Human-readable text format with detailed results and statistics.</p>
+                    <div class="code-block">
+Windows Security Compliance Report
+========================================
+Generated: 2024-01-15 14:30:25
+Duration: 45.67 seconds
+Total Checks: 121
+Successful: 115
+Failed: 6
+Success Rate: 95.0%
+
+Detailed Results:
+========================================
+
+Account Policies
+----------------
+✓ Enforce password history
+  Status: success
+  Message: ✓ Password history set to 24 successfully
+  Previous: 0 passwords
+  Current: 24 passwords
+                    </div>
+
+                    <h3>JSON Report</h3>
+                    <p>Machine-readable JSON format for integration with other tools.</p>
+                    <div class="code-block">
+{
+  "summary": {
+    "total_checks": 121,
+    "successful_checks": 115,
+    "failed_checks": 6,
+    "success_rate": "95.0%",
+    "duration_seconds": 45.67,
+    "timestamp": "2024-01-15T14:30:25"
+  },
+  "results": [
+    {
+      "status": "success",
+      "message": "✓ Password history set to 24 successfully",
+      "previous": "0 passwords",
+      "current": "24 passwords",
+      "heading": "Account Policies",
+      "subheading": "Password Policy",
+      "title": "Enforce password history",
+      "script_key": "enforce_password_history",
+      "timestamp": "2024-01-15T14:30:25"
+    }
+  ]
+}
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Integration Examples</h2>
+                    
+                    <h3>Batch Script Integration</h3>
+                    <div class="code-block">
+@echo off
+echo Running security compliance check...
+python compliance_cli.py --output daily_report_%date%.html
+if %errorlevel% equ 0 (
+    echo Compliance check completed successfully
+) else (
+    echo Compliance check failed
+    exit /b 1
+)
+                    </div>
+
+                    <h3>PowerShell Integration</h3>
+                    <div class="code-block">
+# Run compliance check and email results
+$report = "compliance_report_$(Get-Date -Format 'yyyyMMdd').html"
+python compliance_cli.py --output $report
+
+if ($LASTEXITCODE -eq 0) {
+    Send-MailMessage -To "admin@company.com" -Subject "Daily Security Compliance Report" -Body "Please find attached the daily security compliance report." -Attachments $report
+}
+                    </div>
+
+                    <h3>Scheduled Task Integration</h3>
+                    <div class="code-block">
+# Create scheduled task for daily compliance checks
+schtasks /create /tn "Daily Security Compliance" /tr "python C:\path\to\compliance_cli.py --output C:\reports\daily_%date%.html" /sc daily /st 09:00
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Troubleshooting</h2>
+                    
+                    <h3>Common Issues</h3>
+                    <div class="alert alert-warning">
+                        <strong>Issue:</strong> "Not running as Administrator"<br>
+                        <strong>Solution:</strong> Right-click Command Prompt or PowerShell and select "Run as administrator"
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <strong>Issue:</strong> "Function not found"<br>
+                        <strong>Solution:</strong> Ensure windows_tasks.py is in the same directory and all dependencies are installed
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <strong>Issue:</strong> "JSON file not found"<br>
+                        <strong>Solution:</strong> Ensure windows_tasks.json is in the same directory or use --json option to specify custom path
+                    </div>
+                    
+                    <h3>Error Codes</h3>
+                    <ul>
+                        <li><strong>Exit code 0:</strong> Success</li>
+                        <li><strong>Exit code 1:</strong> Error (file not found, import error, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Windows Security Compliance Tool</h3>
+                    <p>Comprehensive security policy management for Windows systems</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="cli.html">CLI Guide</a></li>
+                        <li><a href="gui.html">GUI Guide</a></li>
+                        <li><a href="parameters.html">Parameters</a></li>
+                        <li><a href="manual-setup.html">Manual Setup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="download.html">Download</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="https://github.com/AjeyVerma">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Windows Security Compliance Tool. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

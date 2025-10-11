@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUI Guide - Windows Security Compliance Tool</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>Windows Security Compliance</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="cli.html" class="nav-link">CLI Guide</a></li>
+                <li><a href="gui.html" class="nav-link active">GUI Guide</a></li>
+                <li><a href="parameters.html" class="nav-link">Parameters</a></li>
+                <li><a href="manual-setup.html" class="nav-link">Manual Setup</a></li>
+                <li><a href="download.html" class="nav-link">Download</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Graphical User Interface (GUI) Guide</h1>
+                <p>Complete documentation for using the Windows Security Compliance GUI tool</p>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <div class="content-section">
+                    <h2>Overview</h2>
+                    <p>The Windows Security Compliance GUI tool provides an intuitive graphical interface for managing Windows security policies, running compliance checks, and generating reports. It's perfect for users who prefer a visual interface over command-line operations.</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Note:</strong> The GUI tool requires Administrator privileges for full functionality. Some features may be limited without proper permissions.
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Getting Started</h2>
+                    <h3>Launching the GUI</h3>
+                    <div class="code-block">
+# Run the GUI application
+python gui.py
+
+# Or use the batch file (Windows)
+run_gui.bat
+                    </div>
+
+                    <h3>First Launch</h3>
+                    <p>When you first launch the GUI, you'll see the main interface with the following sections:</p>
+                    <ul>
+                        <li><strong>Navigation Panel:</strong> Browse through different security categories</li>
+                        <li><strong>Parameter List:</strong> View and select specific security parameters</li>
+                        <li><strong>Action Buttons:</strong> Run checks, generate reports, and manage settings</li>
+                        <li><strong>Status Bar:</strong> Display current operation status and results</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Main Interface</h2>
+                    
+                    <h3>Navigation Panel</h3>
+                    <p>The left navigation panel organizes security parameters into logical categories:</p>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Account Policies</div>
+                            <h4>Password Policy</h4>
+                            <div class="description">Password complexity, age, and history requirements</div>
+                            <div class="registry-path">6 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Account Policies</div>
+                            <h4>Account Lockout Policy</h4>
+                            <div class="description">Account lockout threshold and duration settings</div>
+                            <div class="registry-path">3 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Local Policies</div>
+                            <h4>User Rights Assignment</h4>
+                            <div class="description">User rights and privilege assignments</div>
+                            <div class="registry-path">7 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options</div>
+                            <h4>Accounts</h4>
+                            <div class="description">Account security settings and restrictions</div>
+                            <div class="registry-path">5 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options</div>
+                            <h4>Interactive logon</h4>
+                            <div class="description">Interactive logon security settings</div>
+                            <div class="registry-path">7 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options</div>
+                            <h4>Microsoft network server</h4>
+                            <div class="description">Network server security configuration</div>
+                            <div class="registry-path">7 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options</div>
+                            <h4>Network security</h4>
+                            <div class="description">Network security protocols and settings</div>
+                            <div class="registry-path">5 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">System Settings</div>
+                            <h4>User Account Control</h4>
+                            <div class="description">UAC settings and elevation prompts</div>
+                            <div class="registry-path">6 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">System Settings</div>
+                            <h4>System Services</h4>
+                            <div class="description">System service configuration and management</div>
+                            <div class="registry-path">26 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Windows Defender Firewall</div>
+                            <h4>Private Profile</h4>
+                            <div class="description">Firewall settings for private networks</div>
+                            <div class="registry-path">8 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Windows Defender Firewall</div>
+                            <h4>Public Profile</h4>
+                            <div class="description">Firewall settings for public networks</div>
+                            <div class="registry-path">10 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Advanced Audit Policy</div>
+                            <h4>Account Logon</h4>
+                            <div class="description">Account logon audit settings</div>
+                            <div class="registry-path">17 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Advanced Audit Policy</div>
+                            <h4>AutoPlay Policies</h4>
+                            <div class="description">AutoPlay security settings</div>
+                            <div class="registry-path">3 parameters</div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Microsoft Defender Application Guard</div>
+                            <h4>Application Guard Settings</h4>
+                            <div class="description">Application Guard configuration and policies</div>
+                            <div class="registry-path">11 parameters</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Running Compliance Checks</h2>
+                    
+                    <h3>Individual Parameter Checks</h3>
+                    <p>To check a specific parameter:</p>
+                    <ol>
+                        <li>Navigate to the desired category in the left panel</li>
+                        <li>Select the specific parameter you want to check</li>
+                        <li>Click the "Check" button next to the parameter</li>
+                        <li>View the results in the status area</li>
+                    </ol>
+
+                    <h3>Category-wide Checks</h3>
+                    <p>To check all parameters in a category:</p>
+                    <ol>
+                        <li>Select the category (e.g., "Account Policies")</li>
+                        <li>Click the "Check All" button for that category</li>
+                        <li>Monitor the progress in the status bar</li>
+                        <li>Review the results when complete</li>
+                    </ol>
+
+                    <h3>Full System Check</h3>
+                    <p>To run a complete compliance check:</p>
+                    <ol>
+                        <li>Click the "Run All Checks" button in the toolbar</li>
+                        <li>Wait for all 121 parameters to be checked</li>
+                        <li>Review the comprehensive results</li>
+                        <li>Generate a report if needed</li>
+                    </ol>
+                </div>
+
+                <div class="content-section">
+                    <h2>Report Generation</h2>
+                    
+                    <h3>HTML Reports</h3>
+                    <p>Generate detailed HTML reports with visual formatting:</p>
+                    <ol>
+                        <li>Run your desired compliance checks</li>
+                        <li>Click "Generate Report" in the toolbar</li>
+                        <li>Select "HTML Format"</li>
+                        <li>Choose the output location</li>
+                        <li>Click "Generate" to create the report</li>
+                    </ol>
+
+                    <h3>PDF Reports</h3>
+                    <p>Create professional PDF reports for documentation:</p>
+                    <ol>
+                        <li>Complete your compliance checks</li>
+                        <li>Click "Generate Report" in the toolbar</li>
+                        <li>Select "PDF Format"</li>
+                        <li>Choose the output location</li>
+                        <li>Click "Generate" to create the PDF</li>
+                    </ol>
+
+                    <h3>Report Contents</h3>
+                    <p>Reports include:</p>
+                    <ul>
+                        <li>Executive summary with overall compliance percentage</li>
+                        <li>Detailed results for each parameter checked</li>
+                        <li>Before and after values for changed settings</li>
+                        <li>Recommendations for non-compliant parameters</li>
+                        <li>Timestamp and system information</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Backup and Restore</h2>
+                    
+                    <h3>Creating Backups</h3>
+                    <p>Before making changes, always create a backup:</p>
+                    <ol>
+                        <li>Click "Backup" in the toolbar</li>
+                        <li>Select the backup location</li>
+                        <li>Choose a descriptive filename</li>
+                        <li>Click "Create Backup"</li>
+                    </ol>
+
+                    <h3>Restoring from Backup</h3>
+                    <p>To restore from a previous backup:</p>
+                    <ol>
+                        <li>Click "Restore" in the toolbar</li>
+                        <li>Browse to the backup file (.inf format)</li>
+                        <li>Review the backup details</li>
+                        <li>Click "Restore" to apply the settings</li>
+                    </ol>
+
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Warning:</strong> Restoring from backup will overwrite current security settings. Ensure you have a recent backup before proceeding.
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Settings and Configuration</h2>
+                    
+                    <h3>Application Settings</h3>
+                    <p>Access settings through the "Settings" menu:</p>
+                    <ul>
+                        <li><strong>Default Report Format:</strong> Choose HTML or PDF as default</li>
+                        <li><strong>Auto-backup:</strong> Automatically create backups before changes</li>
+                        <li><strong>Logging Level:</strong> Set verbosity of operation logs</li>
+                        <li><strong>Theme:</strong> Choose between light and dark themes</li>
+                    </ul>
+
+                    <h3>Parameter Configuration</h3>
+                    <p>Customize parameter behavior:</p>
+                    <ul>
+                        <li><strong>Severity Levels:</strong> Set high/medium/low severity for parameters</li>
+                        <li><strong>Custom Values:</strong> Define custom values for specific parameters</li>
+                        <li><strong>Exclusions:</strong> Exclude certain parameters from checks</li>
+                        <li><strong>Grouping:</strong> Organize parameters into custom groups</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Keyboard Shortcuts</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Shortcut</th>
+                                    <th>Action</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>Ctrl + R</code></td>
+                                    <td>Run All Checks</td>
+                                    <td>Execute all compliance checks</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Ctrl + B</code></td>
+                                    <td>Backup</td>
+                                    <td>Create security policy backup</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Ctrl + Shift + R</code></td>
+                                    <td>Restore</td>
+                                    <td>Restore from backup</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Ctrl + G</code></td>
+                                    <td>Generate Report</td>
+                                    <td>Create compliance report</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Ctrl + S</code></td>
+                                    <td>Save Settings</td>
+                                    <td>Save current configuration</td>
+                                </tr>
+                                <tr>
+                                    <td><code>F1</code></td>
+                                    <td>Help</td>
+                                    <td>Show help documentation</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Ctrl + Q</code></td>
+                                    <td>Quit</td>
+                                    <td>Exit the application</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Troubleshooting</h2>
+                    
+                    <h3>Common Issues</h3>
+                    <div class="alert alert-warning">
+                        <strong>Issue:</strong> "Access Denied" errors<br>
+                        <strong>Solution:</strong> Run the application as Administrator by right-clicking and selecting "Run as administrator"
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <strong>Issue:</strong> GUI not responding<br>
+                        <strong>Solution:</strong> Check if the application is running with proper permissions and restart if necessary
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <strong>Issue:</strong> Report generation fails<br>
+                        <strong>Solution:</strong> Ensure you have write permissions to the output directory and sufficient disk space
+                    </div>
+                    
+                    <h3>Performance Tips</h3>
+                    <ul>
+                        <li>Close unnecessary applications before running full system checks</li>
+                        <li>Use category-specific checks for faster results</li>
+                        <li>Enable auto-backup only when necessary to improve performance</li>
+                        <li>Clear old reports periodically to free up disk space</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Best Practices</h2>
+                    
+                    <h3>Before Making Changes</h3>
+                    <ol>
+                        <li>Always create a backup of current settings</li>
+                        <li>Run a full compliance check to understand current state</li>
+                        <li>Review the results and plan your changes</li>
+                        <li>Test changes on a non-production system first</li>
+                    </ol>
+
+                    <h3>Regular Maintenance</h3>
+                    <ol>
+                        <li>Run weekly compliance checks</li>
+                        <li>Generate monthly compliance reports</li>
+                        <li>Review and update security policies as needed</li>
+                        <li>Keep backups of all configuration changes</li>
+                    </ol>
+
+                    <h3>Security Considerations</h3>
+                    <ul>
+                        <li>Store backups in secure locations</li>
+                        <li>Use strong passwords for any authentication</li>
+                        <li>Regularly update the tool and dependencies</li>
+                        <li>Monitor compliance reports for security trends</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Windows Security Compliance Tool</h3>
+                    <p>Comprehensive security policy management for Windows systems</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="cli.html">CLI Guide</a></li>
+                        <li><a href="gui.html">GUI Guide</a></li>
+                        <li><a href="parameters.html">Parameters</a></li>
+                        <li><a href="manual-setup.html">Manual Setup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="download.html">Download</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="https://github.com/AjeyVerma">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Windows Security Compliance Tool. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
