@@ -117,8 +117,11 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📬 Contact
+<!-- ## 👨‍💻 Author
 
-Ajey Verma - [@AjeyVerma](https://github.com/AjeyVerma)
+Developed and maintained by **Ajay Kumar**  
+*(also known as **Ajay Verma** / **Aarush Chaudhary** in different communities)*  
 
-Project Link: [https://github.com/AjeyVerma/windows-security-compliance](https://github.com/AjeyVerma/windows-security-compliance)
+- GitHub: [@ajeyverma](https://github.com/ajeyverma)  
+- LinkedIn: [Ajay Verma](https://www.linkedin.com/in/ajeyverma/)  
+- Instagram: [@ajayverma](https://instagram.com/ajayverma097)  -->
