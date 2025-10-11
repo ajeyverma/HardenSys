@@ -1,8 +1,8 @@
-# Windows Security Compliance Tool - Website Documentation
+# HardenSys - Website Documentation
 
 ## 🎉 Website Creation Complete!
 
-A comprehensive website has been created for the Windows Security Compliance Tool with complete documentation for both CLI and GUI interfaces, including all 121 parameters with detailed manual setup instructions.
+A comprehensive website has been created for the Windows and Linux Security Compliance Tool with complete documentation for both CLI and GUI interfaces, including all 121 parameters with detailed manual setup instructions.
 
 ## 📁 Website Structure
 
@@ -173,4 +173,4 @@ The website is now complete and ready for deployment. It provides:
 3. **User Feedback**: Gather feedback for improvements
 4. **Regular Updates**: Keep documentation current with tool updates
 
-The website provides a complete, professional documentation solution for the Windows Security Compliance Tool! 🎉
+The website provides a complete, professional documentation solution for the HardenSys Tool! 🎉

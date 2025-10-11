@@ -1,6 +1,6 @@
-# Windows Security Compliance CLI Tool
+# HardenSys CLI Tool
 
-A command-line interface for running Windows security compliance checks based on CIS benchmarks and security best practices.
+A command-line interface for running Windows and Linux security compliance checks based on CIS benchmarks and security best practices.
 
 ## Features
 
@@ -14,15 +14,16 @@ A command-line interface for running Windows security compliance checks based on
 
 - Python 3.7+
 - Windows 10/11
+- Linux (Ubuntu/Debian)
 - Administrator privileges (recommended for full functionality)
 
 ## Files
 
 - `compliance_cli.py` - Main CLI script
-- `run_compliance.bat` - Windows batch file launcher
-- `run_compliance.ps1` - PowerShell launcher
-- `windows_tasks.json` - Compliance task definitions
-- `windows_tasks.py` - Compliance check functions
+- `windows_tasks.json` - Compliance task definitions for Windows
+- `windows_tasks.py` - Compliance check functions for Windows
+- `linux_tasks.json` - Compliance task definitions for Linux
+- `linux_tasks.py` - Compliance check functions for Linux
 
 ## Usage
 
@@ -32,60 +33,55 @@ A command-line interface for running Windows security compliance checks based on
 # Run all compliance checks
 python compliance_cli.py
 
-# Using batch file
-run_compliance.bat
-
-# Using PowerShell
-.\run_compliance.ps1
 ```
 
 ### Filtering by Category
 
 ```bash
 # Run only Account Policies checks
-python compliance_cli.py --heading "Account Policies"
+python HardenSys.py --heading "Account Policies"
 
 # Run only Password Policy checks
-python compliance_cli.py --subheading "Password Policy"
+python HardenSys.py --subheading "Password Policy"
 
 # Run only Advanced Audit Policy Configuration
-python compliance_cli.py --heading "Advanced Audit Policy Configuration"
+python HardenSys.py --heading "Advanced Audit Policy Configuration"
 ```
 
 ### Report Generation
 
 ```bash
 # Generate text report
-python compliance_cli.py --output report.txt
+python HardenSys.py --output report.txt
 
 # Generate JSON report
-python compliance_cli.py --format json --output report.json
+python HardenSys.py --format json --output report.json
 
 # Generate report for specific category
-python compliance_cli.py --heading "Account Policies" --output account_policies.txt
+python HardenSys.py --heading "Account Policies" --output account_policies.txt
 ```
 
 ### List Available Categories
 
 ```bash
 # List all available categories and subcategories
-python compliance_cli.py --list
+python HardenSys.py --list
 ```
 
 ### PowerShell Examples
 
 ```powershell
 # Run all checks
-.\run_compliance.ps1
+.\HardenSys.ps1
 
 # Run specific category
-.\run_compliance.ps1 -Heading "Account Policies"
+.\HardenSys.ps1 -Heading "Account Policies"
 
 # Generate JSON report
-.\run_compliance.ps1 -Format json -Output "compliance_report.json"
+.\HardenSys.ps1 -Format json -Output "compliance_report.json"
 
 # List categories
-.\run_compliance.ps1 -List
+.\HardenSys.ps1 -List
 ```
 
 ## Command Line Options
@@ -134,7 +130,7 @@ python compliance_cli.py --list
 
 ### Text Report
 ```
-Windows Security Compliance Report
+HardenSys Compliance Report
 ========================================
 Generated: 2024-01-15 14:30:25
 Duration: 45.67 seconds
@@ -188,7 +184,7 @@ For full functionality, run the tool as Administrator:
 
 1. **Command Prompt**: Right-click Command Prompt → "Run as administrator"
 2. **PowerShell**: Right-click PowerShell → "Run as administrator"
-3. **Batch File**: Right-click `run_compliance.bat` → "Run as administrator"
+3. **Batch File**: Right-click `HardenSys.bat` → "Run as administrator"
 
 ## Troubleshooting
 
@@ -219,22 +215,22 @@ For full functionality, run the tool as Administrator:
 
 ### Quick Security Check
 ```bash
-python compliance_cli.py --heading "Account Policies" --output quick_check.txt
+python HardenSys.py --heading "Account Policies" --output quick_check.txt
 ```
 
 ### Full Audit with JSON Export
 ```bash
-python compliance_cli.py --format json --output full_audit.json
+python HardenSys.py --format json --output full_audit.json
 ```
 
 ### Password Policy Only
 ```bash
-python compliance_cli.py --subheading "Password Policy" --verbose
+python HardenSys.py --subheading "Password Policy" --verbose
 ```
 
 ### Firewall Configuration Check
 ```bash
-python compliance_cli.py --heading "Windows Defender Firewall with Advanced Security"
+python HardenSys.py --heading "Windows Defender Firewall with Advanced Security"
 ```
 
 ## Integration
@@ -249,6 +245,6 @@ The CLI tool can be integrated into:
 Example scheduled task:
 ```bash
 # Run daily compliance check
-schtasks /create /tn "Daily Security Compliance" /tr "python C:\path\to\compliance_cli.py --output C:\reports\daily_%date%.txt" /sc daily /st 09:00
+schtasks /create /tn "Daily Security Compliance" /tr "python C:\path\to\HardenSys.py --output C:\reports\daily_%date%.txt" /sc daily /st 09:00
 ```
 
