@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Windows Security Compliance CLI Tool
+HardenSys CLI Tool
 Command-line interface for running Windows security compliance checks.
 """
 
