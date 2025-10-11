@@ -1,4 +1,4 @@
-# Windows Security Compliance Tool
+# HardenSys - Unified System Hardening Tool
 
 A comprehensive security policy management and compliance checking tool for Windows systems. This tool helps organizations and system administrators enforce, manage, and audit Windows security policies through both CLI and GUI interfaces.
 
@@ -38,8 +38,8 @@ A comprehensive security policy management and compliance checking tool for Wind
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/AjeyVerma/windows-security-compliance.git
-cd windows-security-compliance
+git clone https://github.com/AjeyVerma/HardenSys.git
+cd HardenSys
 ```
 
 2. Install required dependencies:
@@ -52,13 +52,13 @@ pip install -r requirements.txt
 #### GUI Interface
 Run the graphical interface:
 ```bash
-python gui.py
+python HardenSys_gui.py
 ```
 
 #### CLI Interface
 Run compliance checks and generate a report:
 ```bash
-python compliance_cli.py --output report.html
+python HardenSys.py --output report.html
 ```
 
 ## 📊 Compliance Categories
