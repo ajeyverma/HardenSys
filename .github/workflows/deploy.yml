@@ -1,0 +1,26 @@
+name: 🚀 Deploy Website to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'website/**'   # only deploy when website folder changes
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy website folder to website branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: website          # Target branch (for Pages)
+          folder: website          # Source folder (in main)
+          clean: true              # Wipe old files before deploying
