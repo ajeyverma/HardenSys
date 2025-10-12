@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Parameters - HardenSys Documentation</title>
+    <link rel="stylesheet" href="css/docs.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="docs-container">
+        <!-- Sidebar Navigation -->
+        <nav class="docs-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../images/app_logo.png" alt="HardenSys" class="logo-icon">
+                    <span>HardenSys</span>
+                </div>
+                <div class="version">v1.0.0</div>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="nav-section">
+                    <div class="nav-title">Getting Started</div>
+                    <ul class="nav-list">
+                        <li><a href="index.html#introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="index.html#installation" class="nav-link">Installation</a></li>
+                        <li><a href="index.html#quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="index.html#requirements" class="nav-link">Requirements</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">CLI Interface</div>
+                    <ul class="nav-list">
+                        <li><a href="cli.html#cli-overview" class="nav-link">Overview</a></li>
+                        <li><a href="cli.html#cli-basic-usage" class="nav-link">Basic Usage</a></li>
+                        <li><a href="cli.html#cli-filtering" class="nav-link">Filtering Options</a></li>
+                        <li><a href="cli.html#cli-reports" class="nav-link">Report Generation</a></li>
+                        <li><a href="cli.html#cli-examples" class="nav-link">Examples</a></li>
+                        <li><a href="cli.html#cli-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">GUI Interface</div>
+                    <ul class="nav-list">
+                        <li><a href="gui.html#gui-overview" class="nav-link">Overview</a></li>
+                        <li><a href="gui.html#gui-navigation" class="nav-link">Navigation</a></li>
+                        <li><a href="gui.html#gui-running-checks" class="nav-link">Running Checks</a></li>
+                        <li><a href="gui.html#gui-reports" class="nav-link">Reports</a></li>
+                        <li><a href="gui.html#gui-settings" class="nav-link">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Security Parameters</div>
+                    <ul class="nav-list">
+                        <li><a href="#parameters-overview" class="nav-link active">Overview</a></li>
+                        <li><a href="#parameters-categories" class="nav-link">Categories</a></li>
+                        <li><a href="#parameters-search" class="nav-link">Search Parameters</a></li>
+                        <li><a href="#parameters-manual-setup" class="nav-link">Manual Setup</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Advanced Topics</div>
+                    <ul class="nav-list">
+                        <li><a href="advanced.html#advanced-integration" class="nav-link">Integration</a></li>
+                        <li><a href="advanced.html#advanced-automation" class="nav-link">Automation</a></li>
+                        <li><a href="advanced.html#advanced-backup" class="nav-link">Backup & Restore</a></li>
+                        <li><a href="advanced.html#advanced-best-practices" class="nav-link">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Reference</div>
+                    <ul class="nav-list">
+                        <li><a href="reference.html#reference-cli-options" class="nav-link">CLI Options</a></li>
+                        <li><a href="reference.html#reference-error-codes" class="nav-link">Error Codes</a></li>
+                        <li><a href="reference.html#reference-faq" class="nav-link">FAQ</a></li>
+                        <li><a href="reference.html#reference-changelog" class="nav-link">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="docs-main">
+            <div class="docs-content">
+                <!-- Parameters Overview Section -->
+                <section id="parameters-overview" class="docs-section">
+                    <h1>Security Parameters</h1>
+                    <p class="lead">Complete reference for all 121 security parameters covered by HardenSys.</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Note:</strong> All parameters are based on CIS benchmarks and security best practices for Windows systems.
+                    </div>
+
+                    <h2>Overview</h2>
+                    <p>HardenSys covers 121 security parameters across 7 main categories, providing comprehensive coverage of Windows security hardening requirements. Each parameter includes detailed configuration instructions and compliance checking.</p>
+
+                    <h3>Parameter Structure</h3>
+                    <p>Each security parameter includes:</p>
+                    <ul>
+                        <li><strong>Title:</strong> Descriptive name of the security setting</li>
+                        <li><strong>Details:</strong> Detailed description and recommended configuration</li>
+                        <li><strong>Script Key:</strong> Internal function identifier for automation</li>
+                        <li><strong>Category:</strong> Security category classification</li>
+                        <li><strong>Subcategory:</strong> Specific subcategory within the main category</li>
+                    </ul>
+                </section>
+
+                <!-- Categories Section -->
+                <section id="parameters-categories" class="docs-section">
+                    <h2>Security Categories</h2>
+                    
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <h3>Account Policies</h3>
+                            <p>9 parameters covering password policies, account lockout settings, and Kerberos authentication.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>Password Policy (6 parameters)</li>
+                                    <li>Account Lockout Policy (3 parameters)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <h3>User Rights Assignment</h3>
+                            <p>7 parameters covering administrative privileges, system access controls, and security permissions.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>User Rights Assignment (7 parameters)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h3>Security Options</h3>
+                            <p>24 parameters covering network security, User Account Control, and system cryptography.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>Accounts (1 parameter)</li>
+                                    <li>Interactive logon (1 parameter)</li>
+                                    <li>Microsoft network server (1 parameter)</li>
+                                    <li>Network security (1 parameter)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>System Settings</h3>
+                            <p>32 parameters covering User Account Control, system services, and critical service configurations.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>User Account Control (32 parameters)</li>
+                                    <li>System Services (32 parameters)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h3>Windows Defender Firewall</h3>
+                            <p>18 parameters covering firewall profiles, connection security, and rule management.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>Private Profile (9 parameters)</li>
+                                    <li>Public Profile (9 parameters)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h3>Advanced Audit Policy</h3>
+                            <p>20 parameters covering account logon, object access, and system events.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>Account Logon (20 parameters)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <h3>Microsoft Defender Application Guard</h3>
+                            <p>11 parameters covering Application Guard settings and configuration.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>Application Guard Settings (11 parameters)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Search Parameters Section -->
+                <section id="parameters-search" class="docs-section">
+                    <h2>Search Parameters</h2>
+                    
+                    <div class="search-container">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="parameter-search" placeholder="Search parameters..." />
+                            <button class="search-clear" id="search-clear" style="display: none;">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="search-results" id="parameter-results"></div>
+                    </div>
+
+                    <h3>Search Examples</h3>
+                    <div class="search-examples">
+                        <div class="example-card">
+                            <h4>By Category</h4>
+                            <p>Search for parameters by security category:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>CLI Command</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <pre><code>python HardenSys.py --info "Account Policies"</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="example-card">
+                            <h4>By Keyword</h4>
+                            <p>Search for parameters containing specific keywords:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>CLI Command</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <pre><code>python HardenSys.py --info "password"</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="example-card">
+                            <h4>By Specific Parameter</h4>
+                            <p>Get detailed information about a specific parameter:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>CLI Command</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <pre><code>python HardenSys.py --info "Enforce password history"</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Popular Parameters</h3>
+                    <div class="popular-parameters">
+                        <div class="parameter-card">
+                            <h4>Enforce password history</h4>
+                            <p>Ensure 'Enforce password history' is set to '24 or more password(s)'</p>
+                            <div class="parameter-meta">
+                                <span class="category">Account Policies</span>
+                                <span class="subcategory">Password Policy</span>
+                            </div>
+                        </div>
+
+                        <div class="parameter-card">
+                            <h4>Maximum password age</h4>
+                            <p>Ensure 'Maximum password age' is set to '90 days, but not 0'</p>
+                            <div class="parameter-meta">
+                                <span class="category">Account Policies</span>
+                                <span class="subcategory">Password Policy</span>
+                            </div>
+                        </div>
+
+                        <div class="parameter-card">
+                            <h4>Minimum password length</h4>
+                            <p>Ensure 'Minimum password length' is set to '12 or more character(s)'</p>
+                            <div class="parameter-meta">
+                                <span class="category">Account Policies</span>
+                                <span class="subcategory">Password Policy</span>
+                            </div>
+                        </div>
+
+                        <div class="parameter-card">
+                            <h4>Password complexity requirements</h4>
+                            <p>Ensure 'Password must meet complexity requirements' is set to 'Enabled'</p>
+                            <div class="parameter-meta">
+                                <span class="category">Account Policies</span>
+                                <span class="subcategory">Password Policy</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Manual Setup Section -->
+                <section id="parameters-manual-setup" class="docs-section">
+                    <h2>Manual Setup</h2>
+                    
+                    <p>For environments where automated configuration is not possible, HardenSys provides detailed manual setup instructions for each parameter.</p>
+
+                    <h3>Setup Methods</h3>
+                    <div class="setup-methods">
+                        <div class="method-card">
+                            <div class="method-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4>Local Security Policy</h4>
+                            <p>Configure parameters using the Local Security Policy editor (secpol.msc)</p>
+                            <div class="method-steps">
+                                <ol>
+                                    <li>Open Local Security Policy</li>
+                                    <li>Navigate to the appropriate category</li>
+                                    <li>Configure the parameter as specified</li>
+                                    <li>Apply and verify the setting</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="method-card">
+                            <div class="method-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>Registry Editor</h4>
+                            <p>Configure parameters directly in the Windows Registry</p>
+                            <div class="method-steps">
+                                <ol>
+                                    <li>Open Registry Editor (regedit)</li>
+                                    <li>Navigate to the specified registry path</li>
+                                    <li>Create or modify the registry value</li>
+                                    <li>Restart the system if required</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="method-card">
+                            <div class="method-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <h4>Command Line</h4>
+                            <p>Configure parameters using command-line tools</p>
+                            <div class="method-steps">
+                                <ol>
+                                    <li>Open Command Prompt as Administrator</li>
+                                    <li>Run the specified command</li>
+                                    <li>Verify the configuration</li>
+                                    <li>Test the setting</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="method-card">
+                            <div class="method-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Group Policy</h4>
+                            <p>Configure parameters using Group Policy Management</p>
+                            <div class="method-steps">
+                                <ol>
+                                    <li>Open Group Policy Management Console</li>
+                                    <li>Create or edit a Group Policy Object</li>
+                                    <li>Navigate to the appropriate policy section</li>
+                                    <li>Configure and deploy the policy</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Verification Procedures</h3>
+                    <p>After manual configuration, verify that the settings have been applied correctly:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Verify password policy settings
+net accounts
+
+# Verify security options
+secedit /export /cfg security_policy.cfg
+
+# Verify registry settings
+reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</code></pre>
+                    </div>
+
+                    <h3>Best Practices</h3>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Important:</strong> Always create a backup of your current security policy before making changes.
+                    </div>
+                    
+                    <ul>
+                        <li>Test changes in a non-production environment first</li>
+                        <li>Document all manual changes for audit purposes</li>
+                        <li>Verify settings after system restarts</li>
+                        <li>Monitor for any unexpected behavior</li>
+                        <li>Keep detailed records of configuration changes</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/docs.js"></script>
+    <script src="js/parameters.js"></script>
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUI Interface - HardenSys Documentation</title>
+    <link rel="stylesheet" href="css/docs.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="docs-container">
+        <!-- Sidebar Navigation -->
+        <nav class="docs-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../images/app_logo.png" alt="HardenSys" class="logo-icon">
+                    <span>HardenSys</span>
+                </div>
+                <div class="version">v1.0.0</div>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="nav-section">
+                    <div class="nav-title">Getting Started</div>
+                    <ul class="nav-list">
+                        <li><a href="index.html#introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="index.html#installation" class="nav-link">Installation</a></li>
+                        <li><a href="index.html#quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="index.html#requirements" class="nav-link">Requirements</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">CLI Interface</div>
+                    <ul class="nav-list">
+                        <li><a href="cli.html#cli-overview" class="nav-link">Overview</a></li>
+                        <li><a href="cli.html#cli-basic-usage" class="nav-link">Basic Usage</a></li>
+                        <li><a href="cli.html#cli-filtering" class="nav-link">Filtering Options</a></li>
+                        <li><a href="cli.html#cli-reports" class="nav-link">Report Generation</a></li>
+                        <li><a href="cli.html#cli-examples" class="nav-link">Examples</a></li>
+                        <li><a href="cli.html#cli-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">GUI Interface</div>
+                    <ul class="nav-list">
+                        <li><a href="#gui-overview" class="nav-link active">Overview</a></li>
+                        <li><a href="#gui-navigation" class="nav-link">Navigation</a></li>
+                        <li><a href="#gui-running-checks" class="nav-link">Running Checks</a></li>
+                        <li><a href="#gui-reports" class="nav-link">Reports</a></li>
+                        <li><a href="#gui-settings" class="nav-link">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Security Parameters</div>
+                    <ul class="nav-list">
+                        <li><a href="parameters.html#parameters-overview" class="nav-link">Overview</a></li>
+                        <li><a href="parameters.html#parameters-categories" class="nav-link">Categories</a></li>
+                        <li><a href="parameters.html#parameters-search" class="nav-link">Search Parameters</a></li>
+                        <li><a href="parameters.html#parameters-manual-setup" class="nav-link">Manual Setup</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Advanced Topics</div>
+                    <ul class="nav-list">
+                        <li><a href="advanced.html#advanced-integration" class="nav-link">Integration</a></li>
+                        <li><a href="advanced.html#advanced-automation" class="nav-link">Automation</a></li>
+                        <li><a href="advanced.html#advanced-backup" class="nav-link">Backup & Restore</a></li>
+                        <li><a href="advanced.html#advanced-best-practices" class="nav-link">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Reference</div>
+                    <ul class="nav-list">
+                        <li><a href="reference.html#reference-cli-options" class="nav-link">CLI Options</a></li>
+                        <li><a href="reference.html#reference-error-codes" class="nav-link">Error Codes</a></li>
+                        <li><a href="reference.html#reference-faq" class="nav-link">FAQ</a></li>
+                        <li><a href="reference.html#reference-changelog" class="nav-link">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="docs-main">
+            <div class="docs-content">
+                <!-- GUI Overview Section -->
+                <section id="gui-overview" class="docs-section">
+                    <h1>Graphical User Interface (GUI)</h1>
+                    <p class="lead">Complete documentation for using the HardenSys GUI tool for interactive security management.</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Note:</strong> The GUI provides an intuitive interface for users who prefer visual interaction over command-line operations.
+                    </div>
+
+                    <h2>Overview</h2>
+                    <p>The HardenSys GUI provides a user-friendly graphical interface for running security compliance checks, generating reports, and managing Windows security policies. It's designed for users who prefer visual interaction over command-line operations.</p>
+
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Intuitive graphical interface with category selection</li>
+                        <li>Real-time progress tracking and status updates</li>
+                        <li>Interactive report generation and viewing</li>
+                        <li>Backup and restore functionality</li>
+                        <li>Settings configuration and customization</li>
+                        <li>Keyboard shortcuts for power users</li>
+                    </ul>
+
+                    <h3>Launching the GUI</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python HardenSys_gui.py</code></pre>
+                    </div>
+                </section>
+
+                <!-- Navigation Section -->
+                <section id="gui-navigation" class="docs-section">
+                    <h2>Interface Navigation</h2>
+                    
+                    <h3>Main Window Layout</h3>
+                    <p>The GUI consists of several key components:</p>
+                    
+                    <div class="interface-components">
+                        <div class="component-card">
+                            <div class="component-icon">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                            <h4>Menu Bar</h4>
+                            <p>Access to File, Edit, View, Tools, and Help menus</p>
+                        </div>
+
+                        <div class="component-card">
+                            <div class="component-icon">
+                                <i class="fas fa-toolbox"></i>
+                            </div>
+                            <h4>Toolbar</h4>
+                            <p>Quick access to common functions like Run Checks, Generate Report, and Settings</p>
+                        </div>
+
+                        <div class="component-card">
+                            <div class="component-icon">
+                                <i class="fas fa-list"></i>
+                            </div>
+                            <h4>Category Panel</h4>
+                            <p>Select security categories and subcategories for compliance checks</p>
+                        </div>
+
+                        <div class="component-card">
+                            <div class="component-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Progress Panel</h4>
+                            <p>Real-time progress tracking and status updates during checks</p>
+                        </div>
+
+                        <div class="component-card">
+                            <div class="component-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h4>Results Panel</h4>
+                            <p>Display compliance check results and detailed information</p>
+                        </div>
+
+                        <div class="component-card">
+                            <div class="component-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h4>Status Bar</h4>
+                            <p>Current status, progress information, and system notifications</p>
+                        </div>
+                    </div>
+
+                    <h3>Menu Structure</h3>
+                    <div class="menu-structure">
+                        <div class="menu-section">
+                            <h4>File Menu</h4>
+                            <ul>
+                                <li><strong>New Check:</strong> Start a new compliance check</li>
+                                <li><strong>Open Report:</strong> Open an existing compliance report</li>
+                                <li><strong>Save Report:</strong> Save current results to file</li>
+                                <li><strong>Export:</strong> Export results in various formats</li>
+                                <li><strong>Exit:</strong> Close the application</li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-section">
+                            <h4>Edit Menu</h4>
+                            <ul>
+                                <li><strong>Select All:</strong> Select all parameters</li>
+                                <li><strong>Clear Selection:</strong> Clear current selection</li>
+                                <li><strong>Find:</strong> Search for specific parameters</li>
+                                <li><strong>Preferences:</strong> Open settings dialog</li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-section">
+                            <h4>View Menu</h4>
+                            <ul>
+                                <li><strong>Refresh:</strong> Refresh the current view</li>
+                                <li><strong>Show Details:</strong> Toggle detailed information display</li>
+                                <li><strong>Full Screen:</strong> Toggle full screen mode</li>
+                                <li><strong>Zoom:</strong> Adjust display zoom level</li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-section">
+                            <h4>Tools Menu</h4>
+                            <ul>
+                                <li><strong>Run Checks:</strong> Execute selected compliance checks</li>
+                                <li><strong>Generate Report:</strong> Create compliance report</li>
+                                <li><strong>Backup Policies:</strong> Backup current security policies</li>
+                                <li><strong>Restore Policies:</strong> Restore from backup</li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-section">
+                            <h4>Help Menu</h4>
+                            <ul>
+                                <li><strong>User Guide:</strong> Open user documentation</li>
+                                <li><strong>Keyboard Shortcuts:</strong> View shortcut reference</li>
+                                <li><strong>About:</strong> Application information</li>
+                                <li><strong>Check Updates:</strong> Check for application updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Running Checks Section -->
+                <section id="gui-running-checks" class="docs-section">
+                    <h2>Running Compliance Checks</h2>
+                    
+                    <h3>Selecting Categories</h3>
+                    <p>Choose which security categories to check:</p>
+                    
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Select Category</h4>
+                                <p>Choose a security category from the dropdown menu in the Category Panel</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Choose Subcategory</h4>
+                                <p>Select specific subcategories within the chosen category</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Configure Options</h4>
+                                <p>Set any additional options like output format or detailed logging</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Run Checks</h4>
+                                <p>Click "Run Checks" button or use Ctrl+R keyboard shortcut</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Check Types</h3>
+                    <div class="check-types">
+                        <div class="check-type-card">
+                            <div class="check-type-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4>Individual Checks</h4>
+                            <p>Run checks for specific parameters or subcategories</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>GUI Steps</span>
+                                </div>
+                                <pre><code>1. Select specific parameter
+2. Click "Run Check" button
+3. View results in Results Panel</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="check-type-card">
+                            <div class="check-type-icon">
+                                <i class="fas fa-list-check"></i>
+                            </div>
+                            <h4>Category Checks</h4>
+                            <p>Run checks for entire security categories</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>GUI Steps</span>
+                                </div>
+                                <pre><code>1. Select security category
+2. Choose subcategories
+3. Click "Run Category Check"
+4. Monitor progress in Progress Panel</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="check-type-card">
+                            <div class="check-type-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Full System Checks</h4>
+                            <p>Run comprehensive checks across all security parameters</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>GUI Steps</span>
+                                </div>
+                                <pre><code>1. Select "All Categories"
+2. Click "Run Full Check"
+3. Monitor progress and results
+4. Generate comprehensive report</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Progress Monitoring</h3>
+                    <p>The Progress Panel provides real-time feedback during compliance checks:</p>
+                    <ul>
+                        <li><strong>Progress Bar:</strong> Visual indication of completion percentage</li>
+                        <li><strong>Status Messages:</strong> Current operation and status updates</li>
+                        <li><strong>Check Counter:</strong> Number of checks completed vs. total</li>
+                        <li><strong>Time Elapsed:</strong> Duration of current check session</li>
+                        <li><strong>Success/Failure Count:</strong> Running tally of results</li>
+                    </ul>
+                </section>
+
+                <!-- Reports Section -->
+                <section id="gui-reports" class="docs-section">
+                    <h2>Report Generation</h2>
+                    
+                    <h3>Generating Reports</h3>
+                    <p>Create comprehensive compliance reports from your check results:</p>
+                    
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Complete Checks</h4>
+                                <p>Run compliance checks and wait for completion</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Review Results</h4>
+                                <p>Examine results in the Results Panel</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Generate Report</h4>
+                                <p>Click "Generate Report" or use Ctrl+G shortcut</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Choose Format</h4>
+                                <p>Select report format (HTML, PDF, or Text)</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Save Report</h4>
+                                <p>Choose location and filename for the report</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Report Formats</h3>
+                    <div class="report-formats">
+                        <div class="format-card">
+                            <div class="format-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>HTML Reports</h4>
+                            <p>Interactive web-based reports with detailed formatting</p>
+                            <ul>
+                                <li>Clickable navigation</li>
+                                <li>Expandable sections</li>
+                                <li>Color-coded results</li>
+                                <li>Print-friendly layout</li>
+                            </ul>
+                        </div>
+
+                        <div class="format-card">
+                            <div class="format-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h4>PDF Reports</h4>
+                            <p>Professional PDF documents for formal documentation</p>
+                            <ul>
+                                <li>Professional formatting</li>
+                                <li>Table of contents</li>
+                                <li>Executive summary</li>
+                                <li>Detailed findings</li>
+                            </ul>
+                        </div>
+
+                        <div class="format-card">
+                            <div class="format-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h4>Text Reports</h4>
+                            <p>Plain text reports for simple viewing and processing</p>
+                            <ul>
+                                <li>Simple format</li>
+                                <li>Easy to parse</li>
+                                <li>Small file size</li>
+                                <li>Universal compatibility</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Report Contents</h3>
+                    <p>All report formats include:</p>
+                    <ul>
+                        <li><strong>Executive Summary:</strong> High-level overview of compliance status</li>
+                        <li><strong>Detailed Results:</strong> Complete results for each parameter checked</li>
+                        <li><strong>Recommendations:</strong> Suggested actions for non-compliant settings</li>
+                        <li><strong>Statistics:</strong> Success rates, failure counts, and timing information</li>
+                        <li><strong>Metadata:</strong> Report generation date, time, and system information</li>
+                    </ul>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="gui-settings" class="docs-section">
+                    <h2>Settings and Configuration</h2>
+                    
+                    <h3>Application Settings</h3>
+                    <p>Configure the GUI behavior and appearance:</p>
+                    
+                    <div class="settings-sections">
+                        <div class="settings-section">
+                            <h4>General Settings</h4>
+                            <ul>
+                                <li><strong>Language:</strong> Select interface language</li>
+                                <li><strong>Theme:</strong> Choose light or dark theme</li>
+                                <li><strong>Font Size:</strong> Adjust text size for readability</li>
+                                <li><strong>Auto-save:</strong> Automatically save reports</li>
+                                <li><strong>Check Updates:</strong> Automatically check for updates</li>
+                            </ul>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>Check Settings</h4>
+                            <ul>
+                                <li><strong>Default Categories:</strong> Set default categories to check</li>
+                                <li><strong>Timeout:</strong> Set timeout for individual checks</li>
+                                <li><strong>Retry Attempts:</strong> Number of retry attempts for failed checks</li>
+                                <li><strong>Verbose Logging:</strong> Enable detailed logging</li>
+                                <li><strong>Parallel Checks:</strong> Run multiple checks simultaneously</li>
+                            </ul>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>Report Settings</h4>
+                            <ul>
+                                <li><strong>Default Format:</strong> Set default report format</li>
+                                <li><strong>Output Directory:</strong> Default location for reports</li>
+                                <li><strong>Include Timestamps:</strong> Add timestamps to reports</li>
+                                <li><strong>Compress Reports:</strong> Compress large reports</li>
+                                <li><strong>Email Reports:</strong> Email reports automatically</li>
+                            </ul>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>Security Settings</h4>
+                            <ul>
+                                <li><strong>Require Admin:</strong> Require administrator privileges</li>
+                                <li><strong>Backup Before Changes:</strong> Create backup before modifications</li>
+                                <li><strong>Confirm Changes:</strong> Confirm before applying changes</li>
+                                <li><strong>Audit Logging:</strong> Log all security changes</li>
+                                <li><strong>Encrypt Reports:</strong> Encrypt sensitive reports</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Keyboard Shortcuts</h3>
+                    <p>Power users can use keyboard shortcuts for faster operation:</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Shortcut</th>
+                                <th>Action</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>Ctrl+N</code></td>
+                                <td>New Check</td>
+                                <td>Start a new compliance check</td>
+                            </tr>
+                            <tr>
+                                <td><code>Ctrl+R</code></td>
+                                <td>Run Checks</td>
+                                <td>Execute selected compliance checks</td>
+                            </tr>
+                            <tr>
+                                <td><code>Ctrl+G</code></td>
+                                <td>Generate Report</td>
+                                <td>Create compliance report</td>
+                            </tr>
+                            <tr>
+                                <td><code>Ctrl+S</code></td>
+                                <td>Save Report</td>
+                                <td>Save current results</td>
+                            </tr>
+                            <tr>
+                                <td><code>Ctrl+O</code></td>
+                                <td>Open Report</td>
+                                <td>Open existing report</td>
+                            </tr>
+                            <tr>
+                                <td><code>Ctrl+B</code></td>
+                                <td>Backup</td>
+                                <td>Backup security policies</td>
+                            </tr>
+                            <tr>
+                                <td><code>Ctrl+Shift+R</code></td>
+                                <td>Restore</td>
+                                <td>Restore from backup</td>
+                            </tr>
+                            <tr>
+                                <td><code>F1</code></td>
+                                <td>Help</td>
+                                <td>Open help documentation</td>
+                            </tr>
+                            <tr>
+                                <td><code>F5</code></td>
+                                <td>Refresh</td>
+                                <td>Refresh current view</td>
+                            </tr>
+                            <tr>
+                                <td><code>Esc</code></td>
+                                <td>Cancel</td>
+                                <td>Cancel current operation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Best Practices</h3>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Tip:</strong> Configure settings according to your organization's security requirements and workflow.
+                    </div>
+                    
+                    <ul>
+                        <li>Enable automatic backups before making changes</li>
+                        <li>Set appropriate timeouts for your environment</li>
+                        <li>Configure email notifications for important events</li>
+                        <li>Use keyboard shortcuts for improved efficiency</li>
+                        <li>Regularly update the application for security patches</li>
+                        <li>Test settings in a non-production environment first</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/docs.js"></script>
+</body>
+</html>

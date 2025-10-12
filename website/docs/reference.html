@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference - HardenSys Documentation</title>
+    <link rel="stylesheet" href="css/docs.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="docs-container">
+        <!-- Sidebar Navigation -->
+        <nav class="docs-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../images/app_logo.png" alt="HardenSys" class="logo-icon">
+                    <span>HardenSys</span>
+                </div>
+                <div class="version">v1.0.0</div>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="nav-section">
+                    <div class="nav-title">Getting Started</div>
+                    <ul class="nav-list">
+                        <li><a href="index.html#introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="index.html#installation" class="nav-link">Installation</a></li>
+                        <li><a href="index.html#quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="index.html#requirements" class="nav-link">Requirements</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">CLI Interface</div>
+                    <ul class="nav-list">
+                        <li><a href="cli.html#cli-overview" class="nav-link">Overview</a></li>
+                        <li><a href="cli.html#cli-basic-usage" class="nav-link">Basic Usage</a></li>
+                        <li><a href="cli.html#cli-filtering" class="nav-link">Filtering Options</a></li>
+                        <li><a href="cli.html#cli-reports" class="nav-link">Report Generation</a></li>
+                        <li><a href="cli.html#cli-examples" class="nav-link">Examples</a></li>
+                        <li><a href="cli.html#cli-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">GUI Interface</div>
+                    <ul class="nav-list">
+                        <li><a href="gui.html#gui-overview" class="nav-link">Overview</a></li>
+                        <li><a href="gui.html#gui-navigation" class="nav-link">Navigation</a></li>
+                        <li><a href="gui.html#gui-running-checks" class="nav-link">Running Checks</a></li>
+                        <li><a href="gui.html#gui-reports" class="nav-link">Reports</a></li>
+                        <li><a href="gui.html#gui-settings" class="nav-link">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Security Parameters</div>
+                    <ul class="nav-list">
+                        <li><a href="parameters.html#parameters-overview" class="nav-link">Overview</a></li>
+                        <li><a href="parameters.html#parameters-categories" class="nav-link">Categories</a></li>
+                        <li><a href="parameters.html#parameters-search" class="nav-link">Search Parameters</a></li>
+                        <li><a href="parameters.html#parameters-manual-setup" class="nav-link">Manual Setup</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Advanced Topics</div>
+                    <ul class="nav-list">
+                        <li><a href="advanced.html#advanced-integration" class="nav-link">Integration</a></li>
+                        <li><a href="advanced.html#advanced-automation" class="nav-link">Automation</a></li>
+                        <li><a href="advanced.html#advanced-backup" class="nav-link">Backup & Restore</a></li>
+                        <li><a href="advanced.html#advanced-best-practices" class="nav-link">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Reference</div>
+                    <ul class="nav-list">
+                        <li><a href="#reference-cli-options" class="nav-link active">CLI Options</a></li>
+                        <li><a href="#reference-error-codes" class="nav-link">Error Codes</a></li>
+                        <li><a href="#reference-faq" class="nav-link">FAQ</a></li>
+                        <li><a href="#reference-changelog" class="nav-link">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="docs-main">
+            <div class="docs-content">
+                <!-- CLI Options Section -->
+                <section id="reference-cli-options" class="docs-section">
+                    <h1>Reference</h1>
+                    <p class="lead">Complete reference guide for HardenSys CLI options and error codes.</p>
+                    
+                    <h2>CLI Options</h2>
+                    <p>Complete list of command-line options available in HardenSys.</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Option</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>--json FILE</code></td>
+                                <td>Path to tasks JSON file</td>
+                                <td><code>--json custom_tasks.json</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>--heading NAME</code></td>
+                                <td>Filter by heading</td>
+                                <td><code>--heading "Account Policies"</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>--subheading NAME</code></td>
+                                <td>Filter by subheading</td>
+                                <td><code>--subheading "Password Policy"</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>--parameter NAME</code></td>
+                                <td>Filter by title name</td>
+                                <td><code>--parameter "Enforce password history"</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>--info NAME</code></td>
+                                <td>Show detailed information</td>
+                                <td><code>--info "password"</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>--output FILE</code></td>
+                                <td>Output file for report</td>
+                                <td><code>--output report.txt</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>--format FORMAT</code></td>
+                                <td>Report format (text/json)</td>
+                                <td><code>--format json</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>--list</code></td>
+                                <td>List available categories</td>
+                                <td><code>--list</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>--verbose</code></td>
+                                <td>Verbose output</td>
+                                <td><code>--verbose</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>--help</code></td>
+                                <td>Show help message</td>
+                                <td><code>--help</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Error Codes Section -->
+                <section id="reference-error-codes" class="docs-section">
+                    <h2>Error Codes</h2>
+                    <p>Reference for all error codes and their meanings.</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Exit Code</th>
+                                <th>Description</th>
+                                <th>Resolution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>Success</td>
+                                <td>Operation completed successfully</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>General Error</td>
+                                <td>Check error message for details</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>File Not Found</td>
+                                <td>Verify file paths and permissions</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Permission Denied</td>
+                                <td>Run as Administrator</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Import Error</td>
+                                <td>Check Python dependencies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="reference-faq" class="docs-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <h3>General Questions</h3>
+                    <div class="faq-item">
+                        <h4>Q: What is HardenSys?</h4>
+                        <p>A: HardenSys is a comprehensive security policy management and compliance checking tool for Windows systems.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Q: Do I need Administrator privileges?</h4>
+                        <p>A: Yes, Administrator privileges are required for full functionality. Some checks may fail without proper permissions.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Q: Can I customize the security parameters?</h4>
+                        <p>A: Yes, you can modify the windows_tasks.json file to add or modify security parameters.</p>
+                    </div>
+                    
+                    <h3>Technical Questions</h3>
+                    <div class="faq-item">
+                        <h4>Q: How do I generate reports?</h4>
+                        <p>A: Use the --output option to save reports: <code>python HardenSys.py --output report.html</code></p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Q: Can I run specific categories only?</h4>
+                        <p>A: Yes, use the --heading or --subheading options to filter by category.</p>
+                    </div>
+                </section>
+
+                <!-- Changelog Section -->
+                <section id="reference-changelog" class="docs-section">
+                    <h2>Changelog</h2>
+                    <p>Version history and changes for HardenSys.</p>
+                    
+                    <h3>Version 1.0.0</h3>
+                    <div class="changelog-entry">
+                        <h4>New Features</h4>
+                        <ul>
+                            <li>Initial release of HardenSys</li>
+                            <li>CLI interface with 121 security parameters</li>
+                            <li>GUI interface for interactive use</li>
+                            <li>HTML and PDF report generation</li>
+                            <li>Backup and restore functionality</li>
+                            <li>Parameter filtering and search</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="changelog-entry">
+                        <h4>Security Categories</h4>
+                        <ul>
+                            <li>Account Policies (9 parameters)</li>
+                            <li>User Rights Assignment (7 parameters)</li>
+                            <li>Security Options (24 parameters)</li>
+                            <li>System Settings (32 parameters)</li>
+                            <li>Windows Firewall (18 parameters)</li>
+                            <li>Advanced Audit Policy (20 parameters)</li>
+                            <li>Application Guard (11 parameters)</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/docs.js"></script>
+</body>
+</html>

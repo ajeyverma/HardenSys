@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Topics - HardenSys Documentation</title>
+    <link rel="stylesheet" href="css/docs.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="docs-container">
+        <!-- Sidebar Navigation -->
+        <nav class="docs-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../images/app_logo.png" alt="HardenSys" class="logo-icon">
+                    <span>HardenSys</span>
+                </div>
+                <div class="version">v1.0.0</div>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="nav-section">
+                    <div class="nav-title">Getting Started</div>
+                    <ul class="nav-list">
+                        <li><a href="index.html#introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="index.html#installation" class="nav-link">Installation</a></li>
+                        <li><a href="index.html#quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="index.html#requirements" class="nav-link">Requirements</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">CLI Interface</div>
+                    <ul class="nav-list">
+                        <li><a href="cli.html#cli-overview" class="nav-link">Overview</a></li>
+                        <li><a href="cli.html#cli-basic-usage" class="nav-link">Basic Usage</a></li>
+                        <li><a href="cli.html#cli-filtering" class="nav-link">Filtering Options</a></li>
+                        <li><a href="cli.html#cli-reports" class="nav-link">Report Generation</a></li>
+                        <li><a href="cli.html#cli-examples" class="nav-link">Examples</a></li>
+                        <li><a href="cli.html#cli-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">GUI Interface</div>
+                    <ul class="nav-list">
+                        <li><a href="gui.html#gui-overview" class="nav-link">Overview</a></li>
+                        <li><a href="gui.html#gui-navigation" class="nav-link">Navigation</a></li>
+                        <li><a href="gui.html#gui-running-checks" class="nav-link">Running Checks</a></li>
+                        <li><a href="gui.html#gui-reports" class="nav-link">Reports</a></li>
+                        <li><a href="gui.html#gui-settings" class="nav-link">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Security Parameters</div>
+                    <ul class="nav-list">
+                        <li><a href="parameters.html#parameters-overview" class="nav-link">Overview</a></li>
+                        <li><a href="parameters.html#parameters-categories" class="nav-link">Categories</a></li>
+                        <li><a href="parameters.html#parameters-search" class="nav-link">Search Parameters</a></li>
+                        <li><a href="parameters.html#parameters-manual-setup" class="nav-link">Manual Setup</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Advanced Topics</div>
+                    <ul class="nav-list">
+                        <li><a href="#advanced-integration" class="nav-link active">Integration</a></li>
+                        <li><a href="#advanced-automation" class="nav-link">Automation</a></li>
+                        <li><a href="#advanced-backup" class="nav-link">Backup & Restore</a></li>
+                        <li><a href="#advanced-best-practices" class="nav-link">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Reference</div>
+                    <ul class="nav-list">
+                        <li><a href="reference.html#reference-cli-options" class="nav-link">CLI Options</a></li>
+                        <li><a href="reference.html#reference-error-codes" class="nav-link">Error Codes</a></li>
+                        <li><a href="reference.html#reference-faq" class="nav-link">FAQ</a></li>
+                        <li><a href="reference.html#reference-changelog" class="nav-link">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="docs-main">
+            <div class="docs-content">
+                <!-- Advanced Integration Section -->
+                <section id="advanced-integration" class="docs-section">
+                    <h1>Advanced Topics</h1>
+                    <p class="lead">Advanced configuration and integration options for HardenSys.</p>
+                    
+                    <h2>Integration</h2>
+                    <p>HardenSys can be integrated into various enterprise environments and workflows.</p>
+                    
+                    <h3>CI/CD Integration</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>GitHub Actions</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>name: Security Compliance Check
+on: [push, pull_request]
+jobs:
+  security-check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run HardenSys
+        run: python HardenSys.py --format json --output compliance.json</code></pre>
+                    </div>
+                </section>
+
+                <!-- Advanced Automation Section -->
+                <section id="advanced-automation" class="docs-section">
+                    <h2>Automation</h2>
+                    <p>Automate security compliance checks and reporting.</p>
+                    
+                    <h3>Scheduled Tasks</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Windows Task Scheduler</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>schtasks /create /tn "Daily Security Compliance" /tr "python C:\path\to\HardenSys.py --output C:\reports\daily_%date%.txt" /sc daily /st 09:00</code></pre>
+                    </div>
+                </section>
+
+                <!-- Advanced Backup Section -->
+                <section id="advanced-backup" class="docs-section">
+                    <h2>Backup & Restore</h2>
+                    <p>Advanced backup and restore procedures for security policies.</p>
+                    
+                    <h3>Automated Backups</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>PowerShell Script</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Automated backup script
+$backupPath = "C:\backups\security_policies"
+$timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+$backupFile = "$backupPath\secpol_backup_$timestamp.inf"
+
+secedit /export /cfg $backupFile</code></pre>
+                    </div>
+                </section>
+
+                <!-- Advanced Best Practices Section -->
+                <section id="advanced-best-practices" class="docs-section">
+                    <h2>Best Practices</h2>
+                    <p>Recommended practices for implementing and maintaining HardenSys.</p>
+                    
+                    <h3>Implementation Guidelines</h3>
+                    <ul>
+                        <li>Test all changes in a non-production environment first</li>
+                        <li>Create regular backups before making modifications</li>
+                        <li>Document all custom configurations</li>
+                        <li>Monitor compliance reports regularly</li>
+                        <li>Keep the tool updated with latest security patches</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/docs.js"></script>
+</body>
+</html>

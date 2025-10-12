@@ -9,6 +9,7 @@ import json
 import time
 import argparse
 import subprocess
+import ctypes
 from typing import Dict, List, Any
 from datetime import datetime
 import os
@@ -79,7 +80,7 @@ class ComplianceCLI:
                 'current': 'Unknown'
             }
     
-    def run_checks(self, tasks: List[Dict], filter_heading: str = None, filter_subheading: str = None) -> List[Dict]:
+    def run_checks(self, tasks: List[Dict], filter_heading: str = None, filter_subheading: str = None, filter_title: str = None) -> List[Dict]:
         """Run compliance checks with optional filtering."""
         self.start_time = time.time()
         results = []
@@ -92,6 +93,8 @@ class ComplianceCLI:
             if filter_heading and task.get('heading', '').lower() != filter_heading.lower():
                 continue
             if filter_subheading and task.get('subheading', '').lower() != filter_subheading.lower():
+                continue
+            if filter_title and task.get('title', '').lower() != filter_title.lower():
                 continue
             
             print(f"[{i}/{len(tasks)}] {task.get('title', 'Unknown')}")
@@ -205,6 +208,72 @@ class ComplianceCLI:
             for subheading in sorted(subheadings):
                 count = len([t for t in tasks if t.get('heading') == heading and t.get('subheading') == subheading])
                 print(f"  - {subheading} ({count} checks)")
+    
+    def show_info(self, tasks: List[Dict], search_term: str):
+        """Show detailed information about a specific parameter, subheading, or heading."""
+        search_term_lower = search_term.lower()
+        matching_tasks = []
+        
+        # Find matching tasks
+        for task in tasks:
+            title = task.get('title', '').lower()
+            subheading = task.get('subheading', '').lower()
+            heading = task.get('heading', '').lower()
+            
+            if (search_term_lower in title or 
+                search_term_lower in subheading or 
+                search_term_lower in heading):
+                matching_tasks.append(task)
+        
+        if not matching_tasks:
+            print(f"No tasks found matching '{search_term}'")
+            return
+        
+        print(f"Information for: '{search_term}'")
+        print("=" * 50)
+        
+        # Group by heading and subheading
+        grouped = {}
+        for task in matching_tasks:
+            heading = task.get('heading', 'Unknown')
+            subheading = task.get('subheading', 'Unknown')
+            
+            if heading not in grouped:
+                grouped[heading] = {}
+            if subheading not in grouped[heading]:
+                grouped[heading][subheading] = []
+            
+            grouped[heading][subheading].append(task)
+        
+        # Display grouped information
+        for heading in sorted(grouped.keys()):
+            print(f"\n[HEADING] {heading}")
+            print("-" * (len(heading) + 10))
+            
+            for subheading in sorted(grouped[heading].keys()):
+                tasks_in_subheading = grouped[heading][subheading]
+                print(f"\n  [SUBCATEGORY] {subheading} ({len(tasks_in_subheading)} tasks)")
+                
+                for task in tasks_in_subheading:
+                    title = task.get('title', 'Unknown')
+                    details = task.get('details', 'No details available')
+                    script_key = task.get('script_key', 'Unknown')
+                    
+                    print(f"\n    [TASK] {title}")
+                    print(f"       Details: {details}")
+                    print(f"       Script Key: {script_key}")
+        
+        print(f"\nTotal matches: {len(matching_tasks)}")
+        
+        # Show usage examples
+        print("\nUsage Examples:")
+        print("-" * 20)
+        if len(matching_tasks) == 1:
+            task = matching_tasks[0]
+            print(f"python HardenSys.py --parameter \"{task.get('title', '')}\"")
+        else:
+            print(f"python HardenSys.py --heading \"{list(grouped.keys())[0]}\"")
+            print(f"python HardenSys.py --subheading \"{list(grouped[list(grouped.keys())[0]].keys())[0]}\"")
 
 
 def main():
@@ -213,12 +282,14 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python compliance_cli.py                           # Run all checks
-  python compliance_cli.py --heading "Account Policies"  # Run specific category
-  python compliance_cli.py --subheading "Password Policy"  # Run specific subcategory
-  python compliance_cli.py --output report.txt      # Save report to file
-  python compliance_cli.py --format json            # Generate JSON report
-  python compliance_cli.py --list                   # List available categories
+  python HardenSys.py                               # Run all checks
+  python HardenSys.py --heading "Account Policies"  # Run specific category
+  python HardenSys.py --subheading "Password Policy"  # Run specific subcategory
+  python HardenSys.py --parameter "Enforce password history"  # Run specific task by title
+  python HardenSys.py --info "password"            # Show info about password-related tasks
+  python HardenSys.py --output report.txt          # Save report to file
+  python HardenSys.py --format json                # Generate JSON report
+  python HardenSys.py --list                       # List available categories
         """
     )
     
@@ -228,6 +299,10 @@ Examples:
                        help='Filter by heading (e.g., "Account Policies")')
     parser.add_argument('--subheading', 
                        help='Filter by subheading (e.g., "Password Policy")')
+    parser.add_argument('--parameter', 
+                       help='Filter by title name (e.g., "Enforce password history")')
+    parser.add_argument('--info', 
+                       help='Show detailed information about parameter/subheading/heading')
     parser.add_argument('--output', '-o', 
                        help='Output file for report')
     parser.add_argument('--format', choices=['text', 'json'], default='text',
@@ -258,9 +333,14 @@ Examples:
         cli.list_categories(tasks)
         return
     
+    # Show info if requested
+    if args.info:
+        cli.show_info(tasks, args.info)
+        return
+    
     # Run checks
     try:
-        results = cli.run_checks(tasks, args.heading, args.subheading)
+        results = cli.run_checks(tasks, args.heading, args.subheading, args.parameter)
         
         # Generate and display report
         report = cli.generate_report(args.output, args.format)

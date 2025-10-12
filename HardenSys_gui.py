@@ -5,6 +5,7 @@ import time
 import threading
 import platform
 import json
+import os
 from typing import List
 
 from PySide6.QtCore import Qt, Signal, QObject
@@ -1598,6 +1599,11 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("HardenSys - Unified System Hardening Tool")
         self.resize(1000, 700)
+        
+        # Set window icon
+        icon_path = "website/images/app_logo.png"
+        if os.path.exists(icon_path):
+            self.setWindowIcon(QIcon(icon_path))
         main = QWidget()
         main_layout = QVBoxLayout(main)
         tabs = QTabWidget()

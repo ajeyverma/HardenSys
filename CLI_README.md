@@ -46,6 +46,13 @@ python HardenSys.py --subheading "Password Policy"
 
 # Run only Advanced Audit Policy Configuration
 python HardenSys.py --heading "Advanced Audit Policy Configuration"
+
+# Run specific task by title name
+python HardenSys.py --parameter "Enforce password history"
+
+# Show detailed information about tasks
+python HardenSys.py --info "password"
+python HardenSys.py --info "Account Policies"
 ```
 
 ### Report Generation
@@ -91,6 +98,8 @@ python HardenSys.py --list
 | `--json FILE` | Path to tasks JSON file (default: windows_tasks.json) |
 | `--heading NAME` | Filter by heading (e.g., "Account Policies") |
 | `--subheading NAME` | Filter by subheading (e.g., "Password Policy") |
+| `--parameter NAME` | Filter by title name (e.g., "Enforce password history") |
+| `--info NAME` | Show detailed information about parameter/subheading/heading |
 | `--output FILE` | Output file for report |
 | `--format FORMAT` | Report format: text or json (default: text) |
 | `--list` | List available categories and exit |
@@ -226,6 +235,23 @@ python HardenSys.py --format json --output full_audit.json
 ### Password Policy Only
 ```bash
 python HardenSys.py --subheading "Password Policy" --verbose
+```
+
+### Specific Task by Title
+```bash
+python HardenSys.py --parameter "Enforce password history" --output password_history_check.txt
+```
+
+### Show Task Information
+```bash
+# Show all password-related tasks
+python HardenSys.py --info "password"
+
+# Show all tasks in Account Policies
+python HardenSys.py --info "Account Policies"
+
+# Show specific task details
+python HardenSys.py --info "Enforce password history"
 ```
 
 ### Firewall Configuration Check

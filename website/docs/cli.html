@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLI Interface - HardenSys Documentation</title>
+    <link rel="stylesheet" href="css/docs.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="docs-container">
+        <!-- Sidebar Navigation -->
+        <nav class="docs-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../images/app_logo.png" alt="HardenSys" class="logo-icon">
+                    <span>HardenSys</span>
+                </div>
+                <div class="version">v1.0.0</div>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="nav-section">
+                    <div class="nav-title">Getting Started</div>
+                    <ul class="nav-list">
+                        <li><a href="index.html#introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="index.html#installation" class="nav-link">Installation</a></li>
+                        <li><a href="index.html#quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="index.html#requirements" class="nav-link">Requirements</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">CLI Interface</div>
+                    <ul class="nav-list">
+                        <li><a href="#cli-overview" class="nav-link active">Overview</a></li>
+                        <li><a href="#cli-basic-usage" class="nav-link">Basic Usage</a></li>
+                        <li><a href="#cli-filtering" class="nav-link">Filtering Options</a></li>
+                        <li><a href="#cli-reports" class="nav-link">Report Generation</a></li>
+                        <li><a href="#cli-examples" class="nav-link">Examples</a></li>
+                        <li><a href="#cli-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">GUI Interface</div>
+                    <ul class="nav-list">
+                        <li><a href="gui.html#gui-overview" class="nav-link">Overview</a></li>
+                        <li><a href="gui.html#gui-navigation" class="nav-link">Navigation</a></li>
+                        <li><a href="gui.html#gui-running-checks" class="nav-link">Running Checks</a></li>
+                        <li><a href="gui.html#gui-reports" class="nav-link">Reports</a></li>
+                        <li><a href="gui.html#gui-settings" class="nav-link">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Security Parameters</div>
+                    <ul class="nav-list">
+                        <li><a href="parameters.html#parameters-overview" class="nav-link">Overview</a></li>
+                        <li><a href="parameters.html#parameters-categories" class="nav-link">Categories</a></li>
+                        <li><a href="parameters.html#parameters-search" class="nav-link">Search Parameters</a></li>
+                        <li><a href="parameters.html#parameters-manual-setup" class="nav-link">Manual Setup</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Advanced Topics</div>
+                    <ul class="nav-list">
+                        <li><a href="advanced.html#advanced-integration" class="nav-link">Integration</a></li>
+                        <li><a href="advanced.html#advanced-automation" class="nav-link">Automation</a></li>
+                        <li><a href="advanced.html#advanced-backup" class="nav-link">Backup & Restore</a></li>
+                        <li><a href="advanced.html#advanced-best-practices" class="nav-link">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Reference</div>
+                    <ul class="nav-list">
+                        <li><a href="reference.html#reference-cli-options" class="nav-link">CLI Options</a></li>
+                        <li><a href="reference.html#reference-error-codes" class="nav-link">Error Codes</a></li>
+                        <li><a href="reference.html#reference-faq" class="nav-link">FAQ</a></li>
+                        <li><a href="reference.html#reference-changelog" class="nav-link">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="docs-main">
+            <div class="docs-content">
+                <!-- CLI Overview Section -->
+                <section id="cli-overview" class="docs-section">
+                    <h1>Command Line Interface (CLI)</h1>
+                    <p class="lead">Complete documentation for using the HardenSys CLI tool for automation and scripting.</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Note:</strong> The CLI tool requires Administrator privileges for full functionality. Some checks may fail without proper permissions.
+                    </div>
+
+                    <h2>Overview</h2>
+                    <p>The HardenSys CLI tool provides a command-line interface for running security compliance checks, generating reports, and managing Windows security policies. It's perfect for automation, scripting, and integration into CI/CD pipelines.</p>
+
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Run all compliance checks or filter by category</li>
+                        <li>Generate text or JSON reports</li>
+                        <li>Administrator privilege detection</li>
+                        <li>Progress tracking and detailed output</li>
+                        <li>Export results to files</li>
+                        <li>Search and filter parameters</li>
+                    </ul>
+                </section>
+
+                <!-- Basic Usage Section -->
+                <section id="cli-basic-usage" class="docs-section">
+                    <h2>Basic Usage</h2>
+                    
+                    <h3>Running All Checks</h3>
+                    <p>The simplest way to use the CLI is to run all compliance checks:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python HardenSys.py</code></pre>
+                    </div>
+
+                    <h3>Getting Help</h3>
+                    <p>View all available options and examples:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python HardenSys.py --help</code></pre>
+                    </div>
+
+                    <h3>Listing Available Categories</h3>
+                    <p>See all available security categories and their parameter counts:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python HardenSys.py --list</code></pre>
+                    </div>
+                </section>
+
+                <!-- Filtering Options Section -->
+                <section id="cli-filtering" class="docs-section">
+                    <h2>Filtering Options</h2>
+                    
+                    <h3>Filter by Heading</h3>
+                    <p>Run checks for a specific security category:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Run only Account Policies checks
+python HardenSys.py --heading "Account Policies"
+
+# Run only Security Options checks
+python HardenSys.py --heading "Security Options"</code></pre>
+                    </div>
+
+                    <h3>Filter by Subheading</h3>
+                    <p>Run checks for a specific subcategory:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Run only Password Policy checks
+python HardenSys.py --subheading "Password Policy"
+
+# Run only User Rights Assignment checks
+python HardenSys.py --subheading "User Rights Assignment"</code></pre>
+                    </div>
+
+                    <h3>Filter by Parameter</h3>
+                    <p>Run a specific task by its title name:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Run specific password history check
+python HardenSys.py --parameter "Enforce password history"
+
+# Run specific password length check
+python HardenSys.py --parameter "Minimum password length"</code></pre>
+                    </div>
+
+                    <h3>Show Parameter Information</h3>
+                    <p>Get detailed information about parameters, subheadings, or headings:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Show all password-related tasks
+python HardenSys.py --info "password"
+
+# Show all tasks in Account Policies
+python HardenSys.py --info "Account Policies"
+
+# Show specific task details
+python HardenSys.py --info "Enforce password history"</code></pre>
+                    </div>
+                </section>
+
+                <!-- Report Generation Section -->
+                <section id="cli-reports" class="docs-section">
+                    <h2>Report Generation</h2>
+                    
+                    <h3>Text Reports</h3>
+                    <p>Generate a text report and save it to a file:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Generate text report
+python HardenSys.py --output report.txt
+
+# Generate report for specific category
+python HardenSys.py --heading "Account Policies" --output account_policies.txt</code></pre>
+                    </div>
+
+                    <h3>JSON Reports</h3>
+                    <p>Generate a JSON report for programmatic processing:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Generate JSON report
+python HardenSys.py --format json --output report.json
+
+# Generate JSON report for specific category
+python HardenSys.py --heading "Security Options" --format json --output security_options.json</code></pre>
+                    </div>
+
+                    <h3>Report Formats</h3>
+                    <p>Both text and JSON formats provide comprehensive compliance information:</p>
+                    
+                    <h4>Text Report Example</h4>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Text Output</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>Windows Security Compliance Report
+========================================
+Generated: 2024-01-15 14:30:25
+Duration: 45.67 seconds
+Total Checks: 121
+Successful: 115
+Failed: 6
+Success Rate: 95.0%
+
+Detailed Results:
+========================================
+
+Account Policies
+----------------
+✓ Enforce password history
+  Status: success
+  Message: ✓ Password history set to 24 successfully
+  Previous: 0 passwords
+  Current: 24 passwords</code></pre>
+                    </div>
+
+                    <h4>JSON Report Example</h4>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>JSON Output</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>{
+  "summary": {
+    "total_checks": 121,
+    "successful_checks": 115,
+    "failed_checks": 6,
+    "success_rate": "95.0%",
+    "duration_seconds": 45.67,
+    "timestamp": "2024-01-15T14:30:25"
+  },
+  "results": [
+    {
+      "status": "success",
+      "message": "✓ Password history set to 24 successfully",
+      "previous": "0 passwords",
+      "current": "24 passwords",
+      "heading": "Account Policies",
+      "subheading": "Password Policy",
+      "title": "Enforce password history",
+      "script_key": "enforce_password_history",
+      "timestamp": "2024-01-15T14:30:25"
+    }
+  ]
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Examples Section -->
+                <section id="cli-examples" class="docs-section">
+                    <h2>Usage Examples</h2>
+                    
+                    <h3>Quick Security Check</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python HardenSys.py --heading "Account Policies" --output quick_check.txt</code></pre>
+                    </div>
+
+                    <h3>Full Audit with JSON Export</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python HardenSys.py --format json --output full_audit.json</code></pre>
+                    </div>
+
+                    <h3>Password Policy Only</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python HardenSys.py --subheading "Password Policy" --verbose</code></pre>
+                    </div>
+
+                    <h3>Specific Task Check</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python HardenSys.py --parameter "Enforce password history" --output password_history_check.txt</code></pre>
+                    </div>
+
+                    <h3>Firewall Configuration Check</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python HardenSys.py --heading "Windows Defender Firewall with Advanced Security"</code></pre>
+                    </div>
+
+                    <h3>PowerShell Integration</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>PowerShell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Run all checks
+.\HardenSys.ps1
+
+# Run specific category
+.\HardenSys.ps1 -Heading "Account Policies"
+
+# Generate JSON report
+.\HardenSys.ps1 -Format json -Output "compliance_report.json"
+
+# List categories
+.\HardenSys.ps1 -List</code></pre>
+                    </div>
+                </section>
+
+                <!-- Troubleshooting Section -->
+                <section id="cli-troubleshooting" class="docs-section">
+                    <h2>Troubleshooting</h2>
+                    
+                    <h3>Common Issues</h3>
+                    
+                    <h4>1. "Not running as Administrator"</h4>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Solution:</strong> Some checks require admin privileges. Run the tool as Administrator for full functionality.
+                    </div>
+                    <p>To run as Administrator:</p>
+                    <ul>
+                        <li><strong>Command Prompt:</strong> Right-click Command Prompt → "Run as administrator"</li>
+                        <li><strong>PowerShell:</strong> Right-click PowerShell → "Run as administrator"</li>
+                        <li><strong>Batch File:</strong> Right-click <code>HardenSys.bat</code> → "Run as administrator"</li>
+                    </ul>
+
+                    <h4>2. "Function not found"</h4>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Solution:</strong> Ensure <code>windows_tasks.py</code> is in the same directory and contains the required function.
+                    </div>
+
+                    <h4>3. "JSON file not found"</h4>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Solution:</strong> Ensure <code>windows_tasks.json</code> is in the same directory or use the <code>--json</code> option to specify a custom path.
+                    </div>
+
+                    <h4>4. Import errors</h4>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Solution:</strong> Ensure all required Python modules are installed and check Python version compatibility.
+                    </div>
+
+                    <h3>Error Codes</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Exit Code</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>Success</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Error (file not found, import error, etc.)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Getting Help</h3>
+                    <p>If you encounter issues not covered here:</p>
+                    <ul>
+                        <li>Check the <a href="reference.html#reference-faq">FAQ section</a></li>
+                        <li>Review the <a href="reference.html#reference-error-codes">Error Codes reference</a></li>
+                        <li>Open an issue on <a href="https://github.com/AjeyVerma/HardenSys">GitHub</a></li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/docs.js"></script>
+</body>
+</html>
