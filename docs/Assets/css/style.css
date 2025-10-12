@@ -1,3 +1,12 @@
+/* App logo style */
+.app_logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+    object-fit: cover;  
+    padding-top: 2px;
+}
 /* Reset and Base Styles */
 * {
     margin: 0;
