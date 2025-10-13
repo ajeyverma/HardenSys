@@ -6,6 +6,7 @@
     <title>HardenSys</title>
     <link rel="stylesheet" href="Assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
 </head>
 <body>
     <nav class="navbar">
@@ -32,7 +33,7 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1>HardenSys</h1>
-                <p class="hero-subtitle">Comprehensive security policy management and compliance checking for Windows systems</p>
+                <p class="hero-subtitle">Comprehensive security policy management and compliance checking for Windows & Linux systems</p>
                 <div class="hero-features">
                     <div class="feature">
                         <i class="fas fa-terminal"></i>
@@ -47,7 +48,7 @@
                     <div class="feature">
                         <i class="fas fa-shield-alt"></i>
                         <h3>121 Parameters</h3>
-                        <p>Comprehensive coverage of Windows security settings</p>
+                        <p>Comprehensive coverage of security settings</p>
                     </div>
                     <div class="feature">
                         <i class="fas fa-file-alt"></i>
@@ -65,48 +66,105 @@
         <section class="overview">
             <div class="container">
                 <h2>Tool Overview</h2>
-                <div class="overview-grid">
-                    <div class="overview-card">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Account Policies</h3>
-                        <p>Password policies, account lockout settings, and authentication controls</p>
-                        <span class="param-count">9 Parameters</span>
+
+                <div class="overview-toggle">
+                    <div class="switch" role="tablist" aria-label="Overview OS">
+                        <div class="ov-slider" aria-hidden="true"></div>
+                        <button type="button" class="ov-btn active" role="tab" aria-selected="true" data-target="ov-windows">
+                            <i class="fab fa-windows"></i> Windows
+                        </button>
+                        <button type="button" class="ov-btn" role="tab" aria-selected="false" data-target="ov-linux">
+                            <i class="fab fa-linux"></i> Linux
+                        </button>
                     </div>
-                    <div class="overview-card">
-                        <i class="fas fa-user-shield"></i>
-                        <h3>User Rights</h3>
-                        <p>User rights assignment and privilege management</p>
-                        <span class="param-count">7 Parameters</span>
+                </div>
+
+                <div class="ov-section ov-windows visible" style="display: block;">
+                    <div class="overview-grid windows-overview">
+                        <div class="overview-card">
+                            <i class="fas fa-cogs"></i>
+                            <h3>Account Policies</h3>
+                            <p>Password policies, account lockout settings, and authentication controls</p>
+                            <span class="param-count">9 Parameters</span>
+                        </div>
+                        <div class="overview-card">
+                            <i class="fas fa-user-shield"></i>
+                            <h3>User Rights</h3>
+                            <p>User rights assignment and privilege management</p>
+                            <span class="param-count">7 Parameters</span>
+                        </div>
+                        <div class="overview-card">
+                            <i class="fas fa-lock"></i>
+                            <h3>Security Options</h3>
+                            <p>Advanced security options and system configuration</p>
+                            <span class="param-count">24 Parameters</span>
+                        </div>
+                        <div class="overview-card">
+                            <i class="fas fa-cog"></i>
+                            <h3>System Settings</h3>
+                            <p>UAC settings, system services, and user account controls</p>
+                            <span class="param-count">32 Parameters</span>
+                        </div>
+                        <div class="overview-card">
+                            <i class="fas fa-fire"></i>
+                            <h3>Firewall</h3>
+                            <p>Firewall configuration and network security rules</p>
+                            <span class="param-count">18 Parameters</span>
+                        </div>
+                        <div class="overview-card">
+                            <i class="fas fa-search"></i>
+                            <h3>Audit Policy</h3>
+                            <p>Advanced audit policy configuration and monitoring</p>
+                            <span class="param-count">20 Parameters</span>
+                        </div>
+                        <div class="overview-card">
+                            <i class="fas fa-shield-virus"></i>
+                            <h3>Application Guard</h3>
+                            <p>Microsoft Defender Application Guard settings</p>
+                            <span class="param-count">11 Parameters</span>
+                        </div>
                     </div>
-                    <div class="overview-card">
-                        <i class="fas fa-lock"></i>
-                        <h3>Security Options</h3>
-                        <p>Advanced security options and system configuration</p>
-                        <span class="param-count">24 Parameters</span>
-                    </div>
-                    <div class="overview-card">
-                        <i class="fas fa-cog"></i>
-                        <h3>System Settings</h3>
-                        <p>UAC settings, system services, and user account controls</p>
-                        <span class="param-count">32 Parameters</span>
-                    </div>
-                    <div class="overview-card">
-                        <i class="fas fa-fire"></i>
-                        <h3>Windows Firewall</h3>
-                        <p>Firewall configuration and network security rules</p>
-                        <span class="param-count">18 Parameters</span>
-                    </div>
-                    <div class="overview-card">
-                        <i class="fas fa-search"></i>
-                        <h3>Audit Policy</h3>
-                        <p>Advanced audit policy configuration and monitoring</p>
-                        <span class="param-count">20 Parameters</span>
-                    </div>
-                    <div class="overview-card">
-                        <i class="fas fa-shield-virus"></i>
-                        <h3>Application Guard</h3>
-                        <p>Microsoft Defender Application Guard settings</p>
-                        <span class="param-count">11 Parameters</span>
+                </div>
+
+                <div class="ov-section ov-linux" style="display: none;">
+            
+                    <div class="overview-grid linux-overview">
+                        <div class="overview-card">
+                            <i class="fas fa-hdd"></i>
+                            <h3>Filesystem Configuration</h3>
+                            <p>Kernel modules, partitions, and file system security</p>
+                            <span class="param-count">16 Parameters</span>
+                        </div>
+                        <div class="overview-card">
+                            <i class="fas fa-box"></i>
+                            <h3>Package Management</h3>
+                            <p>Bootloader settings and process hardening</p>
+                            <span class="param-count">7 Parameters</span>
+                        </div>
+                        <div class="overview-card">
+                            <i class="fas fa-server"></i>
+                            <h3>Services Configuration</h3>
+                            <p>Server and client services plus time sync</p>
+                            <span class="param-count">21 Parameters</span>
+                        </div>
+                        <div class="overview-card">
+                            <i class="fas fa-network-wired"></i>
+                            <h3>Network Configuration</h3>
+                            <p>Network parameters and firewall configuration</p>
+                            <span class="param-count">12 Parameters</span>
+                        </div>
+                        <div class="overview-card">
+                            <i class="fas fa-lock"></i>
+                            <h3>Access Control</h3>
+                            <p>SSH, PAM, and account control policies</p>
+                            <span class="param-count">21 Parameters</span>
+                        </div>
+                        <div class="overview-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>System Hardening</h3>
+                            <p>Additional kernel and system security measures</p>
+                            <span class="param-count">12 Parameters</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -119,7 +177,7 @@
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
                         <h3>Comprehensive Coverage</h3>
-                        <p>121 security parameters covering all major Windows security categories</p>
+                        <p>Comprehensive coverage of major Windows and Linux security categories</p>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-download"></i>
@@ -153,7 +211,15 @@
         <section class="quick-start">
             <div class="container">
                 <h2>Quick Start</h2>
-                <div class="quick-start-grid">
+
+                <!-- Show both Quick Starts, Windows first then Linux -->
+                <h3 style="margin: 8px 0 14px; display:flex; align-items:center; gap:10px; font-size:22px; font-weight:500; letter-spacing:0.2px; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.08);">
+                    <i class="fab fa-windows"></i>
+                    <span>Windows Quick Start</span>
+                </h3>
+
+                <!-- Windows Quick Start -->
+                <div class="quick-start-grid qs-windows">
                     <div class="quick-start-card">
                         <div class="step-number">1</div>
                         <h3>Download</h3>
@@ -162,15 +228,40 @@
                     </div>
                     <div class="quick-start-card">
                         <div class="step-number">2</div>
-                        <h3>Run as Administrator</h3>
-                        <p>Right-click and run as Administrator for full functionality</p>
-                        <code>python compliance_cli.py</code>
+                        <h3>Install dependencies</h3>
+                        <p>Install required Python packages</p>
+                        <div class="code-block"><code>pip install -r requirements.txt</code></div>
                     </div>
                     <div class="quick-start-card">
                         <div class="step-number">3</div>
-                        <h3>Check Compliance</h3>
-                        <p>Run compliance checks and generate reports</p>
-                        <code>python compliance_cli.py --output report.html</code>
+                        <h3>Run & generate report</h3>
+                        <p>Use an elevated PowerShell/CMD if needed</p>
+                        <div class="code-block"><code>python HardenSys.py --output report.html</code></div>
+                    </div>
+                </div>
+
+                <h3 style="margin: 28px 0 14px; display:flex; align-items:center; gap:10px; font-size:22px; font-weight:500; letter-spacing:0.2px; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.08);">
+                    <i class="fab fa-linux"></i>
+                    <span>Linux Quick Start</span>
+                </h3>
+                <div class="quick-start-grid qs-linux">
+                    <div class="quick-start-card">
+                        <div class="step-number">1</div>
+                        <h3>Download</h3>
+                        <p>Download the tool and extract to your desired location</p>
+                        <a href="website/download.html" class="btn btn-outline">Download</a>
+                    </div>
+                    <div class="quick-start-card">
+                        <div class="step-number">2</div>
+                        <h3>Install dependencies</h3>
+                        <p>Install required Python packages</p>
+                        <div class="code-block"><code>pip3 install -r requirements.txt</code></div>
+                    </div>
+                    <div class="quick-start-card">
+                        <div class="step-number">3</div>
+                        <h3>Run & generate report</h3>
+                        <p>Use sudo if your environment requires root</p>
+                        <div class="code-block"><code>python3 HardenSys.py --output report.html</code></div>
                     </div>
                 </div>
             </div>
@@ -182,7 +273,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>HardenSys</h3>
-                    <p>Comprehensive security policy management for Windows systems</p>
+                    <p>Comprehensive security policy management for Windows and Linux systems</p>
                 </div>
                 <div class="footer-section">
                     <h4>Documentation</h4>
@@ -207,7 +298,29 @@
             </div>
         </div>
     </footer>
+    <script>
+    (function(){
+        const buttons = document.querySelectorAll('.overview-toggle .ov-btn');
+        const win = document.querySelector('.ov-windows');
+        const lin = document.querySelector('.ov-linux');
+        const switchEl = document.querySelector('.overview-toggle .switch');
 
+        buttons.forEach(btn => btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const target = btn.getAttribute('data-target');
+            if (target === 'ov-windows') {
+                if (win) { win.style.display = 'block'; win.classList.add('visible'); }
+                if (lin) { lin.style.display = 'none'; lin.classList.remove('visible'); }
+                switchEl && switchEl.classList.remove('is-linux');
+            } else {
+                if (win) { win.style.display = 'none'; win.classList.remove('visible'); }
+                if (lin) { lin.style.display = 'block'; lin.classList.add('visible'); }
+                switchEl && switchEl.classList.add('is-linux');
+            }
+        }));
+    })();
+    </script>
     <script src="website/js/script.js"></script>
 </body>
 </html>

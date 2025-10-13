@@ -606,3 +606,36 @@ tr:hover {
     border-color: #dc3545;
     color: #721c24;
 }
+
+/* Tool Overview OS Toggle */
+.overview-toggle { display: flex; justify-content: center; margin: 0px 0 56px; }
+.overview-toggle .switch {
+    position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+    padding: 8px; border-radius: 999px; column-gap: 0;
+    background: #ffffff; border: 1px solid #e9ecef;
+    overflow: hidden;
+    width: min(350px, 100%);
+}
+.overview-toggle .ov-slider {
+    position: absolute; top: 7px; left: 7px; height: calc(100% - 14px);
+    width: calc(50% - 8px); border-radius: 999px;
+    background: #667eea; /* brand blue */
+    transition: transform 220ms ease;
+    will-change: transform;
+}
+.overview-toggle .switch.is-linux .ov-slider { transform: translateX(100%); }
+.overview-toggle .ov-btn {
+    position: relative; z-index: 1;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; padding: 14px 24px; border-radius: 999px; border: 0; cursor: pointer;
+    background: transparent; color: #555; font-weight: 700; font-size: 18px;
+    letter-spacing: 0.2px; transition: color 160ms ease;
+}
+.overview-toggle .ov-btn:hover { color: #222; }
+.overview-toggle .ov-btn:focus-visible { outline: 2px solid rgba(102,126,234,0.4); outline-offset: 2px; border-radius: 999px; }
+.overview-toggle .ov-btn i { font-size: 20px; }
+.overview-toggle .ov-btn.active { color: #ffffff; }
+
+/* Smooth show/hide for overview sections */
+.ov-section { display: none; opacity: 0; transition: opacity 220ms ease; }
+.ov-section.visible { display: block; opacity: 1; }
