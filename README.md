@@ -2,8 +2,9 @@
 
 A comprehensive security policy management and compliance checking tool for Windows systems. This tool helps organizations and system administrators enforce, manage, and audit Windows security policies through both CLI and GUI interfaces.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
+![Linux](https://img.shields.io/badge/platform-Linux-ff0000)
 ![Python](https://img.shields.io/badge/python-3.6%2B-brightgreen.svg)
 
 ## 🛡️ Features
@@ -115,7 +116,16 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)  
+© 2025 [Ajay Kumar](https://github.com/ajeyverma)  
+(also known as Ajay Verma / Aarush Chaudhary)
+
+## ⚠️ Disclaimer
+
+This tool is provided **"as is"** without warranty of any kind.  
+Use it **at your own risk**. The author is **not responsible** for any damage, data loss, or misconfiguration caused by the use of this tool.
+
+Always test security or system tools in a **safe or virtual environment** before using them on production machines.
 
 <!-- ## 👨‍💻 Author
 
