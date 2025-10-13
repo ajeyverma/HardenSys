@@ -115,7 +115,9 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)  
+© 2025 [Ajay Kumar](https://github.com/ajeyverma)  
+(also known as Ajay Verma / Aarush Chaudhary)
 
 <!-- ## 👨‍💻 Author
 
