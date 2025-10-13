@@ -102,9 +102,11 @@ document.head.appendChild(style);
 
 // Add copy buttons to code blocks
 document.addEventListener('DOMContentLoaded', function() {
-    const codeBlocks = document.querySelectorAll('.code-block, code');
+    const codeBlocks = document.querySelectorAll('.code-block');
     codeBlocks.forEach(block => {
-        if (block.textContent.trim().length > 20) { // Only add to substantial code blocks
+        // Skip if inside a no-copy container
+        if (block.closest && block.closest('.no-copy')) return;
+        if (block.textContent.trim().length > 20) {
             const copyButton = document.createElement('button');
             copyButton.innerHTML = '<i class="fas fa-copy"></i>';
             copyButton.className = 'copy-button';
@@ -120,13 +122,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 cursor: pointer;
                 font-size: 0.8rem;
             `;
-            
-            // Make the parent container relative
             if (block.parentElement) {
                 block.parentElement.style.position = 'relative';
-                block.parentElement.appendChild(copyButton);
+                // Avoid adding a duplicate if one already exists
+                if (!block.parentElement.querySelector('.copy-button')) {
+                    block.parentElement.appendChild(copyButton);
+                }
             }
-            
             copyButton.addEventListener('click', function() {
                 copyToClipboard(block.textContent);
             });
