@@ -4,7 +4,7 @@ A comprehensive security policy management and compliance checking tool for Wind
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
-![Linux](https://img.shields.io/badge/platform-Linux-ff0000)    
+![Linux](https://img.shields.io/badge/platform-Linux-ff0000)
 ![Python](https://img.shields.io/badge/python-3.6%2B-brightgreen.svg)
 
 ## 🛡️ Features
