@@ -4,25 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Topics - HardenSys Documentation</title>
+    <meta name="description" content="Advanced configuration, automation, and integration features of HardenSys for system hardening">
+    <meta name="keywords" content="HardenSys, system hardening, automation, integration, security configuration">
     <link rel="stylesheet" href="css/docs.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../Assets/Images/logo.svg">
+    <link rel="icon" type="image/png" href="../Assets/Images/favicon.png">
 </head>
 <body>
+    <!-- Header with Search Bar -->
+    <header class="docs-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="images/app_logo_black.png" alt="HardenSys" class="header-logo-icon">
+                <span class="header-title">HardenSys Docs</span>
+                <div class="vertical-separator"></div>
+            </div>
+            <div class="header-os-selector">
+                <div class="os-dropdown">
+                    <span class="os-label">OS:</span>
+                    <div class="os-dropdown-toggle">
+                        <span class="os-current">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="os-dropdown-menu">
+                        <div class="os-option active" data-os="windows">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </div>
+                        <div class="os-option" data-os="linux">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="header-search" placeholder="Search documentation..." />
+                    <button class="search-clear" id="header-search-clear" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
     <div class="docs-container">
         <!-- Sidebar Navigation -->
-        <nav class="docs-sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <img src="../images/app_logo.png" alt="HardenSys" class="logo-icon">
-                    <span>HardenSys</span>
-                </div>
-                <div class="version">v1.0.0</div>
+        <nav class="docs-sidebar" id="docs-sidebar">
+            <div class="sidebar-home">
+                <a href="../index.html" class="home-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Home</span>
+                </a>
             </div>
             
             <div class="sidebar-content">
                 <div class="nav-section">
-                    <div class="nav-title">Getting Started</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Getting Started</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="index.html#introduction" class="nav-link">Introduction</a></li>
                         <li><a href="index.html#installation" class="nav-link">Installation</a></li>
@@ -32,7 +86,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">CLI Interface</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">CLI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="cli.html#cli-overview" class="nav-link">Overview</a></li>
                         <li><a href="cli.html#cli-basic-usage" class="nav-link">Basic Usage</a></li>
@@ -44,7 +101,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">GUI Interface</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">GUI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="gui.html#gui-overview" class="nav-link">Overview</a></li>
                         <li><a href="gui.html#gui-navigation" class="nav-link">Navigation</a></li>
@@ -55,7 +115,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Security Parameters</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Security Parameters</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="parameters.html#parameters-overview" class="nav-link">Overview</a></li>
                         <li><a href="parameters.html#parameters-categories" class="nav-link">Categories</a></li>
@@ -65,7 +128,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Advanced Topics</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Advanced Topics</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="#advanced-integration" class="nav-link active">Integration</a></li>
                         <li><a href="#advanced-automation" class="nav-link">Automation</a></li>
@@ -75,7 +141,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Reference</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Reference</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="reference.html#reference-cli-options" class="nav-link">CLI Options</a></li>
                         <li><a href="reference.html#reference-error-codes" class="nav-link">Error Codes</a></li>
@@ -83,12 +152,94 @@
                         <li><a href="reference.html#reference-changelog" class="nav-link">Changelog</a></li>
                     </ul>
                 </div>
+
+                <!-- Linux Sidebar Sections -->
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Getting Started</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/index.html#linux-introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="../docs/index.html#linux-installation" class="nav-link">Installation</a></li>
+                        <li><a href="../docs/index.html#linux-quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="../docs/index.html#linux-requirements" class="nav-link">Requirements</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux CLI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/cli.html#linux-cli-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-basic-usage" class="nav-link">Basic Usage</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-filtering" class="nav-link">Filtering Options</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-reports" class="nav-link">Report Generation</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-examples" class="nav-link">Examples</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux GUI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/gui.html#linux-gui-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-navigation" class="nav-link">Navigation</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-running-checks" class="nav-link">Running Checks</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-reports" class="nav-link">Reports</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-settings" class="nav-link">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Security Parameters</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/parameters.html#linux-parameters-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/parameters.html#linux-parameters-categories" class="nav-link">Categories</a></li>
+                        <li><a href="../docs/parameters.html#linux-complete-parameter-list" class="nav-link">Complete Parameter List</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Advanced Topics</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="#linux-advanced-integration" class="nav-link active">Integration</a></li>
+                        <li><a href="#linux-advanced-automation" class="nav-link">Automation</a></li>
+                        <li><a href="#linux-advanced-backup" class="nav-link">Backup & Restore</a></li>
+                        <li><a href="#linux-advanced-best-practices" class="nav-link">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Reference</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/reference.html#linux-reference-cli-options" class="nav-link">CLI Options</a></li>
+                        <li><a href="../docs/reference.html#linux-reference-error-codes" class="nav-link">Error Codes</a></li>
+                        <li><a href="../docs/reference.html#linux-reference-faq" class="nav-link">FAQ</a></li>
+                        <li><a href="../docs/reference.html#linux-reference-changelog" class="nav-link">Changelog</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
         <!-- Main Content -->
         <main class="docs-main">
-            <div class="docs-content">
+            <!-- Windows Content -->
+            <div class="docs-content windows-content">
                 <!-- Advanced Integration Section -->
                 <section id="advanced-integration" class="docs-section">
                     <h1>Advanced Topics</h1>
@@ -171,9 +322,299 @@ secedit /export /cfg $backupFile</code></pre>
                     </ul>
                 </section>
             </div>
+
+            <!-- Linux Content -->
+            <div class="docs-content linux-content" style="display: none;">
+                <!-- Linux Advanced Integration Section -->
+                <section id="linux-advanced-integration" class="docs-section">
+                    <h1>Linux Advanced Topics</h1>
+                    <p class="lead">Advanced configuration and integration options for HardenSys on Linux systems.</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Linux Advanced:</strong> These topics cover enterprise-level Linux security hardening and automation.
+                    </div>
+
+                    <h2>Integration</h2>
+                    <p>Integrate HardenSys with Linux enterprise tools and workflows for comprehensive security management.</p>
+
+                    <h3>Systemd Integration</h3>
+                    <p>Create systemd services for automated security checking:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Create systemd service file
+sudo nano /etc/systemd/system/hardensys.service
+
+[Unit]
+Description=HardenSys Security Check
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/hardensys/HardenSys.py --output /var/log/hardensys/compliance.log
+User=root
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+                    </div>
+
+                    <h3>Ansible Integration</h3>
+                    <p>Use HardenSys with Ansible for infrastructure automation:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Ansible Playbook</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>- name: Run HardenSys security check
+  hosts: linux_servers
+  tasks:
+    - name: Execute HardenSys compliance check
+      command: python3 /opt/hardensys/HardenSys.py --output /tmp/compliance_{{ ansible_hostname }}.html
+      register: hardensys_result
+      
+    - name: Copy compliance report
+      fetch:
+        src: /tmp/compliance_{{ ansible_hostname }}.html
+        dest: /var/reports/</code></pre>
+                    </div>
+
+                    <h3>Docker Integration</h3>
+                    <p>Run HardenSys in Docker containers for isolated security checks:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Dockerfile</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>FROM ubuntu:20.04
+
+RUN apt-get update && apt-get install -y python3 python3-pip
+COPY HardenSys/ /opt/hardensys/
+WORKDIR /opt/hardensys
+RUN pip3 install -r requirements.txt
+
+CMD ["python3", "HardenSys.py"]</code></pre>
+                    </div>
+                </section>
+
+                <!-- Linux Automation Section -->
+                <section id="linux-advanced-automation" class="docs-section">
+                    <h2>Automation</h2>
+                    <p>Automate Linux security hardening processes for consistent compliance across your infrastructure.</p>
+
+                    <h3>Cron Job Automation</h3>
+                    <p>Schedule regular security checks using cron:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Add to crontab for daily security checks
+0 2 * * * /usr/bin/python3 /opt/hardensys/HardenSys.py --output /var/log/hardensys/daily_$(date +\%Y\%m\%d).html
+
+# Weekly comprehensive report
+0 3 * * 0 /usr/bin/python3 /opt/hardensys/HardenSys.py --all --output /var/log/hardensys/weekly_$(date +\%Y\%m\%d).html</code></pre>
+                    </div>
+
+                    <h3>Shell Script Automation</h3>
+                    <p>Create comprehensive automation scripts:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Bash Script</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>#!/bin/bash
+# Linux Security Automation Script
+
+LOG_DIR="/var/log/hardensys"
+DATE=$(date +%Y%m%d_%H%M%S)
+
+# Create log directory
+mkdir -p $LOG_DIR
+
+# Run security checks
+python3 /opt/hardensys/HardenSys.py --output $LOG_DIR/compliance_$DATE.html
+
+# Check for critical failures
+if grep -q "FAIL" $LOG_DIR/compliance_$DATE.html; then
+    echo "Critical security issues found!" | mail -s "Security Alert" admin@company.com
+fi
+
+# Cleanup old reports (keep last 30 days)
+find $LOG_DIR -name "compliance_*.html" -mtime +30 -delete</code></pre>
+                    </div>
+
+                    <h3>Configuration Management</h3>
+                    <p>Use configuration management tools for consistent security policies:</p>
+                    <ul>
+                        <li><strong>Puppet:</strong> Define security policies as code</li>
+                        <li><strong>Chef:</strong> Automate security configuration</li>
+                        <li><strong>SaltStack:</strong> Manage security states</li>
+                        <li><strong>Terraform:</strong> Infrastructure as code security</li>
+                    </ul>
+                </section>
+
+                <!-- Linux Backup & Restore Section -->
+                <section id="linux-advanced-backup" class="docs-section">
+                    <h2>Backup & Restore</h2>
+                    <p>Implement comprehensive backup and restore procedures for Linux security configurations.</p>
+
+                    <h3>Configuration Backup</h3>
+                    <p>Backup critical Linux security configurations:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>#!/bin/bash
+# Linux Security Configuration Backup
+
+BACKUP_DIR="/backup/security_configs"
+DATE=$(date +%Y%m%d)
+
+mkdir -p $BACKUP_DIR/$DATE
+
+# Backup SSH configuration
+cp /etc/ssh/sshd_config $BACKUP_DIR/$DATE/
+
+# Backup PAM configuration
+cp -r /etc/pam.d/ $BACKUP_DIR/$DATE/
+
+# Backup firewall rules
+ufw status > $BACKUP_DIR/$DATE/ufw_rules.txt
+
+# Backup kernel parameters
+sysctl -a > $BACKUP_DIR/$DATE/kernel_params.txt
+
+# Backup systemd services
+systemctl list-unit-files > $BACKUP_DIR/$DATE/services.txt</code></pre>
+                    </div>
+
+                    <h3>Automated Restore</h3>
+                    <p>Create restore procedures for quick recovery:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>#!/bin/bash
+# Linux Security Configuration Restore
+
+BACKUP_DATE=$1
+BACKUP_DIR="/backup/security_configs/$BACKUP_DATE"
+
+if [ ! -d "$BACKUP_DIR" ]; then
+    echo "Backup directory not found: $BACKUP_DIR"
+    exit 1
+fi
+
+# Restore SSH configuration
+cp $BACKUP_DIR/sshd_config /etc/ssh/
+systemctl restart sshd
+
+# Restore PAM configuration
+cp -r $BACKUP_DIR/pam.d/* /etc/pam.d/
+
+# Restore firewall rules
+ufw --force reset
+ufw enable
+# Apply custom rules from backup
+
+echo "Security configuration restored from $BACKUP_DATE"</code></pre>
+                    </div>
+
+                    <h3>Version Control Integration</h3>
+                    <p>Use Git for configuration version control:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Initialize Git repository for security configs
+cd /etc
+sudo git init
+sudo git add ssh/ pam.d/ security/
+sudo git commit -m "Initial security configuration backup"
+
+# Regular commits
+sudo git add -A
+sudo git commit -m "Security configuration update $(date)"</code></pre>
+                    </div>
+                </section>
+
+                <!-- Linux Best Practices Section -->
+                <section id="linux-advanced-best-practices" class="docs-section">
+                    <h2>Best Practices</h2>
+                    <p>Follow these best practices for effective Linux security hardening with HardenSys.</p>
+
+                    <h3>Implementation Strategy</h3>
+                    <ul>
+                        <li><strong>Staged Rollout:</strong> Test configurations in development before production</li>
+                        <li><strong>Documentation:</strong> Maintain detailed records of all changes</li>
+                        <li><strong>Monitoring:</strong> Implement continuous compliance monitoring</li>
+                        <li><strong>Training:</strong> Ensure team members understand security policies</li>
+                    </ul>
+
+                    <h3>Linux-Specific Considerations</h3>
+                    <ul>
+                        <li><strong>Distribution Differences:</strong> Account for variations between Linux distributions</li>
+                        <li><strong>Kernel Versions:</strong> Test compatibility with different kernel versions</li>
+                        <li><strong>Package Management:</strong> Use appropriate package managers (apt, yum, dnf)</li>
+                        <li><strong>Service Management:</strong> Understand systemd vs traditional init systems</li>
+                    </ul>
+
+                    <h3>Security Monitoring</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Monitor security events
+journalctl -u ssh -f
+
+# Check system integrity
+aide --check
+
+# Monitor file system changes
+inotifywait -m /etc/ssh/sshd_config
+
+# Audit system calls
+auditctl -l</code></pre>
+                    </div>
+
+                    <h3>Compliance Reporting</h3>
+                    <ul>
+                        <li>Generate regular compliance reports</li>
+                        <li>Track remediation progress over time</li>
+                        <li>Maintain audit trails for regulatory compliance</li>
+                        <li>Implement automated alerting for critical issues</li>
+                    </ul>
+                </section>
+            </div>
         </main>
     </div>
 
     <script src="js/docs.js"></script>
+    <script src="js/header.js"></script>
 </body>
 </html>

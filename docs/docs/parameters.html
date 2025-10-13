@@ -4,25 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Parameters - HardenSys Documentation</title>
+    <meta name="description" content="Comprehensive list of security parameters and configurations for Windows and Linux systems in HardenSys">
+    <meta name="keywords" content="HardenSys parameters, security configuration, system hardening, Windows security, Linux security">
     <link rel="stylesheet" href="css/docs.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../Assets/Images/logo.svg">
+    <link rel="icon" type="image/png" href="../Assets/Images/favicon.png">
 </head>
 <body>
+    <!-- Header with Search Bar -->
+    <header class="docs-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="images/app_logo_black.png" alt="HardenSys" class="header-logo-icon">
+                <span class="header-title">HardenSys Docs</span>
+                <div class="vertical-separator"></div>
+            </div>
+            <div class="header-os-selector">
+                <div class="os-dropdown">
+                    <span class="os-label">OS:</span>
+                    <div class="os-dropdown-toggle">
+                        <span class="os-current">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="os-dropdown-menu">
+                        <div class="os-option active" data-os="windows">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </div>
+                        <div class="os-option" data-os="linux">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="header-search" placeholder="Search documentation..." />
+                    <button class="search-clear" id="header-search-clear" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
     <div class="docs-container">
         <!-- Sidebar Navigation -->
-        <nav class="docs-sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <img src="../images/app_logo.png" alt="HardenSys" class="logo-icon">
-                    <span>HardenSys</span>
-                </div>
-                <div class="version">v1.0.0</div>
+        <nav class="docs-sidebar" id="docs-sidebar">
+            <div class="sidebar-home">
+                <a href="../index.html" class="home-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Home</span>
+                </a>
             </div>
             
             <div class="sidebar-content">
                 <div class="nav-section">
-                    <div class="nav-title">Getting Started</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Getting Started</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="index.html#introduction" class="nav-link">Introduction</a></li>
                         <li><a href="index.html#installation" class="nav-link">Installation</a></li>
@@ -32,7 +86,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">CLI Interface</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">CLI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="cli.html#cli-overview" class="nav-link">Overview</a></li>
                         <li><a href="cli.html#cli-basic-usage" class="nav-link">Basic Usage</a></li>
@@ -44,7 +101,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">GUI Interface</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">GUI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="gui.html#gui-overview" class="nav-link">Overview</a></li>
                         <li><a href="gui.html#gui-navigation" class="nav-link">Navigation</a></li>
@@ -55,7 +115,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Security Parameters</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Security Parameters</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="#parameters-overview" class="nav-link active">Overview</a></li>
                         <li><a href="#parameters-categories" class="nav-link">Categories</a></li>
@@ -65,7 +128,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Advanced Topics</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Advanced Topics</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="advanced.html#advanced-integration" class="nav-link">Integration</a></li>
                         <li><a href="advanced.html#advanced-automation" class="nav-link">Automation</a></li>
@@ -75,7 +141,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Reference</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Reference</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="reference.html#reference-cli-options" class="nav-link">CLI Options</a></li>
                         <li><a href="reference.html#reference-error-codes" class="nav-link">Error Codes</a></li>
@@ -83,12 +152,94 @@
                         <li><a href="reference.html#reference-changelog" class="nav-link">Changelog</a></li>
                     </ul>
                 </div>
+
+                <!-- Linux Sidebar Sections -->
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Getting Started</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/index.html#linux-introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="../docs/index.html#linux-installation" class="nav-link">Installation</a></li>
+                        <li><a href="../docs/index.html#linux-quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="../docs/index.html#linux-requirements" class="nav-link">Requirements</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux CLI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/cli.html#linux-cli-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-basic-usage" class="nav-link">Basic Usage</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-filtering" class="nav-link">Filtering Options</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-reports" class="nav-link">Report Generation</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-examples" class="nav-link">Examples</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux GUI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/gui.html#linux-gui-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-navigation" class="nav-link">Navigation</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-running-checks" class="nav-link">Running Checks</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-reports" class="nav-link">Reports</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-settings" class="nav-link">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Security Parameters</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="#linux-parameters-overview" class="nav-link active">Overview</a></li>
+                        <li><a href="#linux-parameters-categories" class="nav-link">Categories</a></li>
+                        <li><a href="#linux-complete-parameter-list" class="nav-link">Complete Parameter List</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Advanced Topics</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/advanced.html#linux-advanced-integration" class="nav-link">Integration</a></li>
+                        <li><a href="../docs/advanced.html#linux-advanced-automation" class="nav-link">Automation</a></li>
+                        <li><a href="../docs/advanced.html#linux-advanced-backup" class="nav-link">Backup & Restore</a></li>
+                        <li><a href="../docs/advanced.html#linux-advanced-best-practices" class="nav-link">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Reference</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/reference.html#linux-reference-cli-options" class="nav-link">CLI Options</a></li>
+                        <li><a href="../docs/reference.html#linux-reference-error-codes" class="nav-link">Error Codes</a></li>
+                        <li><a href="../docs/reference.html#linux-reference-faq" class="nav-link">FAQ</a></li>
+                        <li><a href="../docs/reference.html#linux-reference-changelog" class="nav-link">Changelog</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
         <!-- Main Content -->
         <main class="docs-main">
-            <div class="docs-content">
+            <!-- Windows Content -->
+            <div class="docs-content windows-content">
                 <!-- Parameters Overview Section -->
                 <section id="parameters-overview" class="docs-section">
                     <h1>Security Parameters</h1>
@@ -111,6 +262,18 @@
                         <li><strong>Category:</strong> Security category classification</li>
                         <li><strong>Subcategory:</strong> Specific subcategory within the main category</li>
                     </ul>
+                    
+                    <!-- OS-specific parameter examples -->
+                    <div class="windows-only">
+                        <h3><i class="fab fa-windows"></i> Windows-Specific Parameters</h3>
+                        <p>Windows systems include additional security parameters such as:</p>
+                        <ul>
+                            <li>User Account Control (UAC) settings</li>
+                            <li>Windows Defender configurations</li>
+                            <li>Registry-based security policies</li>
+                            <li>Active Directory integration</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <!-- Categories Section -->
@@ -430,11 +593,474 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</code
                         <li>Keep detailed records of configuration changes</li>
                     </ul>
                 </section>
+
+                <!-- Complete Parameter List Section -->
+                <section id="complete-parameter-list" class="docs-section">
+                    <h2>Complete Parameter List</h2>
+                    <p>Below is the comprehensive list of all 121 security parameters organized by category.</p>
+
+                    <!-- Account Policies -->
+                    <div class="parameter-category">
+                        <h3><i class="fas fa-user-shield"></i> Account Policies</h3>
+                        
+                        <h4>Password Policy</h4>
+                        <ul class="parameter-list">
+                            <li>Enforce password history (24 passwords)</li>
+                            <li>Maximum password age (90 days)</li>
+                            <li>Minimum password age (1 day)</li>
+                            <li>Minimum password length (14 characters)</li>
+                            <li>Password must meet complexity requirements (Enabled)</li>
+                            <li>Store passwords using reversible encryption (Disabled)</li>
+                        </ul>
+
+                        <h4>Account Lockout Policy</h4>
+                        <ul class="parameter-list">
+                            <li>Account lockout duration (15 minutes)</li>
+                            <li>Account lockout threshold (5 invalid attempts)</li>
+                            <li>Reset account lockout counter (15 minutes)</li>
+                        </ul>
+                    </div>
+
+                    <!-- User Rights Assignment -->
+                    <div class="parameter-category">
+                        <h3><i class="fas fa-users-cog"></i> User Rights Assignment</h3>
+                        <ul class="parameter-list">
+                            <li>Access this computer from the network</li>
+                            <li>Allow log on locally</li>
+                            <li>Back up files and directories</li>
+                            <li>Change the system time</li>
+                            <li>Create symbolic links</li>
+                            <li>Deny access to this computer from the network</li>
+                            <li>Log on as a batch job</li>
+                        </ul>
+                    </div>
+
+                    <!-- Security Options -->
+                    <div class="parameter-category">
+                        <h3><i class="fas fa-cog"></i> Security Options</h3>
+                        
+                        <h4>Accounts</h4>
+                        <ul class="parameter-list">
+                            <li>Administrator account status (Disabled)</li>
+                            <li>Guest account status (Disabled)</li>
+                            <li>Rename administrator account</li>
+                            <li>Rename guest account</li>
+                        </ul>
+
+                        <h4>Interactive Logon</h4>
+                        <ul class="parameter-list">
+                            <li>Do not display last user name</li>
+                            <li>Do not require CTRL+ALT+DEL</li>
+                            <li>Machine inactivity limit</li>
+                            <li>Message text for users attempting to log on</li>
+                            <li>Number of previous logons to cache</li>
+                        </ul>
+
+                        <h4>Network Security</h4>
+                        <ul class="parameter-list">
+                            <li>LAN Manager authentication level</li>
+                            <li>Minimum session security for NTLM SSP</li>
+                            <li>PKU2U authentication requests</li>
+                            <li>Session security for secure RPC</li>
+                        </ul>
+                    </div>
+
+                    <!-- System Settings -->
+                    <div class="parameter-category">
+                        <h3><i class="fas fa-server"></i> System Settings</h3>
+                        
+                        <h4>User Account Control</h4>
+                        <ul class="parameter-list">
+                            <li>Admin Approval Mode for Built-in Administrator account</li>
+                            <li>Behavior of the elevation prompt for administrators</li>
+                            <li>Behavior of the elevation prompt for standard users</li>
+                            <li>Detect application installations and prompt for elevation</li>
+                            <li>Only elevate executables that are signed and validated</li>
+                            <li>Run all administrators in Admin Approval Mode</li>
+                            <li>Switch to the secure desktop when prompting for elevation</li>
+                            <li>Virtualize file and registry write failures to per-user locations</li>
+                        </ul>
+
+                        <h4>System Services</h4>
+                        <ul class="parameter-list">
+                            <li>Application Experience Service</li>
+                            <li>AutoTime Service</li>
+                            <li>Background Intelligent Transfer Service</li>
+                            <li>Remote Registry Service</li>
+                            <li>Server Service</li>
+                            <li>Shell Hardware Detection Service</li>
+                            <li>Task Scheduler Service</li>
+                            <li>Windows Error Reporting Service</li>
+                        </ul>
+                    </div>
+
+                    <!-- Windows Defender Firewall -->
+                    <div class="parameter-category">
+                        <h3><i class="fas fa-fire"></i> Windows Defender Firewall</h3>
+                        
+                        <h4>Private Profile</h4>
+                        <ul class="parameter-list">
+                            <li>Firewall state (On)</li>
+                            <li>Inbound connections (Block)</li>
+                            <li>Outbound connections (Allow)</li>
+                            <li>Display notifications (Yes)</li>
+                            <li>Allow unicast response (No)</li>
+                            <li>Apply local firewall rules (Yes)</li>
+                            <li>Apply local connection security rules (Yes)</li>
+                            <li>Logging: Name (System32\LogFiles\Firewall\pfirewall.log)</li>
+                            <li>Logging: Size limit (16384 KB)</li>
+                        </ul>
+
+                        <h4>Public Profile</h4>
+                        <ul class="parameter-list">
+                            <li>Firewall state (On)</li>
+                            <li>Inbound connections (Block)</li>
+                            <li>Outbound connections (Allow)</li>
+                            <li>Display notifications (Yes)</li>
+                            <li>Allow unicast response (No)</li>
+                            <li>Apply local firewall rules (No)</li>
+                            <li>Apply local connection security rules (No)</li>
+                            <li>Logging: Name (System32\LogFiles\Firewall\pfirewall.log)</li>
+                            <li>Logging: Size limit (16384 KB)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Advanced Audit Policy -->
+                    <div class="parameter-category">
+                        <h3><i class="fas fa-clipboard-check"></i> Advanced Audit Policy</h3>
+                        
+                        <h4>Account Logon Events</h4>
+                        <ul class="parameter-list">
+                            <li>Audit Credential Validation (Success and Failure)</li>
+                            <li>Audit Kerberos Authentication Service (Success and Failure)</li>
+                            <li>Audit Kerberos Service Ticket Operations (Success and Failure)</li>
+                            <li>Audit Other Account Logon Events (Success and Failure)</li>
+                        </ul>
+
+                        <h4>Account Management</h4>
+                        <ul class="parameter-list">
+                            <li>Audit Application Group Management</li>
+                            <li>Audit Computer Account Management</li>
+                            <li>Audit Distribution Group Management</li>
+                            <li>Audit Other Account Management Events</li>
+                            <li>Audit Security Group Management</li>
+                            <li>Audit User Account Management</li>
+                        </ul>
+                    </div>
+
+                    <!-- Microsoft Defender Application Guard -->
+                    <div class="parameter-category">
+                        <h3><i class="fas fa-shield-virus"></i> Microsoft Defender Application Guard</h3>
+                        <ul class="parameter-list">
+                            <li>Turn on Microsoft Defender Application Guard</li>
+                            <li>Allow data persistence</li>
+                            <li>Configure network isolation level</li>
+                            <li>Allow camera and microphone access</li>
+                            <li>Allow printing</li>
+                            <li>Allow clipboard operations</li>
+                            <li>Allow hardware-accelerated rendering</li>
+                            <li>Configure allowed networks</li>
+                            <li>Configure proxy settings</li>
+                            <li>Block host networking</li>
+                            <li>Configure download folder</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Linux Content -->
+            <div class="docs-content linux-content" style="display: none;">
+                <!-- Linux Parameters Overview Section -->
+                <section id="linux-parameters-overview" class="docs-section">
+                    <h1>Linux Security Parameters</h1>
+                    <p class="lead">Complete reference for all 89 Linux security parameters covered by HardenSys.</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Note:</strong> All parameters are based on CIS benchmarks and security best practices for Linux systems.
+                    </div>
+
+                    <h2>Overview</h2>
+                    <p>HardenSys covers 89 security parameters across 6 main categories, providing comprehensive coverage of Linux security hardening requirements. Each parameter includes detailed configuration instructions and compliance checking.</p>
+
+                    <h3>Parameter Structure</h3>
+                    <p>Each Linux security parameter includes:</p>
+                    <ul>
+                        <li><strong>Title:</strong> Descriptive name of the security setting</li>
+                        <li><strong>Details:</strong> Detailed description and recommended configuration</li>
+                        <li><strong>Script Key:</strong> Internal function identifier for automation</li>
+                        <li><strong>Category:</strong> Security category classification</li>
+                        <li><strong>Subcategory:</strong> Specific subcategory within the main category</li>
+                    </ul>
+                    
+                    <h3><i class="fab fa-linux"></i> Linux-Specific Parameters</h3>
+                    <p>Linux systems include additional security parameters such as:</p>
+                    <ul>
+                        <li>Kernel parameter configurations</li>
+                        <li>Systemd service hardening</li>
+                        <li>File system permissions</li>
+                        <li>Network security configurations</li>
+                        <li>SSH configuration hardening</li>
+                        <li>PAM authentication security</li>
+                    </ul>
+                </section>
+
+                <!-- Linux Categories Section -->
+                <section id="linux-parameters-categories" class="docs-section">
+                    <h2>Linux Security Categories</h2>
+                    
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-hdd"></i>
+                            </div>
+                            <h3>Filesystem Configuration</h3>
+                            <p>16 parameters covering kernel modules and partition settings.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>Filesystem Kernel Modules (9 parameters)</li>
+                                    <li>Filesystem Partitions (7 parameters)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <h3>Package Management</h3>
+                            <p>7 parameters covering bootloader and process hardening.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>Bootloader Configuration (2 parameters)</li>
+                                    <li>Process Hardening (5 parameters)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Services Configuration</h3>
+                            <p>21 parameters covering server and client service management.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>Server Services (12 parameters)</li>
+                                    <li>Client Services (6 parameters)</li>
+                                    <li>Time Synchronization (3 parameters)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3>Network Configuration</h3>
+                            <p>12 parameters covering network parameters and firewall settings.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>Network Parameters (7 parameters)</li>
+                                    <li>Firewall Configuration (5 parameters)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <h3>Access Control</h3>
+                            <p>21 parameters covering SSH, PAM, and user account controls.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>SSH Configuration (6 parameters)</li>
+                                    <li>PAM Configuration (5 parameters)</li>
+                                    <li>User Account Controls (5 parameters)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>System Hardening</h3>
+                            <p>12 parameters covering additional system security measures.</p>
+                            <div class="category-details">
+                                <h4>Subcategories:</h4>
+                                <ul>
+                                    <li>System Hardening (12 parameters)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Linux Complete Parameter List Section -->
+                <section id="linux-complete-parameter-list" class="docs-section">
+                    <h2>Complete Linux Parameter List</h2>
+                    <p>Below is the comprehensive list of all 89 Linux security parameters organized by category.</p>
+
+                    <!-- Filesystem Configuration -->
+                    <div class="parameter-category">
+                        <h3><i class="fas fa-hdd"></i> Filesystem Configuration</h3>
+                        
+                        <h4>Filesystem Kernel Modules</h4>
+                        <ul class="parameter-list">
+                            <li>Ensure cramfs kernel module is not available</li>
+                            <li>Ensure freevxfs kernel module is not available</li>
+                            <li>Ensure hfs kernel module is not available</li>
+                            <li>Ensure hfsplus kernel module is not available</li>
+                            <li>Ensure jffs2 kernel module is not available</li>
+                            <li>Ensure overlayfs kernel module is not available</li>
+                            <li>Ensure squashfs kernel module is not available</li>
+                            <li>Ensure udf kernel module is not available</li>
+                            <li>Ensure usb-storage kernel module is not available</li>
+                        </ul>
+
+                        <h4>Filesystem Partitions</h4>
+                        <ul class="parameter-list">
+                            <li>Configure /tmp partition</li>
+                            <li>Configure /dev/shm partition</li>
+                            <li>Configure /home partition</li>
+                            <li>Configure /var partition</li>
+                            <li>Configure /var/tmp partition</li>
+                            <li>Configure /var/log partition</li>
+                            <li>Configure /var/log/audit partition</li>
+                        </ul>
+                    </div>
+
+                    <!-- Package Management -->
+                    <div class="parameter-category">
+                        <h3><i class="fas fa-box"></i> Package Management</h3>
+                        
+                        <h4>Bootloader Configuration</h4>
+                        <ul class="parameter-list">
+                            <li>Ensure bootloader password is set</li>
+                            <li>Ensure access to bootloader config is configured</li>
+                        </ul>
+
+                        <h4>Process Hardening</h4>
+                        <ul class="parameter-list">
+                            <li>Ensure address space layout randomization is enabled</li>
+                            <li>Ensure ptrace_scope is restricted</li>
+                            <li>Ensure core dumps are restricted</li>
+                            <li>Ensure prelink is not installed</li>
+                            <li>Ensure Automatic Error Reporting is not enabled</li>
+                        </ul>
+                    </div>
+
+                    <!-- Services Configuration -->
+                    <div class="parameter-category">
+                        <h3><i class="fas fa-server"></i> Services Configuration</h3>
+                        
+                        <h4>Server Services</h4>
+                        <ul class="parameter-list">
+                            <li>Ensure autofs services are not in use</li>
+                            <li>Ensure avahi daemon services are not in use</li>
+                            <li>Ensure dhcp server services are not in use</li>
+                            <li>Ensure dns server services are not in use</li>
+                            <li>Ensure ftp server services are not in use</li>
+                            <li>Ensure ldap server services are not in use</li>
+                            <li>Ensure message access server services are not in use</li>
+                            <li>Ensure network file system services are not in use</li>
+                            <li>Ensure nis server services are not in use</li>
+                            <li>Ensure print server services are not in use</li>
+                            <li>Ensure web server services are not in use</li>
+                            <li>Ensure X window server services are not in use</li>
+                        </ul>
+
+                        <h4>Client Services</h4>
+                        <ul class="parameter-list">
+                            <li>Ensure NIS Client is not installed</li>
+                            <li>Ensure rsh client is not installed</li>
+                            <li>Ensure talk client is not installed</li>
+                            <li>Ensure telnet client is not installed</li>
+                            <li>Ensure ldap client is not installed</li>
+                            <li>Ensure ftp client is not installed</li>
+                        </ul>
+
+                        <h4>Time Synchronization</h4>
+                        <ul class="parameter-list">
+                            <li>Ensure time synchronization is in use</li>
+                            <li>Ensure systemd-timesyncd is configured with authorized timeserver</li>
+                            <li>Ensure chrony is configured with authorized timeserver</li>
+                        </ul>
+                    </div>
+
+                    <!-- Network Configuration -->
+                    <div class="parameter-category">
+                        <h3><i class="fas fa-network-wired"></i> Network Configuration</h3>
+                        
+                        <h4>Network Parameters</h4>
+                        <ul class="parameter-list">
+                            <li>Ensure IPv6 status is identified</li>
+                            <li>Ensure wireless interfaces are disabled</li>
+                            <li>Ensure bluetooth services are not in use</li>
+                            <li>Ensure ip forwarding is disabled</li>
+                            <li>Ensure packet redirect sending is disabled</li>
+                            <li>Ensure source routed packets are not accepted</li>
+                            <li>Ensure tcp syn cookies is enabled</li>
+                        </ul>
+
+                        <h4>Firewall Configuration</h4>
+                        <ul class="parameter-list">
+                            <li>Ensure ufw is installed</li>
+                            <li>Ensure ufw service is enabled</li>
+                            <li>Ensure ufw loopback traffic is configured</li>
+                            <li>Ensure ufw default deny firewall policy</li>
+                            <li>Ensure ufw firewall rules exist for all open ports</li>
+                        </ul>
+                    </div>
+
+                    <!-- Access Control -->
+                    <div class="parameter-category">
+                        <h3><i class="fas fa-lock"></i> Access Control</h3>
+                        
+                        <h4>SSH Configuration</h4>
+                        <ul class="parameter-list">
+                            <li>Ensure permissions on /etc/ssh/sshd_config are configured</li>
+                            <li>Ensure SSH private/public host key files permissions are configured</li>
+                            <li>Ensure sshd Ciphers are configured securely</li>
+                            <li>Ensure sshd PermitRootLogin is disabled</li>
+                            <li>Ensure sshd MaxAuthTries is configured</li>
+                            <li>Ensure sshd PermitEmptyPasswords is disabled</li>
+                        </ul>
+
+                        <h4>PAM Configuration</h4>
+                        <ul class="parameter-list">
+                            <li>Ensure password quality requirements are configured</li>
+                            <li>Ensure password hashing algorithm is SHA-512</li>
+                            <li>Ensure password reuse is limited</li>
+                            <li>Ensure password expiration is configured</li>
+                            <li>Ensure failed password attempts are logged</li>
+                        </ul>
+
+                        <h4>User Account Controls</h4>
+                        <ul class="parameter-list">
+                            <li>Ensure root is the only UID 0 account</li>
+                            <li>Ensure system accounts are non-login</li>
+                            <li>Ensure default user shell timeout is configured</li>
+                            <li>Ensure default user umask is configured</li>
+                            <li>Ensure sudo is configured properly</li>
+                        </ul>
+                    </div>
+                </section>
             </div>
         </main>
     </div>
 
     <script src="js/docs.js"></script>
+    <script src="js/header.js"></script>
     <script src="js/parameters.js"></script>
 </body>
 </html>
+
+

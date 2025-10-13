@@ -3,26 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLI Interface - HardenSys Documentation</title>
+    <title>Command Line Interface - HardenSys Documentation</title>
+    <meta name="description" content="Complete guide to using HardenSys command line interface for system hardening and security configuration">
+    <meta name="keywords" content="HardenSys CLI, command line interface, system hardening, security tools, command line configuration">
     <link rel="stylesheet" href="css/docs.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../Assets/Images/logo.svg">
+    <link rel="icon" type="image/png" href="../Assets/Images/favicon.png">
 </head>
 <body>
+    <!-- Header with Search Bar -->
+    <header class="docs-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="images/app_logo_black.png" alt="HardenSys" class="header-logo-icon">
+                <span class="header-title">HardenSys Docs</span>
+                <div class="vertical-separator"></div>
+            </div>
+            <div class="header-os-selector">
+                <div class="os-dropdown">
+                    <span class="os-label">OS:</span>
+                    <div class="os-dropdown-toggle">
+                        <span class="os-current">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="os-dropdown-menu">
+                        <div class="os-option active" data-os="windows">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </div>
+                        <div class="os-option" data-os="linux">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="header-search" placeholder="Search documentation..." />
+                    <button class="search-clear" id="header-search-clear" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
     <div class="docs-container">
         <!-- Sidebar Navigation -->
-        <nav class="docs-sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <img src="../images/app_logo.png" alt="HardenSys" class="logo-icon">
-                    <span>HardenSys</span>
-                </div>
-                <div class="version">v1.0.0</div>
+        <nav class="docs-sidebar" id="docs-sidebar">
+            <div class="sidebar-home">
+                <a href="../index.html" class="home-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Home</span>
+                </a>
             </div>
             
             <div class="sidebar-content">
                 <div class="nav-section">
-                    <div class="nav-title">Getting Started</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Getting Started</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="index.html#introduction" class="nav-link">Introduction</a></li>
                         <li><a href="index.html#installation" class="nav-link">Installation</a></li>
@@ -32,7 +86,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">CLI Interface</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">CLI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="#cli-overview" class="nav-link active">Overview</a></li>
                         <li><a href="#cli-basic-usage" class="nav-link">Basic Usage</a></li>
@@ -44,7 +101,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">GUI Interface</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">GUI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="gui.html#gui-overview" class="nav-link">Overview</a></li>
                         <li><a href="gui.html#gui-navigation" class="nav-link">Navigation</a></li>
@@ -55,7 +115,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Security Parameters</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Security Parameters</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="parameters.html#parameters-overview" class="nav-link">Overview</a></li>
                         <li><a href="parameters.html#parameters-categories" class="nav-link">Categories</a></li>
@@ -65,7 +128,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Advanced Topics</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Advanced Topics</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="advanced.html#advanced-integration" class="nav-link">Integration</a></li>
                         <li><a href="advanced.html#advanced-automation" class="nav-link">Automation</a></li>
@@ -75,7 +141,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Reference</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Reference</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="reference.html#reference-cli-options" class="nav-link">CLI Options</a></li>
                         <li><a href="reference.html#reference-error-codes" class="nav-link">Error Codes</a></li>
@@ -83,12 +152,94 @@
                         <li><a href="reference.html#reference-changelog" class="nav-link">Changelog</a></li>
                     </ul>
                 </div>
+
+                <!-- Linux Sidebar Sections -->
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Getting Started</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/index.html#linux-introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="../docs/index.html#linux-installation" class="nav-link">Installation</a></li>
+                        <li><a href="../docs/index.html#linux-quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="../docs/index.html#linux-requirements" class="nav-link">Requirements</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux CLI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="#linux-cli-overview" class="nav-link active">Overview</a></li>
+                        <li><a href="#linux-cli-basic-usage" class="nav-link">Basic Usage</a></li>
+                        <li><a href="#linux-cli-filtering" class="nav-link">Filtering Options</a></li>
+                        <li><a href="#linux-cli-reports" class="nav-link">Report Generation</a></li>
+                        <li><a href="#linux-cli-examples" class="nav-link">Examples</a></li>
+                        <li><a href="#linux-cli-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux GUI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/gui.html#linux-gui-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-navigation" class="nav-link">Navigation</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-running-checks" class="nav-link">Running Checks</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-reports" class="nav-link">Reports</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-settings" class="nav-link">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Security Parameters</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/parameters.html#linux-parameters-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/parameters.html#linux-parameters-categories" class="nav-link">Categories</a></li>
+                        <li><a href="../docs/parameters.html#linux-complete-parameter-list" class="nav-link">Complete Parameter List</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Advanced Topics</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/advanced.html#linux-advanced-integration" class="nav-link">Integration</a></li>
+                        <li><a href="../docs/advanced.html#linux-advanced-automation" class="nav-link">Automation</a></li>
+                        <li><a href="../docs/advanced.html#linux-advanced-backup" class="nav-link">Backup & Restore</a></li>
+                        <li><a href="../docs/advanced.html#linux-advanced-best-practices" class="nav-link">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Reference</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/reference.html#linux-reference-cli-options" class="nav-link">CLI Options</a></li>
+                        <li><a href="../docs/reference.html#linux-reference-error-codes" class="nav-link">Error Codes</a></li>
+                        <li><a href="../docs/reference.html#linux-reference-faq" class="nav-link">FAQ</a></li>
+                        <li><a href="../docs/reference.html#linux-reference-changelog" class="nav-link">Changelog</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
         <!-- Main Content -->
         <main class="docs-main">
-            <div class="docs-content">
+            <!-- Windows Content -->
+            <div class="docs-content windows-content">
                 <!-- CLI Overview Section -->
                 <section id="cli-overview" class="docs-section">
                     <h1>Command Line Interface (CLI)</h1>
@@ -96,7 +247,7 @@
                     
                     <div class="alert alert-info">
                         <i class="fas fa-info-circle"></i>
-                        <strong>Note:</strong> The CLI tool requires Administrator privileges for full functionality. Some checks may fail without proper permissions.
+                        <strong class="alert-info-text">Note:</strong> The CLI tool requires Administrator privileges for full functionality. Some checks may fail without proper permissions.
                     </div>
 
                     <h2>Overview</h2>
@@ -119,14 +270,32 @@
                     
                     <h3>Running All Checks</h3>
                     <p>The simplest way to use the CLI is to run all compliance checks:</p>
-                    <div class="code-block">
-                        <div class="code-header">
-                            <span>Command Line</span>
-                            <button class="copy-btn" onclick="copyCode(this)">
-                                <i class="fas fa-copy"></i>
-                            </button>
+                    
+                    <!-- OS-specific command examples -->
+                    <div class="windows-only">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Windows Command Prompt</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code>python HardenSys.py</code></pre>
                         </div>
-                        <pre><code>python HardenSys.py</code></pre>
+                        <p class="windows-specific">On Windows, you can also run: <code>py HardenSys.py</code></p>
+                    </div>
+                    
+                    <div class="linux-only">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Linux Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code>python3 HardenSys.py</code></pre>
+                        </div>
+                        <p class="linux-specific">On Linux, you may need to use: <code>python3</code> instead of <code>python</code></p>
                     </div>
 
                     <h3>Getting Help</h3>
@@ -474,9 +643,287 @@ Account Policies
                     </ul>
                 </section>
             </div>
+
+            <!-- Linux Content -->
+            <div class="docs-content linux-content" style="display: none;">
+                <!-- Linux CLI Overview Section -->
+                <section id="linux-cli-overview" class="docs-section">
+                    <h1>Command Line Interface (CLI)</h1>
+                    <p class="lead">Complete documentation for using the HardenSys CLI tool for Linux automation and scripting.</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Linux CLI:</strong> The command-line interface provides powerful automation capabilities for Linux system hardening.
+                    </div>
+
+                    <h2>Overview</h2>
+                    <p>The HardenSys CLI is designed for Linux environments and provides comprehensive security configuration management through command-line operations. It supports batch processing, scripting integration, and automated compliance checking.</p>
+
+                    <h3>Linux-Specific Features</h3>
+                    <ul>
+                        <li>Kernel parameter configuration</li>
+                        <li>Systemd service management</li>
+                        <li>File system permission hardening</li>
+                        <li>Network security configuration</li>
+                        <li>SSH configuration management</li>
+                        <li>PAM authentication security</li>
+                    </ul>
+                </section>
+
+                <!-- Linux Basic Usage Section -->
+                <section id="linux-cli-basic-usage" class="docs-section">
+                    <h2>Basic Usage</h2>
+                    
+                    <h3>Running All Checks</h3>
+                    <p>The simplest way to use the CLI is to run all compliance checks:</p>
+                    
+                    <!-- Linux-specific command examples -->
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python3 HardenSys.py</code></pre>
+                    </div>
+                    <p class="linux-specific">On Linux, you may need to use: <code>python3</code> instead of <code>python</code></p>
+
+                    <h3>Getting Help</h3>
+                    <p>View all available options and examples:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python3 HardenSys.py --help</code></pre>
+                    </div>
+
+                    <h3>Listing Available Categories</h3>
+                    <p>See all available security categories and their parameter counts:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python3 HardenSys.py --list</code></pre>
+                    </div>
+                </section>
+
+                <!-- Linux Filtering Options Section -->
+                <section id="linux-cli-filtering" class="docs-section">
+                    <h2>Filtering Options</h2>
+                    
+                    <h3>By Category</h3>
+                    <p>Run checks for specific security categories:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python3 HardenSys.py --heading "Filesystem Configuration"</code></pre>
+                    </div>
+
+                    <h3>By Specific Parameter</h3>
+                    <p>Check individual security parameters:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python3 HardenSys.py --info "SSH configuration"</code></pre>
+                    </div>
+
+                    <h3>Linux-Specific Categories</h3>
+                    <ul>
+                        <li><strong>Filesystem Configuration:</strong> Kernel modules and partition settings</li>
+                        <li><strong>Package Management:</strong> Bootloader and process hardening</li>
+                        <li><strong>Services Configuration:</strong> Server and client service management</li>
+                        <li><strong>Network Configuration:</strong> Network parameters and firewall settings</li>
+                        <li><strong>Access Control:</strong> SSH, PAM, and user account controls</li>
+                    </ul>
+                </section>
+
+                <!-- Linux Report Generation Section -->
+                <section id="linux-cli-reports" class="docs-section">
+                    <h2>Report Generation</h2>
+                    
+                    <h3>HTML Reports</h3>
+                    <p>Generate comprehensive HTML compliance reports:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python3 HardenSys.py --output linux_compliance_report.html</code></pre>
+                    </div>
+
+                    <h3>PDF Reports</h3>
+                    <p>Generate PDF reports for documentation:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python3 HardenSys.py --output linux_report.pdf --format pdf</code></pre>
+                    </div>
+
+                    <h3>Custom Report Paths</h3>
+                    <p>Specify custom output locations:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python3 HardenSys.py --output /var/log/hardensys/compliance_report.html</code></pre>
+                    </div>
+                </section>
+
+                <!-- Linux Examples Section -->
+                <section id="linux-cli-examples" class="docs-section">
+                    <h2>Linux Examples</h2>
+                    
+                    <h3>Basic Security Check</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Run all Linux security checks
+python3 HardenSys.py
+
+# Generate report
+python3 HardenSys.py --output linux_security_report.html</code></pre>
+                    </div>
+
+                    <h3>Filesystem Hardening</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Check filesystem configuration
+python3 HardenSys.py --heading "Filesystem Configuration"
+
+# Check specific kernel modules
+python3 HardenSys.py --info "kernel module"</code></pre>
+                    </div>
+
+                    <h3>Network Security</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Check network configuration
+python3 HardenSys.py --heading "Network Configuration"
+
+# Check firewall settings
+python3 HardenSys.py --info "firewall"</code></pre>
+                    </div>
+
+                    <h3>SSH Configuration</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Check SSH configuration
+python3 HardenSys.py --heading "Access Control"
+
+# Check specific SSH settings
+python3 HardenSys.py --info "SSH"</code></pre>
+                    </div>
+                </section>
+
+                <!-- Linux Troubleshooting Section -->
+                <section id="linux-cli-troubleshooting" class="docs-section">
+                    <h2>Troubleshooting</h2>
+                    
+                    <h3>Common Linux Issues</h3>
+                    
+                    <h4>Permission Denied</h4>
+                    <p>If you encounter permission errors:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Run with sudo privileges
+sudo python3 HardenSys.py
+
+# Check file permissions
+ls -la HardenSys.py</code></pre>
+                    </div>
+
+                    <h4>Python3 Not Found</h4>
+                    <p>If python3 command is not found:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Install Python3 (Ubuntu/Debian)
+sudo apt update && sudo apt install python3 python3-pip
+
+# Install Python3 (CentOS/RHEL)
+sudo yum install python3 python3-pip</code></pre>
+                    </div>
+
+                    <h4>Module Import Errors</h4>
+                    <p>If you encounter import errors:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Install required packages
+pip3 install -r requirements.txt
+
+# Check Python path
+which python3</code></pre>
+                    </div>
+
+                    <h3>Getting Help</h3>
+                    <ul>
+                        <li>Check the <a href="reference.html#reference-error-codes">Error Codes reference</a></li>
+                        <li>Review Linux-specific documentation</li>
+                        <li>Open an issue on <a href="https://github.com/AjeyVerma/HardenSys">GitHub</a></li>
+                    </ul>
+                </section>
+            </div>
         </main>
     </div>
 
     <script src="js/docs.js"></script>
+    <script src="js/header.js"></script>
 </body>
 </html>

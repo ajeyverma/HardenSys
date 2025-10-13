@@ -3,26 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUI Interface - HardenSys Documentation</title>
+    <title>Graphical User Interface - HardenSys Documentation</title>
+    <meta name="description" content="User guide for HardenSys GUI application, including features, navigation, and system hardening operations">
+    <meta name="keywords" content="HardenSys GUI, graphical interface, system hardening, security configuration, user interface">
     <link rel="stylesheet" href="css/docs.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../Assets/Images/logo.svg">
+    <link rel="icon" type="image/png" href="../Assets/Images/favicon.png">
 </head>
 <body>
+    <!-- Header with Search Bar -->
+    <header class="docs-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="images/app_logo_black.png" alt="HardenSys" class="header-logo-icon">
+                <span class="header-title">HardenSys Docs</span>
+                <div class="vertical-separator"></div>
+            </div>
+            <div class="header-os-selector">
+                <div class="os-dropdown">
+                    <span class="os-label">OS:</span>
+                    <div class="os-dropdown-toggle">
+                        <span class="os-current">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="os-dropdown-menu">
+                        <div class="os-option active" data-os="windows">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </div>
+                        <div class="os-option" data-os="linux">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="header-search" placeholder="Search documentation..." />
+                    <button class="search-clear" id="header-search-clear" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
     <div class="docs-container">
         <!-- Sidebar Navigation -->
-        <nav class="docs-sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <img src="../images/app_logo.png" alt="HardenSys" class="logo-icon">
-                    <span>HardenSys</span>
-                </div>
-                <div class="version">v1.0.0</div>
+        <nav class="docs-sidebar" id="docs-sidebar">
+            <div class="sidebar-home">
+                <a href="../index.html" class="home-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Home</span>
+                </a>
             </div>
             
             <div class="sidebar-content">
                 <div class="nav-section">
-                    <div class="nav-title">Getting Started</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Getting Started</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="index.html#introduction" class="nav-link">Introduction</a></li>
                         <li><a href="index.html#installation" class="nav-link">Installation</a></li>
@@ -32,7 +86,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">CLI Interface</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">CLI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="cli.html#cli-overview" class="nav-link">Overview</a></li>
                         <li><a href="cli.html#cli-basic-usage" class="nav-link">Basic Usage</a></li>
@@ -44,7 +101,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">GUI Interface</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">GUI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="#gui-overview" class="nav-link active">Overview</a></li>
                         <li><a href="#gui-navigation" class="nav-link">Navigation</a></li>
@@ -55,7 +115,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Security Parameters</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Security Parameters</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="parameters.html#parameters-overview" class="nav-link">Overview</a></li>
                         <li><a href="parameters.html#parameters-categories" class="nav-link">Categories</a></li>
@@ -65,7 +128,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Advanced Topics</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Advanced Topics</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="advanced.html#advanced-integration" class="nav-link">Integration</a></li>
                         <li><a href="advanced.html#advanced-automation" class="nav-link">Automation</a></li>
@@ -75,7 +141,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Reference</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Reference</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="reference.html#reference-cli-options" class="nav-link">CLI Options</a></li>
                         <li><a href="reference.html#reference-error-codes" class="nav-link">Error Codes</a></li>
@@ -83,12 +152,94 @@
                         <li><a href="reference.html#reference-changelog" class="nav-link">Changelog</a></li>
                     </ul>
                 </div>
+
+                <!-- Linux Sidebar Sections -->
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Getting Started</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/index.html#linux-introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="../docs/index.html#linux-installation" class="nav-link">Installation</a></li>
+                        <li><a href="../docs/index.html#linux-quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="../docs/index.html#linux-requirements" class="nav-link">Requirements</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux CLI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/cli.html#linux-cli-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-basic-usage" class="nav-link">Basic Usage</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-filtering" class="nav-link">Filtering Options</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-reports" class="nav-link">Report Generation</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-examples" class="nav-link">Examples</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux GUI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="#linux-gui-overview" class="nav-link active">Overview</a></li>
+                        <li><a href="#linux-gui-navigation" class="nav-link">Navigation</a></li>
+                        <li><a href="#linux-gui-running-checks" class="nav-link">Running Checks</a></li>
+                        <li><a href="#linux-gui-reports" class="nav-link">Reports</a></li>
+                        <li><a href="#linux-gui-settings" class="nav-link">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Security Parameters</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/parameters.html#linux-parameters-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/parameters.html#linux-parameters-categories" class="nav-link">Categories</a></li>
+                        <li><a href="../docs/parameters.html#linux-complete-parameter-list" class="nav-link">Complete Parameter List</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Advanced Topics</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/advanced.html#linux-advanced-integration" class="nav-link">Integration</a></li>
+                        <li><a href="../docs/advanced.html#linux-advanced-automation" class="nav-link">Automation</a></li>
+                        <li><a href="../docs/advanced.html#linux-advanced-backup" class="nav-link">Backup & Restore</a></li>
+                        <li><a href="../docs/advanced.html#linux-advanced-best-practices" class="nav-link">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Reference</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/reference.html#linux-reference-cli-options" class="nav-link">CLI Options</a></li>
+                        <li><a href="../docs/reference.html#linux-reference-error-codes" class="nav-link">Error Codes</a></li>
+                        <li><a href="../docs/reference.html#linux-reference-faq" class="nav-link">FAQ</a></li>
+                        <li><a href="../docs/reference.html#linux-reference-changelog" class="nav-link">Changelog</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
         <!-- Main Content -->
         <main class="docs-main">
-            <div class="docs-content">
+            <!-- Windows Content -->
+            <div class="docs-content windows-content">
                 <!-- GUI Overview Section -->
                 <section id="gui-overview" class="docs-section">
                     <h1>Graphical User Interface (GUI)</h1>
@@ -96,7 +247,7 @@
                     
                     <div class="alert alert-info">
                         <i class="fas fa-info-circle"></i>
-                        <strong>Note:</strong> The GUI provides an intuitive interface for users who prefer visual interaction over command-line operations.
+                        <strong class="alert-info-text">Note:</strong> The GUI provides an intuitive interface for users who prefer visual interaction over command-line operations.
                     </div>
 
                     <h2>Overview</h2>
@@ -573,9 +724,239 @@
                     </ul>
                 </section>
             </div>
+
+            <!-- Linux Content -->
+            <div class="docs-content linux-content" style="display: none;">
+                <!-- Linux GUI Overview Section -->
+                <section id="linux-gui-overview" class="docs-section">
+                    <h1>Graphical User Interface (GUI)</h1>
+                    <p class="lead">Complete documentation for using the HardenSys GUI tool for Linux interactive security management.</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Linux GUI:</strong> The graphical interface provides an intuitive way to manage Linux security configurations.
+                    </div>
+
+                    <h2>Overview</h2>
+                    <p>The HardenSys GUI is designed for Linux environments and provides a user-friendly interface for managing security configurations. It offers visual feedback, easy navigation, and comprehensive reporting capabilities.</p>
+
+                    <h3>Linux-Specific Features</h3>
+                    <ul>
+                        <li>Kernel parameter management interface</li>
+                        <li>Systemd service configuration</li>
+                        <li>File system permission management</li>
+                        <li>Network security configuration</li>
+                        <li>SSH configuration interface</li>
+                        <li>PAM authentication management</li>
+                    </ul>
+                </section>
+
+                <!-- Linux Navigation Section -->
+                <section id="linux-gui-navigation" class="docs-section">
+                    <h2>Navigation</h2>
+                    
+                    <h3>Main Interface</h3>
+                    <p>The Linux GUI interface includes:</p>
+                    <ul>
+                        <li><strong>Category Selection:</strong> Choose from Linux-specific security categories</li>
+                        <li><strong>Parameter List:</strong> View all parameters for the selected category</li>
+                        <li><strong>Status Indicators:</strong> Visual feedback on compliance status</li>
+                        <li><strong>Action Buttons:</strong> Run checks, apply fixes, generate reports</li>
+                    </ul>
+
+                    <h3>Linux Categories</h3>
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-hdd"></i>
+                            </div>
+                            <h4>Filesystem Configuration</h4>
+                            <p>Kernel modules and partition settings</p>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <h4>Package Management</h4>
+                            <p>Bootloader and process hardening</p>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h4>Services Configuration</h4>
+                            <p>Server and client service management</p>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h4>Network Configuration</h4>
+                            <p>Network parameters and firewall settings</p>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <h4>Access Control</h4>
+                            <p>SSH, PAM, and user account controls</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Linux Running Checks Section -->
+                <section id="linux-gui-running-checks" class="docs-section">
+                    <h2>Running Checks</h2>
+                    
+                    <h3>Starting the GUI</h3>
+                    <p>Launch the HardenSys GUI on Linux:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>python3 HardenSys_gui.py</code></pre>
+                    </div>
+
+                    <h3>Running Security Checks</h3>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Select Category</h4>
+                                <p>Choose a Linux security category from the dropdown menu</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Review Parameters</h4>
+                                <p>Examine the list of security parameters for the selected category</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Run Checks</h4>
+                                <p>Click "Run Checks" to start the compliance verification</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Review Results</h4>
+                                <p>Examine the compliance status and recommended actions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Linux-Specific Checks</h3>
+                    <ul>
+                        <li><strong>Kernel Module Verification:</strong> Check for disabled kernel modules</li>
+                        <li><strong>File System Permissions:</strong> Verify partition and file permissions</li>
+                        <li><strong>Service Status:</strong> Check systemd service configurations</li>
+                        <li><strong>Network Security:</strong> Verify firewall and network settings</li>
+                        <li><strong>SSH Configuration:</strong> Check SSH security settings</li>
+                        <li><strong>PAM Settings:</strong> Verify authentication configurations</li>
+                    </ul>
+                </section>
+
+                <!-- Linux Reports Section -->
+                <section id="linux-gui-reports" class="docs-section">
+                    <h2>Reports</h2>
+                    
+                    <h3>Generating Reports</h3>
+                    <p>Generate comprehensive compliance reports for Linux systems:</p>
+                    
+                    <h4>HTML Reports</h4>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Generate HTML report
+python3 HardenSys_gui.py --report html --output linux_compliance.html</code></pre>
+                    </div>
+
+                    <h4>PDF Reports</h4>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Linux Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Generate PDF report
+python3 HardenSys_gui.py --report pdf --output linux_compliance.pdf</code></pre>
+                    </div>
+
+                    <h3>Report Contents</h3>
+                    <ul>
+                        <li><strong>Executive Summary:</strong> Overall compliance status</li>
+                        <li><strong>Category Breakdown:</strong> Detailed results by security category</li>
+                        <li><strong>Parameter Details:</strong> Individual parameter compliance status</li>
+                        <li><strong>Recommendations:</strong> Suggested remediation actions</li>
+                        <li><strong>System Information:</strong> Linux distribution and version details</li>
+                    </ul>
+                </section>
+
+                <!-- Linux Settings Section -->
+                <section id="linux-gui-settings" class="docs-section">
+                    <h2>Settings</h2>
+                    
+                    <h3>Configuration Options</h3>
+                    <p>Customize the GUI behavior for Linux environments:</p>
+                    
+                    <h4>Display Settings</h4>
+                    <ul>
+                        <li><strong>Theme:</strong> Choose between light and dark themes</li>
+                        <li><strong>Font Size:</strong> Adjust text size for better readability</li>
+                        <li><strong>Language:</strong> Select interface language</li>
+                    </ul>
+
+                    <h4>Security Settings</h4>
+                    <ul>
+                        <li><strong>Auto-backup:</strong> Automatically backup configurations before changes</li>
+                        <li><strong>Confirmation Prompts:</strong> Require confirmation for critical operations</li>
+                        <li><strong>Logging Level:</strong> Set verbosity of operation logs</li>
+                    </ul>
+
+                    <h4>Linux-Specific Settings</h4>
+                    <ul>
+                        <li><strong>Default Editor:</strong> Choose text editor for configuration files</li>
+                        <li><strong>Terminal Emulator:</strong> Select preferred terminal application</li>
+                        <li><strong>Package Manager:</strong> Specify package manager (apt, yum, dnf)</li>
+                    </ul>
+
+                    <h3>Keyboard Shortcuts</h3>
+                    <div class="shortcuts-grid">
+                        <div class="shortcut-item">
+                            <kbd>Ctrl</kbd> + <kbd>R</kbd>
+                            <span>Run security checks</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Ctrl</kbd> + <kbd>G</kbd>
+                            <span>Generate report</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Ctrl</kbd> + <kbd>S</kbd>
+                            <span>Save configuration</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Ctrl</kbd> + <kbd>Q</kbd>
+                            <span>Quit application</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
 
     <script src="js/docs.js"></script>
+    <script src="js/header.js"></script>
 </body>
 </html>

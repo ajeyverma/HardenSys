@@ -1426,7 +1426,7 @@ class LoggingReportingTab(QWidget):
 </head>
 <body>
   <div class="container">
-    <h1>HardenSys Compliance Report</h1>
+    <h1><img src="../docs/app_logo.png" alt="HardenSys" class="app_logo">HardenSys Compliance Report</h1>
     <p><strong>Generated:</strong> {time.strftime('%Y-%m-%d %H:%M:%S')}</p>
     
     <div class="summary">
@@ -1601,7 +1601,7 @@ class MainWindow(QMainWindow):
         self.resize(1000, 700)
         
         # Set window icon
-        icon_path = "website/images/app_logo.png"
+        icon_path = "docs/app_logo.png"
         if os.path.exists(icon_path):
             self.setWindowIcon(QIcon(icon_path))
         main = QWidget()

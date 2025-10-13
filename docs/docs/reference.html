@@ -4,25 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reference - HardenSys Documentation</title>
+    <meta name="description" content="Technical reference guide for HardenSys including CLI options, error codes, FAQ, and changelog">
+    <meta name="keywords" content="HardenSys reference, command line options, error codes, FAQ, changelog, technical documentation">
     <link rel="stylesheet" href="css/docs.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../Assets/Images/logo.svg">
+    <link rel="icon" type="image/png" href="../Assets/Images/favicon.png">
 </head>
 <body>
+    <!-- Header with Search Bar -->
+    <header class="docs-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="images/app_logo_black.png" alt="HardenSys" class="header-logo-icon">
+                <span class="header-title">HardenSys Docs</span>
+                <div class="vertical-separator"></div>
+            </div>
+            <div class="header-os-selector">
+                <div class="os-dropdown">
+                    <span class="os-label">OS:</span>
+                    <div class="os-dropdown-toggle">
+                        <span class="os-current">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="os-dropdown-menu">
+                        <div class="os-option active" data-os="windows">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </div>
+                        <div class="os-option" data-os="linux">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="header-search" placeholder="Search documentation..." />
+                    <button class="search-clear" id="header-search-clear" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
     <div class="docs-container">
         <!-- Sidebar Navigation -->
-        <nav class="docs-sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <img src="../images/app_logo.png" alt="HardenSys" class="logo-icon">
-                    <span>HardenSys</span>
-                </div>
-                <div class="version">v1.0.0</div>
+        <nav class="docs-sidebar" id="docs-sidebar">
+            <div class="sidebar-home">
+                <a href="../index.html" class="home-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Home</span>
+                </a>
             </div>
             
             <div class="sidebar-content">
                 <div class="nav-section">
-                    <div class="nav-title">Getting Started</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Getting Started</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="index.html#introduction" class="nav-link">Introduction</a></li>
                         <li><a href="index.html#installation" class="nav-link">Installation</a></li>
@@ -32,7 +86,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">CLI Interface</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">CLI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="cli.html#cli-overview" class="nav-link">Overview</a></li>
                         <li><a href="cli.html#cli-basic-usage" class="nav-link">Basic Usage</a></li>
@@ -44,7 +101,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">GUI Interface</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">GUI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="gui.html#gui-overview" class="nav-link">Overview</a></li>
                         <li><a href="gui.html#gui-navigation" class="nav-link">Navigation</a></li>
@@ -55,7 +115,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Security Parameters</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Security Parameters</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="parameters.html#parameters-overview" class="nav-link">Overview</a></li>
                         <li><a href="parameters.html#parameters-categories" class="nav-link">Categories</a></li>
@@ -65,7 +128,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Advanced Topics</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Advanced Topics</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="advanced.html#advanced-integration" class="nav-link">Integration</a></li>
                         <li><a href="advanced.html#advanced-automation" class="nav-link">Automation</a></li>
@@ -75,7 +141,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <div class="nav-title">Reference</div>
+                    <div class="nav-section-header">
+                        <span class="nav-title">Reference</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
                     <ul class="nav-list">
                         <li><a href="#reference-cli-options" class="nav-link active">CLI Options</a></li>
                         <li><a href="#reference-error-codes" class="nav-link">Error Codes</a></li>
@@ -83,12 +152,94 @@
                         <li><a href="#reference-changelog" class="nav-link">Changelog</a></li>
                     </ul>
                 </div>
+
+                <!-- Linux Sidebar Sections -->
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Getting Started</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/index.html#linux-introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="../docs/index.html#linux-installation" class="nav-link">Installation</a></li>
+                        <li><a href="../docs/index.html#linux-quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="../docs/index.html#linux-requirements" class="nav-link">Requirements</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux CLI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/cli.html#linux-cli-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-basic-usage" class="nav-link">Basic Usage</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-filtering" class="nav-link">Filtering Options</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-reports" class="nav-link">Report Generation</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-examples" class="nav-link">Examples</a></li>
+                        <li><a href="../docs/cli.html#linux-cli-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux GUI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/gui.html#linux-gui-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-navigation" class="nav-link">Navigation</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-running-checks" class="nav-link">Running Checks</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-reports" class="nav-link">Reports</a></li>
+                        <li><a href="../docs/gui.html#linux-gui-settings" class="nav-link">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Security Parameters</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/parameters.html#linux-parameters-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/parameters.html#linux-parameters-categories" class="nav-link">Categories</a></li>
+                        <li><a href="../docs/parameters.html#linux-complete-parameter-list" class="nav-link">Complete Parameter List</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Advanced Topics</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/advanced.html#linux-advanced-integration" class="nav-link">Integration</a></li>
+                        <li><a href="../docs/advanced.html#linux-advanced-automation" class="nav-link">Automation</a></li>
+                        <li><a href="../docs/advanced.html#linux-advanced-backup" class="nav-link">Backup & Restore</a></li>
+                        <li><a href="../docs/advanced.html#linux-advanced-best-practices" class="nav-link">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Reference</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="#linux-reference-cli-options" class="nav-link active">CLI Options</a></li>
+                        <li><a href="#linux-reference-error-codes" class="nav-link">Error Codes</a></li>
+                        <li><a href="#linux-reference-faq" class="nav-link">FAQ</a></li>
+                        <li><a href="#linux-reference-changelog" class="nav-link">Changelog</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
         <!-- Main Content -->
         <main class="docs-main">
-            <div class="docs-content">
+            <!-- Windows Content -->
+            <div class="docs-content windows-content">
                 <!-- CLI Options Section -->
                 <section id="reference-cli-options" class="docs-section">
                     <h1>Reference</h1>
@@ -267,9 +418,327 @@
                     </div>
                 </section>
             </div>
+
+            <!-- Linux Content -->
+            <div class="docs-content linux-content" style="display: none;">
+                <!-- Linux CLI Options Section -->
+                <section id="linux-reference-cli-options" class="docs-section">
+                    <h1>Linux Reference</h1>
+                    <p class="lead">Complete reference guide for HardenSys CLI options and error codes on Linux systems.</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Linux Reference:</strong> This section covers Linux-specific CLI options, error codes, and troubleshooting.
+                    </div>
+
+                    <h2>CLI Options</h2>
+                    <p>Complete list of command-line options available for Linux systems.</p>
+
+                    <h3>Basic Options</h3>
+                    <div class="options-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>--help</code></td>
+                                    <td>Display help information</td>
+                                    <td><code>python3 HardenSys.py --help</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--version</code></td>
+                                    <td>Show version information</td>
+                                    <td><code>python3 HardenSys.py --version</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--list</code></td>
+                                    <td>List all available categories</td>
+                                    <td><code>python3 HardenSys.py --list</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--info</code></td>
+                                    <td>Show detailed parameter information</td>
+                                    <td><code>python3 HardenSys.py --info "SSH"</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Filtering Options</h3>
+                    <div class="options-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>--heading</code></td>
+                                    <td>Filter by category heading</td>
+                                    <td><code>python3 HardenSys.py --heading "Filesystem Configuration"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--subheading</code></td>
+                                    <td>Filter by subcategory</td>
+                                    <td><code>python3 HardenSys.py --subheading "SSH Configuration"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--script-key</code></td>
+                                    <td>Filter by script key</td>
+                                    <td><code>python3 HardenSys.py --script-key "ssh_config"</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Output Options</h3>
+                    <div class="options-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>--output</code></td>
+                                    <td>Specify output file</td>
+                                    <td><code>python3 HardenSys.py --output /var/log/compliance.html</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--format</code></td>
+                                    <td>Output format (html, pdf, json)</td>
+                                    <td><code>python3 HardenSys.py --format json</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--verbose</code></td>
+                                    <td>Enable verbose output</td>
+                                    <td><code>python3 HardenSys.py --verbose</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>--quiet</code></td>
+                                    <td>Suppress non-essential output</td>
+                                    <td><code>python3 HardenSys.py --quiet</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Linux Error Codes Section -->
+                <section id="linux-reference-error-codes" class="docs-section">
+                    <h2>Linux Error Codes</h2>
+                    <p>Common error codes and their meanings for Linux systems.</p>
+
+                    <h3>Permission Errors</h3>
+                    <div class="error-codes">
+                        <div class="error-code">
+                            <h4>Error 13: Permission Denied</h4>
+                            <p><strong>Cause:</strong> Insufficient privileges to access system files or configurations.</p>
+                            <p><strong>Solution:</strong> Run with sudo privileges or ensure proper file permissions.</p>
+                            <div class="code-block">
+                                <pre><code>sudo python3 HardenSys.py</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="error-code">
+                            <h4>Error 2: No Such File or Directory</h4>
+                            <p><strong>Cause:</strong> Required configuration files or directories are missing.</p>
+                            <p><strong>Solution:</strong> Verify system installation and file paths.</p>
+                            <div class="code-block">
+                                <pre><code>ls -la /etc/ssh/sshd_config</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Configuration Errors</h3>
+                    <div class="error-codes">
+                        <div class="error-code">
+                            <h4>Error 100: Invalid Configuration</h4>
+                            <p><strong>Cause:</strong> Malformed configuration file or invalid parameter values.</p>
+                            <p><strong>Solution:</strong> Check configuration file syntax and validate parameter values.</p>
+                            <div class="code-block">
+                                <pre><code># Test SSH configuration
+sudo sshd -t
+
+# Check PAM configuration
+pamtester sshd root authenticate</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="error-code">
+                            <h4>Error 101: Service Not Available</h4>
+                            <p><strong>Cause:</strong> Required system service is not running or not installed.</p>
+                            <p><strong>Solution:</strong> Start the service or install the required package.</p>
+                            <div class="code-block">
+                                <pre><code># Check service status
+systemctl status sshd
+
+# Start service if needed
+sudo systemctl start sshd</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>System Errors</h3>
+                    <div class="error-codes">
+                        <div class="error-code">
+                            <h4>Error 200: Kernel Module Error</h4>
+                            <p><strong>Cause:</strong> Unable to access or modify kernel modules.</p>
+                            <p><strong>Solution:</strong> Ensure kernel module tools are installed and accessible.</p>
+                            <div class="code-block">
+                                <pre><code># Install kernel tools
+sudo apt install linux-tools-common
+
+# Check module status
+lsmod | grep -i cramfs</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="error-code">
+                            <h4>Error 201: Network Configuration Error</h4>
+                            <p><strong>Cause:</strong> Unable to access network configuration files or interfaces.</p>
+                            <p><strong>Solution:</strong> Check network configuration and firewall settings.</p>
+                            <div class="code-block">
+                                <pre><code># Check network interfaces
+ip addr show
+
+# Check firewall status
+sudo ufw status</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Linux FAQ Section -->
+                <section id="linux-reference-faq" class="docs-section">
+                    <h2>Linux FAQ</h2>
+                    <p>Frequently asked questions about using HardenSys on Linux systems.</p>
+
+                    <div class="faq-item">
+                        <h3>Q: Which Linux distributions are supported?</h3>
+                        <p><strong>A:</strong> HardenSys supports major Linux distributions including Ubuntu, CentOS, RHEL, Debian, Fedora, and SUSE. The tool automatically detects the distribution and applies appropriate security checks.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Q: Do I need root privileges to run HardenSys?</h3>
+                        <p><strong>A:</strong> Yes, most security checks require root privileges to access system configuration files and modify security settings. Run with <code>sudo</code> or as root user.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Q: How do I install HardenSys on Linux?</h3>
+                        <p><strong>A:</strong> Clone the repository and install dependencies:</p>
+                        <div class="code-block">
+                            <pre><code>git clone https://github.com/AjeyVerma/HardenSys.git
+cd HardenSys
+pip3 install -r requirements.txt</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Q: Can I run HardenSys in a Docker container?</h3>
+                        <p><strong>A:</strong> Yes, but with limitations. Some security checks require access to the host system. Use privileged containers or bind mounts for full functionality.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Q: How do I customize security parameters for my environment?</h3>
+                        <p><strong>A:</strong> Modify the configuration files in the HardenSys directory or use command-line options to filter specific categories or parameters.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Q: What if a security check fails?</h3>
+                        <p><strong>A:</strong> Review the detailed output and recommendations. Many failures can be resolved by modifying system configuration files or installing required packages.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Q: How often should I run security checks?</h3>
+                        <p><strong>A:</strong> Run comprehensive checks weekly and targeted checks after system changes. Use cron jobs for automated scheduling.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Q: Can I integrate HardenSys with monitoring systems?</h3>
+                        <p><strong>A:</strong> Yes, HardenSys can output JSON format for integration with monitoring tools like Nagios, Zabbix, or custom monitoring solutions.</p>
+                    </div>
+                </section>
+
+                <!-- Linux Changelog Section -->
+                <section id="linux-reference-changelog" class="docs-section">
+                    <h2>Linux Changelog</h2>
+                    <p>Recent changes and updates for Linux support in HardenSys.</p>
+
+                    <h3>Version 2.1.0 (Latest)</h3>
+                    <div class="changelog-entry">
+                        <h4>New Features</h4>
+                        <ul>
+                            <li>Added support for Ubuntu 22.04 LTS</li>
+                            <li>Enhanced SSH configuration checking</li>
+                            <li>Improved PAM authentication validation</li>
+                            <li>Added systemd service management checks</li>
+                        </ul>
+
+                        <h4>Improvements</h4>
+                        <ul>
+                            <li>Better error handling for permission issues</li>
+                            <li>Enhanced reporting for kernel module checks</li>
+                            <li>Improved firewall configuration detection</li>
+                            <li>Optimized performance for large systems</li>
+                        </ul>
+
+                        <h4>Bug Fixes</h4>
+                        <ul>
+                            <li>Fixed false positives in filesystem checks</li>
+                            <li>Resolved issues with network interface detection</li>
+                            <li>Corrected package manager detection logic</li>
+                            <li>Fixed memory leaks in long-running processes</li>
+                        </ul>
+                    </div>
+
+                    <h3>Version 2.0.0</h3>
+                    <div class="changelog-entry">
+                        <h4>Major Changes</h4>
+                        <ul>
+                            <li>Complete rewrite of Linux security engine</li>
+                            <li>Added support for 89 Linux security parameters</li>
+                            <li>Implemented modular architecture</li>
+                            <li>Added comprehensive logging system</li>
+                        </ul>
+
+                        <h4>New Linux Features</h4>
+                        <ul>
+                            <li>Kernel parameter validation</li>
+                            <li>Systemd service hardening</li>
+                            <li>File system permission checks</li>
+                            <li>Network security configuration</li>
+                            <li>SSH and PAM security validation</li>
+                        </ul>
+                    </div>
+
+                    <h3>Version 1.5.0</h3>
+                    <div class="changelog-entry">
+                        <h4>Linux Support Added</h4>
+                        <ul>
+                            <li>Initial Linux support implementation</li>
+                            <li>Basic security parameter checking</li>
+                            <li>Command-line interface for Linux</li>
+                            <li>HTML report generation</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
 
     <script src="js/docs.js"></script>
+    <script src="js/header.js"></script>
 </body>
 </html>

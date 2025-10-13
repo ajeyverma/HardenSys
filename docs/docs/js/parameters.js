@@ -2,6 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     initParameterSearch();
+    initHeaderSearch();
+    initMobileMenu();
     loadParameterData();
 });
 
@@ -182,6 +184,71 @@ function showParameterDetails(scriptKey) {
 function loadParameterData() {
     // In a real implementation, this would load data from an API or JSON file
     console.log('Parameter data loaded:', parameterData.length, 'parameters');
+}
+
+// Initialize header search functionality
+function initHeaderSearch() {
+    const headerSearchInput = document.getElementById('header-search');
+    const headerSearchClear = document.getElementById('header-search-clear');
+    
+    if (!headerSearchInput || !headerSearchClear) return;
+    
+    // Header search functionality
+    headerSearchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        
+        if (query.length === 0) {
+            headerSearchClear.style.display = 'none';
+            return;
+        }
+        
+        headerSearchClear.style.display = 'block';
+        // In a real implementation, this would perform a global search
+        console.log('Header search:', query);
+    });
+    
+    // Clear header search
+    headerSearchClear.addEventListener('click', function() {
+        headerSearchInput.value = '';
+        this.style.display = 'none';
+    });
+    
+    // Keyboard shortcuts for header search
+    headerSearchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            this.value = '';
+            headerSearchClear.style.display = 'none';
+        }
+    });
+}
+
+// Initialize mobile menu functionality
+function initMobileMenu() {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const sidebar = document.getElementById('docs-sidebar');
+    
+    if (!mobileMenuToggle || !sidebar) return;
+    
+    mobileMenuToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('open');
+    });
+    
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768 && 
+            !sidebar.contains(e.target) && 
+            !mobileMenuToggle.contains(e.target) && 
+            sidebar.classList.contains('open')) {
+            sidebar.classList.remove('open');
+        }
+    });
+    
+    // Close sidebar when window is resized to desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove('open');
+        }
+    });
 }
 
 // Export parameter data for use in other scripts
