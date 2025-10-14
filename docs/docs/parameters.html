@@ -125,7 +125,6 @@
                     <ul class="nav-list">
                         <li><a href="#parameters-overview" class="nav-link active">Overview</a></li>
                         <li><a href="#parameters-categories" class="nav-link">Categories</a></li>
-                        <li><a href="#parameters-search" class="nav-link">Search Parameters</a></li>
                         <li><a href="#complete-parameter-list" class="nav-link">Complete Parameter List</a></li>
                         <li><a href="#parameters-manual-setup" class="nav-link">Parameters Manual Setup</a></li>
                     </ul>
@@ -428,25 +427,6 @@
                         </div>
                     </div>
                 </section>
-                <!-- Search Parameters Section -->
-                <section id="parameters-search" class="docs-section">
-                    <h2>Search Parameters</h2>
-                    
-                    <div class="search-container">
-                        <div class="search-box">
-                            <i class="fas fa-search"></i>
-                            <input type="text" id="parameter-search" placeholder="Search parameters..." />
-                            <button class="search-clear" id="search-clear" style="display: none;">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        <div class="search-results" id="parameter-results"></div>
-                    </div>
-
-                    
-
-                    
-                </section>
                 <!-- Complete Parameter List Section -->
                 <section id="complete-parameter-list" class="docs-section">
                     <h2>Complete Parameter List</h2>
@@ -465,13 +445,13 @@
                     <div class="alert alert-info">
                         <i class="fas fa-info-circle"></i>
                         <strong>Note:</strong> This section provides detailed manual setup instructions for all Windows security parameters. Each parameter includes registry paths, manual setup steps, and configuration details.
-                                </div>
+                        </div>
 
                     <h3>Search Parameters</h3>
                     <div style="margin-bottom: 2rem;">
                         <input type="text" id="parameter-search-manual" placeholder="Search parameters by name, category, or description..." style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 5px; font-size: 1rem;">
                         <div class="search-results" id="parameter-results-manual"></div>
-                        </div>
+                    </div>
 
                     <h3>Account Policies</h3>
                     <h4>Password Policy</h4>
@@ -510,8 +490,8 @@
                             <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</div>
                             <div class="manual-setup">
                                 <strong>Manual Setup:</strong> Use <code>net accounts /minpwlen:12</code> or Local Security Policy → Account Policies → Password Policy
-                    </div>
-                        </div>
+                                </div>
+                            </div>
                         <div class="parameter-card">
                             <div class="category">Password Policy</div>
                             <h4>Password must meet complexity requirements</h4>
@@ -519,8 +499,8 @@
                             <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</div>
                             <div class="manual-setup">
                                 <strong>Manual Setup:</strong> Use <code>net accounts /domain</code> or Local Security Policy → Account Policies → Password Policy
-                            </div>
                         </div>
+                    </div>
                         <div class="parameter-card">
                             <div class="category">Password Policy</div>
                             <h4>Store passwords using reversible encryption</h4>
@@ -1113,6 +1093,7 @@
                     <h2>Complete Linux Parameter List</h2>
                     <p>Below is the comprehensive list of all 89 Linux security parameters organized by category.</p>
                     <div id="linux-complete-parameter-table" class="complete-parameter-table"></div>
+                    <div id="linux-complete-parameter-list" class="parameter-category-list"></div>
 
                     
                 </section>

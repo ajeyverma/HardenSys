@@ -504,6 +504,7 @@ function initCompleteParameterTables() {
 function renderCompleteParameterTables() {
     const windowsContainer = document.getElementById('complete-parameter-table');
     const linuxContainer = document.getElementById('linux-complete-parameter-table');
+    const linuxListContainer = document.getElementById('linux-complete-parameter-list');
     if (!parameterData || parameterData.length === 0) return;
 
     if (windowsContainer) {
@@ -531,6 +532,46 @@ function renderCompleteParameterTables() {
             tr.style.cursor = 'pointer';
             tr.addEventListener('click', () => {
                 const key = tr.getAttribute('data-script-key');
+                if (key) openParameterDetailPopup(key);
+            });
+        });
+    }
+
+    // Also render grouped list for Linux below the table
+    if (linuxListContainer) {
+        const linuxItems = parameterData.filter(p => p.os === 'linux');
+        const groups = linuxItems.reduce((acc, p) => {
+            const head = p.category || 'General';
+            const sub = p.subcategory || 'Misc';
+            acc[head] = acc[head] || {};
+            acc[head][sub] = acc[head][sub] || [];
+            acc[head][sub].push(p);
+            return acc;
+        }, {});
+
+        const html = Object.keys(groups).sort().map(head => {
+            const subHtml = Object.keys(groups[head]).sort().map(sub => {
+                const items = groups[head][sub]
+                    .sort((a,b) => a.title.localeCompare(b.title))
+                    .map(p => `<li class="param-item" data-script-key="${p.scriptKey}"><strong>${escapeHtml(p.title)}</strong> — ${escapeHtml(p.details)}</li>`)
+                    .join('');
+                return `
+                    <div class="parameter-category">
+                        <h3>${escapeHtml(head)}</h3>
+                        <h4>${escapeHtml(sub)}</h4>
+                        <ul class="parameter-list">${items}</ul>
+                    </div>
+                `;
+            }).join('');
+            return subHtml;
+        }).join('');
+
+        linuxListContainer.innerHTML = html;
+
+        linuxListContainer.querySelectorAll('.param-item').forEach(li => {
+            li.style.cursor = 'pointer';
+            li.addEventListener('click', () => {
+                const key = li.getAttribute('data-script-key');
                 if (key) openParameterDetailPopup(key);
             });
         });
@@ -570,4 +611,11 @@ function buildTableHtml(rows) {
             </table>
         </div>
     `;
+}
+
+function escapeHtml(t) {
+    return (t || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
 }
