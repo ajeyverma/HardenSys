@@ -9,11 +9,11 @@ let linuxParametersData = null;
 async function loadParametersData() {
     try {
         // Load Windows parameters
-        const windowsResponse = await fetch('../docs/assets/json/windows_tasks.json', '../windows_tasks.json', '../docs/windows_tasks.json');
+        const windowsResponse = await fetch('Assets/json/windows_tasks.json');
         windowsParametersData = await windowsResponse.json();
         
         // Load Linux parameters
-        const linuxResponse = await fetch('../docs/assets/json/linux_tasks.json', '../linux_tasks.json', '../docs/linux_tasks.json');
+        const linuxResponse = await fetch('Assets/json/linux_tasks.json');
         linuxParametersData = await linuxResponse.json();
         
         console.log('Parameters data loaded successfully');
