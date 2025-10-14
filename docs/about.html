@@ -235,43 +235,171 @@
             </div>
         </section>
 
-        <section class="container" style="padding: 8px 0 8px;">
-            <h2><i class="fas fa-file-alt"></i> Problem Statement Details</h2>
-            
+        <section class="problem-details-section">
+            <div class="container">
+                <div class="problem-details-header">
+                    <h2><i class="fas fa-file-alt"></i> Problem Statement Details</h2>
+                    <p class="problem-details-subtitle">Comprehensive analysis of the cybersecurity challenge we're addressing</p>
+                </div>
 
-            <h3>Background</h3>
-            <p>Modern operating systems, including Windows, Ubuntu, and CentOS, are widely used in enterprise environments for server and desktop deployments. These systems, by default, may not adhere to strict security baselines. Misconfigurations, exposed services, weak access controls, outdated software, or improper logging can create serious vulnerabilities, leading to data breaches or system compromise.</p>
+                <div class="problem-details-content">
+                    <div class="problem-overview">
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="overview-content">
+                                <h3>Background</h3>
+                                <p>Modern operating systems, including Windows, Ubuntu, and CentOS, are widely used in enterprise environments for server and desktop deployments. These systems, by default, may not adhere to strict security baselines. Misconfigurations, exposed services, weak access controls, outdated software, or improper logging can create serious vulnerabilities, leading to data breaches or system compromise.</p>
+                            </div>
+                        </div>
+                    </div>
 
-            <h3>Problem</h3>
-            <ul>
-                <li>Time-consuming</li>
-                <li>Error-prone</li>
-                <li>Inconsistent across platforms</li>
-                <li>Difficult to audit and verify</li>
-            </ul>
-            <p>System administrators often lack a centralized tool to automatically assess, enforce, and report compliance of Windows and Linux systems against industry-standard hardening policies.</p>
+                    <div class="problem-challenges">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Current Challenges</h3>
+                        <div class="challenges-grid">
+                            <div class="challenge-item">
+                                <i class="fas fa-clock"></i>
+                                <h4>Time-consuming</h4>
+                                <p>Manual hardening processes take extensive time and resources</p>
+                            </div>
+                            <div class="challenge-item">
+                                <i class="fas fa-times-circle"></i>
+                                <h4>Error-prone</h4>
+                                <p>Human errors in configuration can create security gaps</p>
+                            </div>
+                            <div class="challenge-item">
+                                <i class="fas fa-random"></i>
+                                <h4>Inconsistent</h4>
+                                <p>Different approaches across platforms lead to vulnerabilities</p>
+                            </div>
+                            <div class="challenge-item">
+                                <i class="fas fa-search"></i>
+                                <h4>Hard to Audit</h4>
+                                <p>Difficult to verify and maintain compliance standards</p>
+                            </div>
+                        </div>
+                        <p class="challenge-summary">System administrators often lack a centralized tool to automatically assess, enforce, and report compliance of Windows and Linux systems against industry-standard hardening policies.</p>
+                    </div>
 
-            <h3>Objective</h3>
-            <ul>
-                <li>Support Windows (10/11), Ubuntu (20.04+), and CentOS (7+)</li>
-                <li>Apply parameters as per Annexure ‘A’ (Windows) and Annexure ‘B’ (Linux)</li>
-                <li>Generate detailed compliance reports (previous/current value and result)</li>
-                <li>Be easy to use for novice and expert administrators</li>
-                <li>Support rollback to previous settings</li>
-            </ul>
+                    <div class="problem-objectives">
+                        <h3><i class="fas fa-bullseye"></i> Our Objectives</h3>
+                        <div class="objectives-list">
+                            <div class="objective-item">
+                                <div class="objective-icon">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <div class="objective-content">
+                                    <h4>Multi-Platform Support</h4>
+                                    <p>Support Windows (10/11), Ubuntu (20.04+), and CentOS (7+)</p>
+                                </div>
+                            </div>
+                            <div class="objective-item">
+                                <div class="objective-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="objective-content">
+                                    <h4>Standardized Parameters</h4>
+                                    <p>Apply parameters as per Annexure 'A' (Windows) and Annexure 'B' (Linux)</p>
+                                </div>
+                            </div>
+                            <div class="objective-item">
+                                <div class="objective-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="objective-content">
+                                    <h4>Detailed Reporting</h4>
+                                    <p>Generate detailed compliance reports (previous/current value and result)</p>
+                                </div>
+                            </div>
+                            <div class="objective-item">
+                                <div class="objective-icon">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <div class="objective-content">
+                                    <h4>User-Friendly Interface</h4>
+                                    <p>Be easy to use for novice and expert administrators</p>
+                                </div>
+                            </div>
+                            <div class="objective-item">
+                                <div class="objective-icon">
+                                    <i class="fas fa-undo"></i>
+                                </div>
+                                <div class="objective-content">
+                                    <h4>Rollback Capability</h4>
+                                    <p>Support rollback to previous settings</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <h3>Key Features</h3>
-            <ul>
-                <li><strong>OS Detection & Modular Engine:</strong> Detects target OS, runs appropriate modules, configurable hardening levels</li>
-                <li><strong>Security Checks & Remediation:</strong> As per Annexure ‘A’ (Windows) and ‘B’ (Linux)</li>
-                <li><strong>Reporting & Logging:</strong> PDF reports with severities, action logs with timestamps</li>
-                <li><strong>CLI & GUI Interfaces:</strong> Automation-ready CLI and optional GUI</li>
-                <li><strong>Rollback Capability:</strong> Stores previous configurations for rollback</li>
-            </ul>
+                    <div class="problem-features">
+                        <h3><i class="fas fa-star"></i> Key Features</h3>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>OS Detection & Modular Engine</h4>
+                                    <p>Detects target OS, runs appropriate modules, configurable hardening levels</p>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Security Checks & Remediation</h4>
+                                    <p>As per Annexure 'A' (Windows) and 'B' (Linux)</p>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Reporting & Logging</h4>
+                                    <p>PDF reports with severities, action logs with timestamps</p>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-terminal"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>CLI & GUI Interfaces</h4>
+                                    <p>Automation-ready CLI and optional GUI</p>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-history"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Rollback Capability</h4>
+                                    <p>Stores previous configurations for rollback</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="alert alert-info">
-                <i class="fas fa-link"></i>
-                <strong class="alert-info-text">Dataset:</strong> <a href="https://sih.gov.in/dataset/Annexure_A_B_NTRO_SIH25237.pdf" target="_blank" rel="noopener">Annexure_A_B_NTRO_SIH25237.pdf</a>
+                    <div class="problem-resources">
+                        <div class="resource-card">
+                            <div class="resource-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <div class="resource-content">
+                                <h4>Official Dataset</h4>
+                                <p>Access the complete technical specifications and requirements</p>
+                                <a href="https://sih.gov.in/dataset/Annexure_A_B_NTRO_SIH25237.pdf" target="_blank" rel="noopener" class="resource-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Download Annexure_A_B_NTRO_SIH25237.pdf
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
