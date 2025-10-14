@@ -342,30 +342,45 @@ function openParameterDetailPopup(scriptKey) {
     body.innerHTML = cardHtml;
     popup.style.display = 'flex';
 
-    // Close handlers
+    // Close handlers - remove existing listeners first
     const closeBtn = document.getElementById('param-popup-close');
     const closeOverlay = document.getElementById('param-popup-close-overlay');
     const close = () => { popup.style.display = 'none'; };
-    if (closeBtn) closeBtn.onclick = close;
-    if (closeOverlay) closeOverlay.onclick = close;
+    
+    // Remove existing event listeners
+    if (closeBtn) {
+        closeBtn.replaceWith(closeBtn.cloneNode(true));
+        document.getElementById('param-popup-close').onclick = close;
+    }
+    if (closeOverlay) {
+        closeOverlay.replaceWith(closeOverlay.cloneNode(true));
+        document.getElementById('param-popup-close-overlay').onclick = close;
+    }
 
-    document.addEventListener('keydown', function escHandler(e) {
-        if (e.key === 'Escape') { close(); document.removeEventListener('keydown', escHandler); }
-    });
+    // Remove existing escape handler and add new one
+    document.removeEventListener('keydown', handleEscapeKey);
+    document.addEventListener('keydown', handleEscapeKey);
+    
+    function handleEscapeKey(e) {
+        if (e.key === 'Escape') { 
+            close(); 
+            document.removeEventListener('keydown', handleEscapeKey); 
+        }
+    }
 }
 
 // Load parameter data (placeholder function)
 async function loadParameterData() {
     try {
         const windows = await fetchJsonWithFallbacks([
-            '/docs/assets/json/windows_tasks.json',
+            '../Assets/json/windows_tasks.json',
             '../windows_tasks.json',
-            '/docs/windows_tasks.json'
+            '../docs/windows_tasks.json'
         ]);
         const linux = await fetchJsonWithFallbacks([
-            '/docs/assets/json/linux_tasks.json',
+            '../Assets/json/linux_tasks.json',
             '../linux_tasks.json',
-            '/docs/linux_tasks.json'
+            '../docs/linux_tasks.json'
         ]);
 
         // Normalize into unified structure
@@ -427,22 +442,99 @@ function bindManualCardClicks() {
             card.style.cursor = 'pointer';
             card.addEventListener('click', () => {
                 const title = (card.querySelector('h4')?.textContent || '').trim();
+                const description = (card.querySelector('.description')?.textContent || '').trim();
+                const category = (card.querySelector('.category')?.textContent || '').trim();
+                const registryPath = (card.querySelector('.registry-path')?.textContent || '').trim();
+                const manualSetup = (card.querySelector('.manual-setup')?.textContent || '').trim();
+                
                 if (!title) return;
-                // Prefer OS-matching parameter; fallback to any title match
-                let param = (parameterData || []).find(p => p.os === os && p.title.toLowerCase() === title.toLowerCase());
-                if (!param) param = (parameterData || []).find(p => p.title.toLowerCase() === title.toLowerCase());
-                if (param) {
-                    openParameterDetailPopup(param.scriptKey);
-                } else {
-                    // Fallback: open popup with title-only content
-                    openParameterDetailPopup(sanitizeKey(title));
-                }
+                
+                // Create a parameter object from the card data
+                const paramData = {
+                    title: title,
+                    details: description,
+                    category: category,
+                    registryPath: registryPath,
+                    manualSetup: manualSetup,
+                    os: os
+                };
+                
+                // Open popup with the card data
+                openParameterDetailPopupFromCard(paramData);
             });
         });
     };
 
     attach(windowsSection, 'windows');
     attach(linuxSection, 'linux');
+}
+
+// Open parameter detail popup from card data
+function openParameterDetailPopupFromCard(paramData) {
+    const popup = document.getElementById('param-detail-popup');
+    const title = document.getElementById('param-popup-title');
+    const meta = document.getElementById('param-popup-meta');
+    const body = document.getElementById('param-popup-body');
+    
+    if (!popup || !title || !meta || !body) {
+        console.error('Popup elements not found');
+        return;
+    }
+    
+    // Set title
+    title.textContent = paramData.title;
+    
+    // Set meta information
+    let metaHtml = '';
+    if (paramData.category) {
+        metaHtml += `<div class="param-meta-item"><strong>Category:</strong> ${paramData.category}</div>`;
+    }
+    if (paramData.os) {
+        metaHtml += `<div class="param-meta-item"><strong>OS:</strong> ${paramData.os.charAt(0).toUpperCase() + paramData.os.slice(1)}</div>`;
+    }
+    meta.innerHTML = metaHtml;
+    
+    // Set body content
+    let bodyHtml = '';
+    if (paramData.details) {
+        bodyHtml += `<div class="param-detail-section"><h4>Description</h4><p>${paramData.details}</p></div>`;
+    }
+    if (paramData.registryPath) {
+        bodyHtml += `<div class="param-detail-section"><h4>Configuration Path</h4><p><code>${paramData.registryPath}</code></p></div>`;
+    }
+    if (paramData.manualSetup) {
+        bodyHtml += `<div class="param-detail-section"><h4>Manual Setup</h4><p>${paramData.manualSetup}</p></div>`;
+    }
+    body.innerHTML = bodyHtml;
+    
+    // Show popup
+    popup.style.display = 'flex';
+    
+    // Close handlers - remove existing listeners first
+    const closeBtn = document.getElementById('param-popup-close');
+    const closeOverlay = document.getElementById('param-popup-close-overlay');
+    const close = () => { popup.style.display = 'none'; };
+    
+    // Remove existing event listeners
+    if (closeBtn) {
+        closeBtn.replaceWith(closeBtn.cloneNode(true));
+        document.getElementById('param-popup-close').onclick = close;
+    }
+    if (closeOverlay) {
+        closeOverlay.replaceWith(closeOverlay.cloneNode(true));
+        document.getElementById('param-popup-close-overlay').onclick = close;
+    }
+
+    // Remove existing escape handler and add new one
+    document.removeEventListener('keydown', handleEscapeKey);
+    document.addEventListener('keydown', handleEscapeKey);
+    
+    function handleEscapeKey(e) {
+        if (e.key === 'Escape') { 
+            close(); 
+            document.removeEventListener('keydown', handleEscapeKey); 
+        }
+    }
 }
 
 // Local header search function removed to avoid overriding global header search
