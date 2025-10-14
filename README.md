@@ -71,7 +71,7 @@ python3 HardenSys.py --output report.html
 
 ## 📚 Documentation
 
-Visit our comprehensive documentation at: **[https://ajeyverma.github.io/HardenSys/](https://ajeyverma.github.io/HardenSys/)**
+Visit our comprehensive documentation at: **[https://ajeyverma.github.io/HardenSys/docs](https://ajeyverma.github.io/HardenSys/docs)**
 
 ### Documentation Features
 - **Interactive Parameter Reference**: Search and explore all 210+ security parameters
