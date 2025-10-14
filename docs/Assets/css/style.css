@@ -663,6 +663,490 @@ body {
         font-size: 1.5rem;
     }
 }
+
+/* Problem Statement Details Section */
+.problem-details-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+    position: relative;
+}
+
+.problem-details-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.problem-details-header h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.problem-details-header h2 i {
+    color: #667eea;
+    font-size: 2rem;
+}
+
+.problem-details-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.problem-details-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Overview Card */
+.problem-overview {
+    margin-bottom: 60px;
+}
+
+.overview-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    transition: all 0.3s ease;
+}
+
+.overview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.overview-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.overview-icon i {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.overview-content h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.overview-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+}
+
+/* Challenges Section */
+.problem-challenges {
+    margin-bottom: 60px;
+}
+
+.problem-challenges h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.problem-challenges h3 i {
+    color: #e74c3c;
+    font-size: 1.5rem;
+}
+
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.challenge-item {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.challenge-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.challenge-item:hover::before {
+    transform: scaleX(1);
+}
+
+.challenge-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.challenge-item i {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.challenge-item h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.challenge-item p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.challenge-summary {
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+    margin: 0;
+}
+
+/* Objectives Section */
+.problem-objectives {
+    margin-bottom: 60px;
+}
+
+.problem-objectives h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.problem-objectives h3 i {
+    color: #27ae60;
+    font-size: 1.5rem;
+}
+
+.objectives-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.objective-item {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.objective-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.objective-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.objective-icon i {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.objective-content h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.objective-content p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Features Section */
+.problem-features {
+    margin-bottom: 60px;
+}
+
+.problem-features h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.problem-features h3 i {
+    color: #f39c12;
+    font-size: 1.5rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.feature-icon i {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.feature-content h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.feature-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Resources Section */
+.problem-resources {
+    margin-bottom: 0;
+}
+
+.resource-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+}
+
+.resource-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.resource-icon i {
+    color: #ffd700;
+    font-size: 1.8rem;
+}
+
+.resource-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.resource-content p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.resource-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.resource-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.resource-link i {
+    font-size: 0.9rem;
+}
+
+/* Responsive Design for Problem Details */
+@media (max-width: 768px) {
+    .problem-details-section {
+        padding: 60px 0;
+    }
+    
+    .problem-details-header h2 {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .overview-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .challenges-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .objective-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .resource-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .problem-details-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .overview-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .problem-challenges h3,
+    .problem-objectives h3,
+    .problem-features h3 {
+        font-size: 1.6rem;
+    }
+    
+    .challenge-item,
+    .feature-card {
+        padding: 20px 15px;
+    }
+    
+    .objective-item {
+        padding: 15px;
+    }
+}
 .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); }
 .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 12px 0 16px; }
 .problem-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 14px; }
