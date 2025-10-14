@@ -11,18 +11,33 @@ The documentation is now live at: **[https://ajeyverma.github.io/HardenSys/](htt
 ## 📁 Website Structure
 
 ```
-website/
+website
 ├── index.html              # Main homepage
-├── cli.html                # CLI documentation
-├── gui.html                # GUI documentation  
-├── parameters.html        # Parameters reference
-├── manual-setup.html      # Manual setup guide
-├── download.html          # Download page
-├── css/
-│   └── style.css          # Responsive CSS styling
-├── js/
-│   └── script.js          # Interactive JavaScript
-└── images/                # Website assets
+├── about.html              # About page
+├── Docs/
+|   ├── index.html          # Introduction page
+|   ├── cli.html            # CLI documentation
+|   ├── gui.html            # GUI documentation
+|   ├── parameters.html     # Parameters reference
+|   ├── manual-setup.html   # Manual setup guide
+|   ├── advanced.html       # Advance topics guide
+|   ├── reference.html      # Complete reference guide
+|   ├── css/
+|   |   └── docs.css        # Docs CSS styling
+|   ├── js/
+|   |   ├── docs.js
+|   |   ├── header.js
+|   |   └── parameter.js
+|   └── images/               # Docs related assets
+└── Assets/
+    ├── css/
+    |   └── style.css           # Responsive CSS styling
+    ├── js/ 
+    |   ├── script.js           # website script file
+    |   └── parameter-popup.js 
+    ├── images/                 # Website assets
+    └── json/                   # parameters json file
+            
 ```
 
 ## 🚀 Features Implemented
