@@ -16,30 +16,20 @@ function initHeaderSearch() {
     
     if (!headerSearchInput || !headerSearchClear) return;
 
-    // Create suggestions dropdown if missing
+    // Ensure suggestions dropdown exists and is inside the search box
+    const searchBox = headerSearchInput ? headerSearchInput.closest('.search-box') : null;
     if (!headerSearchSuggestions) {
         headerSearchSuggestions = document.createElement('div');
         headerSearchSuggestions.id = 'header-search-suggestions';
-        headerSearchSuggestions.style.position = 'absolute';
-        headerSearchSuggestions.style.top = '100%';
-        headerSearchSuggestions.style.left = '0';
-        headerSearchSuggestions.style.right = '0';
-        headerSearchSuggestions.style.zIndex = '1000';
-        headerSearchSuggestions.style.background = '#fff';
-        headerSearchSuggestions.style.border = '1px solid #e9ecef';
-        headerSearchSuggestions.style.borderTop = 'none';
-        headerSearchSuggestions.style.boxShadow = '0 8px 24px rgba(0,0,0,0.08)';
-        headerSearchSuggestions.style.display = 'none';
-        headerSearchSuggestions.style.maxHeight = '320px';
-        headerSearchSuggestions.style.overflowY = 'auto';
-
-        // Position container relative to search input's parent (the search box)
-        const searchBox = headerSearchInput.parentElement;
-        if (searchBox && getComputedStyle(searchBox).position === 'static') {
-            searchBox.style.position = 'relative';
-        }
-        (searchBox || document.body).appendChild(headerSearchSuggestions);
     }
+    if (searchBox && !searchBox.contains(headerSearchSuggestions)) {
+        searchBox.appendChild(headerSearchSuggestions);
+    }
+    if (searchBox && getComputedStyle(searchBox).position === 'static') {
+        searchBox.style.position = 'relative';
+    }
+    // Minimal inline safety in case page lacks CSS
+    headerSearchSuggestions.style.zIndex = '1000';
 
     // Build searchable index from sidebar links and visible headings
     let searchIndex = buildHeaderSearchIndex();

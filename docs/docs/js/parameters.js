@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initParameterSearch();
     initManualParameterSearch();
     initLinuxManualParameterSearch();
-    initHeaderSearch();
+    // Use global header search from header.js
     initMobileMenu();
     loadParameterData();
     bindManualCardClicks();
@@ -445,8 +445,8 @@ function bindManualCardClicks() {
     attach(linuxSection, 'linux');
 }
 
-// Initialize header search functionality
-function initHeaderSearch() {
+// Local header search function removed to avoid overriding global header search
+function initHeaderSearchLocal() {
     const headerSearchInput = document.getElementById('header-search');
     const headerSearchClear = document.getElementById('header-search-clear');
     
