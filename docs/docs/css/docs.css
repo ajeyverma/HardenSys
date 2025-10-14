@@ -497,6 +497,32 @@ body {
     margin-right: 10px;
     padding-top: 2px;
     flex-shrink: 0;
+    fill: var(--text-primary);
+    transition: opacity 0.3s ease;
+}
+
+/* Ensure logo is visible during theme changes */
+#docs-header-logo {
+    opacity: 1;
+}
+
+/* Smooth transition for logo changes */
+#docs-header-logo[src*="app_logo_white.png"],
+#docs-header-logo[src*="app_logo_black.png"] {
+    transition: all 0.3s ease;
+}
+
+/* CSS-based dark mode logo switching as fallback */
+@media (prefers-color-scheme: dark) {
+    #docs-header-logo {
+        content: url('../Assets/Images/app_logo_white.png');
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    #docs-header-logo {
+        content: url('../Assets/Images/app_logo_black.png');
+    }
 }
 
 .header-title {

@@ -18,7 +18,7 @@
     <header class="docs-header">
         <div class="header-container">
             <div class="header-logo">
-                <img src="images/app_logo_black.png" alt="HardenSys" class="header-logo-icon">
+                <img src="images/app_logo_black.png" alt="HardenSys" class="header-logo-icon" id="docs-header-logo">
                 <span class="header-title">HardenSys Docs</span>
                 <div class="vertical-separator"></div>
             </div>
@@ -657,5 +657,41 @@ auditctl -l</code></pre>
 
     <script src="js/docs.js"></script>
     <script src="js/header.js"></script>
+    
+    <script>
+    // Dark mode logo switching for docs
+    function updateDocsLogoForTheme() {
+        const logo = document.getElementById('docs-header-logo');
+        if (!logo) {
+            console.log('Docs logo element not found');
+            return;
+        }
+        
+        // Check if user prefers dark mode
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        console.log('Dark mode detected for docs:', prefersDark);
+        
+        if (prefersDark) {
+            // Use white logo for dark mode
+            logo.src = 'images/app_logo_white.png';
+            console.log('Switched to white logo for dark mode in docs');
+        } else {
+            // Use black logo for light mode
+            logo.src = 'images/app_logo_black.png';
+            console.log('Switched to black logo for light mode in docs');
+        }
+    }
+    
+    // Update logo immediately and on page load
+    updateDocsLogoForTheme();
+    document.addEventListener('DOMContentLoaded', updateDocsLogoForTheme);
+    
+    // Listen for theme changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    mediaQuery.addEventListener('change', updateDocsLogoForTheme);
+    
+    // Also check on window load as a fallback
+    window.addEventListener('load', updateDocsLogoForTheme);
+    </script>
 </body>
 </html>
