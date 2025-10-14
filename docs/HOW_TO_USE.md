@@ -4,15 +4,15 @@ A comprehensive guide on how to use the HardenSys security compliance tool for b
 
 ## 📋 Table of Contents
 
-- [Prerequisites](-#prerequisites)
-- [Installation](-#installation)
-- [Quick Start](-#quick-start)
-- [GUI Interface](-#gui-interface)
-- [CLI Interface](-#cli-interface)
-- [Understanding Reports](-#understanding-reports)
-- [Advanced Usage](-#advanced-usage)
-- [Troubleshooting](-#troubleshooting)
-- [Best Practices](-#best-practices)
+- [Prerequisites](#-prerequisites)
+- [Installation](#-installation)
+- [Quick Start](#-quick-start)
+- [GUI Interface](#-gui-interface)
+- [CLI Interface](#-cli-interface)
+- [Understanding Reports](#-understanding-reports)
+- [Advanced Usage](#-advanced-usage)
+- [Troubleshooting](#-troubleshooting)
+- [Best Practices](#-best-practices)
 
 ## 🔧 Prerequisites
 
