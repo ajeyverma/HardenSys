@@ -481,6 +481,12 @@ body {
     margin: 0 20px;
     margin-top: 2px; /* Optional: Add spacing around the separator */
   }
+  .vertical-separator-secondary {
+    border-left: 2px solid var(--sidebar-border);
+    height: 20px;
+    margin-top: 2px;
+    margin-left: 10px;
+  }
 
 
 
@@ -748,6 +754,20 @@ body {
 
 .home-link:hover i {
     transform: translateX(-2px);
+}
+.docs-nav-link-about {
+    color: var(--text-primary);
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding-top: 2px;
+    padding-left: 10px;
+}
+.docs-nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
 }
 
 .nav-section {
