@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     loadParameterData();
     bindManualCardClicks();
     initCompleteParameterTables();
+    initLinuxSectionVisibilityRender();
+    hookOsSwitchRerender();
 });
 
 // Parameter data loaded from JSON
@@ -348,10 +350,16 @@ function openParameterDetailPopup(scriptKey) {
 // Load parameter data (placeholder function)
 async function loadParameterData() {
     try {
-        const winResp = await fetch('/docs/assets/json/windows_tasks.json');
-        const linuxResp = await fetch('/docs/assets/json/linux_tasks.json');
-        const windows = winResp.ok ? await winResp.json() : [];
-        const linux = linuxResp.ok ? await linuxResp.json() : [];
+        const windows = await fetchJsonWithFallbacks([
+            '/docs/assets/json/windows_tasks.json',
+            '../windows_tasks.json',
+            '/docs/windows_tasks.json'
+        ]);
+        const linux = await fetchJsonWithFallbacks([
+            '/docs/assets/json/linux_tasks.json',
+            '../linux_tasks.json',
+            '/docs/linux_tasks.json'
+        ]);
 
         // Normalize into unified structure
         const toEntry = (p, os) => ({
@@ -389,6 +397,8 @@ async function loadParameterData() {
         renderCompleteParameterTables();
     } catch (e) {
         console.error('Failed to load parameter data', e);
+        // Attempt to still render from DOM if available
+        renderCompleteParameterTables();
     }
 }
 
@@ -504,13 +514,14 @@ function initCompleteParameterTables() {
 function renderCompleteParameterTables() {
     const windowsContainer = document.getElementById('complete-parameter-table');
     const linuxContainer = document.getElementById('linux-complete-parameter-table');
-    const linuxListContainer = document.getElementById('linux-complete-parameter-list');
-    if (!parameterData || parameterData.length === 0) return;
+    const linuxListContainer = null;
+    // allow DOM fallback even if parameterData is empty
 
     if (windowsContainer) {
-        const winRows = parameterData
-            .filter(p => p.os === 'windows')
-            .map((p, idx) => tableRow(idx + 1, p));
+        const datasetWin = (parameterData && parameterData.length)
+            ? parameterData.filter(p => p.os === 'windows')
+            : collectFromDom('#parameters-manual-setup', 'windows');
+        const winRows = datasetWin.map((p, idx) => tableRow(idx + 1, p));
         windowsContainer.innerHTML = buildTableHtml(winRows);
         // Click to open detail popup
         windowsContainer.querySelectorAll('tbody tr').forEach(tr => {
@@ -523,9 +534,9 @@ function renderCompleteParameterTables() {
     }
 
     if (linuxContainer) {
-        const linRows = parameterData
-            .filter(p => p.os === 'linux')
-            .map((p, idx) => tableRow(idx + 1, p));
+        // Build strictly from DOM (manual cards), not from JSON
+        const datasetLin = collectFromDom('#linux-parameters-manual-setup', 'linux');
+        const linRows = datasetLin.map((p, idx) => tableRow(idx + 1, p));
         linuxContainer.innerHTML = buildTableHtml(linRows);
         // Click to open detail popup
         linuxContainer.querySelectorAll('tbody tr').forEach(tr => {
@@ -537,45 +548,7 @@ function renderCompleteParameterTables() {
         });
     }
 
-    // Also render grouped list for Linux below the table
-    if (linuxListContainer) {
-        const linuxItems = parameterData.filter(p => p.os === 'linux');
-        const groups = linuxItems.reduce((acc, p) => {
-            const head = p.category || 'General';
-            const sub = p.subcategory || 'Misc';
-            acc[head] = acc[head] || {};
-            acc[head][sub] = acc[head][sub] || [];
-            acc[head][sub].push(p);
-            return acc;
-        }, {});
-
-        const html = Object.keys(groups).sort().map(head => {
-            const subHtml = Object.keys(groups[head]).sort().map(sub => {
-                const items = groups[head][sub]
-                    .sort((a,b) => a.title.localeCompare(b.title))
-                    .map(p => `<li class="param-item" data-script-key="${p.scriptKey}"><strong>${escapeHtml(p.title)}</strong> — ${escapeHtml(p.details)}</li>`)
-                    .join('');
-                return `
-                    <div class="parameter-category">
-                        <h3>${escapeHtml(head)}</h3>
-                        <h4>${escapeHtml(sub)}</h4>
-                        <ul class="parameter-list">${items}</ul>
-                    </div>
-                `;
-            }).join('');
-            return subHtml;
-        }).join('');
-
-        linuxListContainer.innerHTML = html;
-
-        linuxListContainer.querySelectorAll('.param-item').forEach(li => {
-            li.style.cursor = 'pointer';
-            li.addEventListener('click', () => {
-                const key = li.getAttribute('data-script-key');
-                if (key) openParameterDetailPopup(key);
-            });
-        });
-    }
+    // No second list/table
 }
 
 function tableRow(num, p) {
@@ -618,4 +591,72 @@ function escapeHtml(t) {
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
+}
+
+// Re-render Linux tables when Linux section becomes visible
+function initLinuxSectionVisibilityRender() {
+    const linuxSection = document.getElementById('linux-complete-parameter-list');
+    if (!('IntersectionObserver' in window) || !linuxSection) {
+        // Fallback: render once after a tick
+        setTimeout(renderCompleteParameterTables, 250);
+        return;
+    }
+    try {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    renderCompleteParameterTables();
+                }
+            });
+        }, { root: null, threshold: 0.1 });
+        observer.observe(linuxSection);
+    } catch (_) {
+        setTimeout(renderCompleteParameterTables, 250);
+    }
+}
+
+// Re-render when OS is switched via global header control
+function hookOsSwitchRerender() {
+    if (window.__hs_os_hooked) return;
+    window.__hs_os_hooked = true;
+    if (typeof window.setActiveOS === 'function') {
+        const original = window.setActiveOS;
+        window.setActiveOS = function(os) {
+            const result = original.apply(this, arguments);
+            try { setTimeout(renderCompleteParameterTables, 50); } catch (_) {}
+            return result;
+        };
+    } else {
+        // Also re-render on hashchange (for anchors) and on load delay
+        window.addEventListener('hashchange', () => setTimeout(renderCompleteParameterTables, 50));
+        setTimeout(renderCompleteParameterTables, 300);
+    }
+}
+
+async function fetchJsonWithFallbacks(paths) {
+    for (const url of paths) {
+        try {
+            const resp = await fetch(url);
+            if (resp.ok) {
+                const json = await resp.json();
+                if (Array.isArray(json)) return json;
+            }
+        } catch (e) {
+            // continue to next
+        }
+    }
+    return [];
+}
+
+function collectFromDom(rootSel, os) {
+    const root = document.querySelector(rootSel);
+    if (!root) return [];
+    return Array.from(root.querySelectorAll('.parameter-card')).map(card => ({
+        title: (card.querySelector('h4')?.textContent || '').trim(),
+        details: (card.querySelector('.description')?.textContent || '').trim(),
+        category: (card.querySelector('.category')?.textContent || '').trim(),
+        subcategory: '',
+        scriptKey: sanitizeKey(((card.querySelector('h4')?.textContent || '').trim().toLowerCase()) + `_${os}`),
+        os
+    }));
 }
