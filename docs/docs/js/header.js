@@ -12,8 +12,44 @@ document.addEventListener('DOMContentLoaded', function() {
 function initHeaderSearch() {
     const headerSearchInput = document.getElementById('header-search');
     const headerSearchClear = document.getElementById('header-search-clear');
+    let headerSearchSuggestions = document.getElementById('header-search-suggestions');
     
     if (!headerSearchInput || !headerSearchClear) return;
+
+    // Create suggestions dropdown if missing
+    if (!headerSearchSuggestions) {
+        headerSearchSuggestions = document.createElement('div');
+        headerSearchSuggestions.id = 'header-search-suggestions';
+        headerSearchSuggestions.style.position = 'absolute';
+        headerSearchSuggestions.style.top = '100%';
+        headerSearchSuggestions.style.left = '0';
+        headerSearchSuggestions.style.right = '0';
+        headerSearchSuggestions.style.zIndex = '1000';
+        headerSearchSuggestions.style.background = '#fff';
+        headerSearchSuggestions.style.border = '1px solid #e9ecef';
+        headerSearchSuggestions.style.borderTop = 'none';
+        headerSearchSuggestions.style.boxShadow = '0 8px 24px rgba(0,0,0,0.08)';
+        headerSearchSuggestions.style.display = 'none';
+        headerSearchSuggestions.style.maxHeight = '320px';
+        headerSearchSuggestions.style.overflowY = 'auto';
+
+        // Position container relative to search input's parent (the search box)
+        const searchBox = headerSearchInput.parentElement;
+        if (searchBox && getComputedStyle(searchBox).position === 'static') {
+            searchBox.style.position = 'relative';
+        }
+        (searchBox || document.body).appendChild(headerSearchSuggestions);
+    }
+
+    // Build searchable index from sidebar links and visible headings
+    let searchIndex = buildHeaderSearchIndex();
+    window.addEventListener('osChanged', () => { searchIndex = buildHeaderSearchIndex(); });
+    window.addEventListener('hashchange', () => { searchIndex = buildHeaderSearchIndex(); });
+    document.addEventListener('click', (e) => {
+        if (!headerSearchSuggestions.contains(e.target) && e.target !== headerSearchInput) {
+            hideHeaderSuggestions();
+        }
+    });
     
     // Header search functionality
     headerSearchInput.addEventListener('input', function() {
@@ -21,27 +57,119 @@ function initHeaderSearch() {
         
         if (query.length === 0) {
             headerSearchClear.style.display = 'none';
+            hideHeaderSuggestions();
             return;
         }
         
         headerSearchClear.style.display = 'block';
-        // In a real implementation, this would perform a global search
-        console.log('Header search:', query);
+        const results = searchIndex.filter(item =>
+            item.title.toLowerCase().includes(query)
+        ).slice(0, 8);
+        renderHeaderSuggestions(results, headerSearchSuggestions);
     });
     
     // Clear header search
     headerSearchClear.addEventListener('click', function() {
         headerSearchInput.value = '';
         this.style.display = 'none';
+        hideHeaderSuggestions();
     });
     
     // Keyboard shortcuts for header search
     headerSearchInput.addEventListener('keydown', function(e) {
+        const visible = headerSearchSuggestions && headerSearchSuggestions.style.display !== 'none';
+        if (visible && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+            e.preventDefault();
+            moveHeaderSuggestionFocus(headerSearchSuggestions, e.key === 'ArrowDown' ? 1 : -1);
+            return;
+        }
+        if (visible && e.key === 'Enter') {
+            const focused = headerSearchSuggestions.querySelector('.header-suggestion.focused');
+            if (focused) {
+                const href = focused.getAttribute('data-href');
+                if (href) window.location.href = href;
+                hideHeaderSuggestions();
+                return;
+            }
+        }
         if (e.key === 'Escape') {
             this.value = '';
             headerSearchClear.style.display = 'none';
+            hideHeaderSuggestions();
         }
     });
+}
+
+function buildHeaderSearchIndex() {
+    const items = [];
+    // Sidebar links
+    document.querySelectorAll('#docs-sidebar .nav-list a.nav-link').forEach(link => {
+        const title = (link.textContent || '').trim();
+        const href = link.getAttribute('href') || '';
+        if (title && href) {
+            items.push({ title, href });
+        }
+    });
+    // Visible headings with ids in main content
+    document.querySelectorAll('.docs-main h1[id], .docs-main h2[id], .docs-main h3[id]').forEach(h => {
+        const title = (h.textContent || '').trim();
+        const id = h.getAttribute('id');
+        if (title && id) {
+            items.push({ title, href: `#${id}` });
+        }
+    });
+    // De-duplicate by href
+    const seen = new Set();
+    return items.filter(it => {
+        if (seen.has(it.href)) return false;
+        seen.add(it.href);
+        return true;
+    });
+}
+
+function renderHeaderSuggestions(results, container) {
+    if (!container) return;
+    if (!results || results.length === 0) {
+        hideHeaderSuggestions();
+        return;
+    }
+    container.innerHTML = results.map((r, idx) => `
+        <div class="header-suggestion${idx === 0 ? ' focused' : ''}" data-href="${r.href}" style="padding: 0.5rem 0.75rem; cursor: pointer; border-top: 1px solid #f1f3f5;">
+            <div style="font-weight: 600;">${r.title}</div>
+            <div style="font-size: 12px; color: #6c757d;">${r.href}</div>
+        </div>
+    `).join('');
+    container.style.display = 'block';
+    Array.from(container.children).forEach(child => {
+        child.addEventListener('mouseenter', () => {
+            container.querySelectorAll('.header-suggestion').forEach(el => el.classList.remove('focused'));
+            child.classList.add('focused');
+        });
+        child.addEventListener('click', () => {
+            const href = child.getAttribute('data-href');
+            if (href) window.location.href = href;
+            hideHeaderSuggestions();
+        });
+    });
+}
+
+function hideHeaderSuggestions() {
+    const container = document.getElementById('header-search-suggestions');
+    if (container) {
+        container.style.display = 'none';
+        container.innerHTML = '';
+    }
+}
+
+function moveHeaderSuggestionFocus(container, delta) {
+    const items = Array.from(container.querySelectorAll('.header-suggestion'));
+    if (items.length === 0) return;
+    let idx = items.findIndex(el => el.classList.contains('focused'));
+    if (idx === -1) idx = 0;
+    const next = (idx + delta + items.length) % items.length;
+    items.forEach(el => el.classList.remove('focused'));
+    items[next].classList.add('focused');
+    items[next].scrollIntoView({ block: 'nearest' });
 }
 
 // Initialize mobile menu functionality

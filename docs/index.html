@@ -21,6 +21,13 @@
                 <li><a href="docs/parameters.html" class="nav-link"><i class="fas fa-shield-alt"></i> Parameters</a></li>
                 <li><a href="/about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
             </ul>
+            <div class="header-search" style="position: relative; display: flex; align-items: center; gap: 6px; margin-left: 12px;">
+                <i class="fas fa-search" style="color: rgba(255,255,255,0.8);"></i>
+                <input type="text" id="header-search" placeholder="Search documentation..." style="padding: 8px 10px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #fff; width: 220px;">
+                <button class="search-clear" id="header-search-clear" style="display: none; background: transparent; border: 0; color: rgba(255,255,255,0.8); cursor: pointer;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -367,6 +374,7 @@
     </div>
 
     <script src="/docs/Assets/js/script.js"></script>
+    <script src="/docs/docs/js/header.js"></script>
     <script src="/docs/Assets/js/parameters-popup.js"></script>
 </body>
 </html>
