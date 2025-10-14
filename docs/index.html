@@ -57,7 +57,36 @@
                     </div>
                 </div>
                 <div class="hero-actions">
-                    <a href="website/download.html" class="btn btn-primary">Download Tool</a>
+                    <div class="download-dropdown">
+                        <a href="https://github.com/ajeyverma/HardenSys/archive/refs/heads/main.zip" class="btn btn-primary download-main">
+                            <i class="fas fa-download"></i>
+                            Download Tool
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="download-dropdown-menu">
+                            <a href="https://github.com/ajeyverma/HardenSys/archive/refs/heads/main.zip" class="download-option">
+                                <i class="fas fa-crown"></i>
+                                <div class="option-content">
+                                    <span class="option-title">Complete Package</span>
+                                    <span class="option-desc">All tools & documentation</span>
+                                </div>
+                            </a>
+                            <a href="docs/?os=windows#download" class="download-option">
+                                <i class="fab fa-windows"></i>
+                                <div class="option-content">
+                                    <span class="option-title">Windows Specific</span>
+                                    <span class="option-desc">Windows tools & guides</span>
+                                </div>
+                            </a>
+                            <a href="docs/?os=linux#linux-download" class="download-option">
+                                <i class="fab fa-linux"></i>
+                                <div class="option-content">
+                                    <span class="option-title">Linux Specific</span>
+                                    <span class="option-desc">Linux tools & guides</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                     <a href="docs" class="btn btn-secondary">Get Started</a>
                 </div>
             </div>
@@ -85,43 +114,43 @@
                             <i class="fas fa-cogs"></i>
                             <h3>Account Policies</h3>
                             <p>Password policies, account lockout settings, and authentication controls</p>
-                            <span class="param-count">9 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('account-policies')">9 Parameters</span>
                         </div>
                         <div class="overview-card">
                             <i class="fas fa-user-shield"></i>
                             <h3>User Rights</h3>
                             <p>User rights assignment and privilege management</p>
-                            <span class="param-count">7 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('user-rights')">7 Parameters</span>
                         </div>
                         <div class="overview-card">
                             <i class="fas fa-lock"></i>
                             <h3>Security Options</h3>
                             <p>Advanced security options and system configuration</p>
-                            <span class="param-count">24 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('security-options')">24 Parameters</span>
                         </div>
                         <div class="overview-card">
                             <i class="fas fa-cog"></i>
                             <h3>System Settings</h3>
                             <p>UAC settings, system services, and user account controls</p>
-                            <span class="param-count">32 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('system-settings')">32 Parameters</span>
                         </div>
                         <div class="overview-card">
                             <i class="fas fa-fire"></i>
                             <h3>Firewall</h3>
                             <p>Firewall configuration and network security rules</p>
-                            <span class="param-count">18 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('firewall')">18 Parameters</span>
                         </div>
                         <div class="overview-card">
                             <i class="fas fa-search"></i>
                             <h3>Audit Policy</h3>
                             <p>Advanced audit policy configuration and monitoring</p>
-                            <span class="param-count">20 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('audit-policy')">20 Parameters</span>
                         </div>
                         <div class="overview-card">
                             <i class="fas fa-shield-virus"></i>
                             <h3>Application Guard</h3>
                             <p>Microsoft Defender Application Guard settings</p>
-                            <span class="param-count">11 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('application-guard')">11 Parameters</span>
                         </div>
                     </div>
                 </div>
@@ -133,37 +162,37 @@
                             <i class="fas fa-hdd"></i>
                             <h3>Filesystem Configuration</h3>
                             <p>Kernel modules, partitions, and file system security</p>
-                            <span class="param-count">16 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('filesystem')">16 Parameters</span>
                         </div>
                         <div class="overview-card">
                             <i class="fas fa-box"></i>
                             <h3>Package Management</h3>
                             <p>Bootloader settings and process hardening</p>
-                            <span class="param-count">7 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('package-management')">7 Parameters</span>
                         </div>
                         <div class="overview-card">
                             <i class="fas fa-server"></i>
                             <h3>Services Configuration</h3>
                             <p>Server and client services plus time sync</p>
-                            <span class="param-count">21 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('services-configuration')">21 Parameters</span>
                         </div>
                         <div class="overview-card">
                             <i class="fas fa-network-wired"></i>
                             <h3>Network Configuration</h3>
                             <p>Network parameters and firewall configuration</p>
-                            <span class="param-count">12 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('network-configuration')">12 Parameters</span>
                         </div>
                         <div class="overview-card">
                             <i class="fas fa-lock"></i>
                             <h3>Access Control</h3>
                             <p>SSH, PAM, and account control policies</p>
-                            <span class="param-count">21 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('access-control')">21 Parameters</span>
                         </div>
                         <div class="overview-card">
                             <i class="fas fa-shield-alt"></i>
                             <h3>System Hardening</h3>
                             <p>Additional kernel and system security measures</p>
-                            <span class="param-count">12 Parameters</span>
+                            <span class="param-count" onclick="openParametersPopup('system-hardening')">12 Parameters</span>
                         </div>
                     </div>
                 </div>
@@ -224,7 +253,7 @@
                         <div class="step-number">1</div>
                         <h3>Download</h3>
                         <p>Download the tool and extract to your desired location</p>
-                        <a href="website/download.html" class="btn btn-outline">Download</a>
+                        <a href="docs/?os=windows#download" class="btn btn-outline">Download</a>
                     </div>
                     <div class="quick-start-card">
                         <div class="step-number">2</div>
@@ -249,7 +278,7 @@
                         <div class="step-number">1</div>
                         <h3>Download</h3>
                         <p>Download the tool and extract to your desired location</p>
-                        <a href="website/download.html" class="btn btn-outline">Download</a>
+                        <a href="docs/?os=linux#linux-download" class="btn btn-outline">Download</a>
                     </div>
                     <div class="quick-start-card">
                         <div class="step-number">2</div>
@@ -322,6 +351,23 @@
         }));
     })();
     </script>
+    <!-- Parameters Popup -->
+    <div id="parameters-popup" class="parameters-popup">
+        <div class="popup-overlay" onclick="closeParametersPopup()"></div>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2 id="popup-title">Parameters</h2>
+                <button class="popup-close" onclick="closeParametersPopup()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body" id="popup-body">
+                <!-- Parameters will be loaded here -->
+            </div>
+        </div>
+    </div>
+
     <script src="/docs/Assets/js/script.js"></script>
+    <script src="/docs/Assets/js/parameters-popup.js"></script>
 </body>
 </html>

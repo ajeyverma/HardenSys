@@ -79,10 +79,12 @@
                     </div>
                     <ul class="nav-list">
                         <li><a href="#introduction" class="nav-link active">Introduction</a></li>
-                        <li><a href="#installation" class="nav-link">Installation</a></li>
-                        <li><a href="#quick-start" class="nav-link">Quick Start</a></li>
                         <li><a href="#requirements" class="nav-link">Requirements</a></li>
                         <li><a href="#download" class="nav-link">Download</a></li>
+                        <li><a href="#installation" class="nav-link">Installation</a></li>
+                        <li><a href="#quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="#file-structure" class="nav-link">File Structure</a></li>
+                        <li><a href="#updates-support" class="nav-link">Updates & Support</a></li>
                     </ul>
                 </div>
 
@@ -124,7 +126,23 @@
                         <li><a href="../docs/parameters.html#parameters-overview" class="nav-link">Overview</a></li>
                         <li><a href="../docs/parameters.html#parameters-categories" class="nav-link">Categories</a></li>
                         <li><a href="../docs/parameters.html#parameters-search" class="nav-link">Search Parameters</a></li>
-                        <li><a href="../docs/parameters.html#parameters-manual-setup" class="nav-link">Manual Setup</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Manual Setup</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/manual-setup.html#manual-setup-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/manual-setup.html#local-security-policy" class="nav-link">Local Security Policy</a></li>
+                        <li><a href="../docs/manual-setup.html#registry-editor" class="nav-link">Registry Editor</a></li>
+                        <li><a href="../docs/manual-setup.html#command-line" class="nav-link">Command Line</a></li>
+                        <li><a href="../docs/manual-setup.html#group-policy" class="nav-link">Group Policy</a></li>
+                        <li><a href="../docs/manual-setup.html#verification-testing" class="nav-link">Verification & Testing</a></li>
+                        <li><a href="../docs/manual-setup.html#best-practices" class="nav-link">Best Practices</a></li>
+                        <li><a href="../docs/manual-setup.html#troubleshooting" class="nav-link">Troubleshooting</a></li>
                     </ul>
                 </div>
 
@@ -162,9 +180,12 @@
                     </div>
                     <ul class="nav-list">
                         <li><a href="#linux-introduction" class="nav-link active">Introduction</a></li>
+                        <li><a href="#linux-requirements" class="nav-link">Requirements</a></li>
+                        <li><a href="#linux-download" class="nav-link">Download</a></li>
                         <li><a href="#linux-installation" class="nav-link">Installation</a></li>
                         <li><a href="#linux-quick-start" class="nav-link">Quick Start</a></li>
-                        <li><a href="#linux-requirements" class="nav-link">Requirements</a></li>
+                        <li><a href="#linux-file-structure" class="nav-link">File Structure</a></li>
+                        <li><a href="#linux-updates-support" class="nav-link">Updates & Support</a></li>
                     </ul>
                 </div>
 
@@ -206,7 +227,23 @@
                         <li><a href="../docs/parameters.html#parameters-overview" class="nav-link">Overview</a></li>
                         <li><a href="../docs/parameters.html#parameters-categories" class="nav-link">Categories</a></li>
                         <li><a href="../docs/parameters.html#parameters-search" class="nav-link">Search Parameters</a></li>
-                        <li><a href="../docs/parameters.html#parameters-manual-setup" class="nav-link">Manual Setup</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Manual Setup</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../docs/manual-setup.html#linux-manual-setup-overview" class="nav-link">Overview</a></li>
+                        <li><a href="../docs/manual-setup.html#linux-system-configuration" class="nav-link">System Configuration</a></li>
+                        <li><a href="../docs/manual-setup.html#linux-file-permissions" class="nav-link">File Permissions</a></li>
+                        <li><a href="../docs/manual-setup.html#linux-service-management" class="nav-link">Service Management</a></li>
+                        <li><a href="../docs/manual-setup.html#linux-network-security" class="nav-link">Network Security</a></li>
+                        <li><a href="../docs/manual-setup.html#linux-verification-testing" class="nav-link">Verification & Testing</a></li>
+                        <li><a href="../docs/manual-setup.html#linux-best-practices" class="nav-link">Best Practices</a></li>
+                        <li><a href="../docs/manual-setup.html#linux-troubleshooting" class="nav-link">Troubleshooting</a></li>
                     </ul>
                 </div>
 
@@ -288,6 +325,207 @@
                     </div>
                 </section>
 
+                <!-- Requirements Section -->
+                <section id="requirements" class="docs-section">
+                    <h2>System Requirements</h2>
+                    
+                    <div class="requirements-grid">
+                        <div class="requirement-card">
+                            <h3>Operating System</h3>
+                            <ul>
+                                <li>Windows 10 (version 1903 or later)</li>
+                                <li>Windows 11</li>
+                                <li>Windows Server 2019/2022</li>
+                            </ul>
+                        </div>
+                        <div class="requirement-card">
+                            <h3>Software</h3>
+                            <ul>
+                                <li>Python 3.6 or higher</li>
+                                <li>pip package manager</li>
+                                <li>Required Python packages</li>
+                            </ul>
+                        </div>
+                        <div class="requirement-card">
+                            <h3>Privileges</h3>
+                            <ul>
+                                <li>Administrator privileges (recommended)</li>
+                                <li>Local security policy access</li>
+                                <li>Registry modification rights</li>
+                            </ul>
+                        </div>
+                        <div class="requirement-card">
+                            <h3>Hardware</h3>
+                            <ul>
+                                <li>512MB RAM (recommended)</li>
+                                <li>Network access for updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Download Section -->
+                <section id="download" class="docs-section">
+                    <h2>Download HardenSys</h2>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-download"></i>
+                        <strong class="alert-info-text">Ready to get started?</strong> Download HardenSys and begin securing your systems today.
+                    </div>
+
+                    <h3>Download Options</h3>
+                    <div class="download-grid">
+                        <div class="download-card featured">
+                            <div class="download-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <h4>Complete Package</h4>
+                            <p>Everything you need to get started with HardenSys. Includes GUI, CLI, documentation, configuration files, and all dependencies.</p>
+                            <div class="download-info">
+                                <span class="file-size">~25 MB</span>
+                                <span class="file-format">ZIP Archive</span>
+                            </div>
+                            <div class="download-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>GUI & CLI Tools</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Complete Documentation</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>All Dependencies</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Ready to Run</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/ajeyverma/HardenSys/archive/refs/heads/main.zip" class="btn btn-primary" style="display: ruby; text-decoration: none;">
+                                <i class="fas fa-download"></i>
+                                Download Complete Package
+                            </a>
+                        </div>
+                        
+                        <div class="download-card">
+                            <div class="download-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <h4>CLI Tool</h4>
+                            <p>Command-line interface perfect for automation, scripting, and server environments. Lightweight and powerful.</p>
+                            <div class="download-info">
+                                <span class="file-size">~12 KB</span>
+                                <span class="file-format">Python Script</span>
+                            </div>
+                            <div class="download-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Automation Ready</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Server Friendly</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Script Integration</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/ajeyverma/HardenSys/blob/main/HardenSys.py" class="btn btn-outline" style="text-decoration: none;">
+                                <i class="fas fa-download"></i>
+                                Download CLI Tool
+                            </a>
+                            <p style="font-size: 15px; color: #666; margin-top: 25px;"><i class="fas fa-info-circle"></i> <b >Dependencies:</b> windows_tasks.py, windows_tasks.json in the same directory</p>
+                        </div>
+                        
+                        <div class="download-card">
+                            <div class="download-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h4>GUI Application</h4>
+                            <p>User-friendly graphical interface for interactive security management. Perfect for desktop users and administrators.</p>
+                            <div class="download-info">
+                                <span class="file-size">~15 KB</span>
+                                <span class="file-format">Python Script</span>
+                            </div>
+                            <div class="download-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Visual Interface</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Easy to Use</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Real-time Results</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/ajeyverma/HardenSys/blob/main/HardenSys_gui.py" class="btn btn-outline" style="text-decoration: none;">
+                                <i class="fas fa-download"></i>
+                                Download GUI App
+                            </a>
+                            <p style="font-size: 15px; color: #666; margin-top: 25px;"><i class="fas fa-info-circle"></i> <b >Dependencies:</b> windows_tasks.py, windows_tasks.json in the same directory</p>
+                        </div>
+                    </div>
+
+                    <h3>Installation Steps</h3>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Download</h4>
+                                <p>Download the complete package or individual components from the download page</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Extract</h4>
+                                <p>Extract the files to your desired location (e.g., C:\HardenSys)</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Install Dependencies</h4>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>pip install -r requirements.txt</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Run</h4>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>python HardenSys.py</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong class="alert-info-text">Important:</strong> Always run HardenSys with administrator privileges for full functionality. Some security checks require elevated permissions.
+                    </div>
+                </section>
+
                 <!-- Installation Section -->
                 <section id="installation" class="docs-section">
                     <h2>Installation</h2>
@@ -313,6 +551,190 @@ cd HardenSys
 
 # Install dependencies
 pip install -r requirements.txt</code></pre>
+                    </div>
+
+                    <h3>Manual Installation</h3>
+                    <p>For users who prefer to install HardenSys manually or need to customize the installation process:</p>
+                    
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Download Python</h4>
+                                <p>Install Python 3.6 or higher from the official website</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Download</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>https://www.python.org/downloads/</code></pre>
+                                </div>
+                                <div class="alert alert-info">
+                                    <i class="fas fa-info-circle"></i>
+                                    <strong class="alert-info-text">Note:</strong> Make sure to check "Add Python to PATH" during installation on Windows.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Download HardenSys</h4>
+                                <p>Download the complete package or individual components</p>
+                                <div class="installation-options">
+                                    <div class="install-option">
+                                        <h5><i class="fas fa-download"></i> Complete Package</h5>
+                                        <p>Download the full ZIP archive containing all files</p>
+                                        <div class="code-block">
+                                            <div class="code-header">
+                                                <span>Download Link</span>
+                                                <button class="copy-btn" onclick="copyCode(this)">
+                                                    <i class="fas fa-copy"></i>
+                                                </button>
+                                            </div>
+                                            <pre><code>https://github.com/ajeyverma/HardenSys/archive/refs/heads/main.zip</code></pre>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="install-option">
+                                        <h5><i class="fas fa-code"></i> Individual Files</h5>
+                                        <p>Download specific components as needed for Windows systems</p>
+                                        <ul class="file-links">
+                                            <li><a href="https://github.com/ajeyverma/HardenSys/blob/main/HardenSys.py" target="_blank">HardenSys.py</a> - CLI tool</li>
+                                            <li><a href="https://github.com/ajeyverma/HardenSys/blob/main/HardenSys_gui.py" target="_blank">HardenSys_gui.py</a> - GUI application</li>
+                                            <li><a href="https://github.com/ajeyverma/HardenSys/blob/main/windows_tasks.py" target="_blank">windows_tasks.py</a> - Windows engine</li>
+                                            <li><a href="https://github.com/ajeyverma/HardenSys/blob/main/windows_tasks.json" target="_blank">windows_tasks.json</a> - Windows config</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Extract and Organize</h4>
+                                <p>Extract files to your desired location and organize the directory structure</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Windows Command</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># Extract to C:\HardenSys (recommended)
+# Create the directory structure:
+mkdir C:\HardenSys
+cd C:\HardenSys
+
+# Copy all downloaded files to this directory</code></pre>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Install Dependencies</h4>
+                                <p>Install required Python packages using pip</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># Install all dependencies
+pip install -r requirements.txt
+
+# Or install individually:
+pip install PySide6
+pip install reportlab
+pip install PyPDF2
+pip install Pillow
+pip install python-dotenv</code></pre>
+                                </div>
+                                <div class="alert alert-warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <strong class="alert-info-text">Important:</strong> Some packages may require additional system dependencies on Linux. Check the package documentation for specific requirements.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Create Virtual Environment (Optional)</h4>
+                                <p>Create an isolated Python environment for HardenSys</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+venv\Scripts\activate
+
+# Install dependencies in virtual environment
+pip install -r requirements.txt</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                    </div>
+
+                    <h3>Post-Installation Setup</h3>
+                    <div class="setup-options">
+                        <div class="setup-card">
+                            <div class="setup-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <div class="setup-content">
+                                <h4>Create Desktop Shortcuts</h4>
+                                <p>Create convenient shortcuts for easy access</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Windows Batch File</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>@echo off
+cd /d "C:\HardenSys"
+python HardenSys_gui.py
+pause</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="setup-card">
+                            <div class="setup-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <div class="setup-content">
+                                <h4>Add to PATH</h4>
+                                <p>Add HardenSys directory to system PATH for global access</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Windows</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># Add to system PATH:
+# Control Panel → System → Advanced → Environment Variables
+# Add: C:\HardenSys</code></pre>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <h3>Verification</h3>
@@ -419,187 +841,16 @@ python HardenSys_gui.py</code></pre>
                     </div>
                 </section>
 
-                <!-- Requirements Section -->
-                <section id="requirements" class="docs-section">
-                    <h2>System Requirements</h2>
+                <!-- Quick Start Section -->
+                <section id="quick-start" class="docs-section">
+                    <h2>Quick Start</h2>
                     
-                    <div class="requirements-grid">
-                        <div class="requirement-card">
-                            <h3>Operating System</h3>
-                            <ul>
-                                <li>Windows 10 (version 1903 or later)</li>
-                                <li>Windows 11</li>
-                                <li>Windows Server 2019/2022</li>
-                            </ul>
-                        </div>
-                        <div class="requirement-card">
-                            <h3>Software</h3>
-                            <ul>
-                                <li>Python 3.6 or higher</li>
-                                <li>pip package manager</li>
-                                <li>Required Python packages</li>
-                            </ul>
-                        </div>
-                        <div class="requirement-card">
-                            <h3>Privileges</h3>
-                            <ul>
-                                <li>Administrator privileges (recommended)</li>
-                                <li>Local security policy access</li>
-                                <li>Registry modification rights</li>
-                            </ul>
-                        </div>
-                        <div class="requirement-card">
-                            <h3>Resources</h3>
-                            <ul>
-                                <li>Minimum 100MB disk space</li>
-                                <li>512MB RAM (recommended)</li>
-                                <li>Network access for updates</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Download Section -->
-                <section id="download" class="docs-section">
-                    <h2>Download HardenSys</h2>
-                    
-                    <div class="alert alert-info">
-                        <i class="fas fa-download"></i>
-                        <strong class="alert-info-text">Ready to get started?</strong> Download HardenSys and begin securing your systems today.
-                    </div>
-
-                    <h3>Download Options</h3>
-                    <div class="download-grid">
-                        <div class="download-card featured">
-                            <div class="download-icon">
-                                <i class="fas fa-crown"></i>
-                            </div>
-                            <h4>Complete Package</h4>
-                            <p>Everything you need to get started with HardenSys. Includes GUI, CLI, documentation, configuration files, and all dependencies.</p>
-                            <div class="download-info">
-                                <span class="file-size">~25 MB</span>
-                                <span class="file-format">ZIP Archive</span>
-                            </div>
-                            <div class="download-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>GUI & CLI Tools</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Complete Documentation</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>All Dependencies</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Ready to Run</span>
-                                </div>
-                            </div>
-                            <a href="../website/download.html" class="btn btn-primary" style="display: ruby; text-decoration: none;">
-                                <i class="fas fa-download"></i>
-                                Download Complete Package
-                            </a>
-                        </div>
-                        
-                        <div class="download-card">
-                            <div class="download-icon">
-                                <i class="fas fa-terminal"></i>
-                            </div>
-                            <h4>CLI Tool</h4>
-                            <p>Command-line interface perfect for automation, scripting, and server environments. Lightweight and powerful.</p>
-                            <div class="download-info">
-                                <span class="file-size">~12 KB</span>
-                                <span class="file-format">Python Script</span>
-                            </div>
-                            <div class="download-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Automation Ready</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Server Friendly</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Script Integration</span>
-                                </div>
-                            </div>
-                            <a href="https://github.com/ajeyverma/HardenSys/archive/refs/heads/main.zip" class="btn btn-outline" style="text-decoration: none;">
-                                <i class="fas fa-download"></i>
-                                Download CLI Tool
-                            </a>
-                        </div>
-                        
-                        <div class="download-card">
-                            <div class="download-icon">
-                                <i class="fas fa-desktop"></i>
-                            </div>
-                            <h4>GUI Application</h4>
-                            <p>User-friendly graphical interface for interactive security management. Perfect for desktop users and administrators.</p>
-                            <div class="download-info">
-                                <span class="file-size">~15 KB</span>
-                                <span class="file-format">Python Script</span>
-                            </div>
-                            <div class="download-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Visual Interface</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Easy to Use</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Real-time Results</span>
-                                </div>
-                            </div>
-                            <a href="../website/download.html" class="btn btn-outline" style="text-decoration: none;">
-                                <i class="fas fa-download"></i>
-                                Download GUI App
-                            </a>
-                        </div>
-                    </div>
-
-                    <h3>Installation Steps</h3>
+                    <h3>CLI Quick Start</h3>
                     <div class="steps">
                         <div class="step">
                             <div class="step-number">1</div>
                             <div class="step-content">
-                                <h4>Download</h4>
-                                <p>Download the complete package or individual components from the download page</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h4>Extract</h4>
-                                <p>Extract the files to your desired location (e.g., C:\HardenSys)</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h4>Install Dependencies</h4>
-                                <div class="code-block">
-                                    <div class="code-header">
-                                        <span>Command Line</span>
-                                        <button class="copy-btn" onclick="copyCode(this)">
-                                            <i class="fas fa-copy"></i>
-                                        </button>
-                                    </div>
-                                    <pre><code>pip install -r requirements.txt</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h4>Run</h4>
+                                <h4>Run All Checks</h4>
                                 <div class="code-block">
                                     <div class="code-header">
                                         <span>Command Line</span>
@@ -611,11 +862,554 @@ python HardenSys_gui.py</code></pre>
                                 </div>
                             </div>
                         </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Generate Report</h4>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>python HardenSys.py --output report.html</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Filter by Category</h4>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>python HardenSys.py --heading "Account Policies"</code></pre>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="alert alert-warning">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <strong class="alert-info-text">Important:</strong> Always run HardenSys with administrator privileges for full functionality. Some security checks require elevated permissions.
+                    <h3>GUI Quick Start</h3>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Launch GUI</h4>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>python HardenSys_gui.py</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Select Category</h4>
+                                <p>Choose a security category from the dropdown menu</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Run Checks</h4>
+                                <p>Click "Run Checks" to start the compliance check</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- File Structure Section -->
+                <section id="file-structure" class="docs-section">
+                    <h2>File Structure</h2>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-folder-tree"></i>
+                        <strong class="alert-info-text">Project Organization:</strong> Understanding the HardenSys file structure helps you navigate and customize the tool effectively.
+                    </div>
+
+                    <h3>Main Directory Structure</h3>
+                    <div class="file-structure">
+                        <div class="structure-item">
+                            <div class="structure-icon">
+                                <i class="fas fa-folder"></i>
+                            </div>
+                            <div class="structure-content">
+                                <h4>HardenSys/</h4>
+                                <p>Root directory containing all project files</p>
+                            </div>
+                        </div>
+                        
+                        <div class="structure-tree">
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-file-code"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">HardenSys.py</span>
+                                    <span class="file-desc">Main CLI application</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">HardenSys_gui.py</span>
+                                    <span class="file-desc">GUI application</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">windows_tasks.py</span>
+                                    <span class="file-desc">Windows compliance engine</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">linux_tasks.py</span>
+                                    <span class="file-desc">Linux compliance engine</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-list-alt"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">windows_tasks.json</span>
+                                    <span class="file-desc">Windows parameter definitions</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-list-alt"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">linux_tasks.json</span>
+                                    <span class="file-desc">Linux parameter definitions</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">requirements.txt</span>
+                                    <span class="file-desc">Python dependencies</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">README.md</span>
+                                    <span class="file-desc">Project documentation</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">LICENSE</span>
+                                    <span class="file-desc">Apache-2.0 license</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Directory Structure</h3>
+                    <div class="directory-structure">
+                        <div class="dir-item">
+                            <div class="dir-icon">
+                                <i class="fas fa-folder"></i>
+                            </div>
+                            <div class="dir-content">
+                                <h4>docs/</h4>
+                                <p>Documentation and website files</p>
+                                <div class="sub-dirs">
+                                    <div class="sub-dir">
+                                        <i class="fas fa-folder"></i>
+                                        <span>docs/</span>
+                                        <span class="sub-desc">Main documentation pages of Website</span>
+                                    </div>
+                                    <div class="sub-dir">
+                                        <i class="fas fa-folder"></i>
+                                        <span>Assets/</span>
+                                        <span class="sub-desc">CSS, JS, and image files</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dir-item">
+                            <div class="dir-icon">
+                                <i class="fas fa-folder"></i>
+                            </div>
+                            <div class="dir-content">
+                                <h4>backup/</h4>
+                                <p>Security policy backups</p>
+                                <div class="sub-dirs">
+                                    <div class="sub-dir">
+                                        <i class="fas fa-file"></i>
+                                        <span>secpol_backup_*.inf</span>   
+                                    </div>
+                                <div>
+                                        <span class="sub-desc">Linux security policy backups</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dir-item">
+                            <div class="dir-icon">
+                                <i class="fas fa-folder"></i>
+                            </div>
+                            <div class="dir-content">
+                                <h4>reports/</h4>
+                                <p>Generated compliance reports</p>
+                                <div class="sub-dirs">
+                                    <div class="sub-dir">
+                                        <i class="fas fa-folder"></i>
+                                        <span>html/</span>
+                                        <span class="sub-desc">HTML compliance reports</span>
+                                    </div>
+                                    <div class="sub-dir">
+                                        <i class="fas fa-folder"></i>
+                                        <span>pdf/</span>
+                                        <span class="sub-desc">PDF compliance reports</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Key Files Explained</h3>
+                    <div class="file-explanations">
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-file-code"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>HardenSys.py</h4>
+                                <p>The main command-line interface for running security compliance checks. This is the entry point for CLI operations.</p>
+                                <div class="file-usage">
+                                    <strong>Usage:</strong> <code style="display: inline-block;">python HardenSys.py [options]</code>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>HardenSys_gui.py</h4>
+                                <p>Graphical user interface built with PySide6. Provides an interactive way to run compliance checks and view results.</p>
+                                <div class="file-usage">
+                                    <strong>Usage:</strong> <code>python HardenSys_gui.py</code>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>windows_tasks.py</h4>
+                                <p>Core compliance engine containing all security check functions for Windows systems. This is the heart of the Windows security checks.</p>
+                                <div class="file-usage">
+                                    <strong>Contains:</strong> 121+ Windows security check functions
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>linux_tasks.py</h4>
+                                <p>Core compliance engine containing all security check functions for Linux systems. Provides comprehensive Linux security hardening capabilities.</p>
+                                <div class="file-usage">
+                                    <strong>Contains:</strong> 89+ Linux security check functions
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-list-alt"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>windows_tasks.json</h4>
+                                <p>Configuration file defining all Windows security parameters, their descriptions, and compliance rules.</p>
+                                <div class="file-usage">
+                                    <strong>Contains:</strong> Parameter definitions and metadata
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-list-alt"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>linux_tasks.json</h4>
+                                <p>Configuration file defining all Linux security parameters, their descriptions, and compliance rules.</p>
+                                <div class="file-usage">
+                                    <strong>Contains:</strong> Linux parameter definitions and metadata
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>requirements.txt</h4>
+                                <p>Python package dependencies required to run HardenSys. Install with </p>
+                                <div class="file-usage">
+                                    <strong>Usage:</strong> <code style="display: inline-block;">pip install -r requirements.txt</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Generated Files</h3>
+                    <div class="generated-files">
+                        <div class="generated-item">
+                            <div class="generated-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="generated-content">
+                                <h4>Compliance Reports</h4>
+                                <p>HTML and PDF reports generated in the <code>reports/</code> directory</p>
+                                <div class="file-pattern">
+                                    <strong>Pattern:</strong> <code>Compliance_Report_YYYYMMDD_HHMMSS.html</code>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="generated-item">
+                            <div class="generated-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="generated-content">
+                                <h4>Security Backups</h4>
+                                <p>Windows security policy backups created in the <code>backup/</code> directory</p>
+                                <div class="file-pattern">
+                                    <strong>Pattern:</strong> <code>secpol_backup_YYYYMMDD_HHMMSS.inf</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Updates and Support Section -->
+                <section id="updates-support" class="docs-section">
+                    <h2>Updates and Support</h2>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-life-ring"></i>
+                        <strong class="alert-info-text">Need Help?</strong> We're here to support you with comprehensive resources and community assistance.
+                    </div>
+
+                    <h3>Getting Updates</h3>
+                    <p>Stay up-to-date with the latest HardenSys features and security improvements:</p>
+                    
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Check for Updates</h4>
+                                <p>Visit our GitHub repository to check for new releases and updates</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>GitHub</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>https://github.com/ajeyverma/HardenSys</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Backup Current Setup</h4>
+                                <p>Always backup your current configuration before updating</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># Backup your current HardenSys directory
+xcopy HardenSys HardenSys_backup /E /I</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Update Dependencies</h4>
+                                <p>Update Python packages to ensure compatibility</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>pip install -r requirements.txt --upgrade</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Support Resources</h3>
+                    <div class="support-grid">
+                        <div class="support-card">
+                            <div class="support-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4>Documentation</h4>
+                            <p>Comprehensive guides, tutorials, and API references</p>
+                            <ul class="support-links" style="padding-left: 0;">
+                                <li><a href="cli.html"><i class="fa-solid fa-terminal" style="color: #007bff; margin-right: 10px;"></i> CLI Guide</a></li>
+                                <li><a href="gui.html"><i class="fa-solid fa-desktop" style="color: #007bff; margin-right: 10px;"></i> GUI Guide</a></li>
+                                <li><a href="parameters.html"><i class="fa-solid fa-book" style="color: #007bff; margin-right: 14px;"></i> Parameters Reference</a></li>
+                                <li><a href="advanced.html"><i class="fa-solid fa-gear" style="color: #007bff; margin-right: 12px;"></i> Advanced Topics</a></li>
+                            </ul>
+                            <a href="/docs/docs" class="btn btn-outline" style="text-decoration: none;">View All Docs</a>
+                        </div>
+
+                        <div class="support-card">
+                            <div class="support-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h4>GitHub Repository</h4>
+                            <p>Source code, issue tracking, and community discussions</p>
+                            <ul class="support-links" style="padding-left: 0;">
+                                <li><a href="https://github.com/ajeyverma/HardenSys" target="_blank"><i class="fa-solid fa-code" style="color: #007bff; margin-right: 10px;"></i> View Source Code</a></li>
+                                <li><a href="https://github.com/ajeyverma/HardenSys/issues" target="_blank"><i class="fa-solid fa-bug" style="color: #007bff; margin-right: 14px;"></i> Report Issues</a></li>
+                                <li><a href="https://github.com/ajeyverma/HardenSys/discussions" target="_blank"><i class="fa-solid fa-users" style="color: #007bff; margin-right: 11px;"></i> Community Discussions</a></li>
+                                <li><a href="https://github.com/ajeyverma/HardenSys/releases" target="_blank"><i class="fa-solid fa-download" style="color: #007bff; margin-right: 16px;"></i> Latest Releases</a></li>
+                            </ul>
+                            <a href="https://github.com/ajeyverma/HardenSys" target="_blank" class="btn btn-outline" style="text-decoration: none;" >Visit GitHub</a>
+                        </div>
+
+                        <div class="support-card">
+                            <div class="support-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <h4>Bug Reports</h4>
+                            <p>Found a bug? Help us improve HardenSys by reporting issues</p>
+                            <div class="bug-report-steps">
+                                <div class="bug-step">
+                                    <span class="bug-number">1</span>
+                                    <span>Check existing issues</span>
+                                </div>
+                                <div class="bug-step">
+                                    <span class="bug-number">2</span>
+                                    <span>Gather system info</span>
+                                </div>
+                                <div class="bug-step">
+                                    <span class="bug-number">3</span>
+                                    <span>Create detailed report</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/ajeyverma/HardenSys/issues/new" target="_blank" class="btn btn-outline" style="text-decoration: none;">Report Bug</a>
+                        </div>
+
+                        <div class="support-card">
+                            <div class="support-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Feature Requests</h4>
+                            <p>Have an idea for improvement? We'd love to hear from you</p>
+                            <div class="feature-request-info">
+                                <div class="info-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Describe the feature clearly</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Explain the use case</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Consider alternatives</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/ajeyverma/HardenSys/issues/new?template=feature_request.md" target="_blank" class="btn btn-outline" style="text-decoration: none;">Request Feature</a>
+                        </div>
+                    </div>
+
+                    <h3>Community and Contributing</h3>
+                    <div class="community-info">
+                        <div class="community-card">
+                            <h4><i class="fas fa-users"></i> Join the Community</h4>
+                            <p>Connect with other HardenSys users, share experiences, and get help from the community.</p>
+                            <a href="https://github.com/ajeyverma/HardenSys/discussions" target="_blank" class="btn btn-primary" style="text-decoration: none; border: 1px solid var(--border-color); border-radius: 5px; padding: 6px 20px 10px 20px;">Join Discussions</a>
+                        </div>
+                        
+                        <div class="community-card">
+                            <h4><i class="fas fa-code-branch"></i> Contribute to Development</h4>
+                            <p>Help improve HardenSys by contributing code, documentation, or testing.</p>
+                            <a href="https://github.com/ajeyverma/HardenSys/blob/main/CONTRIBUTING.md" target="_blank" class="btn btn-outline" style="text-decoration: none; border: 1px solid var(--border-color); border-radius: 5px; padding: 6px 20px 10px 20px;">Contribute</a>
+                        </div>
+                    </div>
+
+                    <h3>Version Information</h3>
+                    <div class="version-info">
+                        <div class="version-card">
+                            <h4>Current Version</h4>
+                            <div class="version-number">v1.0.0</div>
+                            <p>Latest stable release with full Windows and Linux support</p>
+                        </div>
+                        
+                        <div class="version-card">
+                            <h4>License</h4>
+                            <div class="license-info">Apache-2.0</div>
+                            <p>Open source license allowing free use, modification, and distribution</p>
+                        </div>
+                        
+                        <div class="version-card">
+                            <h4>Maintainer</h4>
+                            <div class="maintainer-info">ByteBender</div>
+                            <p>Primary developer and maintainer of HardenSys</p>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -678,6 +1472,226 @@ python HardenSys_gui.py</code></pre>
                     </ul>
                 </section>
 
+                <!-- Linux Requirements Section -->
+                <section id="linux-requirements" class="docs-section">
+                    <h2>System Requirements</h2>
+                    
+                    <div class="requirements-grid">
+                        <div class="requirement-card">
+                            <h3>Operating System</h3>
+                            <ul>
+                                <li>Ubuntu 18.04 LTS or later</li>
+                                <li>CentOS 7 or later</li>
+                                <li>RHEL 7 or later</li>
+                                <li>Debian 9 or later</li>
+                                <li>Fedora 30 or later</li>
+                            </ul>
+                        </div>
+                        <div class="requirement-card">
+                            <h3>Software</h3>
+                            <ul>
+                                <li>Python 3.6 or higher</li>
+                                <li>pip package manager</li>
+                                <li>Required Python packages</li>
+                                <li>System package manager (apt/yum/dnf)</li>
+                            </ul>
+                        </div>
+                        <div class="requirement-card">
+                            <h3>Privileges</h3>
+                            <ul>
+                                <li>Root or sudo privileges (required)</li>
+                                <li>System configuration access</li>
+                                <li>File system modification rights</li>
+                            </ul>
+                        </div>
+                        <div class="requirement-card">
+                            <h3>Hardware</h3>
+                            <ul>
+                                <li>512MB RAM (recommended)</li>
+                                <li>Network access for updates</li>
+                                <li>Minimum 100MB disk space</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Linux Download Section -->
+                <section id="linux-download" class="docs-section">
+                    <h2>Download HardenSys</h2>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-download"></i>
+                        <strong class="alert-info-text">Ready to get started?</strong> Download HardenSys and begin securing your Linux systems today.
+                    </div>
+
+                    <h3>Download Options</h3>
+                    <div class="download-grid">
+                        <div class="download-card featured">
+                            <div class="download-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <h4>Complete Package</h4>
+                            <p>Everything you need to get started with HardenSys on Linux. Includes GUI, CLI, documentation, configuration files, and all dependencies.</p>
+                            <div class="download-info">
+                                <span class="file-size">~25 MB</span>
+                                <span class="file-format">ZIP Archive</span>
+                            </div>
+                            <div class="download-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>GUI & CLI Tools</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Complete Documentation</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>All Dependencies</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Ready to Run</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/ajeyverma/HardenSys/archive/refs/heads/main.zip" class="btn btn-primary" style="display: ruby; text-decoration: none;">
+                                <i class="fas fa-download"></i>
+                                Download Complete Package
+                            </a>
+                        </div>
+                        
+                        <div class="download-card">
+                            <div class="download-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <h4>CLI Tool</h4>
+                            <p>Command-line interface perfect for automation, scripting, and server environments. Lightweight and powerful for Linux systems.</p>
+                            <div class="download-info">
+                                <span class="file-size">~12 KB</span>
+                                <span class="file-format">Python Script</span>
+                            </div>
+                            <div class="download-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Automation Ready</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Server Friendly</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Script Integration</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/ajeyverma/HardenSys/blob/main/HardenSys.py" class="btn btn-outline" style="text-decoration: none;">
+                                <i class="fas fa-download"></i>
+                                Download CLI Tool
+                            </a>
+                            <p style="font-size: 15px; color: #666; margin-top: 25px;"><i class="fas fa-info-circle"></i> <b>Dependencies:</b> linux_tasks.py, linux_tasks.json in the same directory</p>
+                        </div>
+                        
+                        <div class="download-card">
+                            <div class="download-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h4>GUI Application</h4>
+                            <p>User-friendly graphical interface for interactive security management. Perfect for desktop Linux users and administrators.</p>
+                            <div class="download-info">
+                                <span class="file-size">~15 KB</span>
+                                <span class="file-format">Python Script</span>
+                            </div>
+                            <div class="download-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Visual Interface</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Easy to Use</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Real-time Results</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/ajeyverma/HardenSys/blob/main/HardenSys_gui.py" class="btn btn-outline" style="text-decoration: none;">
+                                <i class="fas fa-download"></i>
+                                Download GUI App
+                            </a>
+                            <p style="font-size: 15px; color: #666; margin-top: 25px;"><i class="fas fa-info-circle"></i> <b>Dependencies:</b> linux_tasks.py, linux_tasks.json in the same directory</p>
+                        </div>
+                    </div>
+
+                    <h3>Installation Steps</h3>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Download</h4>
+                                <p>Download the complete package or individual components from the download page</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Extract</h4>
+                                <p>Extract the files to your desired location (e.g., /opt/HardenSys)</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Install Dependencies</h4>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>pip3 install -r requirements.txt</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Set Permissions</h4>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>chmod +x HardenSys.py HardenSys_gui.py</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Run</h4>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>python3 HardenSys.py</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong class="alert-info-text">Important:</strong> Always run HardenSys with root or sudo privileges for full functionality. Some security checks require elevated permissions.
+                    </div>
+                </section>
+
                 <!-- Linux Installation Section -->
                 <section id="linux-installation" class="docs-section">
                     <h2>Installation</h2>
@@ -707,6 +1721,233 @@ pip3 install -r requirements.txt
 
 # Make scripts executable
 chmod +x HardenSys.py HardenSys_gui.py</code></pre>
+                    </div>
+
+                    <h3>Manual Installation</h3>
+                    <p>For users who prefer to install HardenSys manually or need to customize the installation process:</p>
+                    
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Install Python</h4>
+                                <p>Install Python 3.6 or higher using your system package manager</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Ubuntu/Debian</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>sudo apt update
+sudo apt install python3 python3-pip</code></pre>
+                                </div>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>CentOS/RHEL/Fedora</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># CentOS/RHEL
+sudo yum install python3 python3-pip
+
+# Fedora
+sudo dnf install python3 python3-pip</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Download HardenSys</h4>
+                                <p>Download the complete package or individual components</p>
+                                <div class="installation-options">
+                                    <div class="install-option">
+                                        <h5><i class="fas fa-download"></i> Complete Package</h5>
+                                        <p>Download the full ZIP archive containing all files</p>
+                                        <div class="code-block">
+                                            <div class="code-header">
+                                                <span>Download Link</span>
+                                                <button class="copy-btn" onclick="copyCode(this)">
+                                                    <i class="fas fa-copy"></i>
+                                                </button>
+                                            </div>
+                                            <pre><code>https://github.com/ajeyverma/HardenSys/archive/refs/heads/main.zip</code></pre>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="install-option">
+                                        <h5><i class="fas fa-code"></i> Individual Files</h5>
+                                        <p>Download specific components as needed for Linux systems</p>
+                                        <ul class="file-links">
+                                            <li><a href="https://github.com/ajeyverma/HardenSys/blob/main/HardenSys.py" target="_blank">HardenSys.py</a> - CLI tool</li>
+                                            <li><a href="https://github.com/ajeyverma/HardenSys/blob/main/HardenSys_gui.py" target="_blank">HardenSys_gui.py</a> - GUI application</li>
+                                            <li><a href="https://github.com/ajeyverma/HardenSys/blob/main/linux_tasks.py" target="_blank">linux_tasks.py</a> - Linux engine</li>
+                                            <li><a href="https://github.com/ajeyverma/HardenSys/blob/main/linux_tasks.json" target="_blank">linux_tasks.json</a> - Linux config</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Extract and Organize</h4>
+                                <p>Extract files to your desired location and organize the directory structure</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Linux Command</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># Extract to /opt/HardenSys (recommended)
+sudo mkdir -p /opt/HardenSys
+cd /opt/HardenSys
+
+# Extract downloaded files
+sudo unzip HardenSys-main.zip
+sudo mv HardenSys-main/* .
+sudo rmdir HardenSys-main
+
+# Set ownership
+sudo chown -R $USER:$USER /opt/HardenSys</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Install Dependencies</h4>
+                                <p>Install required Python packages using pip</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># Install all dependencies
+pip3 install -r requirements.txt
+
+# Or install individually:
+pip3 install PySide6
+pip3 install reportlab
+pip3 install PyPDF2
+pip3 install Pillow
+pip3 install python-dotenv</code></pre>
+                                </div>
+                                <div class="alert alert-warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <strong class="alert-info-text">Important:</strong> Some packages may require additional system dependencies. Install them using your package manager if needed.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Create Virtual Environment (Optional)</h4>
+                                <p>Create an isolated Python environment for HardenSys</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Command Line</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Install dependencies in virtual environment
+pip install -r requirements.txt</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <h4>Set Permissions</h4>
+                                <p>Set appropriate permissions for the HardenSys files</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Linux Command</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># Make scripts executable
+chmod +x HardenSys.py
+chmod +x HardenSys_gui.py
+
+# Set ownership (if needed)
+sudo chown -R $USER:$USER /opt/HardenSys</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Post-Installation Setup</h3>
+                    <div class="setup-options">
+                        <div class="setup-card">
+                            <div class="setup-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <div class="setup-content">
+                                <h4>Create Desktop Shortcuts</h4>
+                                <p>Create convenient shortcuts for easy access</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Desktop Entry</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># Create desktop entry for GUI
+cat > ~/.local/share/applications/hardensys.desktop << EOF
+[Desktop Entry]
+Name=HardenSys
+Comment=Security Compliance Tool
+Exec=/opt/HardenSys/HardenSys_gui.py
+Icon=security-high
+Terminal=false
+Type=Application
+Categories=Security;
+EOF</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="setup-card">
+                            <div class="setup-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <div class="setup-content">
+                                <h4>Add to PATH</h4>
+                                <p>Add HardenSys directory to system PATH for global access</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Bash/Zsh</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code># Add to ~/.bashrc or ~/.zshrc:
+echo 'export PATH="/opt/HardenSys:$PATH"' >> ~/.bashrc
+
+# Reload shell configuration:
+source ~/.bashrc</code></pre>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <h3>Verification</h3>
@@ -813,47 +2054,479 @@ python3 HardenSys_gui.py</code></pre>
                     </div>
                 </section>
 
-                <!-- Linux Requirements Section -->
-                <section id="linux-requirements" class="docs-section">
-                    <h2>System Requirements</h2>
+                <!-- Linux File Structure Section -->
+                <section id="linux-file-structure" class="docs-section">
+                    <h2>File Structure</h2>
                     
-                    <div class="requirements-grid">
-                        <div class="requirement-card">
-                            <h3>Operating System</h3>
-                            <ul>
-                                <li>Ubuntu 18.04 LTS or later</li>
-                                <li>CentOS 7 or later</li>
-                                <li>RHEL 7 or later</li>
-                                <li>Debian 9 or later</li>
-                                <li>Fedora 30 or later</li>
-                            </ul>
+                    <div class="alert alert-info">
+                        <i class="fas fa-folder-tree"></i>
+                        <strong class="alert-info-text">Project Organization:</strong> Understanding the HardenSys file structure helps you navigate and customize the tool effectively for Linux systems.
+                    </div>
+
+                    <h3>Main Directory Structure</h3>
+                    <div class="file-structure">
+                        <div class="structure-item">
+                            <div class="structure-icon">
+                                <i class="fas fa-folder"></i>
+                            </div>
+                            <div class="structure-content">
+                                <h4>HardenSys/</h4>
+                                <p>Root directory containing all project files</p>
+                            </div>
                         </div>
-                        <div class="requirement-card">
-                            <h3>Software</h3>
-                            <ul>
-                                <li>Python 3.6 or higher</li>
-                                <li>pip3 package manager</li>
-                                <li>Required Python packages</li>
-                                <li>Git (for installation)</li>
-                            </ul>
+                        
+                        <div class="structure-tree">
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-file-code"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">HardenSys.py</span>
+                                    <span class="file-desc">Main CLI application</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">HardenSys_gui.py</span>
+                                    <span class="file-desc">GUI application</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">windows_tasks.py</span>
+                                    <span class="file-desc">Windows compliance engine</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">linux_tasks.py</span>
+                                    <span class="file-desc">Linux compliance engine</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-list-alt"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">windows_tasks.json</span>
+                                    <span class="file-desc">Windows parameter definitions</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-list-alt"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">linux_tasks.json</span>
+                                    <span class="file-desc">Linux parameter definitions</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">requirements.txt</span>
+                                    <span class="file-desc">Python dependencies</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">README.md</span>
+                                    <span class="file-desc">Project documentation</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tree-item">
+                                <div class="tree-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div class="tree-content">
+                                    <span class="file-name">LICENSE</span>
+                                    <span class="file-desc">Apache-2.0 license</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="requirement-card">
-                            <h3>Privileges</h3>
-                            <ul>
-                                <li>Root or sudo privileges</li>
-                                <li>System configuration access</li>
-                                <li>File system modification rights</li>
-                                <li>Service management permissions</li>
-                            </ul>
+                    </div>
+
+                    <h3>Directory Structure</h3>
+                    <div class="directory-structure">
+                        <div class="dir-item">
+                            <div class="dir-icon">
+                                <i class="fas fa-folder"></i>
+                            </div>
+                            <div class="dir-content">
+                                <h4>docs/</h4>
+                                <p>Documentation and website files</p>
+                                <div class="sub-dirs">
+                                    <div class="sub-dir">
+                                        <i class="fas fa-folder"></i>
+                                        <span>docs/</span>
+                                        <span class="sub-desc">Main documentation pages of Website</span>
+                                    </div>
+                                    <div class="sub-dir">
+                                        <i class="fas fa-folder"></i>
+                                        <span>Assets/</span>
+                                        <span class="sub-desc">CSS, JS, and image files</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="requirement-card">
-                            <h3>Resources</h3>
-                            <ul>
-                                <li>Minimum 100MB disk space</li>
-                                <li>512MB RAM (recommended)</li>
-                                <li>Network access for updates</li>
-                                <li>Terminal/SSH access</li>
+                        
+                        <div class="dir-item">
+                            <div class="dir-icon">
+                                <i class="fas fa-folder"></i>
+                            </div>
+                            <div class="dir-content">
+                                <h4>backup/</h4>
+                                <p>Security policy backups</p>
+                                <div class="sub-dirs">
+                                    <div class="sub-dir">
+                                        <i class="fas fa-file"></i>
+                                        <span>linux_backup_*.conf</span>   
+                                    </div>
+                                <div>
+                                        <span class="sub-desc">Linux security policy backups</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dir-item">
+                            <div class="dir-icon">
+                                <i class="fas fa-folder"></i>
+                            </div>
+                            <div class="dir-content">
+                                <h4>reports/</h4>
+                                <p>Generated compliance reports</p>
+                                <div class="sub-dirs">
+                                    <div class="sub-dir">
+                                        <i class="fas fa-folder"></i>
+                                        <span>html/</span>
+                                        <span class="sub-desc">HTML compliance reports</span>
+                                    </div>
+                                    <div class="sub-dir">
+                                        <i class="fas fa-folder"></i>
+                                        <span>pdf/</span>
+                                        <span class="sub-desc">PDF compliance reports</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Key Files Explained</h3>
+                    <div class="file-explanations">
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-file-code"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>HardenSys.py</h4>
+                                <p>The main command-line interface for running security compliance checks on Linux systems. This is the entry point for CLI operations.</p>
+                                <div class="file-usage">
+                                    <strong>Usage:</strong> <code style="display: inline-block;">python3 HardenSys.py [options]</code>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>HardenSys_gui.py</h4>
+                                <p>Graphical user interface built with PySide6. Provides an interactive way to run compliance checks and view results on Linux desktop environments.</p>
+                                <div class="file-usage">
+                                    <strong>Usage:</strong> <code>python3 HardenSys_gui.py</code>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>linux_tasks.py</h4>
+                                <p>Core compliance engine containing all security check functions for Linux systems. This is the heart of the Linux security checks.</p>
+                                <div class="file-usage">
+                                    <strong>Contains:</strong> 89+ Linux security check functions
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>windows_tasks.py</h4>
+                                <p>Core compliance engine containing all security check functions for Windows systems. This is the heart of the Windows security checks.</p>
+                                <div class="file-usage">
+                                    <strong>Contains:</strong> 121+ Windows security check functions
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-list-alt"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>linux_tasks.json</h4>
+                                <p>Configuration file defining all Linux security parameters, their descriptions, and compliance rules.</p>
+                                <div class="file-usage">
+                                    <strong>Contains:</strong> Linux parameter definitions and metadata
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-list-alt"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>windows_tasks.json</h4>
+                                <p>Configuration file defining all Windows security parameters, their descriptions, and compliance rules.</p>
+                                <div class="file-usage">
+                                    <strong>Contains:</strong> Parameter definitions and metadata
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="explanation-card">
+                            <div class="explanation-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="explanation-content">
+                                <h4>requirements.txt</h4>
+                                <p>Python package dependencies required to run HardenSys on Linux. Install with pip3.</p>
+                                <div class="file-usage">
+                                    <strong>Usage:</strong> <code style="display: inline-block;">pip3 install -r requirements.txt</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Generated Files</h3>
+                    <div class="generated-files">
+                        <div class="generated-item">
+                            <div class="generated-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="generated-content">
+                                <h4>Compliance Reports</h4>
+                                <p>HTML and PDF reports generated in the <code>reports/</code> directory</p>
+                                <div class="file-pattern">
+                                    <strong>Pattern:</strong> <code>Linux_Compliance_Report_YYYYMMDD_HHMMSS.html</code>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="generated-item">
+                            <div class="generated-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="generated-content">
+                                <h4>Security Backups</h4>
+                                <p>Linux security policy backups created in the <code>backup/</code> directory</p>
+                                <div class="file-pattern">
+                                    <strong>Pattern:</strong> <code>linux_backup_YYYYMMDD_HHMMSS.conf</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Linux Updates and Support Section -->
+                <section id="linux-updates-support" class="docs-section">
+                    <h2>Updates and Support</h2>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-life-ring"></i>
+                        <strong class="alert-info-text">Need Help?</strong> Find support resources, community links, and update information for HardenSys on Linux.
+                    </div>
+
+                    <h3>Getting Updates</h3>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Check for Updates</h4>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Linux Terminal</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>cd /opt/HardenSys
+git pull origin main</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Update Dependencies</h4>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Linux Terminal</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>pip3 install -r requirements.txt --upgrade</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Verify Installation</h4>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Linux Terminal</span>
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <pre><code>python3 HardenSys.py --version</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Support Resources</h3>
+                    <div class="support-grid">
+                        <div class="support-card">
+                            <div class="support-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4>Documentation</h4>
+                            <p>Comprehensive guides, tutorials, and API references</p>
+                            <ul class="support-links" style="padding-left: 0;">
+                                <li><a href="cli.html"><i class="fa-solid fa-terminal" style="color: #007bff; margin-right: 10px;"></i> CLI Guide</a></li>
+                                <li><a href="gui.html"><i class="fa-solid fa-desktop" style="color: #007bff; margin-right: 10px;"></i> GUI Guide</a></li>
+                                <li><a href="parameters.html"><i class="fa-solid fa-book" style="color: #007bff; margin-right: 14px;"></i> Parameters Reference</a></li>
+                                <li><a href="advanced.html"><i class="fa-solid fa-gear" style="color: #007bff; margin-right: 12px;"></i> Advanced Topics</a></li>
                             </ul>
+                            <a href="/docs/docs" class="btn btn-outline" style="text-decoration: none;">View All Docs</a>
+                        </div>
+
+                        <div class="support-card">
+                            <div class="support-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h4>GitHub Repository</h4>
+                            <p>Source code, issue tracking, and community discussions</p>
+                            <ul class="support-links" style="padding-left: 0;">
+                                <li><a href="https://github.com/ajeyverma/HardenSys" target="_blank"><i class="fa-solid fa-code" style="color: #007bff; margin-right: 10px;"></i> View Source Code</a></li>
+                                <li><a href="https://github.com/ajeyverma/HardenSys/issues" target="_blank"><i class="fa-solid fa-bug" style="color: #007bff; margin-right: 14px;"></i> Report Issues</a></li>
+                                <li><a href="https://github.com/ajeyverma/HardenSys/discussions" target="_blank"><i class="fa-solid fa-users" style="color: #007bff; margin-right: 11px;"></i> Community Discussions</a></li>
+                                <li><a href="https://github.com/ajeyverma/HardenSys/releases" target="_blank"><i class="fa-solid fa-download" style="color: #007bff; margin-right: 16px;"></i> Latest Releases</a></li>
+                            </ul>
+                            <a href="https://github.com/ajeyverma/HardenSys" target="_blank" class="btn btn-outline" style="text-decoration: none;" >Visit GitHub</a>
+                        </div>
+
+                        <div class="support-card">
+                            <div class="support-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <h4>Bug Reports</h4>
+                            <p>Found a bug? Help us improve HardenSys by reporting issues</p>
+                            <div class="bug-report-steps">
+                                <div class="bug-step">
+                                    <span class="bug-number">1</span>
+                                    <span>Check existing issues</span>
+                                </div>
+                                <div class="bug-step">
+                                    <span class="bug-number">2</span>
+                                    <span>Gather system info</span>
+                                </div>
+                                <div class="bug-step">
+                                    <span class="bug-number">3</span>
+                                    <span>Create detailed report</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/ajeyverma/HardenSys/issues/new" target="_blank" class="btn btn-outline" style="text-decoration: none;">Report Bug</a>
+                        </div>
+
+                        <div class="support-card">
+                            <div class="support-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Feature Requests</h4>
+                            <p>Have an idea for improvement? We'd love to hear from you</p>
+                            <div class="feature-request-info">
+                                <div class="info-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Describe the feature clearly</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Explain the use case</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Consider alternatives</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/ajeyverma/HardenSys/issues/new?template=feature_request.md" target="_blank" class="btn btn-outline" style="text-decoration: none;">Request Feature</a>
+                        </div>
+                    </div>
+                    <h3>Community and Contributing</h3>
+                    <div class="community-info">
+                        <div class="community-card">
+                            <h4><i class="fas fa-users"></i> Join the Community</h4>
+                            <p>Connect with other HardenSys users, share experiences, and get help from the community.</p>
+                            <a href="https://github.com/ajeyverma/HardenSys/discussions" target="_blank" class="btn btn-primary" style="text-decoration: none; border: 1px solid var(--border-color); border-radius: 5px; padding: 6px 20px 10px 20px;">Join Discussions</a>
+                        </div>
+                        
+                        <div class="community-card">
+                            <h4><i class="fas fa-code-branch"></i> Contribute to Development</h4>
+                            <p>Help improve HardenSys by contributing code, documentation, or testing.</p>
+                            <a href="https://github.com/ajeyverma/HardenSys/blob/main/CONTRIBUTING.md" target="_blank" class="btn btn-outline" style="text-decoration: none; border: 1px solid var(--border-color); border-radius: 5px; padding: 6px 20px 10px 20px;">Contribute</a>
+                        </div>
+                    </div>
+
+                    <h3>Version Information</h3>
+                    <div class="version-info">
+                        <div class="version-card">
+                            <h4>Current Version</h4>
+                            <div class="version-number">v1.0.0</div>
+                            <p>Latest stable release with full Linux & Windows support</p>
+                          
+                        </div>
+                        
+                        <div class="version-card">
+                            <h4>License</h4>
+                            <div class="license-info">Apache-2.0 License</div>
+                            <p>Open source and free to use for personal and commercial projects</p>
+                        </div>
+                        
+                        <div class="version-card">
+                            <h4>Maintainer</h4>
+                            <div class="maintainer-info">ByteBender</div>
+                            <p>Primary developer and maintainer of HardenSys</p>
                         </div>
                     </div>
                 </section>

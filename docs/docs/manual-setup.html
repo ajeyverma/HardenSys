@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Setup Guide - HardenSys Documentation</title>
+    <meta name="description" content="Comprehensive manual setup guide for configuring Windows and Linux security parameters">
+    <meta name="keywords" content="HardenSys, manual setup, security configuration, Windows security, Linux security, documentation">
+    <link rel="stylesheet" href="css/docs.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../Assets/Images/logo.svg">
+    <link rel="icon" type="image/png" href="../Assets/Images/favicon.png">
+</head>
+<body>
+    <!-- Header with Search Bar -->
+    <header class="docs-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="images/app_logo_black.png" alt="HardenSys" class="header-logo-icon">
+                <span class="header-title">HardenSys Docs</span>
+                <div class="vertical-separator"></div>
+            </div>
+            <div class="header-os-selector">
+                <div class="os-dropdown">
+                    <span class="os-label">OS:</span>
+                    <div class="os-dropdown-toggle">
+                        <span class="os-current">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="os-dropdown-menu">
+                        <div class="os-option active" data-os="windows">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </div>
+                        <div class="os-option" data-os="linux">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="header-search" placeholder="Search documentation..." />
+                    <button class="search-clear" id="header-search-clear" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="docs-container">
+        <!-- Sidebar Navigation -->
+        <nav class="docs-sidebar" id="docs-sidebar">
+            <div class="sidebar-home">
+                <a href="../index.html" class="home-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="nav-section">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Getting Started</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="index.html#introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="index.html#requirements" class="nav-link">Requirements</a></li>
+                        <li><a href="index.html#download" class="nav-link">Download</a></li>
+                        <li><a href="index.html#installation" class="nav-link">Installation</a></li>
+                        <li><a href="index.html#quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="index.html#file-structure" class="nav-link">File Structure</a></li>
+                        <li><a href="index.html#updates-support" class="nav-link">Updates & Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-header">
+                        <span class="nav-title">CLI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="cli.html#cli-overview" class="nav-link">Overview</a></li>
+                        <li><a href="cli.html#cli-basic-usage" class="nav-link">Basic Usage</a></li>
+                        <li><a href="cli.html#cli-filtering" class="nav-link">Filtering Options</a></li>
+                        <li><a href="cli.html#cli-reports" class="nav-link">Report Generation</a></li>
+                        <li><a href="cli.html#cli-examples" class="nav-link">Examples</a></li>
+                        <li><a href="cli.html#cli-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-header">
+                        <span class="nav-title">GUI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="gui.html#gui-overview" class="nav-link">Overview</a></li>
+                        <li><a href="gui.html#gui-navigation" class="nav-link">Navigation</a></li>
+                        <li><a href="gui.html#gui-running-checks" class="nav-link">Running Checks</a></li>
+                        <li><a href="gui.html#gui-reports" class="nav-link">Reports</a></li>
+                        <li><a href="gui.html#gui-settings" class="nav-link">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Security Parameters</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="parameters.html#parameters-overview" class="nav-link">Overview</a></li>
+                        <li><a href="parameters.html#parameters-categories" class="nav-link">Categories</a></li>
+                        <li><a href="parameters.html#parameters-search" class="nav-link">Search Parameters</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Manual Setup</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="#manual-setup-overview" class="nav-link active">Overview</a></li>
+                        <li><a href="#local-security-policy" class="nav-link">Local Security Policy</a></li>
+                        <li><a href="#registry-editor" class="nav-link">Registry Editor</a></li>
+                        <li><a href="#command-line" class="nav-link">Command Line</a></li>
+                        <li><a href="#group-policy" class="nav-link">Group Policy</a></li>
+                        <li><a href="#verification-testing" class="nav-link">Verification & Testing</a></li>
+                        <li><a href="#best-practices" class="nav-link">Best Practices</a></li>
+                        <li><a href="#troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Advanced Topics</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="advanced.html#advanced-integration" class="nav-link">Integration</a></li>
+                        <li><a href="advanced.html#advanced-automation" class="nav-link">Automation</a></li>
+                        <li><a href="advanced.html#advanced-backup" class="nav-link">Backup & Restore</a></li>
+                        <li><a href="advanced.html#advanced-best-practices" class="nav-link">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Reference</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="reference.html#reference-cli-options" class="nav-link">CLI Options</a></li>
+                        <li><a href="reference.html#reference-error-codes" class="nav-link">Error Codes</a></li>
+                        <li><a href="reference.html#reference-faq" class="nav-link">FAQ</a></li>
+                        <li><a href="reference.html#reference-changelog" class="nav-link">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Linux-specific sidebar navigation -->
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Getting Started</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="index.html#linux-introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="index.html#linux-requirements" class="nav-link">Requirements</a></li>
+                        <li><a href="index.html#linux-download" class="nav-link">Download</a></li>
+                        <li><a href="index.html#linux-installation" class="nav-link">Installation</a></li>
+                        <li><a href="index.html#linux-quick-start" class="nav-link">Quick Start</a></li>
+                        <li><a href="index.html#linux-file-structure" class="nav-link">File Structure</a></li>
+                        <li><a href="index.html#linux-updates-support" class="nav-link">Updates & Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux CLI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="cli.html#cli-overview" class="nav-link">Overview</a></li>
+                        <li><a href="cli.html#cli-basic-usage" class="nav-link">Basic Usage</a></li>
+                        <li><a href="cli.html#cli-filtering" class="nav-link">Filtering Options</a></li>
+                        <li><a href="cli.html#cli-reports" class="nav-link">Report Generation</a></li>
+                        <li><a href="cli.html#cli-examples" class="nav-link">Examples</a></li>
+                        <li><a href="cli.html#cli-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux GUI Interface</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="gui.html#gui-overview" class="nav-link">Overview</a></li>
+                        <li><a href="gui.html#gui-navigation" class="nav-link">Navigation</a></li>
+                        <li><a href="gui.html#gui-running-checks" class="nav-link">Running Checks</a></li>
+                        <li><a href="gui.html#gui-reports" class="nav-link">Reports</a></li>
+                        <li><a href="gui.html#gui-settings" class="nav-link">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Security Parameters</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="parameters.html#parameters-overview" class="nav-link">Overview</a></li>
+                        <li><a href="parameters.html#parameters-categories" class="nav-link">Categories</a></li>
+                        <li><a href="parameters.html#parameters-search" class="nav-link">Search Parameters</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Manual Setup</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="#linux-manual-setup-overview" class="nav-link active">Overview</a></li>
+                        <li><a href="#linux-system-configuration" class="nav-link">System Configuration</a></li>
+                        <li><a href="#linux-file-permissions" class="nav-link">File Permissions</a></li>
+                        <li><a href="#linux-service-management" class="nav-link">Service Management</a></li>
+                        <li><a href="#linux-network-security" class="nav-link">Network Security</a></li>
+                        <li><a href="#linux-verification-testing" class="nav-link">Verification & Testing</a></li>
+                        <li><a href="#linux-best-practices" class="nav-link">Best Practices</a></li>
+                        <li><a href="#linux-troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Advanced Topics</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="advanced.html#advanced-integration" class="nav-link">Integration</a></li>
+                        <li><a href="advanced.html#advanced-automation" class="nav-link">Automation</a></li>
+                        <li><a href="advanced.html#advanced-backup" class="nav-link">Backup & Restore</a></li>
+                        <li><a href="advanced.html#advanced-best-practices" class="nav-link">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section linux-sidebar" style="display: none;">
+                    <div class="nav-section-header">
+                        <span class="nav-title">Linux Reference</span>
+                        <i class="fas fa-chevron-down nav-toggle"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="reference.html#reference-cli-options" class="nav-link">CLI Options</a></li>
+                        <li><a href="reference.html#reference-error-codes" class="nav-link">Error Codes</a></li>
+                        <li><a href="reference.html#reference-faq" class="nav-link">FAQ</a></li>
+                        <li><a href="reference.html#reference-changelog" class="nav-link">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="docs-main">
+            <!-- Windows Content -->
+            <div class="docs-content windows-content">
+                <!-- Overview Section -->
+                <section id="manual-setup-overview" class="docs-section">
+                    <h1>Manual Setup Guide</h1>
+                    <p class="lead">Step-by-step instructions for manually configuring Windows security parameters</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong class="alert-info-text">Important:</strong> Always create a backup of your current security settings before making any changes. Some changes may require a system restart to take effect.
+                    </div>
+
+                    <h2>Overview</h2>
+                    <p>This guide provides detailed instructions for manually configuring Windows security parameters using various methods including Local Security Policy, Registry Editor, Command Line, and Group Policy. Each method is suitable for different scenarios and administrative requirements.</p>
+
+                    <h3>Setup Methods</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4>Local Security Policy</h4>
+                            <p>Graphical interface for configuring security policies</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <h4>Registry Editor</h4>
+                            <p>Direct registry modification for advanced settings</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <h4>Command Line</h4>
+                            <p>Automated configuration using command-line tools</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4>Group Policy</h4>
+                            <p>Enterprise-level policy management</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Local Security Policy Section -->
+                <section id="local-security-policy" class="docs-section">
+                    <h2>Local Security Policy</h2>
+                    <p>The Local Security Policy editor provides a graphical interface for configuring Windows security settings. This is the most user-friendly method for manual configuration.</p>
+                    
+                    <h3>Accessing Local Security Policy</h3>
+                    <ol>
+                        <li>Press <code>Win + R</code> to open the Run dialog</li>
+                        <li>Type <code>secpol.msc</code> and press Enter</li>
+                        <li>If prompted by UAC, click "Yes" to allow administrator access</li>
+                    </ol>
+
+                    <h3>Account Policies Configuration</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Configuration Steps</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>1. Navigate to: Account Policies → Password Policy
+2. Configure the following settings:
+   - Enforce password history: 24 passwords remembered
+   - Maximum password age: 90 days
+   - Minimum password age: 1 day
+   - Minimum password length: 12 characters
+   - Password must meet complexity requirements: Enabled
+   - Store passwords using reversible encryption: Disabled
+
+3. Navigate to: Account Policies → Account Lockout Policy
+4. Configure the following settings:
+   - Account lockout duration: 15 minutes
+   - Account lockout threshold: 5 invalid logon attempts
+   - Reset account lockout counter after: 10 minutes</code></pre>
+                    </div>
+
+                    <h3>Local Policies Configuration</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Configuration Steps</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>1. Navigate to: Local Policies → User Rights Assignment
+2. Configure the following settings:
+   - Access this computer from the network: Administrators, Authenticated Users
+   - Allow log on locally: Administrators, Users
+   - Back up files and directories: Administrators
+   - Change the system time: Administrators, LOCAL SERVICE
+   - Change the time zone: Administrators, LOCAL SERVICE
+
+3. Navigate to: Local Policies → Security Options
+4. Configure the following settings:
+   - Accounts: Block Microsoft accounts: Users cannot add or log on with Microsoft accounts
+   - Accounts: Guest account status: Disabled
+   - Accounts: Limit local account use of blank passwords: Enabled
+   - Interactive logon: Do not require CTRL+ALT+DEL: Disabled
+   - Interactive logon: Don't display last signed in: Enabled</code></pre>
+                    </div>
+                </section>
+
+                <!-- Registry Editor Section -->
+                <section id="registry-editor" class="docs-section">
+                    <h2>Registry Editor</h2>
+                    <p>Direct registry modification provides the most granular control over Windows security settings. This method is recommended for advanced users and automated deployments.</p>
+                    
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong class="alert-info-text">Warning:</strong> Incorrect registry modifications can cause system instability. Always backup the registry before making changes.
+                    </div>
+
+                    <h3>Accessing Registry Editor</h3>
+                    <ol>
+                        <li>Press <code>Win + R</code> to open the Run dialog</li>
+                        <li>Type <code>regedit</code> and press Enter</li>
+                        <li>If prompted by UAC, click "Yes" to allow administrator access</li>
+                    </ol>
+
+                    <h3>Password Policy Registry Settings</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Registry Path</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>Navigate to: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+
+Set the following values:
+- PasswordHistorySize: 24 (DWORD)
+- MaximumPasswordAge: 90 (DWORD)
+- MinimumPasswordAge: 1 (DWORD)
+- MinimumPasswordLength: 12 (DWORD)
+- PasswordComplexity: 1 (DWORD)
+- ClearTextPassword: 0 (DWORD)</code></pre>
+                    </div>
+
+                    <h3>Account Lockout Registry Settings</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Registry Path</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>Navigate to: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+
+Set the following values:
+- LockoutBadCount: 5 (DWORD)
+- LockoutDuration: 15 (DWORD)
+- ResetLockoutCount: 10 (DWORD)
+- AllowAdministratorLockout: 1 (DWORD)</code></pre>
+                    </div>
+
+                    <h3>Interactive Logon Registry Settings</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Registry Path</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>Navigate to: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+
+Set the following values:
+- DisableCAD: 0 (DWORD) - Require CTRL+ALT+DEL
+- DontDisplayLastUserName: 0 (DWORD) - Don't display last signed in
+- LegalNoticeCaption: "Legal Notice" (String)
+- LegalNoticeText: "This system is restricted to authorized users" (String)</code></pre>
+                    </div>
+
+                    <h3>User Account Control Registry Settings</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Registry Path</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>Navigate to: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+
+Set the following values:
+- ConsentPromptBehaviorAdmin: 5 (DWORD) - Prompt for consent for non-Windows binaries
+- ConsentPromptBehaviorUser: 3 (DWORD) - Automatically deny elevation requests
+- EnableInstallerDetection: 1 (DWORD) - Enabled
+- EnableLUA: 1 (DWORD) - Enabled
+- PromptOnSecureDesktop: 1 (DWORD) - Enabled
+- ValidateAdminCodeSignatures: 0 (DWORD) - Disabled</code></pre>
+                    </div>
+                </section>
+
+                <!-- Command Line Section -->
+                <section id="command-line" class="docs-section">
+                    <h2>Command Line Configuration</h2>
+                    <p>Command-line tools provide automated configuration capabilities suitable for scripting and remote administration.</p>
+
+                    <h3>Using net accounts Command</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Configure password policy
+net accounts /uniquepw:24
+net accounts /maxpwage:90
+net accounts /minpwage:1
+net accounts /minpwlen:12
+
+# Configure account lockout policy
+net accounts /lockoutthreshold:5
+net accounts /lockoutduration:15
+net accounts /lockoutwindow:10
+
+# View current settings
+net accounts</code></pre>
+                    </div>
+
+                    <h3>Using reg add Command</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Password policy settings
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v PasswordHistorySize /t REG_DWORD /d 24 /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v MaximumPasswordAge /t REG_DWORD /d 90 /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v MinimumPasswordAge /t REG_DWORD /d 1 /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v MinimumPasswordLength /t REG_DWORD /d 12 /f
+
+# Interactive logon settings
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableCAD /t REG_DWORD /d 0 /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v DontDisplayLastUserName /t REG_DWORD /d 0 /f
+
+# UAC settings
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v ConsentPromptBehaviorAdmin /t REG_DWORD /d 5 /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v ConsentPromptBehaviorUser /t REG_DWORD /d 3 /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 1 /f</code></pre>
+                    </div>
+
+                    <h3>Using secedit Command</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Export current security policy
+secedit /export /cfg current_policy.inf
+
+# Import security policy from file
+secedit /configure /db security.sdb /cfg policy.inf
+
+# Apply security template
+secedit /configure /db security.sdb /cfg security_template.inf</code></pre>
+                    </div>
+
+                    <h3>Using auditpol Command</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Configure audit policies
+auditpol /set /subcategory:"Credential Validation" /success:enable /failure:enable
+auditpol /set /subcategory:"Account Logon" /success:enable /failure:enable
+auditpol /set /subcategory:"Logon" /success:enable /failure:enable
+
+# View current audit policy
+auditpol /get /category:*</code></pre>
+                    </div>
+                </section>
+
+                <!-- Group Policy Section -->
+                <section id="group-policy" class="docs-section">
+                    <h2>Group Policy Configuration</h2>
+                    <p>Group Policy provides enterprise-level policy management for Windows domains and organizational units.</p>
+
+                    <h3>Accessing Group Policy Management</h3>
+                    <ol>
+                        <li>Press <code>Win + R</code> to open the Run dialog</li>
+                        <li>Type <code>gpmc.msc</code> and press Enter</li>
+                        <li>Navigate to your domain and organizational units</li>
+                    </ol>
+
+                    <h3>Computer Configuration Policies</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Group Policy Path</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>Navigate to: Computer Configuration → Policies → Windows Settings → Security Settings
+
+1. Account Policies → Password Policy
+   - Enforce password history: 24 passwords remembered
+   - Maximum password age: 90 days
+   - Minimum password age: 1 day
+   - Minimum password length: 12 characters
+   - Password must meet complexity requirements: Enabled
+   - Store passwords using reversible encryption: Disabled
+
+2. Account Policies → Account Lockout Policy
+   - Account lockout duration: 15 minutes
+   - Account lockout threshold: 5 invalid logon attempts
+   - Reset account lockout counter after: 10 minutes
+
+3. Local Policies → User Rights Assignment
+   - Access this computer from the network: Administrators, Authenticated Users
+   - Allow log on locally: Administrators, Users
+   - Back up files and directories: Administrators
+   - Change the system time: Administrators, LOCAL SERVICE
+
+4. Local Policies → Security Options
+   - Accounts: Block Microsoft accounts: Users cannot add or log on with Microsoft accounts
+   - Accounts: Guest account status: Disabled
+   - Interactive logon: Do not require CTRL+ALT+DEL: Disabled
+   - Interactive logon: Don't display last signed in: Enabled</code></pre>
+                    </div>
+
+                    <h3>Advanced Audit Policy Configuration</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Group Policy Path</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>Navigate to: Computer Configuration → Policies → Windows Settings → Security Settings → Advanced Audit Policy Configuration
+
+1. Account Logon
+   - Audit Credential Validation: Success and Failure
+   - Audit Kerberos Authentication Service: Success and Failure
+   - Audit Kerberos Service Ticket Operations: Success and Failure
+
+2. Account Management
+   - Audit Application Group Management: Success and Failure
+   - Audit Security Group Management: Success and Failure
+   - Audit User Account Management: Success and Failure
+
+3. Logon/Logoff
+   - Audit Logon: Success and Failure
+   - Audit Logoff: Success
+   - Audit Account Lockout: Success and Failure</code></pre>
+                    </div>
+
+                    <h3>Microsoft Defender Application Guard</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Group Policy Path</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>Navigate to: Computer Configuration → Policies → Administrative Templates → Windows Components → Microsoft Defender Application Guard
+
+Configure the following settings:
+- Allow auditing events: Disabled
+- Allow camera and microphone access: Disabled
+- Allow data persistence: Disabled
+- Allow file download to host: Disabled
+- Configure clipboard settings: Disabled
+- Allow virtual GPU: Disabled
+- Block non-enterprise content: Enabled
+- Allow printing: Disabled
+- Save files to host: Disabled
+- Enable Application Guard: Enabled</code></pre>
+                    </div>
+                </section>
+
+                <!-- Verification and Testing Section -->
+                <section id="verification-testing" class="docs-section">
+                    <h2>Verification and Testing</h2>
+                    
+                    <h3>Verifying Password Policy</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Check password policy settings
+net accounts
+
+# Verify registry settings
+reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v PasswordHistorySize
+reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v MaximumPasswordAge
+reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v MinimumPasswordLength</code></pre>
+                    </div>
+
+                    <h3>Verifying Account Lockout Policy</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Check account lockout settings
+net accounts
+
+# Verify registry settings
+reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v LockoutBadCount
+reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v LockoutDuration</code></pre>
+                    </div>
+
+                    <h3>Verifying UAC Settings</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Check UAC registry settings
+reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v ConsentPromptBehaviorAdmin
+reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA
+reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v PromptOnSecureDesktop</code></pre>
+                    </div>
+
+                    <h3>Verifying Audit Policies</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Check audit policy settings
+auditpol /get /category:*
+
+# Check specific subcategories
+auditpol /get /subcategory:"Credential Validation"
+auditpol /get /subcategory:"Account Logon"
+auditpol /get /subcategory:"Logon"</code></pre>
+                    </div>
+                </section>
+
+                <!-- Best Practices Section -->
+                <section id="best-practices" class="docs-section">
+                    <h2>Best Practices</h2>
+                    
+                    <h3>Before Making Changes</h3>
+                    <ol>
+                        <li><strong>Create a backup:</strong> Always backup current security settings before making changes</li>
+                        <li><strong>Test in non-production:</strong> Test all changes in a non-production environment first</li>
+                        <li><strong>Document changes:</strong> Keep detailed records of all security policy changes</li>
+                        <li><strong>Plan rollback:</strong> Have a rollback plan in case changes cause issues</li>
+                    </ol>
+
+                    <h3>Implementation Strategy</h3>
+                    <ol>
+                        <li><strong>Phased approach:</strong> Implement changes in phases to minimize risk</li>
+                        <li><strong>Monitor impact:</strong> Monitor system performance and user experience after changes</li>
+                        <li><strong>User communication:</strong> Inform users of any changes that may affect their workflow</li>
+                        <li><strong>Regular reviews:</strong> Schedule regular reviews of security policy effectiveness</li>
+                    </ol>
+
+                    <h3>Maintenance and Monitoring</h3>
+                    <ol>
+                        <li><strong>Regular audits:</strong> Conduct regular security audits to ensure compliance</li>
+                        <li><strong>Performance monitoring:</strong> Monitor system performance for any negative impacts</li>
+                        <li><strong>Security updates:</strong> Keep security policies updated with latest best practices</li>
+                        <li><strong>Incident response:</strong> Have procedures in place for security incidents</li>
+                    </ol>
+                </section>
+
+                <!-- Troubleshooting Section -->
+                <section id="troubleshooting" class="docs-section">
+                    <h2>Troubleshooting</h2>
+                    
+                    <h3>Common Issues</h3>;
+                    <div class="alert alert-warning" style="display: block;">
+                        <div><strong class="alert-info-text">Issue:</strong> Changes not taking effect</div>
+                        <div><strong class="alert-info-text">Solution:</strong> Restart the system or log off and log back on. Some settings require a restart to take effect.</div>
+                    </div>
+                    
+                    <div class="alert alert-warning" style="display: block;">
+                        <div><strong class="alert-info-text">Issue:</strong> Access denied errors</div>
+                        <div><strong class="alert-info-text">Solution:</strong> Ensure you're running as Administrator and have proper permissions to modify security settings.</div>
+                    </div>
+                    
+                    <div class="alert alert-warning" style="display: block;">
+                        <div><strong class="alert-info-text">Issue:</strong> Group Policy not applying</div>
+                        <div><strong class="alert-info-text">Solution:</strong> Run <code>gpupdate /force</code> to refresh Group Policy settings and restart the system.</div>
+                    </div>
+
+                    <h3>Recovery Procedures</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Restore from backup using secedit
+secedit /configure /db security.sdb /cfg backup_policy.inf
+
+# Reset to default security settings
+secedit /configure /db security.sdb /cfg %windir%\inf\defltbase.inf
+
+# Restore specific registry keys from backup
+reg import backup_registry.reg</code></pre>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Linux Content -->
+            <div class="docs-content linux-content" style="display: none;">
+                <!-- Linux Overview Section -->
+                <section id="linux-manual-setup-overview" class="docs-section">
+                    <h1>Linux Manual Setup Guide</h1>
+                    <p class="lead">Step-by-step instructions for manually configuring Linux security parameters</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong class="alert-info-text">Important:</strong> Always create a backup of your current configuration before making any changes. Some changes may require a system restart to take effect.
+                    </div>
+
+                    <h2>Overview</h2>
+                    <p>This guide provides detailed instructions for manually configuring Linux security parameters using various methods including system configuration files, command-line tools, and service management. Each method is suitable for different scenarios and administrative requirements.</p>
+
+                    <h3>Setup Methods</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4>System Configuration</h4>
+                            <p>Direct modification of system configuration files</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>File Permissions</h4>
+                            <p>Managing file and directory permissions for security</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h4>Service Management</h4>
+                            <p>Configuring and managing system services</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h4>Network Security</h4>
+                            <p>Network configuration and firewall settings</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Linux System Configuration Section -->
+                <section id="linux-system-configuration" class="docs-section">
+                    <h2>System Configuration</h2>
+                    <p>Linux system configuration involves modifying various configuration files to implement security hardening measures.</p>
+                    
+                    <h3>Kernel Parameters</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Configuration File</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Edit /etc/sysctl.conf
+echo "net.ipv4.ip_forward = 0" >> /etc/sysctl.conf
+echo "net.ipv4.conf.all.send_redirects = 0" >> /etc/sysctl.conf
+echo "net.ipv4.conf.default.send_redirects = 0" >> /etc/sysctl.conf
+echo "net.ipv4.conf.all.accept_redirects = 0" >> /etc/sysctl.conf
+echo "net.ipv4.conf.default.accept_redirects = 0" >> /etc/sysctl.conf
+echo "net.ipv4.conf.all.accept_source_route = 0" >> /etc/sysctl.conf
+echo "net.ipv4.conf.default.accept_source_route = 0" >> /etc/sysctl.conf
+echo "net.ipv4.conf.all.log_martians = 1" >> /etc/sysctl.conf
+echo "net.ipv4.conf.default.log_martians = 1" >> /etc/sysctl.conf
+echo "net.ipv4.icmp_echo_ignore_broadcasts = 1" >> /etc/sysctl.conf
+echo "net.ipv4.icmp_ignore_bogus_error_responses = 1" >> /etc/sysctl.conf
+
+# Apply changes
+sysctl -p</code></pre>
+                    </div>
+
+                    <h3>Password Policy Configuration</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Configuration File</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Edit /etc/login.defs
+PASS_MAX_DAYS 90
+PASS_MIN_DAYS 1
+PASS_WARN_AGE 7
+PASS_MIN_LEN 12
+
+# Edit /etc/pam.d/common-password
+password requisite pam_pwquality.so retry=3 minlen=12 dcredit=-1 ucredit=-1 lcredit=-1 ocredit=-1</code></pre>
+                    </div>
+
+                    <h3>SSH Configuration</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Configuration File</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Edit /etc/ssh/sshd_config
+Port 22
+Protocol 2
+PermitRootLogin no
+MaxAuthTries 3
+ClientAliveInterval 300
+ClientAliveCountMax 2
+LoginGraceTime 60
+AllowUsers admin
+Banner /etc/issue.net
+PermitEmptyPasswords no
+PasswordAuthentication yes
+PubkeyAuthentication yes
+X11Forwarding no
+MaxSessions 2
+MaxStartups 3:30:10
+
+# Restart SSH service
+systemctl restart sshd</code></pre>
+                    </div>
+                </section>
+
+                <!-- Linux File Permissions Section -->
+                <section id="linux-file-permissions" class="docs-section">
+                    <h2>File Permissions</h2>
+                    <p>Proper file permissions are crucial for Linux security. This section covers setting appropriate permissions for critical system files.</p>
+
+                    <h3>Critical File Permissions</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Set permissions for critical files
+chmod 600 /etc/shadow
+chmod 644 /etc/passwd
+chmod 644 /etc/group
+chmod 600 /etc/gshadow
+chmod 600 /etc/ssh/sshd_config
+chmod 644 /etc/ssh/ssh_host_*_key.pub
+chmod 600 /etc/ssh/ssh_host_*_key
+
+# Set ownership
+chown root:root /etc/shadow
+chown root:root /etc/passwd
+chown root:root /etc/group
+chown root:root /etc/gshadow
+chown root:root /etc/ssh/sshd_config</code></pre>
+                    </div>
+
+                    <h3>Directory Permissions</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Set directory permissions
+chmod 755 /home
+chmod 700 /home/username
+chmod 755 /tmp
+chmod 1777 /tmp
+chmod 755 /var/tmp
+chmod 1777 /var/tmp
+
+# Set sticky bit for temporary directories
+chmod +t /tmp
+chmod +t /var/tmp</code></pre>
+                    </div>
+
+                    <h3>Mount Options</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Configuration File</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Edit /etc/fstab
+# Add security options to mount points
+/tmp /tmp tmpfs defaults,noexec,nosuid,nodev 0 0
+/dev/shm /dev/shm tmpfs defaults,noexec,nosuid,nodev 0 0
+/home /home ext4 defaults,nodev,nosuid 0 0
+/var /var ext4 defaults,nodev,nosuid 0 0
+/var/tmp /var/tmp ext4 defaults,noexec,nosuid,nodev 0 0
+/var/log /var/log ext4 defaults,noexec,nosuid,nodev 0 0</code></pre>
+                    </div>
+                </section>
+
+                <!-- Linux Service Management Section -->
+                <section id="linux-service-management" class="docs-section">
+                    <h2>Service Management</h2>
+                    <p>Disabling unnecessary services reduces the attack surface of your Linux system.</p>
+
+                    <h3>Disable Unnecessary Services</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Disable common unnecessary services
+systemctl disable avahi-daemon
+systemctl disable cups
+systemctl disable dhcpd
+systemctl disable named
+systemctl disable dnsmasq
+systemctl disable vsftpd
+systemctl disable slapd
+systemctl disable dovecot
+systemctl disable nfs-server
+systemctl disable rpcbind
+systemctl disable rsync
+systemctl disable smb
+systemctl disable snmpd
+systemctl disable tftp
+systemctl disable squid
+systemctl disable httpd
+systemctl disable xinetd
+systemctl disable gdm
+systemctl disable postfix</code></pre>
+                    </div>
+
+                    <h3>Enable Essential Services</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Enable essential security services
+systemctl enable sshd
+systemctl enable ufw
+systemctl enable fail2ban
+systemctl enable auditd
+systemctl enable rsyslog
+systemctl enable cron
+
+# Start services
+systemctl start sshd
+systemctl start ufw
+systemctl start fail2ban
+systemctl start auditd
+systemctl start rsyslog
+systemctl start cron</code></pre>
+                    </div>
+
+                    <h3>Configure Firewall</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Configure UFW firewall
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow ssh
+ufw allow 80/tcp
+ufw allow 443/tcp
+ufw enable
+
+# Check status
+ufw status verbose</code></pre>
+                    </div>
+                </section>
+
+                <!-- Linux Network Security Section -->
+                <section id="linux-network-security" class="docs-section">
+                    <h2>Network Security</h2>
+                    <p>Network security configuration involves setting up proper firewall rules and network parameters.</p>
+
+                    <h3>IPTables Configuration</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Configuration Script</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>#!/bin/bash
+# Basic iptables configuration
+
+# Flush existing rules
+iptables -F
+iptables -X
+iptables -t nat -F
+iptables -t nat -X
+iptables -t mangle -F
+iptables -t mangle -X
+
+# Set default policies
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
+iptables -P OUTPUT ACCEPT
+
+# Allow loopback
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A OUTPUT -o lo -j ACCEPT
+
+# Allow established connections
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Allow SSH
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+
+# Allow HTTP and HTTPS
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+
+# Save rules
+iptables-save > /etc/iptables/rules.v4</code></pre>
+                    </div>
+
+                    <h3>Network Interface Security</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Disable IP forwarding
+echo 0 > /proc/sys/net/ipv4/ip_forward
+
+# Disable ICMP redirects
+echo 0 > /proc/sys/net/ipv4/conf/all/accept_redirects
+echo 0 > /proc/sys/net/ipv4/conf/default/accept_redirects
+
+# Enable IP spoofing protection
+echo 1 > /proc/sys/net/ipv4/conf/all/rp_filter
+echo 1 > /proc/sys/net/ipv4/conf/default/rp_filter
+
+# Disable source routing
+echo 0 > /proc/sys/net/ipv4/conf/all/accept_source_route
+echo 0 > /proc/sys/net/ipv4/conf/default/accept_source_route</code></pre>
+                    </div>
+                </section>
+
+                <!-- Linux Verification and Testing Section -->
+                <section id="linux-verification-testing" class="docs-section">
+                    <h2>Verification and Testing</h2>
+                    
+                    <h3>Verify File Permissions</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Check critical file permissions
+ls -la /etc/shadow
+ls -la /etc/passwd
+ls -la /etc/group
+ls -la /etc/gshadow
+ls -la /etc/ssh/sshd_config
+
+# Check for world-writable files
+find / -type f -perm -002 2>/dev/null
+find / -type d -perm -002 2>/dev/null</code></pre>
+                    </div>
+
+                    <h3>Verify Service Status</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Check service status
+systemctl status sshd
+systemctl status ufw
+systemctl status fail2ban
+systemctl status auditd
+
+# List enabled services
+systemctl list-unit-files --type=service --state=enabled</code></pre>
+                    </div>
+
+                    <h3>Verify Network Configuration</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Check firewall status
+ufw status verbose
+iptables -L -n
+
+# Check network interfaces
+ip addr show
+ip route show
+
+# Check listening ports
+netstat -tuln
+ss -tuln</code></pre>
+                    </div>
+                </section>
+
+                <!-- Linux Best Practices Section -->
+                <section id="linux-best-practices" class="docs-section">
+                    <h2>Best Practices</h2>
+                    
+                    <h3>Before Making Changes</h3>
+                    <ol>
+                        <li><strong>Create a backup:</strong> Always backup current configuration files before making changes</li>
+                        <li><strong>Test in non-production:</strong> Test all changes in a non-production environment first</li>
+                        <li><strong>Document changes:</strong> Keep detailed records of all configuration changes</li>
+                        <li><strong>Plan rollback:</strong> Have a rollback plan in case changes cause issues</li>
+                    </ol>
+
+                    <h3>Implementation Strategy</h3>
+                    <ol>
+                        <li><strong>Phased approach:</strong> Implement changes in phases to minimize risk</li>
+                        <li><strong>Monitor impact:</strong> Monitor system performance and user experience after changes</li>
+                        <li><strong>User communication:</strong> Inform users of any changes that may affect their workflow</li>
+                        <li><strong>Regular reviews:</strong> Schedule regular reviews of security configuration effectiveness</li>
+                    </ol>
+
+                    <h3>Maintenance and Monitoring</h3>
+                    <ol>
+                        <li><strong>Regular audits:</strong> Conduct regular security audits to ensure compliance</li>
+                        <li><strong>Performance monitoring:</strong> Monitor system performance for any negative impacts</li>
+                        <li><strong>Security updates:</strong> Keep security configurations updated with latest best practices</li>
+                        <li><strong>Incident response:</strong> Have procedures in place for security incidents</li>
+                    </ol>
+                </section>
+
+                <!-- Linux Troubleshooting Section -->
+                <section id="linux-troubleshooting" class="docs-section">
+                    <h2>Troubleshooting</h2>
+                    
+                    <h3>Common Issues</h3>
+                    <div class="alert alert-warning" style="display: block;">
+                        <div><strong class="alert-info-text">Issue:</strong> SSH access denied after configuration</div>
+                        <div><strong class="alert-info-text">Solution:</strong> Check SSH configuration syntax and ensure proper permissions. Test with verbose mode: <code>ssh -v user@host</code></div>
+                    </div>
+                    
+                    <div class="alert alert-warning" style="display: block;">
+                        <div><strong class="alert-info-text">Issue:</strong> Services not starting</div>
+                        <div><strong class="alert-info-text">Solution:</strong> Check service status with <code>systemctl status service-name</code> and review logs with <code>journalctl -u service-name</code></div>
+                    </div>
+                    
+                    <div class="alert alert-warning" style="display: block;">
+                        <div><strong class="alert-info-text">Issue:</strong> Network connectivity problems</div>
+                        <div><strong class="alert-info-text">Solution:</strong> Check firewall rules and network configuration. Verify with <code>iptables -L</code> and <code>ip route show</code></div>
+                    </div>
+
+                    <h3>Recovery Procedures</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Command Line</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code># Restore from backup
+cp /etc/ssh/sshd_config.backup /etc/ssh/sshd_config
+systemctl restart sshd
+
+# Reset firewall rules
+ufw --force reset
+iptables -F
+
+# Restore file permissions
+chmod 644 /etc/passwd
+chmod 600 /etc/shadow
+chmod 644 /etc/group
+chmod 600 /etc/gshadow</code></pre>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/docs.js"></script>
+    <script src="js/header.js"></script>
+</body>
+</html>

@@ -1,0 +1,1421 @@
+[
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure Filesystem Kernel Modules",
+    "title": "Ensure cramfs kernel module is not available",
+    "details": "Check that the cramfs kernel module is not loaded and not available for loading."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure Filesystem Kernel Modules",
+    "title": "Ensure freevxfs kernel module is not available",
+    "details": "Check that the freevxfs kernel module is not loaded and not available for loading."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure Filesystem Kernel Modules",
+    "title": "Ensure hfs kernel module is not available",
+    "details": "Check that the hfs kernel module is not loaded and not available for loading."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure Filesystem Kernel Modules",
+    "title": "Ensure hfsplus kernel module is not available",
+    "details": "Check that the hfsplus kernel module is not loaded and not available for loading."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure Filesystem Kernel Modules",
+    "title": "Ensure jffs2 kernel module is not available",
+    "details": "Check that the jffs2 kernel module is not loaded and not available for loading."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure Filesystem Kernel Modules",
+    "title": "Ensure overlayfs kernel module is not available",
+    "details": "Check that the overlayfs kernel module is not loaded and not available for loading."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure Filesystem Kernel Modules",
+    "title": "Ensure squashfs kernel module is not available",
+    "details": "Check that the squashfs kernel module is not loaded and not available for loading."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure Filesystem Kernel Modules",
+    "title": "Ensure udf kernel module is not available",
+    "details": "Check that the udf kernel module is not loaded and not available for loading."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure Filesystem Kernel Modules",
+    "title": "Ensure usb-storage kernel module is not available",
+    "details": "Check that the usb-storage kernel module is not loaded and not available for loading."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure Filesystem Kernel Modules",
+    "title": "Ensure unused filesystems kernel modules are not available",
+    "details": "Ensure that all unused filesystem kernel modules are removed or disabled."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure Filesystem Partitions",
+    "title": "Configure /tmp partition",
+    "details": "Ensure /tmp is a separate partition with nodev, nosuid, and noexec options set."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure /dev/shm",
+    "title": "Configure /dev/shm partition",
+    "details": "Ensure /dev/shm is a separate partition with nodev, nosuid, and noexec options set."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure /home",
+    "title": "Configure /home partition",
+    "details": "Ensure /home is a separate partition with nodev and nosuid options set."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure /var",
+    "title": "Configure /var partition",
+    "details": "Ensure /var is a separate partition with nodev and nosuid options set."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure /var/tmp",
+    "title": "Configure /var/tmp partition",
+    "details": "Ensure /var/tmp is a separate partition with nodev, nosuid, and noexec options set."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure /var/log",
+    "title": "Configure /var/log partition",
+    "details": "Ensure /var/log is a separate partition with nodev, nosuid, and noexec options set."
+  },
+  {
+    "heading": "Filesystem",
+    "subheading": "Configure /var/log/audit",
+    "title": "Configure /var/log/audit partition",
+    "details": "Ensure /var/log/audit is a separate partition with nodev, nosuid, and noexec options set."
+  },
+
+
+  {
+    "heading": "Package Management",
+    "subheading": "Configure Bootloader",
+    "title": "Ensure bootloader password is set",
+    "details": "Verify that the bootloader (GRUB/LILO) has a password configured to prevent unauthorized access to boot options."
+  },
+  {
+    "heading": "Package Management",
+    "subheading": "Configure Bootloader",
+    "title": "Ensure access to bootloader config is configured",
+    "details": "Restrict access to bootloader configuration files to root only."
+  },
+  {
+    "heading": "Package Management",
+    "subheading": "Configure Additional Process Hardening",
+    "title": "Ensure address space layout randomization is enabled",
+    "details": "Enable ASLR to randomize memory locations of processes and libraries, preventing certain memory attacks."
+  },
+  {
+    "heading": "Package Management",
+    "subheading": "Configure Additional Process Hardening",
+    "title": "Ensure ptrace_scope is restricted",
+    "details": "Set /proc/sys/kernel/yama/ptrace_scope to restrict ptrace usage to prevent unauthorized debugging of processes."
+  },
+  {
+    "heading": "Package Management",
+    "subheading": "Configure Additional Process Hardening",
+    "title": "Ensure core dumps are restricted",
+    "details": "Configure limits to prevent sensitive information from being written to core dumps."
+  },
+  {
+    "heading": "Package Management",
+    "subheading": "Configure Additional Process Hardening",
+    "title": "Ensure prelink is not installed",
+    "details": "Remove the 'prelink' package if installed, as it can interfere with ASLR security."
+  },
+  {
+    "heading": "Package Management",
+    "subheading": "Configure Additional Process Hardening",
+    "title": "Ensure Automatic Error Reporting is not enabled",
+    "details": "Disable automatic error reporting to prevent sensitive information from being sent to remote servers."
+  },
+  {
+    "heading": "Package Management",
+    "subheading": "Configure Command Line Warning Banners",
+    "title": "Ensure local login warning banner is configured properly",
+    "details": "Configure /etc/motd or /etc/issue to display a legal warning before local login."
+  },
+  {
+    "heading": "Package Management",
+    "subheading": "Configure Command Line Warning Banners",
+    "title": "Ensure remote login warning banner is configured properly",
+    "details": "Configure /etc/issue.net to display a legal warning before remote login (SSH or Telnet)."
+  },
+  {
+    "heading": "Package Management",
+    "subheading": "Configure Command Line Warning Banners",
+    "title": "Ensure access to /etc/motd is configured",
+    "details": "Restrict write access to /etc/motd to root only."
+  },
+  {
+    "heading": "Package Management",
+    "subheading": "Configure Command Line Warning Banners",
+    "title": "Ensure access to /etc/issue is configured",
+    "details": "Restrict write access to /etc/issue to root only."
+  },
+  {
+    "heading": "Package Management",
+    "subheading": "Configure Command Line Warning Banners",
+    "title": "Ensure access to /etc/issue.net is configured",
+    "details": "Restrict write access to /etc/issue.net to root only."
+  },
+
+
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure autofs services are not in use",
+    "details": "Disable or remove autofs service if not required to prevent unauthorized automatic mounting of filesystems."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure avahi daemon services are not in use",
+    "details": "Disable Avahi daemon to prevent multicast DNS service advertising on the network."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure dhcp server services are not in use",
+    "details": "Disable DHCP server if not required to prevent unauthorized IP assignment on the network."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure dns server services are not in use",
+    "details": "Disable DNS server if not required to prevent unauthorized DNS resolution."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure dnsmasq services are not in use",
+    "details": "Disable dnsmasq service to prevent local DNS caching and DHCP assignment if not needed."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure ftp server services are not in use",
+    "details": "Disable FTP server to reduce risk of unauthenticated file access."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure ldap server services are not in use",
+    "details": "Disable LDAP server if not required to prevent unauthorized directory access."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure message access server services are not in use",
+    "details": "Disable message access services (like IMAP/POP) if not required."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure network file system services are not in use",
+    "details": "Disable NFS services if not required to prevent unauthorized file sharing."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure nis server services are not in use",
+    "details": "Disable NIS server to prevent unauthorized network authentication."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure print server services are not in use",
+    "details": "Disable printing services if not required to reduce attack surface."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure rpcbind services are not in use",
+    "details": "Disable rpcbind to prevent remote procedure call exploits if not needed."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure rsync services are not in use",
+    "details": "Disable rsync daemon if not required to prevent unauthorized file transfers."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure samba file server services are not in use",
+    "details": "Disable Samba to prevent unauthorized SMB file sharing."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure snmp services are not in use",
+    "details": "Disable SNMP services if not required to prevent information leakage."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure tftp server services are not in use",
+    "details": "Disable TFTP server to reduce risk of unauthenticated file transfers."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure web proxy server services are not in use",
+    "details": "Disable web proxy services if not required."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure web server services are not in use",
+    "details": "Disable HTTP/HTTPS servers if not required to reduce attack surface."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure xinetd services are not in use",
+    "details": "Disable xinetd service if not required."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure X window server services are not in use",
+    "details": "Disable X server on production machines if not required."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure mail transfer agent is configured for local-only mode",
+    "details": "Restrict mail server (Postfix/Sendmail) to local-only to prevent unauthorized relaying."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Server Services",
+    "title": "Ensure only approved services are listening on a network interface",
+    "details": "Audit open network ports and ensure only required services are listening."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Client Services",
+    "title": "Ensure NIS Client is not installed",
+    "details": "Remove NIS client to prevent unauthorized network authentication."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Client Services",
+    "title": "Ensure rsh client is not installed",
+    "details": "Remove rsh client to prevent insecure remote shell usage."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Client Services",
+    "title": "Ensure talk client is not installed",
+    "details": "Remove talk client to prevent unnecessary communication channels."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Client Services",
+    "title": "Ensure telnet client is not installed",
+    "details": "Remove telnet client to avoid insecure remote connections."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Client Services",
+    "title": "Ensure ldap client is not installed",
+    "details": "Remove LDAP client if not required."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Client Services",
+    "title": "Ensure ftp client is not installed",
+    "details": "Remove FTP client to reduce attack surface."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Time Synchronization",
+    "title": "Ensure time synchronization is in use",
+    "details": "Configure a time synchronization service like NTP, systemd-timesyncd, or chrony."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure Time Synchronization",
+    "title": "Ensure a single time synchronization daemon is in use",
+    "details": "Only one time daemon should be active to avoid conflicts."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure systemd-timesyncd",
+    "title": "Ensure systemd-timesyncd configured with authorized timeserver",
+    "details": "Configure systemd-timesyncd to use trusted NTP servers."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure systemd-timesyncd",
+    "title": "Ensure systemd-timesyncd is enabled and running",
+    "details": "Verify systemd-timesyncd service is active."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure chrony",
+    "title": "Ensure chrony is configured with authorized timeserver",
+    "details": "Set chrony to use trusted NTP servers."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure chrony",
+    "title": "Ensure chrony is running as user _chrony",
+    "details": "Verify chrony daemon runs under _chrony account."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Configure chrony",
+    "title": "Ensure chrony is enabled and running",
+    "details": "Enable and start the chrony service."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Job Schedulers",
+    "title": "Ensure cron daemon is enabled and active",
+    "details": "Enable cron to ensure scheduled jobs run properly."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Job Schedulers",
+    "title": "Ensure permissions on /etc/crontab are configured",
+    "details": "Restrict /etc/crontab permissions to root only."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Job Schedulers",
+    "title": "Ensure permissions on /etc/cron.hourly are configured",
+    "details": "Restrict /etc/cron.hourly permissions to root only."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Job Schedulers",
+    "title": "Ensure permissions on /etc/cron.daily are configured",
+    "details": "Restrict /etc/cron.daily permissions to root only."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Job Schedulers",
+    "title": "Ensure permissions on /etc/cron.weekly are configured",
+    "details": "Restrict /etc/cron.weekly permissions to root only."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Job Schedulers",
+    "title": "Ensure permissions on /etc/cron.monthly are configured",
+    "details": "Restrict /etc/cron.monthly permissions to root only."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Job Schedulers",
+    "title": "Ensure permissions on /etc/cron.d are configured",
+    "details": "Restrict /etc/cron.d permissions to root only."
+  },
+  {
+    "heading": "Services",
+    "subheading": "Job Schedulers",
+    "title": "Ensure crontab is restricted to authorized users",
+    "details": "Only allow authorized users to edit their crontab files."
+  },
+
+
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Devices",
+    "title": "Ensure IPv6 status is identified",
+    "details": "Check whether IPv6 is enabled and identify its usage to enforce proper security controls."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Devices",
+    "title": "Ensure wireless interfaces are disabled",
+    "details": "Disable Wi-Fi interfaces on servers to prevent unauthorized wireless access."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Devices",
+    "title": "Ensure bluetooth services are not in use",
+    "details": "Disable Bluetooth to reduce attack surface on servers and workstations."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Modules",
+    "title": "Ensure dccp kernel module is not available",
+    "details": "Remove or blacklist the DCCP kernel module to prevent use of Datagram Congestion Control Protocol."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Modules",
+    "title": "Ensure tipc kernel module is not available",
+    "details": "Remove or blacklist TIPC kernel module to prevent unwanted inter-process communication over network."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Modules",
+    "title": "Ensure rds kernel module is not available",
+    "details": "Remove or blacklist RDS module to avoid unnecessary remote direct memory access protocol."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Modules",
+    "title": "Ensure sctp kernel module is not available",
+    "details": "Remove or blacklist SCTP module to prevent unauthorized stream control transmission."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Parameters",
+    "title": "Ensure ip forwarding is disabled",
+    "details": "Disable IP forwarding to prevent the system from routing packets unintentionally."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Parameters",
+    "title": "Ensure packet redirect sending is disabled",
+    "details": "Disable sending ICMP redirects to prevent man-in-the-middle attacks."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Parameters",
+    "title": "Ensure bogus icmp responses are ignored",
+    "details": "Configure kernel to ignore bogus ICMP responses to protect against spoofing."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Parameters",
+    "title": "Ensure broadcast icmp requests are ignored",
+    "details": "Ignore broadcast ICMP requests to prevent Smurf attacks."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Parameters",
+    "title": "Ensure icmp redirects are not accepted",
+    "details": "Disable acceptance of ICMP redirects to avoid MITM attacks."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Parameters",
+    "title": "Ensure secure icmp redirects are not accepted",
+    "details": "Disable secure ICMP redirects to prevent unauthorized routing updates."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Parameters",
+    "title": "Ensure reverse path filtering is enabled",
+    "details": "Enable rp_filter to validate incoming packets for spoofed source addresses."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Parameters",
+    "title": "Ensure source routed packets are not accepted",
+    "details": "Prevent acceptance of source-routed packets to protect against IP spoofing attacks."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Parameters",
+    "title": "Ensure suspicious packets are logged",
+    "details": "Enable logging for suspicious packets to monitor potential network attacks."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Parameters",
+    "title": "Ensure tcp syn cookies is enabled",
+    "details": "Enable TCP SYN cookies to protect against SYN flood attacks."
+  },
+  {
+    "heading": "Network",
+    "subheading": "Configure Network Kernel Parameters",
+    "title": "Ensure ipv6 router advertisements are not accepted",
+    "details": "Disable acceptance of IPv6 router advertisements to prevent rogue router attacks."
+  },
+  {
+    "heading": "Host Based Firewall",
+    "subheading": "Configure a single firewall utility",
+    "title": "Ensure ufw is installed",
+    "details": "Install UFW (Uncomplicated Firewall) to manage firewall rules easily."
+  },
+  {
+    "heading": "Host Based Firewall",
+    "subheading": "Configure a single firewall utility",
+    "title": "Ensure iptables-persistent is not installed with ufw",
+    "details": "Avoid conflicts between UFW and iptables-persistent."
+  },
+  {
+    "heading": "Host Based Firewall",
+    "subheading": "Configure a single firewall utility",
+    "title": "Ensure ufw service is enabled",
+    "details": "Enable UFW service to ensure firewall rules are enforced at boot."
+  },
+  {
+    "heading": "Host Based Firewall",
+    "subheading": "Configure a single firewall utility",
+    "title": "Ensure ufw loopback traffic is configured",
+    "details": "Allow all traffic on loopback interface (lo) for local system processes."
+  },
+  {
+    "heading": "Host Based Firewall",
+    "subheading": "Configure a single firewall utility",
+    "title": "Ensure ufw outbound connections are configured (Manual)",
+    "details": "Manually configure UFW outbound rules as per organizational requirements."
+  },
+  {
+    "heading": "Host Based Firewall",
+    "subheading": "Configure a single firewall utility",
+    "title": "Ensure ufw firewall rules exist for all open ports",
+    "details": "Define firewall rules for each open port to restrict unauthorized access."
+  },
+  {
+    "heading": "Host Based Firewall",
+    "subheading": "Configure a single firewall utility",
+    "title": "Ensure ufw default deny firewall policy",
+    "details": "Set default policy to deny all incoming connections unless explicitly allowed."
+  },
+  {
+    "heading": "Host Based Firewall",
+    "subheading": "Configure a single firewall utility",
+    "title": "Ensure ufw is not in use with iptables",
+    "details": "Ensure that UFW is used exclusively and does not conflict with iptables rules."
+  },
+
+  
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "Permissions on /etc/ssh/sshd_config",
+    "details": "Ensure permissions on /etc/ssh/sshd_config are configured (restricted to root)."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "Permissions on SSH private host key files",
+    "details": "Ensure permissions on SSH private host key files are configured (restricted to root)."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "Permissions on SSH public host key files",
+    "details": "Ensure permissions on SSH public host key files are configured."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd access configuration",
+    "details": "Ensure sshd access is configured (AllowUsers/AllowGroups/Match as appropriate)."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd Banner",
+    "details": "Ensure sshd Banner is configured to display the authorized-use message."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd Ciphers",
+    "details": "Ensure sshd Ciphers are configured to use strong, modern ciphers only."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd ClientAliveInterval/ClientAliveCountMax",
+    "details": "Ensure sshd ClientAliveInterval and ClientAliveCountMax are configured to disconnect inactive sessions."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd DisableForwarding",
+    "details": "Ensure sshd DisableForwarding is enabled to prevent TCP/X11/agent forwarding if not required."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd GSSAPIAuthentication",
+    "details": "Ensure sshd GSSAPIAuthentication is disabled if not used."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd HostbasedAuthentication",
+    "details": "Ensure sshd HostbasedAuthentication is disabled unless explicitly required."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd IgnoreRhosts",
+    "details": "Ensure sshd IgnoreRhosts is enabled to ignore .rhosts files."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd KexAlgorithms",
+    "details": "Ensure sshd KexAlgorithms is configured to use secure key exchange algorithms."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd LoginGraceTime",
+    "details": "Ensure sshd LoginGraceTime is configured to limit time for successful login."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd LogLevel",
+    "details": "Ensure sshd LogLevel is configured (e.g., INFO or VERBOSE) to provide useful logging."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd MACs",
+    "details": "Ensure sshd MACs are configured to use strong message authentication codes."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd MaxAuthTries",
+    "details": "Ensure sshd MaxAuthTries is configured to limit authentication attempts."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd MaxSessions",
+    "details": "Ensure sshd MaxSessions is configured to limit concurrent sessions per connection."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd MaxStartups",
+    "details": "Ensure sshd MaxStartups is configured to mitigate SSH connection-flood attacks."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd PermitEmptyPasswords",
+    "details": "Ensure sshd PermitEmptyPasswords is disabled to prevent empty-password logins."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd PermitRootLogin",
+    "details": "Ensure sshd PermitRootLogin is disabled to prevent direct root logins via SSH."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd PermitUserEnvironment",
+    "details": "Ensure sshd PermitUserEnvironment is disabled to avoid arbitrary environment injection."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure SSH Server",
+    "title": "sshd UsePAM",
+    "details": "Ensure sshd UsePAM is enabled to integrate with PAM authentication controls."
+  },
+
+  {
+    "heading": "Access Control",
+    "subheading": "Configure privilege escalation",
+    "title": "Ensure sudo is installed",
+    "details": "Verify that sudo is installed for controlled privilege escalation."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure privilege escalation",
+    "title": "Ensure sudo commands use pty",
+    "details": "Ensure sudo is configured to allocate a pseudo-tty (Defaults use_pty)."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure privilege escalation",
+    "title": "Ensure sudo log file exists",
+    "details": "Ensure sudo_logfile is configured and the log file exists and is writable by root only."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure privilege escalation",
+    "title": "Ensure users must provide password for privilege escalation",
+    "details": "Ensure sudoers configuration requires users to enter their password for privilege escalation."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure privilege escalation",
+    "title": "Ensure re-authentication for privilege escalation is not globally disabled",
+    "details": "Ensure sudo re-authentication is enforced (not disabled globally)."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure privilege escalation",
+    "title": "Ensure sudo authentication timeout is configured correctly",
+    "details": "Set sudo timestamp_timeout to an appropriate low value to reduce privilege persistence."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Configure privilege escalation",
+    "title": "Ensure access to the su command is restricted",
+    "details": "Restrict access to the su command to authorized users (e.g., via group)."
+  },
+
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM)",
+    "title": "Ensure latest version of pam is installed",
+    "details": "Verify PAM package is up-to-date."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM)",
+    "title": "Ensure libpam-modules is installed",
+    "details": "Ensure libpam-modules (or distro-equivalent) is installed."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM)",
+    "title": "Ensure libpam-pwquality is installed",
+    "details": "Ensure libpam-pwquality (or pam_pwquality equivalent) is installed for password strength checks."
+  },
+
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam-auth-update profiles",
+    "title": "Ensure pam_unix module is enabled",
+    "details": "Ensure pam_unix is enabled in PAM profiles for standard UNIX authentication."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam-auth-update profiles",
+    "title": "Ensure pam_faillock module is enabled",
+    "details": "Ensure pam_faillock (or pam_tally2 equivalent) is enabled to lock accounts after failed attempts."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam-auth-update profiles",
+    "title": "Ensure pam_pwquality module is enabled",
+    "details": "Ensure pam_pwquality (or pam_cracklib) is enabled to enforce password complexity."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam-auth-update profiles",
+    "title": "Ensure pam_pwhistory module is enabled",
+    "details": "Ensure pam_pwhistory (or pam_unix remember) is enabled to enforce password history."
+  },
+
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_faillock configuration",
+    "title": "Ensure password failed attempts lockout is configured",
+    "details": "Configure pam_faillock to lock accounts after a defined number of failed attempts."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_faillock configuration",
+    "title": "Ensure password unlock time is configured",
+    "details": "Configure pam_faillock unlock_time to an appropriate value (e.g., 900 seconds)."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_faillock configuration",
+    "title": "Ensure password failed attempts lockout includes root account",
+    "details": "Ensure pam_faillock policies apply to the root account where appropriate."
+  },
+
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_pwquality configuration",
+    "title": "Ensure password number of changed characters is configured",
+    "details": "Set 'difok' in pam_pwquality to require a minimum number of changed characters."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_pwquality configuration",
+    "title": "Ensure minimum password length is configured",
+    "details": "Configure pam_pwquality 'minlen' to enforce minimum password length (e.g., 12)."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_pwquality configuration",
+    "title": "Ensure password same consecutive characters is configured",
+    "details": "Configure pam_pwquality 'maxrepeat' to limit same consecutive characters."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_pwquality configuration",
+    "title": "Ensure password maximum sequential characters is configured",
+    "details": "Configure pam_pwquality 'maxsequence' to limit sequential characters."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_pwquality configuration",
+    "title": "Ensure password dictionary check is enabled",
+    "details": "Enable dictionary checks (pwquality dict) to prevent weak passwords."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_pwquality configuration",
+    "title": "Ensure password quality checking is enforced",
+    "details": "Ensure PAM enforces password quality rules on all accounts."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_pwquality configuration",
+    "title": "Ensure password quality is enforced for the root user",
+    "details": "Ensure root account is subject to the same pam_pwquality rules."
+  },
+
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_pwhistory configuration",
+    "title": "Ensure password history remember is configured",
+    "details": "Configure pam_pwhistory (or pam_unix remember) to remember a number of previous passwords."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_pwhistory configuration",
+    "title": "Ensure password history is enforced for the root user",
+    "details": "Ensure password history enforcement also applies to the root account."
+  },
+  {
+    "heading": "Access Control",
+    "subheading": "Pluggable Authentication Modules (PAM) - pam_pwhistory configuration",
+    "title": "Ensure pam_pwhistory includes use_authtok",
+    "details": "Ensure pam_pwhistory (or relevant module) uses 'use_authtok' to prevent password reuse bypass."
+  },
+
+
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "Shadow Password Suite",
+    "title": "Password expiration",
+    "details": "Ensure password expiration is configured for all accounts (e.g., PASS_MAX_DAYS set appropriately)."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "Shadow Password Suite",
+    "title": "Minimum password days (Manual)",
+    "details": "Ensure minimum password days (PASS_MIN_DAYS) is configured (manual verification required)."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "Shadow Password Suite",
+    "title": "Password expiration warning days",
+    "details": "Ensure password expiration warning days (WARN_AGE) is configured so users are notified ahead of expiry."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "Shadow Password Suite",
+    "title": "Strong password hashing algorithm",
+    "details": "Ensure a strong password hashing algorithm (e.g., SHA-512) is configured in /etc/login.defs or equivalent."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "Shadow Password Suite",
+    "title": "Inactive password lock",
+    "details": "Ensure inactive account lock (INACTIVE) is configured to disable accounts after a period of inactivity."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "Shadow Password Suite",
+    "title": "Users' last password change date",
+    "details": "Ensure all users have a last password change date in the past (no accounts showing an unset/invalid date)."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "Root and System Accounts",
+    "title": "Root is the only UID 0 account",
+    "details": "Ensure root is the only account with UID 0. Remove or reassign any other UID 0 accounts (CIS 5.4.2.1)."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "Root and System Accounts",
+    "title": "Root is the only GID 0 account",
+    "details": "Ensure root is the only group with GID 0; reassign or remove other groups with GID 0."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "Root and System Accounts",
+    "title": "Group root is the only GID 0 group",
+    "details": "Ensure the 'root' group is the only group assigned GID 0."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "Root Account",
+    "title": "Root account access control",
+    "details": "Ensure direct root access is controlled (disable direct root SSH login, require sudo, restrict physical/console access)."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "Root Account",
+    "title": "Root path integrity",
+    "details": "Ensure root user's PATH is protected from insecure directories and does not include world-writable locations."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "Root Account",
+    "title": "Root user umask",
+    "details": "Ensure root user's default umask is set to a restrictive value (e.g., 027 or 077) to prevent permissive file modes."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "System Accounts",
+    "title": "System accounts do not have a valid login shell",
+    "details": "Ensure system/service accounts use a non-login shell (e.g., /usr/sbin/nologin, /bin/false) where appropriate."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "System Accounts",
+    "title": "Accounts without valid login shell are locked",
+    "details": "Ensure accounts that have no valid login shell are disabled/locked to prevent interactive logins."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "User Defaults",
+    "title": "Ensure nologin is not listed in /etc/shells",
+    "details": "Verify /etc/shells does not contain nologin/false entries so that non-login shells cannot be used as valid shells."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "User Defaults",
+    "title": "Default user shell timeout",
+    "details": "Ensure default shell timeout (TMOUT or equivalent) is configured to auto-logout idle interactive shells."
+  },
+  {
+    "heading": "User Accounts and Environment",
+    "subheading": "User Defaults",
+    "title": "Default user umask",
+    "details": "Ensure default user umask is configured system-wide (e.g., /etc/profile, /etc/login.defs) to a restrictive value like 027."
+  },
+
+  
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "System Logging",
+    "title": "systemd-journald service",
+    "details": [
+      "Ensure journald service is enabled and active",
+      "Ensure journald log file access is configured",
+      "Ensure journald log file rotation is configured",
+      "Ensure only one logging system is in use"
+    ]
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "System Logging",
+    "title": "rsyslog",
+    "details": [
+      "Ensure rsyslog is installed",
+      "Ensure rsyslog service is enabled and active",
+      "Ensure journald is configured to send logs to rsyslog",
+      "Ensure rsyslog log file creation mode is configured",
+      "Ensure rsyslog logging is configured",
+      "Ensure rsyslog is configured to send logs to a remote log host",
+      "Ensure rsyslog is not configured to receive logs from a remote client",
+      "Ensure logrotate is configured"
+    ]
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "System Logging",
+    "title": "Logfiles",
+    "details": [
+      "Ensure access to all logfiles has been configured"
+    ]
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "System Auditing",
+    "title": "auditd Service",
+    "details": [
+      "Ensure auditd packages are installed",
+      "Ensure auditd service is enabled and active",
+      "Ensure auditing for processes that start prior to auditd is enabled",
+      "Ensure audit_backlog_limit is sufficient"
+    ]
+  },
+
+
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "Data Retention",
+    "title": "Audit log storage size",
+    "details": "Ensure audit log storage size is configured to accommodate expected logging volume."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "Data Retention",
+    "title": "Audit logs not auto-deleted",
+    "details": "Ensure audit logs are not automatically deleted to preserve historical data."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "Data Retention",
+    "title": "System disabled when audit logs full",
+    "details": "Ensure the system halts or blocks critical operations if audit logs are full to prevent loss of audit data."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "Data Retention",
+    "title": "Audit log low space warning",
+    "details": "Ensure system warns administrators when audit logs are low on space to prevent unexpected data loss."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Collect changes to sudoers",
+    "details": "Ensure changes to system administration scope (sudoers) are always logged."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Actions as another user",
+    "details": "Ensure actions performed as another user are always logged."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Sudo log file modifications",
+    "details": "Ensure events that modify the sudo log file are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Date and time changes",
+    "details": "Ensure events that modify date and time information are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Network environment changes",
+    "details": "Ensure events that modify the system's network environment are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Privileged command use",
+    "details": "Ensure use of privileged commands is collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Unsuccessful file access",
+    "details": "Ensure unsuccessful file access attempts are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "User/group modifications",
+    "details": "Ensure events that modify user/group information are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Discretionary access control changes",
+    "details": "Ensure discretionary access control permission modification events are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "File system mounts",
+    "details": "Ensure successful file system mounts are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Session initiation info",
+    "details": "Ensure session initiation information is collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Login and logout events",
+    "details": "Ensure login and logout events are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "File deletion events",
+    "details": "Ensure file deletion events by users are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Mandatory Access Control changes",
+    "details": "Ensure events that modify the system's Mandatory Access Controls are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "chcon command attempts",
+    "details": "Ensure successful and unsuccessful attempts to use the chcon command are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "setfacl command attempts",
+    "details": "Ensure successful and unsuccessful attempts to use the setfacl command are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "chacl command attempts",
+    "details": "Ensure successful and unsuccessful attempts to use the chacl command are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "usermod command attempts",
+    "details": "Ensure successful and unsuccessful attempts to use the usermod command are collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Kernel module changes",
+    "details": "Ensure kernel module loading, unloading, and modification is collected."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Immutable audit configuration",
+    "details": "Ensure the audit configuration is immutable."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd Rules",
+    "title": "Running vs on-disk configuration",
+    "details": "Ensure the running and on-disk audit configuration is identical."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd File Access",
+    "title": "Audit log files mode",
+    "details": "Ensure audit log files mode is configured correctly."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd File Access",
+    "title": "Audit log files owner",
+    "details": "Ensure audit log files owner is set appropriately."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd File Access",
+    "title": "Audit log files group owner",
+    "details": "Ensure audit log files group owner is set appropriately."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd File Access",
+    "title": "Audit log directory mode",
+    "details": "Ensure the audit log file directory mode is configured correctly."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd File Access",
+    "title": "Audit configuration files mode",
+    "details": "Ensure audit configuration files mode is configured correctly."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd File Access",
+    "title": "Audit configuration files owner",
+    "details": "Ensure audit configuration files owner is configured."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd File Access",
+    "title": "Audit configuration files group owner",
+    "details": "Ensure audit configuration files group owner is configured."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd File Access",
+    "title": "Audit tools mode",
+    "details": "Ensure audit tools mode is configured correctly."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd File Access",
+    "title": "Audit tools owner",
+    "details": "Ensure audit tools owner is configured."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "auditd File Access",
+    "title": "Audit tools group owner",
+    "details": "Ensure audit tools group owner is configured."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "Integrity Checking",
+    "title": "Install AIDE",
+    "details": "Ensure AIDE is installed for filesystem integrity checking."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "Integrity Checking",
+    "title": "Filesystem integrity checks",
+    "details": "Ensure filesystem integrity is regularly checked using AIDE or equivalent tools."
+  },
+  {
+    "heading": "Logging and Auditing",
+    "subheading": "Integrity Checking",
+    "title": "Cryptographic protection for audit tools",
+    "details": "Ensure cryptographic mechanisms are used to protect the integrity of audit tools."
+  },
+
+  
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "/etc/passwd permissions",
+    "details": "Ensure permissions on /etc/passwd are configured correctly to prevent unauthorized access."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "/etc/passwd- permissions",
+    "details": "Ensure permissions on /etc/passwd- (backup) are configured correctly."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "/etc/group permissions",
+    "details": "Ensure permissions on /etc/group are configured correctly."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "/etc/group- permissions",
+    "details": "Ensure permissions on /etc/group- (backup) are configured correctly."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "/etc/shadow permissions",
+    "details": "Ensure permissions on /etc/shadow are configured to protect hashed passwords."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "/etc/shadow- permissions",
+    "details": "Ensure permissions on /etc/shadow- (backup) are configured correctly."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "/etc/gshadow permissions",
+    "details": "Ensure permissions on /etc/gshadow are configured to protect group passwords."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "/etc/gshadow- permissions",
+    "details": "Ensure permissions on /etc/gshadow- (backup) are configured correctly."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "/etc/shells permissions",
+    "details": "Ensure permissions on /etc/shells are configured correctly."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "/etc/security/opasswd permissions",
+    "details": "Ensure permissions on /etc/security/opasswd are configured correctly."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "World-writable files and directories",
+    "details": "Ensure no world-writable files or directories exist, or secure them appropriately."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "Files and directories without owner/group",
+    "details": "Ensure no files or directories exist without an owner and a group."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "System File Permissions",
+    "title": "SUID and SGID files",
+    "details": "Review all SUID and SGID files manually to ensure they are needed and secure."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "Local User and Group Settings",
+    "title": "Shadowed passwords",
+    "details": "Ensure all accounts in /etc/passwd use shadowed passwords."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "Local User and Group Settings",
+    "title": "/etc/shadow password fields",
+    "details": "Ensure /etc/shadow password fields are not empty."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "Local User and Group Settings",
+    "title": "Group existence",
+    "details": "Ensure all groups referenced in /etc/passwd exist in /etc/group."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "Local User and Group Settings",
+    "title": "Shadow group empty",
+    "details": "Ensure the shadow group is empty."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "Local User and Group Settings",
+    "title": "Duplicate UIDs",
+    "details": "Ensure no duplicate UIDs exist on the system."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "Local User and Group Settings",
+    "title": "Duplicate GIDs",
+    "details": "Ensure no duplicate GIDs exist on the system."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "Local User and Group Settings",
+    "title": "Duplicate usernames",
+    "details": "Ensure no duplicate user names exist on the system."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "Local User and Group Settings",
+    "title": "Duplicate group names",
+    "details": "Ensure no duplicate group names exist on the system."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "Local User and Group Settings",
+    "title": "Local interactive user home directories",
+    "details": "Ensure local interactive users have home directories configured properly."
+  },
+  {
+    "heading": "System Maintenance",
+    "subheading": "Local User and Group Settings",
+    "title": "Local interactive user dot files",
+    "details": "Ensure local interactive users' dot files (.bashrc, .profile, etc.) have correct access permissions."
+  }
+]
+
+

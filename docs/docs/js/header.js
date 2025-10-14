@@ -114,16 +114,22 @@ function initOSSelector() {
     
     if (!dropdown || !toggle || options.length === 0) return;
     
-    // Detect OS automatically, but respect saved preference
+    // Check for URL parameter first
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlOS = urlParams.get('os');
+    
+    // Detect OS automatically, but respect URL parameter, then saved preference
     const detectedOS = detectOS();
     const savedOS = localStorage.getItem('selectedOS');
     
-    // Use saved preference if available, otherwise use detected OS
-    const initialOS = savedOS || detectedOS;
+    // Use URL parameter if available, then saved preference, then detected OS
+    const initialOS = urlOS || savedOS || detectedOS;
     setActiveOS(initialOS);
     
-    // Save the detected OS if no preference was saved
-    if (!savedOS) {
+    // Save the OS preference (URL parameter takes priority)
+    if (urlOS) {
+        localStorage.setItem('selectedOS', urlOS);
+    } else if (!savedOS) {
         localStorage.setItem('selectedOS', detectedOS);
     }
     
@@ -186,6 +192,9 @@ function setActiveOS(os) {
         }
     });
 }
+
+// Expose setActiveOS globally for external use
+window.setActiveOS = setActiveOS;
 
 // Get current selected OS
 function getCurrentOS() {
