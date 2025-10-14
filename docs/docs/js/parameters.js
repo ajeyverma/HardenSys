@@ -94,7 +94,7 @@ function initLinuxManualParameterSearch() {
 
 // Filter-aware search renderer for manual sections
 function performParameterSearchWithFilter(query, resultsContainer, osFilter) {
-    const scoped = (parameterData || []).filter(p => !osFilter || p.os === osFilter);
+    const scoped = getSearchDataset(osFilter);
     const results = scoped.filter(parameter => {
         return parameter.title.toLowerCase().includes(query) ||
                parameter.details.toLowerCase().includes(query) ||
@@ -111,7 +111,7 @@ function performParameterSearchWithFilter(query, resultsContainer, osFilter) {
     }
 
     resultsContainer.innerHTML = results.map(parameter => `
-        <div class="search-result-item" data-script-key="${parameter.scriptKey}">
+        <div class="search-result-item" data-script-key="${parameter.scriptKey}" data-title="${(parameter.title || '').replace(/"/g,'&quot;')}" data-os="${parameter.os || ''}">
             <div>
                 <div class="result-title">${parameter.title}</div>
                 <div class="result-meta">${parameter.category} → ${parameter.subcategory}</div>
@@ -125,7 +125,14 @@ function performParameterSearchWithFilter(query, resultsContainer, osFilter) {
     resultsContainer.querySelectorAll('.search-result-item').forEach(item => {
         item.addEventListener('click', () => {
             const key = item.getAttribute('data-script-key');
-            openParameterDetailPopup(key);
+            const title = item.getAttribute('data-title') || '';
+            const os = item.getAttribute('data-os') || '';
+            const hasJson = !!(parameterData && parameterData.find(p => p.scriptKey === key));
+            if (hasJson) {
+                openParameterDetailPopup(key);
+            } else {
+                openParameterDetailPopupFromDom(title, os);
+            }
         });
     });
 }
@@ -591,6 +598,137 @@ function escapeHtml(t) {
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
+}
+
+function getSearchDataset(osFilter) {
+    // Linux: strictly from DOM manual cards
+    if (osFilter === 'linux') {
+        return collectFromDom('#linux-parameters-manual-setup', 'linux');
+    }
+    // Windows: prefer JSON, fallback to DOM manual cards
+    if (osFilter === 'windows') {
+        const jsonWin = (parameterData || []).filter(p => p.os === 'windows');
+        return jsonWin.length ? jsonWin : collectFromDom('#parameters-manual-setup', 'windows');
+    }
+    // Default: return any available JSON; else combine DOM
+    const jsonAll = (parameterData || []);
+    if (jsonAll.length) return jsonAll;
+    return [
+        ...collectFromDom('#parameters-manual-setup', 'windows'),
+        ...collectFromDom('#linux-parameters-manual-setup', 'linux')
+    ];
+}
+
+// Open popup using DOM cards when JSON entry is not available
+function openParameterDetailPopupFromDom(title, os) {
+    const popup = document.getElementById('param-detail-popup');
+    const titleEl = document.getElementById('param-popup-title');
+    const metaEl = document.getElementById('param-popup-meta');
+    const body = document.getElementById('param-popup-body');
+    if (!popup || !titleEl || !metaEl || !body) return;
+
+    const rootSel = os === 'linux' ? '#linux-parameters-manual-setup' : '#parameters-manual-setup';
+    const cards = Array.from(document.querySelectorAll(`${rootSel} .parameter-card`));
+    const match = cards.find(c => ((c.querySelector('h4')?.textContent || '').trim().toLowerCase()) === (title || '').toLowerCase());
+    if (!match) return;
+
+    const category = match.querySelector('.category')?.textContent || '';
+    const description = match.querySelector('.description')?.textContent || '';
+    const registryPathRaw = match.querySelector('.registry-path')?.textContent || '';
+    const manualHtml = match.querySelector('.manual-setup')?.innerHTML || '';
+
+    titleEl.textContent = title || '';
+    metaEl.textContent = category || '';
+
+    let pathLabel = '';
+    let pathValue = '';
+    if (registryPathRaw) {
+        const parts = registryPathRaw.split(':');
+        if (parts.length > 1) {
+            pathLabel = parts[0].trim();
+            pathValue = parts.slice(1).join(':').trim();
+        } else {
+            pathValue = registryPathRaw.trim();
+        }
+    }
+
+    const codeRegex = /<code>([\s\S]*?)<\/code>/g;
+    const cmdMatches = Array.from(manualHtml.matchAll(codeRegex)).map(m => m[1]);
+    const manualTextOnly = manualHtml
+        .replace(/<strong>\s*Manual Setup:\s*<\/strong>/i, '')
+        .replace(/<code>[\s\S]*?<\/code>/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+    let guiSegments = [];
+    if (manualTextOnly.includes('→')) {
+        guiSegments = manualTextOnly.split('→').map(s => s.trim()).filter(Boolean);
+    } else if (manualTextOnly.length) {
+        guiSegments = [manualTextOnly];
+    }
+
+    const steps = [];
+    if (pathValue) {
+        steps.push(`
+            <div class="step-item">
+                <div class="step-icon"><i class="fas fa-folder-open"></i></div>
+                <div class="step-content">
+                    <h4>${pathLabel || 'Location / Path'}</h4>
+                    <p><span class="path-example">${pathValue}</span></p>
+                </div>
+            </div>
+        `);
+    }
+    if (guiSegments.length) {
+        steps.push(`
+            <div class="step-item">
+                <div class="step-icon"><i class="fas fa-mouse-pointer"></i></div>
+                <div class="step-content">
+                    <h4>GUI Path</h4>
+                    <p>${guiSegments.map((seg, idx) => idx === 0 ? seg : `→ ${seg}`).join(' ')}</p>
+                </div>
+            </div>
+        `);
+    }
+    if (cmdMatches.length) {
+        const commandsHtml = cmdMatches.map(cmd => `
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Command</span>
+                    <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                </div>
+                <pre><code>${cmd}</code></pre>
+            </div>
+        `).join('');
+        steps.push(`
+            <div class="step-item">
+                <div class="step-icon"><i class="fas fa-terminal"></i></div>
+                <div class="step-content">
+                    <h4>Command Line</h4>
+                    ${commandsHtml}
+                </div>
+            </div>
+        `);
+    }
+    if (description) {
+        steps.push(`
+            <div class="step-item">
+                <div class="step-icon"><i class="fas fa-info-circle"></i></div>
+                <div class="step-content">
+                    <h4>About this setting</h4>
+                    <p>${description}</p>
+                </div>
+            </div>
+        `);
+    }
+
+    body.innerHTML = `
+        <div class="parameter-card">
+            <div class="category">${category}</div>
+            <h4>${title || ''}</h4>
+            <div class="steps-list">${steps.join('')}</div>
+        </div>
+    `;
+    popup.style.display = 'flex';
 }
 
 // Re-render Linux tables when Linux section becomes visible
