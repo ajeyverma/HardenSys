@@ -1878,7 +1878,7 @@ body {
     gap: 2rem;
 }
 
-.overview-card {
+.overview-card-home {
     background: white;
     padding: 2rem;
     border-radius: 10px;
@@ -1888,23 +1888,23 @@ body {
     border: 1px solid #e9ecef;
 }
 
-.overview-card:hover {
+.overview-card-home:hover {
     transform: translateY(-5px);
 }
 
-.overview-card i {
+.overview-card-home i {
     font-size: 3rem;
     color: #667eea;
     margin-bottom: 1rem;
 }
 
-.overview-card h3 {
+.overview-card-home h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #333;
 }
 
-.overview-card p {
+.overview-card-home p {
     color: #666;
     margin-bottom: 1rem;
 }
