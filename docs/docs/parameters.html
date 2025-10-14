@@ -126,6 +126,8 @@
                         <li><a href="#parameters-overview" class="nav-link active">Overview</a></li>
                         <li><a href="#parameters-categories" class="nav-link">Categories</a></li>
                         <li><a href="#parameters-search" class="nav-link">Search Parameters</a></li>
+                        <li><a href="#complete-parameter-list" class="nav-link">Complete Parameter List</a></li>
+                        <li><a href="#parameters-manual-setup" class="nav-link">Parameters Manual Setup</a></li>
                     </ul>
                 </div>
 
@@ -227,6 +229,7 @@
                         <li><a href="#linux-parameters-overview" class="nav-link active">Overview</a></li>
                         <li><a href="#linux-parameters-categories" class="nav-link">Categories</a></li>
                         <li><a href="#linux-complete-parameter-list" class="nav-link">Complete Parameter List</a></li>
+                        <li><a href="#linux-parameters-manual-setup" class="nav-link">Parameters Manual Setup</a></li>
                     </ul>
                 </div>
 
@@ -425,7 +428,6 @@
                         </div>
                     </div>
                 </section>
-
                 <!-- Search Parameters Section -->
                 <section id="parameters-search" class="docs-section">
                     <h2>Search Parameters</h2>
@@ -441,371 +443,535 @@
                         <div class="search-results" id="parameter-results"></div>
                     </div>
 
-                    <h3>Search Examples</h3>
-                    <div class="search-examples">
-                        <div class="example-card">
-                            <h4>By Category</h4>
-                            <p>Search for parameters by security category:</p>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>CLI Command</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
-                                </div>
-                                <pre><code>python HardenSys.py --info "Account Policies"</code></pre>
-                            </div>
-                        </div>
-
-                        <div class="example-card">
-                            <h4>By Keyword</h4>
-                            <p>Search for parameters containing specific keywords:</p>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>CLI Command</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
-                                </div>
-                                <pre><code>python HardenSys.py --info "password"</code></pre>
-                            </div>
-                        </div>
-
-                        <div class="example-card">
-                            <h4>By Specific Parameter</h4>
-                            <p>Get detailed information about a specific parameter:</p>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>CLI Command</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
-                                </div>
-                                <pre><code>python HardenSys.py --info "Enforce password history"</code></pre>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3>Popular Parameters</h3>
-                    <div class="popular-parameters">
-                        <div class="parameter-card">
-                            <h4>Enforce password history</h4>
-                            <p>Ensure 'Enforce password history' is set to '24 or more password(s)'</p>
-                            <div class="parameter-meta">
-                                <span class="category">Account Policies</span>
-                                <span class="subcategory">Password Policy</span>
-                            </div>
-                        </div>
-
-                        <div class="parameter-card">
-                            <h4>Maximum password age</h4>
-                            <p>Ensure 'Maximum password age' is set to '90 days, but not 0'</p>
-                            <div class="parameter-meta">
-                                <span class="category">Account Policies</span>
-                                <span class="subcategory">Password Policy</span>
-                            </div>
-                        </div>
-
-                        <div class="parameter-card">
-                            <h4>Minimum password length</h4>
-                            <p>Ensure 'Minimum password length' is set to '12 or more character(s)'</p>
-                            <div class="parameter-meta">
-                                <span class="category">Account Policies</span>
-                                <span class="subcategory">Password Policy</span>
-                            </div>
-                        </div>
-
-                        <div class="parameter-card">
-                            <h4>Password complexity requirements</h4>
-                            <p>Ensure 'Password must meet complexity requirements' is set to 'Enabled'</p>
-                            <div class="parameter-meta">
-                                <span class="category">Account Policies</span>
-                                <span class="subcategory">Password Policy</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Manual Setup Section -->
-                <section id="parameters-manual-setup" class="docs-section">
-                    <h2>Manual Setup</h2>
                     
-                    <p>For environments where automated configuration is not possible, HardenSys provides detailed manual setup instructions for each parameter.</p>
 
-                    <h3>Setup Methods</h3>
-                    <div class="setup-methods">
-                        <div class="method-card">
-                            <div class="method-icon">
-                                <i class="fas fa-cogs"></i>
-                            </div>
-                            <h4>Local Security Policy</h4>
-                            <p>Configure parameters using the Local Security Policy editor (secpol.msc)</p>
-                            <div class="method-steps">
-                                <ol>
-                                    <li>Open Local Security Policy</li>
-                                    <li>Navigate to the appropriate category</li>
-                                    <li>Configure the parameter as specified</li>
-                                    <li>Apply and verify the setting</li>
-                                </ol>
-                            </div>
-                        </div>
-
-                        <div class="method-card">
-                            <div class="method-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <h4>Registry Editor</h4>
-                            <p>Configure parameters directly in the Windows Registry</p>
-                            <div class="method-steps">
-                                <ol>
-                                    <li>Open Registry Editor (regedit)</li>
-                                    <li>Navigate to the specified registry path</li>
-                                    <li>Create or modify the registry value</li>
-                                    <li>Restart the system if required</li>
-                                </ol>
-                            </div>
-                        </div>
-
-                        <div class="method-card">
-                            <div class="method-icon">
-                                <i class="fas fa-terminal"></i>
-                            </div>
-                            <h4>Command Line</h4>
-                            <p>Configure parameters using command-line tools</p>
-                            <div class="method-steps">
-                                <ol>
-                                    <li>Open Command Prompt as Administrator</li>
-                                    <li>Run the specified command</li>
-                                    <li>Verify the configuration</li>
-                                    <li>Test the setting</li>
-                                </ol>
-                            </div>
-                        </div>
-
-                        <div class="method-card">
-                            <div class="method-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h4>Group Policy</h4>
-                            <p>Configure parameters using Group Policy Management</p>
-                            <div class="method-steps">
-                                <ol>
-                                    <li>Open Group Policy Management Console</li>
-                                    <li>Create or edit a Group Policy Object</li>
-                                    <li>Navigate to the appropriate policy section</li>
-                                    <li>Configure and deploy the policy</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3>Verification Procedures</h3>
-                    <p>After manual configuration, verify that the settings have been applied correctly:</p>
-                    <div class="code-block">
-                        <div class="code-header">
-                            <span>Command Line</span>
-                            <button class="copy-btn" onclick="copyCode(this)">
-                                <i class="fas fa-copy"></i>
-                            </button>
-                        </div>
-                        <pre><code># Verify password policy settings
-net accounts
-
-# Verify security options
-secedit /export /cfg security_policy.cfg
-
-# Verify registry settings
-reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</code></pre>
-                    </div>
-
-                    <h3>Best Practices</h3>
-                    <div class="alert alert-info">
-                        <i class="fas fa-info-circle"></i>
-                        <strong>Important:</strong> Always create a backup of your current security policy before making changes.
-                    </div>
                     
-                    <ul>
-                        <li>Test changes in a non-production environment first</li>
-                        <li>Document all manual changes for audit purposes</li>
-                        <li>Verify settings after system restarts</li>
-                        <li>Monitor for any unexpected behavior</li>
-                        <li>Keep detailed records of configuration changes</li>
-                    </ul>
                 </section>
-
                 <!-- Complete Parameter List Section -->
                 <section id="complete-parameter-list" class="docs-section">
                     <h2>Complete Parameter List</h2>
                     <p>Below is the comprehensive list of all 121 security parameters organized by category.</p>
+                    <div id="complete-parameter-table" class="complete-parameter-table"></div>
 
-                    <!-- Account Policies -->
-                    <div class="parameter-category">
-                        <h3><i class="fas fa-user-shield"></i> Account Policies</h3>
-                        
-                        <h4>Password Policy</h4>
-                        <ul class="parameter-list">
-                            <li>Enforce password history (24 passwords)</li>
-                            <li>Maximum password age (90 days)</li>
-                            <li>Minimum password age (1 day)</li>
-                            <li>Minimum password length (14 characters)</li>
-                            <li>Password must meet complexity requirements (Enabled)</li>
-                            <li>Store passwords using reversible encryption (Disabled)</li>
-                        </ul>
-
-                        <h4>Account Lockout Policy</h4>
-                        <ul class="parameter-list">
-                            <li>Account lockout duration (15 minutes)</li>
-                            <li>Account lockout threshold (5 invalid attempts)</li>
-                            <li>Reset account lockout counter (15 minutes)</li>
-                        </ul>
-                    </div>
-
-                    <!-- User Rights Assignment -->
-                    <div class="parameter-category">
-                        <h3><i class="fas fa-users-cog"></i> User Rights Assignment</h3>
-                        <ul class="parameter-list">
-                            <li>Access this computer from the network</li>
-                            <li>Allow log on locally</li>
-                            <li>Back up files and directories</li>
-                            <li>Change the system time</li>
-                            <li>Create symbolic links</li>
-                            <li>Deny access to this computer from the network</li>
-                            <li>Log on as a batch job</li>
-                        </ul>
-                    </div>
-
-                    <!-- Security Options -->
-                    <div class="parameter-category">
-                        <h3><i class="fas fa-cog"></i> Security Options</h3>
-                        
-                        <h4>Accounts</h4>
-                        <ul class="parameter-list">
-                            <li>Administrator account status (Disabled)</li>
-                            <li>Guest account status (Disabled)</li>
-                            <li>Rename administrator account</li>
-                            <li>Rename guest account</li>
-                        </ul>
-
-                        <h4>Interactive Logon</h4>
-                        <ul class="parameter-list">
-                            <li>Do not display last user name</li>
-                            <li>Do not require CTRL+ALT+DEL</li>
-                            <li>Machine inactivity limit</li>
-                            <li>Message text for users attempting to log on</li>
-                            <li>Number of previous logons to cache</li>
-                        </ul>
-
-                        <h4>Network Security</h4>
-                        <ul class="parameter-list">
-                            <li>LAN Manager authentication level</li>
-                            <li>Minimum session security for NTLM SSP</li>
-                            <li>PKU2U authentication requests</li>
-                            <li>Session security for secure RPC</li>
-                        </ul>
-                    </div>
-
-                    <!-- System Settings -->
-                    <div class="parameter-category">
-                        <h3><i class="fas fa-server"></i> System Settings</h3>
-                        
-                        <h4>User Account Control</h4>
-                        <ul class="parameter-list">
-                            <li>Admin Approval Mode for Built-in Administrator account</li>
-                            <li>Behavior of the elevation prompt for administrators</li>
-                            <li>Behavior of the elevation prompt for standard users</li>
-                            <li>Detect application installations and prompt for elevation</li>
-                            <li>Only elevate executables that are signed and validated</li>
-                            <li>Run all administrators in Admin Approval Mode</li>
-                            <li>Switch to the secure desktop when prompting for elevation</li>
-                            <li>Virtualize file and registry write failures to per-user locations</li>
-                        </ul>
-
-                        <h4>System Services</h4>
-                        <ul class="parameter-list">
-                            <li>Application Experience Service</li>
-                            <li>AutoTime Service</li>
-                            <li>Background Intelligent Transfer Service</li>
-                            <li>Remote Registry Service</li>
-                            <li>Server Service</li>
-                            <li>Shell Hardware Detection Service</li>
-                            <li>Task Scheduler Service</li>
-                            <li>Windows Error Reporting Service</li>
-                        </ul>
-                    </div>
-
-                    <!-- Windows Defender Firewall -->
-                    <div class="parameter-category">
-                        <h3><i class="fas fa-fire"></i> Windows Defender Firewall</h3>
-                        
-                        <h4>Private Profile</h4>
-                        <ul class="parameter-list">
-                            <li>Firewall state (On)</li>
-                            <li>Inbound connections (Block)</li>
-                            <li>Outbound connections (Allow)</li>
-                            <li>Display notifications (Yes)</li>
-                            <li>Allow unicast response (No)</li>
-                            <li>Apply local firewall rules (Yes)</li>
-                            <li>Apply local connection security rules (Yes)</li>
-                            <li>Logging: Name (System32\LogFiles\Firewall\pfirewall.log)</li>
-                            <li>Logging: Size limit (16384 KB)</li>
-                        </ul>
-
-                        <h4>Public Profile</h4>
-                        <ul class="parameter-list">
-                            <li>Firewall state (On)</li>
-                            <li>Inbound connections (Block)</li>
-                            <li>Outbound connections (Allow)</li>
-                            <li>Display notifications (Yes)</li>
-                            <li>Allow unicast response (No)</li>
-                            <li>Apply local firewall rules (No)</li>
-                            <li>Apply local connection security rules (No)</li>
-                            <li>Logging: Name (System32\LogFiles\Firewall\pfirewall.log)</li>
-                            <li>Logging: Size limit (16384 KB)</li>
-                        </ul>
-                    </div>
-
-                    <!-- Advanced Audit Policy -->
-                    <div class="parameter-category">
-                        <h3><i class="fas fa-clipboard-check"></i> Advanced Audit Policy</h3>
-                        
-                        <h4>Account Logon Events</h4>
-                        <ul class="parameter-list">
-                            <li>Audit Credential Validation (Success and Failure)</li>
-                            <li>Audit Kerberos Authentication Service (Success and Failure)</li>
-                            <li>Audit Kerberos Service Ticket Operations (Success and Failure)</li>
-                            <li>Audit Other Account Logon Events (Success and Failure)</li>
-                        </ul>
-
-                        <h4>Account Management</h4>
-                        <ul class="parameter-list">
-                            <li>Audit Application Group Management</li>
-                            <li>Audit Computer Account Management</li>
-                            <li>Audit Distribution Group Management</li>
-                            <li>Audit Other Account Management Events</li>
-                            <li>Audit Security Group Management</li>
-                            <li>Audit User Account Management</li>
-                        </ul>
-                    </div>
-
-                    <!-- Microsoft Defender Application Guard -->
-                    <div class="parameter-category">
-                        <h3><i class="fas fa-shield-virus"></i> Microsoft Defender Application Guard</h3>
-                        <ul class="parameter-list">
-                            <li>Turn on Microsoft Defender Application Guard</li>
-                            <li>Allow data persistence</li>
-                            <li>Configure network isolation level</li>
-                            <li>Allow camera and microphone access</li>
-                            <li>Allow printing</li>
-                            <li>Allow clipboard operations</li>
-                            <li>Allow hardware-accelerated rendering</li>
-                            <li>Configure allowed networks</li>
-                            <li>Configure proxy settings</li>
-                            <li>Block host networking</li>
-                            <li>Configure download folder</li>
-                        </ul>
-                    </div>
+                    
                 </section>
-            </div>
+
+                
+
+                <!-- Parameters Manual Setup Section -->
+                <section id="parameters-manual-setup" class="docs-section">
+                    <h2>Parameters Manual Setup</h2>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Note:</strong> This section provides detailed manual setup instructions for all Windows security parameters. Each parameter includes registry paths, manual setup steps, and configuration details.
+                                </div>
+
+                    <h3>Search Parameters</h3>
+                    <div style="margin-bottom: 2rem;">
+                        <input type="text" id="parameter-search-manual" placeholder="Search parameters by name, category, or description..." style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 5px; font-size: 1rem;">
+                        <div class="search-results" id="parameter-results-manual"></div>
+                        </div>
+
+                    <h3>Account Policies</h3>
+                    <h4>Password Policy</h4>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Password Policy</div>
+                            <h4>Enforce password history</h4>
+                            <div class="description">Ensure 'Enforce password history' is set to '24 or more password(s)'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Use <code>net accounts /uniquepw:24</code> or Local Security Policy → Account Policies → Password Policy
+                                </div>
+                            </div>
+                        <div class="parameter-card">
+                            <div class="category">Password Policy</div>
+                            <h4>Maximum password age</h4>
+                            <div class="description">Ensure 'Maximum password age' is set to '90 days, but not 0'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Use <code>net accounts /maxpwage:90</code> or Local Security Policy → Account Policies → Password Policy
+                        </div>
+                                </div>
+                        <div class="parameter-card">
+                            <div class="category">Password Policy</div>
+                            <h4>Minimum password age</h4>
+                            <div class="description">Ensure 'Minimum password age' is set to '1 day'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Use <code>net accounts /minpwage:1</code> or Local Security Policy → Account Policies → Password Policy
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Password Policy</div>
+                            <h4>Minimum password length</h4>
+                            <div class="description">Ensure 'Minimum password length' is set to '12 or more character(s)'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Use <code>net accounts /minpwlen:12</code> or Local Security Policy → Account Policies → Password Policy
+                    </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Password Policy</div>
+                            <h4>Password must meet complexity requirements</h4>
+                            <div class="description">Ensure 'Password must meet complexity requirements' is set to 'Enabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Use <code>net accounts /domain</code> or Local Security Policy → Account Policies → Password Policy
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Password Policy</div>
+                            <h4>Store passwords using reversible encryption</h4>
+                            <div class="description">Ensure 'Store passwords using reversible encryption' is set to 'Disabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Account Policies → Password Policy → Store passwords using reversible encryption
+                            </div>
+                            </div>
+                        </div>
+
+                    <h4>Account Lockout Policy</h4>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Account Lockout Policy</div>
+                            <h4>Account lockout duration</h4>
+                            <div class="description">Ensure 'Account lockout duration' is set to '15 or more minute(s)'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Account Policies → Account Lockout Policy
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Account Lockout Policy</div>
+                            <h4>Account lockout threshold</h4>
+                            <div class="description">Ensure 'Account lockout threshold' is set to '5 or fewer attempt(s), but not 0'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Account Policies → Account Lockout Policy
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Account Lockout Policy</div>
+                            <h4>Allow Administrator account lockout</h4>
+                            <div class="description">Ensure 'Allow Administrator account lockout' is set to 'Enabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Account Policies → Account Lockout Policy
+                            </div>
+                            </div>
+                        </div>
+
+                    <h3>Local Policies</h3>
+                    <h4>User Rights Assignment</h4>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">User Rights Assignment</div>
+                            <h4>Access Credential Manager as a trusted caller</h4>
+                            <div class="description">Ensure 'Access Credential Manager as a trusted caller' is set to 'No One'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → User Rights Assignment
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">User Rights Assignment</div>
+                            <h4>Access this computer from the network</h4>
+                            <div class="description">Ensure 'Access this computer from the network' is set to 'Administrators, Authenticated Users'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → User Rights Assignment
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">User Rights Assignment</div>
+                            <h4>Adjust memory quotas for a process</h4>
+                            <div class="description">Ensure 'Adjust memory quotas for a process' is set to 'Administrators, LOCAL SERVICE, NETWORK SERVICE'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → User Rights Assignment
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">User Rights Assignment</div>
+                            <h4>Allow log on locally</h4>
+                            <div class="description">Ensure 'Allow log on locally' is set to 'Administrators, Users'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → User Rights Assignment
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">User Rights Assignment</div>
+                            <h4>Back up files and directories</h4>
+                            <div class="description">Ensure 'Back up files and directories' is set to 'Administrators'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → User Rights Assignment
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">User Rights Assignment</div>
+                            <h4>Change the system time</h4>
+                            <div class="description">Ensure 'Change the system time' is set to 'Administrators, LOCAL SERVICE'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → User Rights Assignment
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">User Rights Assignment</div>
+                            <h4>Change the time zone</h4>
+                            <div class="description">Ensure 'Change the time zone' is set to 'Administrators, LOCAL SERVICE'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → User Rights Assignment
+                            </div>
+                            </div>
+                        </div>
+
+                    <h3>Security Options</h3>
+                    <h4>Accounts</h4>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Security Options - Accounts</div>
+                            <h4>Block Microsoft accounts</h4>
+                            <div class="description">Ensure 'Block Microsoft accounts' is set to 'Users cannot add or log on with Microsoft accounts'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → Accounts
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options - Accounts</div>
+                            <h4>Guest account status</h4>
+                            <div class="description">Ensure 'Guest account status' is set to 'Disabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → Accounts
+                    </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options - Accounts</div>
+                            <h4>Limit local account use of blank passwords</h4>
+                            <div class="description">Ensure 'Limit local account use of blank passwords' is set to 'Enabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → Accounts
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options - Accounts</div>
+                            <h4>Rename administrator account</h4>
+                            <div class="description">Ensure 'Rename administrator account' is set to 'Administrator'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → Accounts
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options - Accounts</div>
+                            <h4>Rename guest account</h4>
+                            <div class="description">Ensure 'Rename guest account' is set to 'Guest'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → Accounts
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>Interactive logon</h4>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Security Options - Interactive logon</div>
+                            <h4>Do not require CTRL+ALT+DEL</h4>
+                            <div class="description">Ensure 'Do not require CTRL+ALT+DEL' is set to 'Disabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → Interactive logon
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options - Interactive logon</div>
+                            <h4>Don't display last signed in</h4>
+                            <div class="description">Ensure 'Don't display last signed in' is set to 'Enabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → Interactive logon
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options - Interactive logon</div>
+                            <h4>Machine account lockout threshold</h4>
+                            <div class="description">Ensure 'Machine account lockout threshold' is set to '10 or fewer invalid logon attempt(s), but not 0'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → Interactive logon
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options - Interactive logon</div>
+                            <h4>Machine inactivity limit</h4>
+                            <div class="description">Ensure 'Machine inactivity limit' is set to '900 or fewer second(s), but not 0'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → Interactive logon
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options - Interactive logon</div>
+                            <h4>Message text for users attempting to log on</h4>
+                            <div class="description">Ensure 'Message text for users attempting to log on' is set to 'This system is restricted to authorized users'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → Interactive logon
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options - Interactive logon</div>
+                            <h4>Message title for users attempting to log on</h4>
+                            <div class="description">Ensure 'Message title for users attempting to log on' is set to 'Legal Notice'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → Interactive logon
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Security Options - Interactive logon</div>
+                            <h4>Prompt user to change password before expiration</h4>
+                            <div class="description">Ensure 'Prompt user to change password before expiration' is set to '14 or more day(s)'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → Interactive logon
+                            </div>
+                            </div>
+                        </div>
+
+                    <h3>System Settings</h3>
+                    <h4>User Account Control</h4>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">System Settings - UAC</div>
+                            <h4>Admin Approval Mode for Built-in Administrator</h4>
+                            <div class="description">Ensure 'Admin Approval Mode for Built-in Administrator' is set to 'Enabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → User Account Control
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">System Settings - UAC</div>
+                            <h4>Elevation prompt for administrators</h4>
+                            <div class="description">Ensure 'Elevation prompt for administrators' is set to 'Prompt for consent for non-Windows binaries'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → User Account Control
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">System Settings - UAC</div>
+                            <h4>Elevation prompt for standard users</h4>
+                            <div class="description">Ensure 'Elevation prompt for standard users' is set to 'Automatically deny elevation requests'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → User Account Control
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">System Settings - UAC</div>
+                            <h4>Detect application installations</h4>
+                            <div class="description">Ensure 'Detect application installations' is set to 'Enabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → User Account Control
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">System Settings - UAC</div>
+                            <h4>Run all administrators in Admin Approval Mode</h4>
+                            <div class="description">Ensure 'Run all administrators in Admin Approval Mode' is set to 'Enabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → User Account Control
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">System Settings - UAC</div>
+                            <h4>Switch to secure desktop on elevation prompt</h4>
+                            <div class="description">Ensure 'Switch to secure desktop on elevation prompt' is set to 'Enabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Local Policies → Security Options → User Account Control
+                            </div>
+                            </div>
+                        </div>
+
+                    <h3>Advanced Audit Policy Configuration</h3>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Advanced Audit Policy</div>
+                            <h4>Audit Credential Validation</h4>
+                            <div class="description">Ensure 'Audit Credential Validation' is set to 'Success and Failure'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Advanced Audit Policy Configuration → Account Logon
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Advanced Audit Policy</div>
+                            <h4>Audit Application Group Management</h4>
+                            <div class="description">Ensure 'Audit Application Group Management' is set to 'Success and Failure'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Advanced Audit Policy Configuration → Account Management
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Advanced Audit Policy</div>
+                            <h4>Audit Security Group Management</h4>
+                            <div class="description">Ensure 'Audit Security Group Management' is set to 'Success and Failure'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Advanced Audit Policy Configuration → Account Management
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Advanced Audit Policy</div>
+                            <h4>Audit User Account Management</h4>
+                            <div class="description">Ensure 'Audit User Account Management' is set to 'Success and Failure'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Local Security Policy → Advanced Audit Policy Configuration → Account Management
+                            </div>
+                            </div>
+                        </div>
+
+                    <h3>Microsoft Defender Application Guard</h3>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Application Guard</div>
+                            <h4>Allow auditing events</h4>
+                            <div class="description">Ensure 'Allow auditing events' is set to 'Disabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppHVSI</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Group Policy → Computer Configuration → Administrative Templates → Windows Components → Microsoft Defender Application Guard
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Application Guard</div>
+                            <h4>Allow camera and microphone access</h4>
+                            <div class="description">Ensure 'Allow camera and microphone access' is set to 'Disabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppHVSI</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Group Policy → Computer Configuration → Administrative Templates → Windows Components → Microsoft Defender Application Guard
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Application Guard</div>
+                            <h4>Allow data persistence</h4>
+                            <div class="description">Ensure 'Allow data persistence' is set to 'Disabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppHVSI</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Group Policy → Computer Configuration → Administrative Templates → Windows Components → Microsoft Defender Application Guard
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Application Guard</div>
+                            <h4>Allow file download to host</h4>
+                            <div class="description">Ensure 'Allow file download to host' is set to 'Disabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppHVSI</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Group Policy → Computer Configuration → Administrative Templates → Windows Components → Microsoft Defender Application Guard
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Application Guard</div>
+                            <h4>Configure clipboard settings</h4>
+                            <div class="description">Ensure 'Configure clipboard settings' is set to 'Disabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppHVSI</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Group Policy → Computer Configuration → Administrative Templates → Windows Components → Microsoft Defender Application Guard
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Application Guard</div>
+                            <h4>Allow virtual GPU</h4>
+                            <div class="description">Ensure 'Allow virtual GPU' is set to 'Disabled'</div>
+                            <div class="registry-path">Registry: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppHVSI</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Group Policy → Computer Configuration → Administrative Templates → Windows Components → Microsoft Defender Application Guard
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Parameter Categories Summary</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Subcategory</th>
+                                    <th>Parameters</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Account Policies</td>
+                                    <td>Password Policy</td>
+                                    <td>6</td>
+                                    <td>Password complexity, age, and history requirements</td>
+                                </tr>
+                                <tr>
+                                    <td>Account Policies</td>
+                                    <td>Account Lockout Policy</td>
+                                    <td>3</td>
+                                    <td>Account lockout threshold and duration settings</td>
+                                </tr>
+                                <tr>
+                                    <td>Local Policies</td>
+                                    <td>User Rights Assignment</td>
+                                    <td>7</td>
+                                    <td>User rights and privilege assignments</td>
+                                </tr>
+                                <tr>
+                                    <td>Security Options</td>
+                                    <td>Accounts</td>
+                                    <td>5</td>
+                                    <td>Account security settings and restrictions</td>
+                                </tr>
+                                <tr>
+                                    <td>Security Options</td>
+                                    <td>Interactive logon</td>
+                                    <td>7</td>
+                                    <td>Interactive logon security settings</td>
+                                </tr>
+                                <tr>
+                                    <td>System Settings</td>
+                                    <td>User Account Control</td>
+                                    <td>6</td>
+                                    <td>UAC settings and elevation prompts</td>
+                                </tr>
+                                <tr>
+                                    <td>Advanced Audit Policy</td>
+                                    <td>Account Logon</td>
+                                    <td>4</td>
+                                    <td>Account logon audit settings</td>
+                                </tr>
+                                <tr>
+                                    <td>Microsoft Defender Application Guard</td>
+                                    <td>Application Guard Settings</td>
+                                    <td>6</td>
+                                    <td>Application Guard configuration and policies</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                </section>
+
+
+                    </div>
 
             <!-- Linux Content -->
             <div class="docs-content linux-content" style="display: none;">
@@ -818,7 +984,7 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</code
                         <i class="fas fa-info-circle"></i>
                         <strong>Note:</strong> All parameters are based on CIS benchmarks and security best practices for Linux systems.
                     </div>
-
+                    
                     <h2>Overview</h2>
                     <p>HardenSys covers 89 security parameters across 6 main categories, providing comprehensive coverage of Linux security hardening requirements. Each parameter includes detailed configuration instructions and compliance checking.</p>
 
@@ -860,7 +1026,7 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</code
                                 <ul>
                                     <li>Filesystem Kernel Modules (9 parameters)</li>
                                     <li>Filesystem Partitions (7 parameters)</li>
-                                </ul>
+                        </ul>
                             </div>
                         </div>
 
@@ -875,9 +1041,9 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</code
                                 <ul>
                                     <li>Bootloader Configuration (2 parameters)</li>
                                     <li>Process Hardening (5 parameters)</li>
-                                </ul>
+                        </ul>
                             </div>
-                        </div>
+                    </div>
 
                         <div class="category-card">
                             <div class="category-icon">
@@ -891,9 +1057,9 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</code
                                     <li>Server Services (12 parameters)</li>
                                     <li>Client Services (6 parameters)</li>
                                     <li>Time Synchronization (3 parameters)</li>
-                                </ul>
+                        </ul>
                             </div>
-                        </div>
+                    </div>
 
                         <div class="category-card">
                             <div class="category-icon">
@@ -906,7 +1072,7 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</code
                                 <ul>
                                     <li>Network Parameters (7 parameters)</li>
                                     <li>Firewall Configuration (5 parameters)</li>
-                                </ul>
+                        </ul>
                             </div>
                         </div>
 
@@ -922,9 +1088,9 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</code
                                     <li>SSH Configuration (6 parameters)</li>
                                     <li>PAM Configuration (5 parameters)</li>
                                     <li>User Account Controls (5 parameters)</li>
-                                </ul>
+                        </ul>
                             </div>
-                        </div>
+                    </div>
 
                         <div class="category-card">
                             <div class="category-icon">
@@ -936,8 +1102,8 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</code
                                 <h4>Subcategories:</h4>
                                 <ul>
                                     <li>System Hardening (12 parameters)</li>
-                                </ul>
-                            </div>
+                        </ul>
+                    </div>
                         </div>
                     </div>
                 </section>
@@ -946,150 +1112,706 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</code
                 <section id="linux-complete-parameter-list" class="docs-section">
                     <h2>Complete Linux Parameter List</h2>
                     <p>Below is the comprehensive list of all 89 Linux security parameters organized by category.</p>
+                    <div id="linux-complete-parameter-table" class="complete-parameter-table"></div>
 
-                    <!-- Filesystem Configuration -->
-                    <div class="parameter-category">
-                        <h3><i class="fas fa-hdd"></i> Filesystem Configuration</h3>
-                        
+                    
+                </section>
+
+                <!-- Linux Parameters Manual Setup Section -->
+                <section id="linux-parameters-manual-setup" class="docs-section">
+                    <h2>Linux Parameters Manual Setup</h2>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Note:</strong> This section provides detailed manual setup instructions for all Linux security parameters. Each parameter includes configuration files, command-line instructions, and system-specific setup steps.
+                    </div>
+
+                    <h3>Search Parameters</h3>
+                    <div style="margin-bottom: 2rem;">
+                        <input type="text" id="linux-parameter-search-manual" placeholder="Search Linux parameters by name, category, or description..." style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 5px; font-size: 1rem;">
+                        <div class="search-results" id="linux-parameter-results-manual"></div>
+                    </div>
+
+                    <h3>Filesystem Configuration</h3>
                         <h4>Filesystem Kernel Modules</h4>
-                        <ul class="parameter-list">
-                            <li>Ensure cramfs kernel module is not available</li>
-                            <li>Ensure freevxfs kernel module is not available</li>
-                            <li>Ensure hfs kernel module is not available</li>
-                            <li>Ensure hfsplus kernel module is not available</li>
-                            <li>Ensure jffs2 kernel module is not available</li>
-                            <li>Ensure overlayfs kernel module is not available</li>
-                            <li>Ensure squashfs kernel module is not available</li>
-                            <li>Ensure udf kernel module is not available</li>
-                            <li>Ensure usb-storage kernel module is not available</li>
-                        </ul>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Kernel Modules</div>
+                            <h4>Ensure cramfs kernel module is not available</h4>
+                            <div class="description">Disable the cramfs kernel module to prevent mounting of cramfs filesystems</div>
+                            <div class="registry-path">File: /etc/modprobe.d/cramfs.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Create file with content: <code>install cramfs /bin/true</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Kernel Modules</div>
+                            <h4>Ensure freevxfs kernel module is not available</h4>
+                            <div class="description">Disable the freevxfs kernel module to prevent mounting of freevxfs filesystems</div>
+                            <div class="registry-path">File: /etc/modprobe.d/freevxfs.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Create file with content: <code>install freevxfs /bin/true</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Kernel Modules</div>
+                            <h4>Ensure hfs kernel module is not available</h4>
+                            <div class="description">Disable the hfs kernel module to prevent mounting of hfs filesystems</div>
+                            <div class="registry-path">File: /etc/modprobe.d/hfs.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Create file with content: <code>install hfs /bin/true</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Kernel Modules</div>
+                            <h4>Ensure hfsplus kernel module is not available</h4>
+                            <div class="description">Disable the hfsplus kernel module to prevent mounting of hfsplus filesystems</div>
+                            <div class="registry-path">File: /etc/modprobe.d/hfsplus.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Create file with content: <code>install hfsplus /bin/true</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Kernel Modules</div>
+                            <h4>Ensure jffs2 kernel module is not available</h4>
+                            <div class="description">Disable the jffs2 kernel module to prevent mounting of jffs2 filesystems</div>
+                            <div class="registry-path">File: /etc/modprobe.d/jffs2.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Create file with content: <code>install jffs2 /bin/true</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Kernel Modules</div>
+                            <h4>Ensure overlayfs kernel module is not available</h4>
+                            <div class="description">Disable the overlayfs kernel module to prevent mounting of overlayfs filesystems</div>
+                            <div class="registry-path">File: /etc/modprobe.d/overlayfs.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Create file with content: <code>install overlayfs /bin/true</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Kernel Modules</div>
+                            <h4>Ensure squashfs kernel module is not available</h4>
+                            <div class="description">Disable the squashfs kernel module to prevent mounting of squashfs filesystems</div>
+                            <div class="registry-path">File: /etc/modprobe.d/squashfs.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Create file with content: <code>install squashfs /bin/true</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Kernel Modules</div>
+                            <h4>Ensure udf kernel module is not available</h4>
+                            <div class="description">Disable the udf kernel module to prevent mounting of udf filesystems</div>
+                            <div class="registry-path">File: /etc/modprobe.d/udf.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Create file with content: <code>install udf /bin/true</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Kernel Modules</div>
+                            <h4>Ensure usb-storage kernel module is not available</h4>
+                            <div class="description">Disable the usb-storage kernel module to prevent mounting of USB storage devices</div>
+                            <div class="registry-path">File: /etc/modprobe.d/usb-storage.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Create file with content: <code>install usb-storage /bin/true</code>
+                            </div>
+                        </div>
+                    </div>
 
                         <h4>Filesystem Partitions</h4>
-                        <ul class="parameter-list">
-                            <li>Configure /tmp partition</li>
-                            <li>Configure /dev/shm partition</li>
-                            <li>Configure /home partition</li>
-                            <li>Configure /var partition</li>
-                            <li>Configure /var/tmp partition</li>
-                            <li>Configure /var/log partition</li>
-                            <li>Configure /var/log/audit partition</li>
-                        </ul>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Partitions</div>
+                            <h4>Configure /tmp partition</h4>
+                            <div class="description">Ensure /tmp is configured as a separate partition with appropriate mount options</div>
+                            <div class="registry-path">File: /etc/fstab</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add entry: <code>/tmp /tmp ext4 defaults,rw,nosuid,nodev,noexec,relatime 0 0</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Partitions</div>
+                            <h4>Configure /dev/shm partition</h4>
+                            <div class="description">Ensure /dev/shm is configured with appropriate mount options</div>
+                            <div class="registry-path">File: /etc/fstab</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add entry: <code>tmpfs /dev/shm tmpfs defaults,nodev,nosuid,noexec 0 0</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Partitions</div>
+                            <h4>Configure /home partition</h4>
+                            <div class="description">Ensure /home is configured as a separate partition</div>
+                            <div class="registry-path">File: /etc/fstab</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add entry: <code>/home /home ext4 defaults,rw,nodev,relatime 0 2</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Partitions</div>
+                            <h4>Configure /var partition</h4>
+                            <div class="description">Ensure /var is configured as a separate partition</div>
+                            <div class="registry-path">File: /etc/fstab</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add entry: <code>/var /var ext4 defaults,rw,nodev,nosuid,relatime 0 2</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Partitions</div>
+                            <h4>Configure /var/tmp partition</h4>
+                            <div class="description">Ensure /var/tmp is configured with appropriate mount options</div>
+                            <div class="registry-path">File: /etc/fstab</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add entry: <code>/var/tmp /var/tmp ext4 defaults,rw,nosuid,nodev,noexec,relatime 0 0</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Partitions</div>
+                            <h4>Configure /var/log partition</h4>
+                            <div class="description">Ensure /var/log is configured as a separate partition</div>
+                            <div class="registry-path">File: /etc/fstab</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add entry: <code>/var/log /var/log ext4 defaults,rw,nodev,nosuid,noexec,relatime 0 2</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Filesystem Partitions</div>
+                            <h4>Configure /var/log/audit partition</h4>
+                            <div class="description">Ensure /var/log/audit is configured as a separate partition</div>
+                            <div class="registry-path">File: /etc/fstab</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add entry: <code>/var/log/audit /var/log/audit ext4 defaults,rw,nodev,nosuid,noexec,relatime 0 2</code>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Package Management -->
-                    <div class="parameter-category">
-                        <h3><i class="fas fa-box"></i> Package Management</h3>
-                        
+                    <h3>Package Management</h3>
                         <h4>Bootloader Configuration</h4>
-                        <ul class="parameter-list">
-                            <li>Ensure bootloader password is set</li>
-                            <li>Ensure access to bootloader config is configured</li>
-                        </ul>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Bootloader Configuration</div>
+                            <h4>Ensure bootloader password is set</h4>
+                            <div class="description">Set a password for the bootloader to prevent unauthorized access</div>
+                            <div class="registry-path">File: /etc/grub.d/40_custom</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add password configuration and run <code>update-grub</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Bootloader Configuration</div>
+                            <h4>Ensure access to bootloader config is configured</h4>
+                            <div class="description">Restrict access to bootloader configuration files</div>
+                            <div class="registry-path">File: /etc/grub.d/</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set permissions: <code>chmod 600 /etc/grub.d/*</code>
+                            </div>
+                        </div>
+                    </div>
 
                         <h4>Process Hardening</h4>
-                        <ul class="parameter-list">
-                            <li>Ensure address space layout randomization is enabled</li>
-                            <li>Ensure ptrace_scope is restricted</li>
-                            <li>Ensure core dumps are restricted</li>
-                            <li>Ensure prelink is not installed</li>
-                            <li>Ensure Automatic Error Reporting is not enabled</li>
-                        </ul>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Process Hardening</div>
+                            <h4>Ensure address space layout randomization is enabled</h4>
+                            <div class="description">Enable ASLR to randomize memory layout and prevent buffer overflow attacks</div>
+                            <div class="registry-path">File: /proc/sys/kernel/randomize_va_space</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set value to 2: <code>echo 2 > /proc/sys/kernel/randomize_va_space</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Process Hardening</div>
+                            <h4>Ensure ptrace_scope is restricted</h4>
+                            <div class="description">Restrict ptrace to prevent debugging of processes by non-privileged users</div>
+                            <div class="registry-path">File: /proc/sys/kernel/yama/ptrace_scope</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set value to 1: <code>echo 1 > /proc/sys/kernel/yama/ptrace_scope</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Process Hardening</div>
+                            <h4>Ensure core dumps are restricted</h4>
+                            <div class="description">Restrict core dumps to prevent sensitive information leakage</div>
+                            <div class="registry-path">File: /etc/security/limits.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add line: <code>* hard core 0</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Process Hardening</div>
+                            <h4>Ensure prelink is not installed</h4>
+                            <div class="description">Remove prelink package to prevent security bypasses</div>
+                            <div class="registry-path">Package: prelink</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Remove package: <code>apt remove prelink</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Process Hardening</div>
+                            <h4>Ensure Automatic Error Reporting is not enabled</h4>
+                            <div class="description">Disable automatic error reporting to prevent information leakage</div>
+                            <div class="registry-path">File: /etc/default/apport</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set enabled=0: <code>echo 'enabled=0' > /etc/default/apport</code>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Services Configuration -->
-                    <div class="parameter-category">
-                        <h3><i class="fas fa-server"></i> Services Configuration</h3>
-                        
+                    <h3>Services Configuration</h3>
                         <h4>Server Services</h4>
-                        <ul class="parameter-list">
-                            <li>Ensure autofs services are not in use</li>
-                            <li>Ensure avahi daemon services are not in use</li>
-                            <li>Ensure dhcp server services are not in use</li>
-                            <li>Ensure dns server services are not in use</li>
-                            <li>Ensure ftp server services are not in use</li>
-                            <li>Ensure ldap server services are not in use</li>
-                            <li>Ensure message access server services are not in use</li>
-                            <li>Ensure network file system services are not in use</li>
-                            <li>Ensure nis server services are not in use</li>
-                            <li>Ensure print server services are not in use</li>
-                            <li>Ensure web server services are not in use</li>
-                            <li>Ensure X window server services are not in use</li>
-                        </ul>
-
-                        <h4>Client Services</h4>
-                        <ul class="parameter-list">
-                            <li>Ensure NIS Client is not installed</li>
-                            <li>Ensure rsh client is not installed</li>
-                            <li>Ensure talk client is not installed</li>
-                            <li>Ensure telnet client is not installed</li>
-                            <li>Ensure ldap client is not installed</li>
-                            <li>Ensure ftp client is not installed</li>
-                        </ul>
-
-                        <h4>Time Synchronization</h4>
-                        <ul class="parameter-list">
-                            <li>Ensure time synchronization is in use</li>
-                            <li>Ensure systemd-timesyncd is configured with authorized timeserver</li>
-                            <li>Ensure chrony is configured with authorized timeserver</li>
-                        </ul>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Server Services</div>
+                            <h4>Ensure autofs services are not in use</h4>
+                            <div class="description">Disable autofs service to prevent automatic mounting of filesystems</div>
+                            <div class="registry-path">Service: autofs</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Disable service: <code>systemctl disable autofs</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Server Services</div>
+                            <h4>Ensure avahi daemon services are not in use</h4>
+                            <div class="description">Disable avahi daemon to prevent service discovery</div>
+                            <div class="registry-path">Service: avahi-daemon</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Disable service: <code>systemctl disable avahi-daemon</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Server Services</div>
+                            <h4>Ensure dhcp server services are not in use</h4>
+                            <div class="description">Disable DHCP server services to prevent unauthorized network configuration</div>
+                            <div class="registry-path">Service: isc-dhcp-server</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Disable service: <code>systemctl disable isc-dhcp-server</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Server Services</div>
+                            <h4>Ensure dns server services are not in use</h4>
+                            <div class="description">Disable DNS server services to prevent DNS attacks</div>
+                            <div class="registry-path">Service: bind9</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Disable service: <code>systemctl disable bind9</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Server Services</div>
+                            <h4>Ensure ftp server services are not in use</h4>
+                            <div class="description">Disable FTP server services to prevent insecure file transfers</div>
+                            <div class="registry-path">Service: vsftpd</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Disable service: <code>systemctl disable vsftpd</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Server Services</div>
+                            <h4>Ensure ldap server services are not in use</h4>
+                            <div class="description">Disable LDAP server services to prevent directory service attacks</div>
+                            <div class="registry-path">Service: slapd</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Disable service: <code>systemctl disable slapd</code>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Network Configuration -->
-                    <div class="parameter-category">
-                        <h3><i class="fas fa-network-wired"></i> Network Configuration</h3>
-                        
+                    <h3>Network Configuration</h3>
                         <h4>Network Parameters</h4>
-                        <ul class="parameter-list">
-                            <li>Ensure IPv6 status is identified</li>
-                            <li>Ensure wireless interfaces are disabled</li>
-                            <li>Ensure bluetooth services are not in use</li>
-                            <li>Ensure ip forwarding is disabled</li>
-                            <li>Ensure packet redirect sending is disabled</li>
-                            <li>Ensure source routed packets are not accepted</li>
-                            <li>Ensure tcp syn cookies is enabled</li>
-                        </ul>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Network Parameters</div>
+                            <h4>Ensure IPv6 status is identified</h4>
+                            <div class="description">Identify IPv6 configuration status and disable if not needed</div>
+                            <div class="registry-path">File: /etc/sysctl.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add IPv6 disable entries to sysctl.conf
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Network Parameters</div>
+                            <h4>Ensure wireless interfaces are disabled</h4>
+                            <div class="description">Disable wireless interfaces to prevent unauthorized network access</div>
+                            <div class="registry-path">File: /etc/modprobe.d/blacklist.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add blacklist entries for wireless modules
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Network Parameters</div>
+                            <h4>Ensure bluetooth services are not in use</h4>
+                            <div class="description">Disable Bluetooth services to prevent unauthorized device connections</div>
+                            <div class="registry-path">Service: bluetooth</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Disable service: <code>systemctl disable bluetooth</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Network Parameters</div>
+                            <h4>Ensure ip forwarding is disabled</h4>
+                            <div class="description">Disable IP forwarding to prevent routing attacks</div>
+                            <div class="registry-path">File: /proc/sys/net/ipv4/ip_forward</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set value to 0: <code>echo 0 > /proc/sys/net/ipv4/ip_forward</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Network Parameters</div>
+                            <h4>Ensure packet redirect sending is disabled</h4>
+                            <div class="description">Disable packet redirect sending to prevent ICMP redirect attacks</div>
+                            <div class="registry-path">File: /proc/sys/net/ipv4/conf/all/send_redirects</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set value to 0: <code>echo 0 > /proc/sys/net/ipv4/conf/all/send_redirects</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Network Parameters</div>
+                            <h4>Ensure source routed packets are not accepted</h4>
+                            <div class="description">Disable source routed packets to prevent routing attacks</div>
+                            <div class="registry-path">File: /proc/sys/net/ipv4/conf/all/accept_source_route</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set value to 0: <code>echo 0 > /proc/sys/net/ipv4/conf/all/accept_source_route</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Network Parameters</div>
+                            <h4>Ensure tcp syn cookies is enabled</h4>
+                            <div class="description">Enable TCP SYN cookies to prevent SYN flood attacks</div>
+                            <div class="registry-path">File: /proc/sys/net/ipv4/tcp_syncookies</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set value to 1: <code>echo 1 > /proc/sys/net/ipv4/tcp_syncookies</code>
+                            </div>
+                        </div>
+                    </div>
 
                         <h4>Firewall Configuration</h4>
-                        <ul class="parameter-list">
-                            <li>Ensure ufw is installed</li>
-                            <li>Ensure ufw service is enabled</li>
-                            <li>Ensure ufw loopback traffic is configured</li>
-                            <li>Ensure ufw default deny firewall policy</li>
-                            <li>Ensure ufw firewall rules exist for all open ports</li>
-                        </ul>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">Firewall Configuration</div>
+                            <h4>Ensure ufw is installed</h4>
+                            <div class="description">Install UFW firewall to provide network security</div>
+                            <div class="registry-path">Package: ufw</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Install package: <code>apt install ufw</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Firewall Configuration</div>
+                            <h4>Ensure ufw service is enabled</h4>
+                            <div class="description">Enable UFW firewall service</div>
+                            <div class="registry-path">Service: ufw</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Enable service: <code>systemctl enable ufw</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Firewall Configuration</div>
+                            <h4>Ensure ufw loopback traffic is configured</h4>
+                            <div class="description">Configure UFW to allow loopback traffic</div>
+                            <div class="registry-path">UFW Rules</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add rule: <code>ufw allow in on lo</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Firewall Configuration</div>
+                            <h4>Ensure ufw default deny firewall policy</h4>
+                            <div class="description">Set UFW default policy to deny all traffic</div>
+                            <div class="registry-path">UFW Policy</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set policy: <code>ufw default deny incoming</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">Firewall Configuration</div>
+                            <h4>Ensure ufw firewall rules exist for all open ports</h4>
+                            <div class="description">Configure UFW rules for all necessary open ports</div>
+                            <div class="registry-path">UFW Rules</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add specific rules for required services
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Access Control -->
-                    <div class="parameter-category">
-                        <h3><i class="fas fa-lock"></i> Access Control</h3>
-                        
+                    <h3>Access Control</h3>
                         <h4>SSH Configuration</h4>
-                        <ul class="parameter-list">
-                            <li>Ensure permissions on /etc/ssh/sshd_config are configured</li>
-                            <li>Ensure SSH private/public host key files permissions are configured</li>
-                            <li>Ensure sshd Ciphers are configured securely</li>
-                            <li>Ensure sshd PermitRootLogin is disabled</li>
-                            <li>Ensure sshd MaxAuthTries is configured</li>
-                            <li>Ensure sshd PermitEmptyPasswords is disabled</li>
-                        </ul>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">SSH Configuration</div>
+                            <h4>Ensure permissions on /etc/ssh/sshd_config are configured</h4>
+                            <div class="description">Set proper permissions on SSH configuration file</div>
+                            <div class="registry-path">File: /etc/ssh/sshd_config</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set permissions: <code>chmod 600 /etc/ssh/sshd_config</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">SSH Configuration</div>
+                            <h4>Ensure SSH private/public host key files permissions are configured</h4>
+                            <div class="description">Set proper permissions on SSH host key files</div>
+                            <div class="registry-path">Directory: /etc/ssh/</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set permissions: <code>chmod 600 /etc/ssh/ssh_host_*_key</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">SSH Configuration</div>
+                            <h4>Ensure sshd Ciphers are configured securely</h4>
+                            <div class="description">Configure secure SSH ciphers in sshd_config</div>
+                            <div class="registry-path">File: /etc/ssh/sshd_config</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add line: <code>Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">SSH Configuration</div>
+                            <h4>Ensure sshd PermitRootLogin is disabled</h4>
+                            <div class="description">Disable root login via SSH</div>
+                            <div class="registry-path">File: /etc/ssh/sshd_config</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set: <code>PermitRootLogin no</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">SSH Configuration</div>
+                            <h4>Ensure sshd MaxAuthTries is configured</h4>
+                            <div class="description">Limit SSH authentication attempts</div>
+                            <div class="registry-path">File: /etc/ssh/sshd_config</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set: <code>MaxAuthTries 3</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">SSH Configuration</div>
+                            <h4>Ensure sshd PermitEmptyPasswords is disabled</h4>
+                            <div class="description">Disable empty password authentication</div>
+                            <div class="registry-path">File: /etc/ssh/sshd_config</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set: <code>PermitEmptyPasswords no</code>
+                            </div>
+                        </div>
+                    </div>
 
                         <h4>PAM Configuration</h4>
-                        <ul class="parameter-list">
-                            <li>Ensure password quality requirements are configured</li>
-                            <li>Ensure password hashing algorithm is SHA-512</li>
-                            <li>Ensure password reuse is limited</li>
-                            <li>Ensure password expiration is configured</li>
-                            <li>Ensure failed password attempts are logged</li>
-                        </ul>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">PAM Configuration</div>
+                            <h4>Ensure password quality requirements are configured</h4>
+                            <div class="description">Configure password quality requirements using libpam-pwquality</div>
+                            <div class="registry-path">File: /etc/security/pwquality.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Configure password complexity requirements
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">PAM Configuration</div>
+                            <h4>Ensure password hashing algorithm is SHA-512</div>
+                            <div class="description">Configure system to use SHA-512 for password hashing</div>
+                            <div class="registry-path">File: /etc/pam.d/common-password</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Configure: <code>password [success=1 default=ignore] pam_unix.so sha512</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">PAM Configuration</div>
+                            <h4>Ensure password reuse is limited</h4>
+                            <div class="description">Configure password reuse restrictions</div>
+                            <div class="registry-path">File: /etc/pam.d/common-password</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add: <code>password required pam_pwhistory.so remember=5</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">PAM Configuration</div>
+                            <h4>Ensure password expiration is configured</h4>
+                            <div class="description">Configure password expiration policies</div>
+                            <div class="registry-path">File: /etc/login.defs</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set: <code>PASS_MAX_DAYS 90</code> and <code>PASS_MIN_DAYS 7</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">PAM Configuration</div>
+                            <h4>Ensure failed password attempts are logged</h4>
+                            <div class="description">Configure logging of failed password attempts</div>
+                            <div class="registry-path">File: /etc/pam.d/common-auth</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add: <code>auth required pam_tally2.so deny=5 onerr=fail unlock_time=1800</code>
+                            </div>
+                        </div>
 
                         <h4>User Account Controls</h4>
-                        <ul class="parameter-list">
-                            <li>Ensure root is the only UID 0 account</li>
-                            <li>Ensure system accounts are non-login</li>
-                            <li>Ensure default user shell timeout is configured</li>
-                            <li>Ensure default user umask is configured</li>
-                            <li>Ensure sudo is configured properly</li>
-                        </ul>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">User Account Controls</div>
+                            <h4>Ensure root is the only UID 0 account</h4>
+                            <div class="description">Verify that only root has UID 0</div>
+                            <div class="registry-path">File: /etc/passwd</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Check: <code>awk -F: '($3 == 0) { print $1 }' /etc/passwd</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">User Account Controls</div>
+                            <h4>Ensure system accounts are non-login</h4>
+                            <div class="description">Ensure system accounts cannot be used for login</div>
+                            <div class="registry-path">File: /etc/passwd</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Set shell to /usr/sbin/nologin for system accounts
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">User Account Controls</div>
+                            <h4>Ensure default user shell timeout is configured</h4>
+                            <div class="description">Configure shell timeout for inactive sessions</div>
+                            <div class="registry-path">File: /etc/bash.bashrc</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add: <code>TMOUT=600</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">User Account Controls</div>
+                            <h4>Ensure default user umask is configured</h4>
+                            <div class="description">Configure default umask for file permissions</div>
+                            <div class="registry-path">File: /etc/bash.bashrc</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Add: <code>umask 027</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">User Account Controls</div>
+                            <h4>Ensure sudo is configured properly</h4>
+                            <div class="description">Configure sudo with proper security settings</div>
+                            <div class="registry-path">File: /etc/sudoers</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Configure sudo timeout and logging
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>System Hardening</h3>
+                    <div class="parameter-grid">
+                        <div class="parameter-card">
+                            <div class="category">System Hardening</div>
+                            <h4>Ensure systemd-timesyncd is configured with authorized timeserver</h4>
+                            <div class="description">Configure time synchronization with authorized NTP servers</div>
+                            <div class="registry-path">File: /etc/systemd/timesyncd.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Configure NTP servers: <code>NTP=time.nist.gov</code>
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">System Hardening</div>
+                            <h4>Ensure chrony is configured with authorized timeserver</h4>
+                            <div class="description">Configure chrony with authorized NTP servers</div>
+                            <div class="registry-path">File: /etc/chrony/chrony.conf</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Configure server entries with trusted NTP servers
+                            </div>
+                        </div>
+                        <div class="parameter-card">
+                            <div class="category">System Hardening</div>
+                            <h4>Ensure time synchronization is in use</h4>
+                            <div class="description">Enable time synchronization service</div>
+                            <div class="registry-path">Service: systemd-timesyncd</div>
+                            <div class="manual-setup">
+                                <strong>Manual Setup:</strong> Enable service: <code>systemctl enable systemd-timesyncd</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Linux Parameter Categories Summary</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Subcategory</th>
+                                    <th>Parameters</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Filesystem Configuration</td>
+                                    <td>Filesystem Kernel Modules</td>
+                                    <td>9</td>
+                                    <td>Disable unnecessary filesystem kernel modules</td>
+                                </tr>
+                                <tr>
+                                    <td>Filesystem Configuration</td>
+                                    <td>Filesystem Partitions</td>
+                                    <td>7</td>
+                                    <td>Configure secure filesystem partitions</td>
+                                </tr>
+                                <tr>
+                                    <td>Package Management</td>
+                                    <td>Bootloader Configuration</td>
+                                    <td>2</td>
+                                    <td>Secure bootloader configuration</td>
+                                </tr>
+                                <tr>
+                                    <td>Package Management</td>
+                                    <td>Process Hardening</td>
+                                    <td>5</td>
+                                    <td>Process security hardening measures</td>
+                                </tr>
+                                <tr>
+                                    <td>Services Configuration</td>
+                                    <td>Server Services</td>
+                                    <td>12</td>
+                                    <td>Disable unnecessary server services</td>
+                                </tr>
+                                <tr>
+                                    <td>Services Configuration</td>
+                                    <td>Client Services</td>
+                                    <td>6</td>
+                                    <td>Remove unnecessary client services</td>
+                                </tr>
+                                <tr>
+                                    <td>Services Configuration</td>
+                                    <td>Time Synchronization</td>
+                                    <td>3</td>
+                                    <td>Configure time synchronization services</td>
+                                </tr>
+                                <tr>
+                                    <td>Network Configuration</td>
+                                    <td>Network Parameters</td>
+                                    <td>7</td>
+                                    <td>Configure secure network parameters</td>
+                                </tr>
+                                <tr>
+                                    <td>Network Configuration</td>
+                                    <td>Firewall Configuration</td>
+                                    <td>5</td>
+                                    <td>Configure firewall settings</td>
+                                </tr>
+                                <tr>
+                                    <td>Access Control</td>
+                                    <td>SSH Configuration</td>
+                                    <td>6</td>
+                                    <td>Secure SSH configuration</td>
+                                </tr>
+                                <tr>
+                                    <td>Access Control</td>
+                                    <td>PAM Configuration</td>
+                                    <td>5</td>
+                                    <td>Configure PAM authentication security</td>
+                                </tr>
+                                <tr>
+                                    <td>Access Control</td>
+                                    <td>User Account Controls</td>
+                                    <td>5</td>
+                                    <td>Configure user account security</td>
+                                </tr>
+                                <tr>
+                                    <td>System Hardening</td>
+                                    <td>System Hardening</td>
+                                    <td>3</td>
+                                    <td>Additional system security measures</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </section>
             </div>
@@ -1099,6 +1821,21 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</code
     <script src="js/docs.js"></script>
     <script src="js/header.js"></script>
     <script src="js/parameters.js"></script>
+        
+        <!-- Parameter Details Popup -->
+        <div id="param-detail-popup" class="param-popup" style="display:none;">
+            <div class="param-overlay" id="param-popup-close-overlay"></div>
+            <div class="param-modal" role="dialog" aria-modal="true" aria-labelledby="param-popup-title">
+                <div class="param-modal-header">
+                    <h3 id="param-popup-title"></h3>
+                    <button class="param-close" id="param-popup-close" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="param-modal-meta" id="param-popup-meta"></div>
+                <div class="param-modal-body" id="param-popup-body"></div>
+            </div>
+        </div>
 </body>
 </html>
 
