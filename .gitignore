@@ -1,3 +1,4 @@
 # Ignore a folder and its contents
 venv/
 __pycache__/
+docs/website/
