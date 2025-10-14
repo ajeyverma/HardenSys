@@ -1,38 +1,47 @@
 # HardenSys CLI Tool
 
-A command-line interface for running Windows and Linux security compliance checks based on CIS benchmarks and security best practices.
+A command-line interface for running Windows and Linux security compliance checks based on CIS benchmarks and security best practices. Supports 121 Windows parameters and 89 Linux parameters across multiple security categories.
 
 ## Features
 
-- Run all compliance checks or filter by category
-- Generate text or JSON reports
-- Administrator privilege detection
-- Progress tracking and detailed output
-- Export results to files
+- **Cross-Platform Support**: Windows and Linux compliance checking
+- **Comprehensive Coverage**: 121 Windows + 89 Linux security parameters
+- **Flexible Filtering**: Run all checks or filter by category/parameter
+- **Multiple Report Formats**: Text, JSON, and HTML reports
+- **Administrator Detection**: Automatic privilege checking
+- **Progress Tracking**: Real-time status updates and detailed output
+- **Export Capabilities**: Save results to files for analysis
 
 ## Requirements
 
 - Python 3.7+
-- Windows 10/11
-- Linux (Ubuntu/Debian)
-- Administrator privileges (recommended for full functionality)
+- **Windows**: Windows 10/11
+- **Linux**: Ubuntu/Debian (other distributions supported)
+- Administrator/root privileges (recommended for full functionality)
 
 ## Files
 
-- `compliance_cli.py` - Main CLI script
-- `windows_tasks.json` - Compliance task definitions for Windows
+- `HardenSys.py` - Main CLI script
+- `HardenSys_gui.py` - GUI interface
+- `windows_tasks.json` - Compliance task definitions for Windows (121 parameters)
 - `windows_tasks.py` - Compliance check functions for Windows
-- `linux_tasks.json` - Compliance task definitions for Linux
+- `linux_tasks.json` - Compliance task definitions for Linux (89 parameters)
 - `linux_tasks.py` - Compliance check functions for Linux
+- `requirements.txt` - Python dependencies
 
 ## Usage
 
 ### Basic Usage
 
 ```bash
-# Run all compliance checks
-python compliance_cli.py
+# Run all compliance checks (Windows)
+python HardenSys.py
 
+# Run all compliance checks (Linux)
+python3 HardenSys.py
+
+# Run with output file
+python HardenSys.py --output report.html
 ```
 
 ### Filtering by Category

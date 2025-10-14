@@ -1,22 +1,18 @@
 # HardenSys - Unified System Hardening Tool
 
-A comprehensive security policy management and compliance checking tool for Windows systems. This tool helps organizations and system administrators enforce, manage, and audit Windows security policies through both CLI and GUI interfaces.
+A comprehensive security policy management and compliance checking tool for Windows and Linux systems. This tool helps organizations and system administrators enforce, manage, and audit security policies through both CLI and GUI interfaces.
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 ![Linux](https://img.shields.io/badge/platform-Linux-ff0000)
 ![Python](https://img.shields.io/badge/python-3.6%2B-brightgreen.svg)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://ajeyverma.github.io/HardenSys/)
 
 ## 🛡️ Features
 
-- **Comprehensive Coverage**: 121 security parameters across multiple categories
-  - Account Policies (9 parameters)
-  - User Rights (7 parameters)
-  - Security Options (24 parameters)
-  - System Settings (32 parameters)
-  - Windows Firewall (18 parameters)
-  - Audit Policy (20 parameters)
-  - Application Guard (11 parameters)
+- **Comprehensive Coverage**: 121 Windows + 89 Linux security parameters
+  - **Windows**: Account Policies, User Rights, Security Options, System Settings, Firewall, Audit Policy, Application Guard
+  - **Linux**: Filesystem Configuration, Package Management, Services, Network, Access Control, System Hardening
 
 - **Dual Interface**
   - Command-line interface for automation and scripting
@@ -27,13 +23,20 @@ A comprehensive security policy management and compliance checking tool for Wind
   - Detailed HTML and PDF compliance reports
   - Real-time policy status monitoring
   - Batch processing support
+  - Cross-platform support (Windows & Linux)
+
+- **Professional Documentation**
+  - Complete GitHub Pages documentation
+  - Interactive parameter reference
+  - Step-by-step setup guides
+  - API documentation and examples
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Windows Operating System
+- Windows 10/11 or Linux (Ubuntu/Debian)
 - Python 3.6 or higher
-- Administrator privileges
+- Administrator/root privileges (recommended)
 
 ### Installation
 
@@ -59,35 +62,66 @@ python HardenSys_gui.py
 #### CLI Interface
 Run compliance checks and generate a report:
 ```bash
+# Windows
 python HardenSys.py --output report.html
+
+# Linux
+python3 HardenSys.py --output report.html
 ```
+
+## 📚 Documentation
+
+Visit our comprehensive documentation at: **[https://ajeyverma.github.io/HardenSys/](https://ajeyverma.github.io/HardenSys/)**
+
+### Documentation Features
+- **Interactive Parameter Reference**: Search and explore all 210+ security parameters
+- **Step-by-Step Guides**: Complete setup instructions for both Windows and Linux
+- **API Documentation**: Full CLI and GUI interface documentation
+- **Examples & Tutorials**: Real-world usage scenarios and best practices
+- **Troubleshooting**: Common issues and solutions
 
 ## 📊 Compliance Categories
 
-1. **Account Policies**
-   - Password policies
-   - Account lockout settings
-   - Kerberos authentication
+### Windows (121 Parameters)
+1. **Account Policies** (9 parameters)
+   - Password policies, account lockout settings, Kerberos authentication
 
-2. **User Rights Assignment**
-   - Administrative privileges
-   - System access controls
-   - Security permissions
+2. **User Rights Assignment** (7 parameters)
+   - Administrative privileges, system access controls, security permissions
 
-3. **Security Options**
-   - Network security
-   - User Account Control
-   - System cryptography
+3. **Security Options** (24 parameters)
+   - Network security, User Account Control, system cryptography
 
-4. **System Services**
-   - Critical service configurations
-   - Security-related services
-   - Network services
+4. **System Settings** (32 parameters)
+   - Critical service configurations, security-related services
 
-5. **Windows Firewall**
-   - Firewall profiles
-   - Connection security
-   - Rule management
+5. **Windows Firewall** (18 parameters)
+   - Firewall profiles, connection security, rule management
+
+6. **Advanced Audit Policy** (20 parameters)
+   - Account logon, object access, system events
+
+7. **Application Guard** (11 parameters)
+   - Microsoft Defender Application Guard settings
+
+### Linux (89 Parameters)
+1. **Filesystem Configuration** (16 parameters)
+   - Kernel modules, partitions, file system security
+
+2. **Package Management** (7 parameters)
+   - Bootloader settings, process hardening
+
+3. **Services Configuration** (21 parameters)
+   - Server and client services, time synchronization
+
+4. **Network Configuration** (12 parameters)
+   - Network parameters, firewall configuration
+
+5. **Access Control** (21 parameters)
+   - SSH, PAM, user account controls
+
+6. **System Hardening** (12 parameters)
+   - Additional kernel and system security measures
 
 ## 📝 Reports
 

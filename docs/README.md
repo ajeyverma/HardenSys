@@ -30,9 +30,10 @@ docs/
 - **Getting Started**: Installation, quick start, and requirements
 - **CLI Interface**: Complete command-line documentation
 - **GUI Interface**: Graphical interface guide
-- **Security Parameters**: Reference for all 121 parameters
+- **Security Parameters**: Reference for all 210+ parameters (121 Windows + 89 Linux)
 - **Advanced Topics**: Integration, automation, and best practices
 - **Reference**: CLI options, error codes, FAQ, and changelog
+- **Cross-Platform**: Windows and Linux specific documentation
 
 ### ✅ **Interactive Features**
 - **Search Functionality**: Real-time search across all documentation
@@ -135,9 +136,10 @@ docs/
 ## 📊 Content Coverage
 
 ### **Complete Documentation**
-- **121 Parameters**: All security parameters documented
-- **7 Categories**: Complete category coverage
+- **210+ Parameters**: All security parameters documented (121 Windows + 89 Linux)
+- **13 Categories**: Complete category coverage across both platforms
 - **CLI & GUI**: Both interfaces fully documented
+- **Cross-Platform**: Windows and Linux specific examples
 - **Examples**: Real-world usage scenarios
 - **Troubleshooting**: Common issues and solutions
 
@@ -201,13 +203,21 @@ docs/
 
 ## 🎉 Ready for Production
 
-The documentation is now complete and ready for deployment. It provides:
+The documentation is now complete and live at GitHub Pages. It provides:
 
 - ✅ **Professional Design**: GitHub-style interface
 - ✅ **Complete Coverage**: All aspects of HardenSys documented
+- ✅ **Cross-Platform**: Windows and Linux documentation
 - ✅ **User-Friendly**: Easy navigation and clear instructions
 - ✅ **Responsive**: Works on all devices
 - ✅ **Interactive**: Search, copy, and navigation features
 - ✅ **Accessible**: WCAG compliant design
+- ✅ **Live Documentation**: Available at https://ajeyverma.github.io/HardenSys/
 
 The documentation provides a complete, professional solution for the HardenSys Tool! 🎉
+
+## 🔗 **Quick Links**
+
+- **Live Documentation**: [https://ajeyverma.github.io/HardenSys/](https://ajeyverma.github.io/HardenSys/)
+- **Interactive Parameters**: [https://ajeyverma.github.io/HardenSys/docs/parameters.html](https://ajeyverma.github.io/HardenSys/docs/parameters.html)
+- **GitHub Repository**: [https://github.com/ajeyverma/HardenSys](https://github.com/ajeyverma/HardenSys)

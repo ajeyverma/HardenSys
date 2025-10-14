@@ -2,7 +2,11 @@
 
 ## 🎉 Website Creation Complete!
 
-A comprehensive website has been created for the Windows and Linux Security Compliance Tool with complete documentation for both CLI and GUI interfaces, including all 121 parameters with detailed manual setup instructions.
+A comprehensive website has been created for the Windows and Linux Security Compliance Tool with complete documentation for both CLI and GUI interfaces, including all 210+ parameters (121 Windows + 89 Linux) with detailed manual setup instructions.
+
+## 🌐 Live Documentation
+
+The documentation is now live at: **[https://ajeyverma.github.io/HardenSys/](https://ajeyverma.github.io/HardenSys/)**
 
 ## 📁 Website Structure
 
@@ -49,16 +53,18 @@ website/
 
 ### ✅ **Parameters Reference (parameters.html)**
 - **Search Functionality**: Real-time parameter search
-- **121 Parameters**: Complete reference with categories
+- **210+ Parameters**: Complete reference with categories (121 Windows + 89 Linux)
 - **Manual Setup Instructions**: Step-by-step configuration
-- **Registry Paths**: Detailed registry locations
-- **Category Summary**: 14 categories with parameter counts
+- **Registry/Config Paths**: Detailed configuration locations
+- **Category Summary**: 13 categories with parameter counts
 - **Interactive Cards**: Expandable parameter information
+- **OS-Specific Content**: Windows and Linux parameter sections
 
 ### ✅ **Manual Setup Guide (manual-setup.html)**
-- **4 Setup Methods**: Local Security Policy, Registry, Command Line, Group Policy
-- **Step-by-Step Instructions**: Detailed configuration procedures
-- **Code Examples**: Command-line and registry examples
+- **Windows Setup Methods**: Local Security Policy, Registry, Command Line, Group Policy
+- **Linux Setup Methods**: System Configuration, File Permissions, Service Management, Network Security
+- **Step-by-Step Instructions**: Detailed configuration procedures for both platforms
+- **Code Examples**: Command-line, registry, and configuration file examples
 - **Verification Procedures**: Testing and validation steps
 - **Best Practices**: Implementation and maintenance strategies
 - **Troubleshooting**: Common issues and recovery procedures
@@ -126,11 +132,11 @@ website/
 ## 📊 **Content Coverage**
 
 ### **Complete Documentation**
-- **121 Parameters**: All security parameters documented
-- **14 Categories**: Complete category coverage
-- **4 Setup Methods**: Multiple configuration approaches
+- **210+ Parameters**: All security parameters documented (121 Windows + 89 Linux)
+- **13 Categories**: Complete category coverage across both platforms
+- **Multiple Setup Methods**: Windows and Linux configuration approaches
 - **CLI & GUI**: Both interfaces fully documented
-- **Manual Setup**: Step-by-step configuration guides
+- **Manual Setup**: Step-by-step configuration guides for both platforms
 
 ### **User-Friendly Features**
 - **Search Functionality**: Find parameters quickly
@@ -157,20 +163,28 @@ website/
 
 ## 🚀 **Ready for Production**
 
-The website is now complete and ready for deployment. It provides:
+The website is now complete and live at GitHub Pages. It provides:
 
 - ✅ **Complete Documentation**: All aspects of the tool covered
 - ✅ **Professional Design**: Modern, responsive interface
 - ✅ **User-Friendly**: Easy navigation and clear instructions
-- ✅ **Comprehensive Coverage**: 121 parameters with detailed setup
+- ✅ **Comprehensive Coverage**: 210+ parameters with detailed setup
+- ✅ **Cross-Platform**: Both Windows and Linux fully documented
 - ✅ **Multiple Interfaces**: Both CLI and GUI fully documented
 - ✅ **Manual Setup**: Complete manual configuration guides
+- ✅ **Live Documentation**: Accessible at https://ajeyverma.github.io/HardenSys/
 
 ## 📝 **Next Steps**
 
-1. **Deploy Website**: Upload to web server or GitHub Pages
-2. **Test Functionality**: Verify all links and features work
+1. ✅ **Deploy Website**: Successfully deployed to GitHub Pages
+2. ✅ **Test Functionality**: All links and features working
 3. **User Feedback**: Gather feedback for improvements
 4. **Regular Updates**: Keep documentation current with tool updates
 
 The website provides a complete, professional documentation solution for the HardenSys Tool! 🎉
+
+## 🔗 **Quick Links**
+
+- **Live Documentation**: [https://ajeyverma.github.io/HardenSys/](https://ajeyverma.github.io/HardenSys/)
+- **GitHub Repository**: [https://github.com/ajeyverma/HardenSys](https://github.com/ajeyverma/HardenSys)
+- **Interactive Parameters**: [https://ajeyverma.github.io/HardenSys/docs/parameters.html](https://ajeyverma.github.io/HardenSys/docs/parameters.html)
